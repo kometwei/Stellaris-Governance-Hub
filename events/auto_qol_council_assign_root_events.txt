@@ -1,0 +1,2292 @@
+namespace = auto_qol_council_assign
+
+# ========================================================
+country_event = {
+	id = auto_qol_council_assign.1
+	title = "auto_qol_council_assign.1.name"
+	desc = "auto_qol_council_assign.1.desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					is_gestalt = no is_nomadic = yes
+					NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+				}
+				AND = {
+					is_gestalt = no is_nomadic = no
+					NOT = { has_councilor = { COUNCILOR = councilor_research } }
+				}
+				AND = {
+					has_valid_civic = civic_catalytic_processing
+					NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+				}
+				AND = {
+					has_valid_civic = civic_eager_explorers
+					NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+				}
+				AND = {
+					has_valid_civic = civic_environmentalist
+					NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+				}
+				AND = {
+					has_valid_civic = civic_idyllic_bloom
+					NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+				}
+				AND = {
+					has_valid_civic = civic_memory_vault
+					NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+				}
+				AND = {
+					has_valid_civic = civic_technocracy
+					NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+				}
+				AND = {
+					has_valid_civic = civic_memory_vault_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_catalytic_processing
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+				}
+				AND = {
+					has_valid_civic = civic_ruthless_competition
+					NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+				}
+				AND = {
+					is_gestalt = yes
+					NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+				}
+				AND = {
+					any_owned_leader = {
+									has_trait = leader_trait_curator
+								}
+					NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+				}
+				AND = {
+					has_valid_civic = civic_individual_machine_predictive_analysis
+					NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+				}
+				AND = {
+					has_valid_civic = civic_astrometeorology
+					NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+				}
+				AND = {
+					has_valid_civic = civic_astrometeorology_megacorp
+					NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+				}
+				AND = {
+					has_valid_civic = civic_storm_callers
+					NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+				}
+				AND = {
+					has_valid_civic = civic_storm_callers_megacorp
+					NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+				}
+				AND = {
+					has_valid_civic = civic_environmental_architects
+					NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+				}
+				AND = {
+					has_valid_civic = civic_environmental_architects_megacorp
+					NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+				}
+				AND = {
+					has_valid_civic = civic_crowdsourcing
+					NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_crowdsourcing
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+				}
+				AND = {
+					has_valid_civic = civic_SH_tech
+					NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+				}
+				AND = {
+					has_valid_civic = civic_wgaurora
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+				}
+			}
+		}
+		name = "auto_qol_council_assign.cat_scientist"
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_gestalt = no is_nomadic = yes
+						NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+					}
+					AND = {
+						is_gestalt = no is_nomadic = no
+						NOT = { has_councilor = { COUNCILOR = councilor_research } }
+					}
+					AND = {
+						has_valid_civic = civic_catalytic_processing
+						NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+					}
+					AND = {
+						has_valid_civic = civic_eager_explorers
+						NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+					}
+					AND = {
+						has_valid_civic = civic_environmentalist
+						NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+					}
+					AND = {
+						has_valid_civic = civic_idyllic_bloom
+						NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+					}
+					AND = {
+						has_valid_civic = civic_memory_vault
+						NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+					}
+					AND = {
+						has_valid_civic = civic_technocracy
+						NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+					}
+					AND = {
+						has_valid_civic = civic_memory_vault_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_catalytic_processing
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+					}
+					AND = {
+						has_valid_civic = civic_ruthless_competition
+						NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+					}
+					AND = {
+						is_gestalt = yes
+						NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+					}
+					AND = {
+						any_owned_leader = {
+										has_trait = leader_trait_curator
+									}
+						NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+					}
+					AND = {
+						has_valid_civic = civic_individual_machine_predictive_analysis
+						NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+					}
+					AND = {
+						has_valid_civic = civic_astrometeorology
+						NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+					}
+					AND = {
+						has_valid_civic = civic_astrometeorology_megacorp
+						NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+					}
+					AND = {
+						has_valid_civic = civic_storm_callers
+						NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+					}
+					AND = {
+						has_valid_civic = civic_storm_callers_megacorp
+						NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+					}
+					AND = {
+						has_valid_civic = civic_environmental_architects
+						NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+					}
+					AND = {
+						has_valid_civic = civic_environmental_architects_megacorp
+						NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+					}
+					AND = {
+						has_valid_civic = civic_crowdsourcing
+						NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_crowdsourcing
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+					}
+					AND = {
+						has_valid_civic = civic_SH_tech
+						NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+					}
+					AND = {
+						has_valid_civic = civic_wgaurora
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+					}
+				}
+			}
+			country_event = { id = auto_qol_council_assign.20 }
+		}
+	}
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					is_gestalt = no is_nomadic = yes
+					NOT = { has_councilor = { COUNCILOR = councilor_defense_nomadic } }
+				}
+				AND = {
+					is_gestalt = no is_nomadic = no
+					NOT = { has_councilor = { COUNCILOR = councilor_defense } }
+				}
+				AND = {
+					has_valid_civic = civic_barbaric_despoilers
+					NOT = { has_councilor = { COUNCILOR = councilor_barbaric_despoilers } }
+				}
+				AND = {
+					has_valid_civic = civic_beacon_of_liberty
+					NOT = { has_councilor = { COUNCILOR = councilor_beacon_of_liberty } }
+				}
+				AND = {
+					has_valid_civic = civic_citizen_service
+					NOT = { has_councilor = { COUNCILOR = councilor_citizen_service } }
+				}
+				AND = {
+					has_valid_civic = civic_corvee_system
+					NOT = { has_councilor = { COUNCILOR = councilor_corvee_system } }
+				}
+				AND = {
+					has_valid_civic = civic_crusader_spirit
+					NOT = { has_councilor = { COUNCILOR = councilor_crusader_spirit } }
+				}
+				AND = {
+					has_valid_civic = civic_distinguished_admiralty
+					NOT = { has_councilor = { COUNCILOR = councilor_distinguished_admiralty } }
+				}
+				AND = {
+					has_valid_civic = civic_feudal_realm
+					NOT = { has_councilor = { COUNCILOR = councilor_feudal_realm } }
+				}
+				AND = {
+					has_valid_civic = civic_inwards_perfection
+					NOT = { has_councilor = { COUNCILOR = councilor_inwards_perfection } }
+				}
+				AND = {
+					has_valid_civic = civic_nationalistic_zeal
+					NOT = { has_councilor = { COUNCILOR = councilor_nationalistic_zeal } }
+				}
+				AND = {
+					has_valid_civic = civic_police_state
+					NOT = { has_councilor = { COUNCILOR = councilor_police_state } }
+				}
+				AND = {
+					has_valid_civic = civic_pompous_purists
+					NOT = { has_councilor = { COUNCILOR = councilor_pompous_purists } }
+				}
+				AND = {
+					has_valid_civic = civic_warrior_culture
+					NOT = { has_councilor = { COUNCILOR = councilor_warrior_culture } }
+				}
+				AND = {
+					has_valid_civic = civic_flight_schools
+					NOT = { has_councilor = { COUNCILOR = councilor_head_flight_operations } }
+				}
+				AND = {
+					has_valid_civic = civic_crusader_spirit_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_crusader_spirit_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_criminal_heritage
+					NOT = { has_councilor = { COUNCILOR = councilor_criminal_heritage } }
+				}
+				AND = {
+					has_valid_civic = civic_indentured_assets
+					NOT = { has_councilor = { COUNCILOR = councilor_indentured_assets } }
+				}
+				AND = {
+					has_valid_civic = civic_naval_contractors
+					NOT = { has_councilor = { COUNCILOR = councilor_naval_contractors } }
+				}
+				AND = {
+					has_valid_civic = civic_private_military_companies
+					NOT = { has_councilor = { COUNCILOR = councilor_private_military_companies } }
+				}
+				AND = {
+					has_valid_civic = civic_public_relations_specialists
+					NOT = { has_councilor = { COUNCILOR = councilor_public_relations_specialists } }
+				}
+				AND = {
+					has_valid_civic = civic_trading_posts
+					NOT = { has_councilor = { COUNCILOR = councilor_trading_posts } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_flight_schools
+					NOT = { has_councilor = { COUNCILOR = councilor_flight_director } }
+				}
+				AND = {
+					is_gestalt = yes
+					NOT = { has_councilor = { COUNCILOR = councilor_gestalt_legion } }
+				}
+				AND = {
+					has_valid_civic = civic_galactic_sovereign
+					NOT = { has_councilor = { COUNCILOR = councilor_galactic_sovereign } }
+				}
+				AND = {
+					has_valid_civic = civic_sovereign_guardianship
+					NOT = { has_councilor = { COUNCILOR = councilor_sovereign_guardianship } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_sovereign_guardianship
+					NOT = { has_councilor = { COUNCILOR = councilor_sovereign_guardianship_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_individual_machine_warbots
+					NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_warbots } }
+				}
+				AND = {
+					has_country_flag = unlocks_warden_of_the_citadel
+					NOT = { has_councilor = { COUNCILOR = councilor_warden_of_the_citadel } }
+				}
+				AND = {
+					has_valid_civic = civic_scorched_earth
+					NOT = { has_councilor = { COUNCILOR = councilor_infernal_scorcher } }
+				}
+				AND = {
+					any_owned_leader = {
+									has_leader_flag = mindwarden_commander
+								}
+					NOT = { has_councilor = { COUNCILOR = councilor_mindwarden } }
+				}
+				AND = {
+					has_valid_civic = civic_SH_ship
+					NOT = { has_councilor = { COUNCILOR = councilor_SH_ship } }
+				}
+				AND = {
+					has_valid_civic = civic_wgvictoria
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_victoria } }
+				}
+				AND = {
+					has_valid_civic = civic_wsg_super_harbor
+					NOT = { has_councilor = { COUNCILOR = councilor_wsg_super_harbor } }
+				}
+				AND = {
+					has_valid_civic = civic_yaosai
+					NOT = { has_councilor = { COUNCILOR = councilor_sh_yaosai } }
+				}
+				AND = {
+					has_valid_civic = civic_eat_and_drink
+					NOT = { has_councilor = { COUNCILOR = councilor_sh_eat_and_drink } }
+				}
+				AND = {
+					has_valid_civic = civic_uf_5
+					NOT = { has_councilor = { COUNCILOR = councilor_uf_5 } }
+				}
+			}
+		}
+		name = "auto_qol_council_assign.cat_commander"
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_gestalt = no is_nomadic = yes
+						NOT = { has_councilor = { COUNCILOR = councilor_defense_nomadic } }
+					}
+					AND = {
+						is_gestalt = no is_nomadic = no
+						NOT = { has_councilor = { COUNCILOR = councilor_defense } }
+					}
+					AND = {
+						has_valid_civic = civic_barbaric_despoilers
+						NOT = { has_councilor = { COUNCILOR = councilor_barbaric_despoilers } }
+					}
+					AND = {
+						has_valid_civic = civic_beacon_of_liberty
+						NOT = { has_councilor = { COUNCILOR = councilor_beacon_of_liberty } }
+					}
+					AND = {
+						has_valid_civic = civic_citizen_service
+						NOT = { has_councilor = { COUNCILOR = councilor_citizen_service } }
+					}
+					AND = {
+						has_valid_civic = civic_corvee_system
+						NOT = { has_councilor = { COUNCILOR = councilor_corvee_system } }
+					}
+					AND = {
+						has_valid_civic = civic_crusader_spirit
+						NOT = { has_councilor = { COUNCILOR = councilor_crusader_spirit } }
+					}
+					AND = {
+						has_valid_civic = civic_distinguished_admiralty
+						NOT = { has_councilor = { COUNCILOR = councilor_distinguished_admiralty } }
+					}
+					AND = {
+						has_valid_civic = civic_feudal_realm
+						NOT = { has_councilor = { COUNCILOR = councilor_feudal_realm } }
+					}
+					AND = {
+						has_valid_civic = civic_inwards_perfection
+						NOT = { has_councilor = { COUNCILOR = councilor_inwards_perfection } }
+					}
+					AND = {
+						has_valid_civic = civic_nationalistic_zeal
+						NOT = { has_councilor = { COUNCILOR = councilor_nationalistic_zeal } }
+					}
+					AND = {
+						has_valid_civic = civic_police_state
+						NOT = { has_councilor = { COUNCILOR = councilor_police_state } }
+					}
+					AND = {
+						has_valid_civic = civic_pompous_purists
+						NOT = { has_councilor = { COUNCILOR = councilor_pompous_purists } }
+					}
+					AND = {
+						has_valid_civic = civic_warrior_culture
+						NOT = { has_councilor = { COUNCILOR = councilor_warrior_culture } }
+					}
+					AND = {
+						has_valid_civic = civic_flight_schools
+						NOT = { has_councilor = { COUNCILOR = councilor_head_flight_operations } }
+					}
+					AND = {
+						has_valid_civic = civic_crusader_spirit_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_crusader_spirit_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_criminal_heritage
+						NOT = { has_councilor = { COUNCILOR = councilor_criminal_heritage } }
+					}
+					AND = {
+						has_valid_civic = civic_indentured_assets
+						NOT = { has_councilor = { COUNCILOR = councilor_indentured_assets } }
+					}
+					AND = {
+						has_valid_civic = civic_naval_contractors
+						NOT = { has_councilor = { COUNCILOR = councilor_naval_contractors } }
+					}
+					AND = {
+						has_valid_civic = civic_private_military_companies
+						NOT = { has_councilor = { COUNCILOR = councilor_private_military_companies } }
+					}
+					AND = {
+						has_valid_civic = civic_public_relations_specialists
+						NOT = { has_councilor = { COUNCILOR = councilor_public_relations_specialists } }
+					}
+					AND = {
+						has_valid_civic = civic_trading_posts
+						NOT = { has_councilor = { COUNCILOR = councilor_trading_posts } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_flight_schools
+						NOT = { has_councilor = { COUNCILOR = councilor_flight_director } }
+					}
+					AND = {
+						is_gestalt = yes
+						NOT = { has_councilor = { COUNCILOR = councilor_gestalt_legion } }
+					}
+					AND = {
+						has_valid_civic = civic_galactic_sovereign
+						NOT = { has_councilor = { COUNCILOR = councilor_galactic_sovereign } }
+					}
+					AND = {
+						has_valid_civic = civic_sovereign_guardianship
+						NOT = { has_councilor = { COUNCILOR = councilor_sovereign_guardianship } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_sovereign_guardianship
+						NOT = { has_councilor = { COUNCILOR = councilor_sovereign_guardianship_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_individual_machine_warbots
+						NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_warbots } }
+					}
+					AND = {
+						has_country_flag = unlocks_warden_of_the_citadel
+						NOT = { has_councilor = { COUNCILOR = councilor_warden_of_the_citadel } }
+					}
+					AND = {
+						has_valid_civic = civic_scorched_earth
+						NOT = { has_councilor = { COUNCILOR = councilor_infernal_scorcher } }
+					}
+					AND = {
+						any_owned_leader = {
+										has_leader_flag = mindwarden_commander
+									}
+						NOT = { has_councilor = { COUNCILOR = councilor_mindwarden } }
+					}
+					AND = {
+						has_valid_civic = civic_SH_ship
+						NOT = { has_councilor = { COUNCILOR = councilor_SH_ship } }
+					}
+					AND = {
+						has_valid_civic = civic_wgvictoria
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_victoria } }
+					}
+					AND = {
+						has_valid_civic = civic_wsg_super_harbor
+						NOT = { has_councilor = { COUNCILOR = councilor_wsg_super_harbor } }
+					}
+					AND = {
+						has_valid_civic = civic_yaosai
+						NOT = { has_councilor = { COUNCILOR = councilor_sh_yaosai } }
+					}
+					AND = {
+						has_valid_civic = civic_eat_and_drink
+						NOT = { has_councilor = { COUNCILOR = councilor_sh_eat_and_drink } }
+					}
+					AND = {
+						has_valid_civic = civic_uf_5
+						NOT = { has_councilor = { COUNCILOR = councilor_uf_5 } }
+					}
+				}
+			}
+			country_event = { id = auto_qol_council_assign.40 }
+		}
+	}
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					blocks_minister_of_state = no is_gestalt = no is_nomadic = yes
+					NOT = { has_councilor = { COUNCILOR = councilor_state_nomadic } }
+				}
+				AND = {
+					blocks_minister_of_state = no is_gestalt = no is_nomadic = no
+					NOT = { has_councilor = { COUNCILOR = councilor_state } }
+				}
+				AND = {
+					has_valid_civic = civic_anglers
+					NOT = { has_councilor = { COUNCILOR = councilor_anglers } }
+				}
+				AND = {
+					has_valid_civic = civic_ascensionists
+					NOT = { has_councilor = { COUNCILOR = councilor_ascensionists } }
+				}
+				AND = {
+					has_valid_civic = civic_byzantine_bureaucracy
+					NOT = { has_councilor = { COUNCILOR = councilor_byzantine_bureaucracy } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_dominion
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_dominion } }
+				}
+				AND = {
+					has_valid_civic = civic_crafters
+					NOT = { has_councilor = { COUNCILOR = councilor_crafters } }
+				}
+				AND = {
+					has_valid_civic = civic_cutthroat_politics
+					NOT = { has_councilor = { COUNCILOR = councilor_cutthroat_politics } }
+				}
+				AND = {
+					has_valid_civic = civic_death_cult
+					NOT = { has_councilor = { COUNCILOR = councilor_death_cult } }
+				}
+				AND = {
+					has_valid_civic = civic_diplomatic_corps
+					NOT = { has_councilor = { COUNCILOR = councilor_diplomatic_corps } }
+				}
+				AND = {
+					has_valid_civic = civic_efficient_bureaucracy
+					NOT = { has_councilor = { COUNCILOR = councilor_efficient_bureaucracy } }
+				}
+				AND = {
+					has_valid_civic = civic_exalted_priesthood
+					NOT = { has_councilor = { COUNCILOR = councilor_exalted_priesthood } }
+				}
+				AND = {
+					has_valid_civic = civic_free_haven
+					NOT = { has_councilor = { COUNCILOR = councilor_free_haven } }
+				}
+				AND = {
+					has_valid_civic = civic_functional_architecture
+					NOT = { has_councilor = { COUNCILOR = councilor_functional_architecture } }
+				}
+				AND = {
+					has_valid_civic = civic_idealistic_foundation
+					NOT = { has_councilor = { COUNCILOR = councilor_idealistic_foundation } }
+				}
+				AND = {
+					has_valid_civic = civic_imperial_cult
+					NOT = { has_councilor = { COUNCILOR = councilor_imperial_cult } }
+				}
+				AND = {
+					has_valid_civic = civic_memorialist
+					NOT = { has_councilor = { COUNCILOR = councilor_memorialist } }
+				}
+				AND = {
+					has_valid_civic = civic_merchant_guilds
+					NOT = { has_councilor = { COUNCILOR = councilor_merchant_guilds } }
+				}
+				AND = {
+					has_valid_civic = civic_mining_guilds
+					NOT = { has_councilor = { COUNCILOR = councilor_mining_guilds } }
+				}
+				AND = {
+					has_valid_civic = civic_parliamentary_system
+					NOT = { has_councilor = { COUNCILOR = councilor_parliamentary_system } }
+				}
+				AND = {
+					has_valid_civic = civic_selective_kinship
+					NOT = { has_councilor = { COUNCILOR = councilor_selective_kinship } }
+				}
+				AND = {
+					has_valid_civic = civic_task_delegation_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_task_delegation_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_brand_loyalty
+					NOT = { has_councilor = { COUNCILOR = councilor_brand_loyalty } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_anglers
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_anglers } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_ascensionists
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_ascensionists } }
+				}
+				AND = {
+					has_valid_civic = civic_death_cult_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_death_cult_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_free_traders
+					NOT = { has_councilor = { COUNCILOR = councilor_free_traders } }
+				}
+				AND = {
+					has_valid_civic = civic_gospel_of_the_masses
+					NOT = { has_councilor = { COUNCILOR = councilor_gospel_of_the_masses } }
+				}
+				AND = {
+					has_valid_civic = civic_media_conglomerate
+					NOT = { has_councilor = { COUNCILOR = councilor_media_conglomerate } }
+				}
+				AND = {
+					has_valid_civic = civic_permanent_employment
+					NOT = { has_councilor = { COUNCILOR = councilor_permanent_employment } }
+				}
+				AND = {
+					has_valid_civic = civic_privatized_exploration
+					NOT = { has_councilor = { COUNCILOR = councilor_privatized_exploration } }
+				}
+				AND = {
+					is_gestalt = yes
+					NOT = { has_councilor = { COUNCILOR = councilor_gestalt_growth } }
+				}
+				AND = {
+					is_gestalt = yes
+					NOT = { has_councilor = { COUNCILOR = councilor_gestalt_regulatory } }
+				}
+				AND = {
+					any_owned_leader = {
+									has_trait = leader_trait_shroudwalker
+								}
+					NOT = { has_councilor = { COUNCILOR = councilor_shroudwalker_teacher } }
+				}
+				AND = {
+					any_owned_leader = {
+									OR = {
+										has_trait = leader_trait_xuracorp_liaison
+										has_trait = leader_trait_riggan_liaison
+										has_trait = leader_trait_muutagan_liaison
+									}
+								}
+					NOT = { has_councilor = { COUNCILOR = councilor_enclave_trader } }
+				}
+				AND = {
+					has_valid_civic = civic_chosen
+					NOT = { has_councilor = { COUNCILOR = councilor_chosen } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_chosen
+					NOT = { has_councilor = { COUNCILOR = councilor_chosen_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_caravan_masters
+					NOT = { has_councilor = { COUNCILOR = councilor_waystation_bosun } }
+				}
+				AND = {
+					has_valid_civic = civic_deep_sleep
+					NOT = { has_councilor = { COUNCILOR = councilor_deep_sleep } }
+				}
+				AND = {
+					has_valid_civic = civic_caravan_masters_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_waystation_quota_auditor } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_deep_sleep
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_deep_sleep } }
+				}
+				AND = {
+					has_valid_civic = civic_SH_yihui
+					NOT = { has_councilor = { COUNCILOR = councilor_SH_yihui } }
+				}
+				AND = {
+					has_valid_civic = civic_wgella
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_ella } }
+				}
+				AND = {
+					has_valid_civic = civic_wgelves
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_elves } }
+				}
+				AND = {
+					has_valid_civic = civic_sunflower
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_sunflower } }
+				}
+				AND = {
+					has_valid_civic = civic_uf_1
+					NOT = { has_councilor = { COUNCILOR = councilor_uf_1 } }
+				}
+				AND = {
+					has_valid_civic = civic_uf_2
+					NOT = { has_councilor = { COUNCILOR = councilor_uf_2 } }
+				}
+				AND = {
+					has_valid_civic = civic_uf_3
+					NOT = { has_councilor = { COUNCILOR = councilor_uf_3 } }
+				}
+			}
+		}
+		name = "auto_qol_council_assign.cat_official"
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						blocks_minister_of_state = no is_gestalt = no is_nomadic = yes
+						NOT = { has_councilor = { COUNCILOR = councilor_state_nomadic } }
+					}
+					AND = {
+						blocks_minister_of_state = no is_gestalt = no is_nomadic = no
+						NOT = { has_councilor = { COUNCILOR = councilor_state } }
+					}
+					AND = {
+						has_valid_civic = civic_anglers
+						NOT = { has_councilor = { COUNCILOR = councilor_anglers } }
+					}
+					AND = {
+						has_valid_civic = civic_ascensionists
+						NOT = { has_councilor = { COUNCILOR = councilor_ascensionists } }
+					}
+					AND = {
+						has_valid_civic = civic_byzantine_bureaucracy
+						NOT = { has_councilor = { COUNCILOR = councilor_byzantine_bureaucracy } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_dominion
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_dominion } }
+					}
+					AND = {
+						has_valid_civic = civic_crafters
+						NOT = { has_councilor = { COUNCILOR = councilor_crafters } }
+					}
+					AND = {
+						has_valid_civic = civic_cutthroat_politics
+						NOT = { has_councilor = { COUNCILOR = councilor_cutthroat_politics } }
+					}
+					AND = {
+						has_valid_civic = civic_death_cult
+						NOT = { has_councilor = { COUNCILOR = councilor_death_cult } }
+					}
+					AND = {
+						has_valid_civic = civic_diplomatic_corps
+						NOT = { has_councilor = { COUNCILOR = councilor_diplomatic_corps } }
+					}
+					AND = {
+						has_valid_civic = civic_efficient_bureaucracy
+						NOT = { has_councilor = { COUNCILOR = councilor_efficient_bureaucracy } }
+					}
+					AND = {
+						has_valid_civic = civic_exalted_priesthood
+						NOT = { has_councilor = { COUNCILOR = councilor_exalted_priesthood } }
+					}
+					AND = {
+						has_valid_civic = civic_free_haven
+						NOT = { has_councilor = { COUNCILOR = councilor_free_haven } }
+					}
+					AND = {
+						has_valid_civic = civic_functional_architecture
+						NOT = { has_councilor = { COUNCILOR = councilor_functional_architecture } }
+					}
+					AND = {
+						has_valid_civic = civic_idealistic_foundation
+						NOT = { has_councilor = { COUNCILOR = councilor_idealistic_foundation } }
+					}
+					AND = {
+						has_valid_civic = civic_imperial_cult
+						NOT = { has_councilor = { COUNCILOR = councilor_imperial_cult } }
+					}
+					AND = {
+						has_valid_civic = civic_memorialist
+						NOT = { has_councilor = { COUNCILOR = councilor_memorialist } }
+					}
+					AND = {
+						has_valid_civic = civic_merchant_guilds
+						NOT = { has_councilor = { COUNCILOR = councilor_merchant_guilds } }
+					}
+					AND = {
+						has_valid_civic = civic_mining_guilds
+						NOT = { has_councilor = { COUNCILOR = councilor_mining_guilds } }
+					}
+					AND = {
+						has_valid_civic = civic_parliamentary_system
+						NOT = { has_councilor = { COUNCILOR = councilor_parliamentary_system } }
+					}
+					AND = {
+						has_valid_civic = civic_selective_kinship
+						NOT = { has_councilor = { COUNCILOR = councilor_selective_kinship } }
+					}
+					AND = {
+						has_valid_civic = civic_task_delegation_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_task_delegation_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_brand_loyalty
+						NOT = { has_councilor = { COUNCILOR = councilor_brand_loyalty } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_anglers
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_anglers } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_ascensionists
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_ascensionists } }
+					}
+					AND = {
+						has_valid_civic = civic_death_cult_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_death_cult_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_free_traders
+						NOT = { has_councilor = { COUNCILOR = councilor_free_traders } }
+					}
+					AND = {
+						has_valid_civic = civic_gospel_of_the_masses
+						NOT = { has_councilor = { COUNCILOR = councilor_gospel_of_the_masses } }
+					}
+					AND = {
+						has_valid_civic = civic_media_conglomerate
+						NOT = { has_councilor = { COUNCILOR = councilor_media_conglomerate } }
+					}
+					AND = {
+						has_valid_civic = civic_permanent_employment
+						NOT = { has_councilor = { COUNCILOR = councilor_permanent_employment } }
+					}
+					AND = {
+						has_valid_civic = civic_privatized_exploration
+						NOT = { has_councilor = { COUNCILOR = councilor_privatized_exploration } }
+					}
+					AND = {
+						is_gestalt = yes
+						NOT = { has_councilor = { COUNCILOR = councilor_gestalt_growth } }
+					}
+					AND = {
+						is_gestalt = yes
+						NOT = { has_councilor = { COUNCILOR = councilor_gestalt_regulatory } }
+					}
+					AND = {
+						any_owned_leader = {
+										has_trait = leader_trait_shroudwalker
+									}
+						NOT = { has_councilor = { COUNCILOR = councilor_shroudwalker_teacher } }
+					}
+					AND = {
+						any_owned_leader = {
+										OR = {
+											has_trait = leader_trait_xuracorp_liaison
+											has_trait = leader_trait_riggan_liaison
+											has_trait = leader_trait_muutagan_liaison
+										}
+									}
+						NOT = { has_councilor = { COUNCILOR = councilor_enclave_trader } }
+					}
+					AND = {
+						has_valid_civic = civic_chosen
+						NOT = { has_councilor = { COUNCILOR = councilor_chosen } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_chosen
+						NOT = { has_councilor = { COUNCILOR = councilor_chosen_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_caravan_masters
+						NOT = { has_councilor = { COUNCILOR = councilor_waystation_bosun } }
+					}
+					AND = {
+						has_valid_civic = civic_deep_sleep
+						NOT = { has_councilor = { COUNCILOR = councilor_deep_sleep } }
+					}
+					AND = {
+						has_valid_civic = civic_caravan_masters_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_waystation_quota_auditor } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_deep_sleep
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_deep_sleep } }
+					}
+					AND = {
+						has_valid_civic = civic_SH_yihui
+						NOT = { has_councilor = { COUNCILOR = councilor_SH_yihui } }
+					}
+					AND = {
+						has_valid_civic = civic_wgella
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_ella } }
+					}
+					AND = {
+						has_valid_civic = civic_wgelves
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_elves } }
+					}
+					AND = {
+						has_valid_civic = civic_sunflower
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_sunflower } }
+					}
+					AND = {
+						has_valid_civic = civic_uf_1
+						NOT = { has_councilor = { COUNCILOR = councilor_uf_1 } }
+					}
+					AND = {
+						has_valid_civic = civic_uf_2
+						NOT = { has_councilor = { COUNCILOR = councilor_uf_2 } }
+					}
+					AND = {
+						has_valid_civic = civic_uf_3
+						NOT = { has_councilor = { COUNCILOR = councilor_uf_3 } }
+					}
+				}
+			}
+			country_event = { id = auto_qol_council_assign.30 }
+		}
+	}
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					has_valid_civic = civic_agrarian_idyll
+					NOT = { has_councilor = { COUNCILOR = councilor_agrarian_idyll } }
+				}
+				AND = {
+					has_valid_civic = civic_aristocratic_elite
+					NOT = { has_councilor = { COUNCILOR = councilor_aristocratic_elite } }
+				}
+				AND = {
+					has_valid_civic = civic_fanatic_purifiers
+					NOT = { has_councilor = { COUNCILOR = councilor_fanatic_purifiers } }
+				}
+				AND = {
+					has_valid_civic = civic_meritocracy
+					NOT = { has_councilor = { COUNCILOR = councilor_meritocracy } }
+				}
+				AND = {
+					has_valid_civic = civic_philosopher_king
+					NOT = { has_councilor = { COUNCILOR = councilor_philosopher_king } }
+				}
+				AND = {
+					has_valid_civic = civic_pleasure_seekers
+					NOT = { has_councilor = { COUNCILOR = councilor_pleasure_seekers } }
+				}
+				AND = {
+					has_valid_civic = civic_reanimated_armies
+					NOT = { has_councilor = { COUNCILOR = councilor_reanimated_armies } }
+				}
+				AND = {
+					has_valid_civic = civic_relentless_industrialists
+					NOT = { has_councilor = { COUNCILOR = councilor_relentless_industrialists } }
+				}
+				AND = {
+					has_valid_civic = civic_scavengers
+					NOT = { has_councilor = { COUNCILOR = councilor_scavengers } }
+				}
+				AND = {
+					has_valid_civic = civic_shadow_council
+					NOT = { has_councilor = { COUNCILOR = councilor_shadow_council } }
+				}
+				AND = {
+					has_valid_civic = civic_shared_burden
+					NOT = { has_councilor = { COUNCILOR = councilor_shared_burden } }
+				}
+				AND = {
+					has_valid_civic = civic_slaver_guilds
+					NOT = { has_councilor = { COUNCILOR = councilor_slaver_guilds } }
+				}
+				AND = {
+					has_valid_civic = civic_toxic_baths
+					NOT = { has_councilor = { COUNCILOR = councilor_toxic_baths } }
+				}
+				AND = {
+					has_valid_civic = civic_toxic_baths_individual_machine
+					NOT = { has_councilor = { COUNCILOR = councilor_toxic_baths_individual_machine } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_toxic_baths_individual_machine
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_toxic_baths_individual_machine } }
+				}
+				AND = {
+					has_valid_civic = civic_heroic_tales
+					NOT = { has_councilor = { COUNCILOR = councilor_heroic_tales } }
+				}
+				AND = {
+					has_valid_civic = civic_dystopian_society
+					NOT = { has_councilor = { COUNCILOR = councilor_dystopian_society } }
+				}
+				AND = {
+					has_valid_civic = civic_guided_sapience
+					NOT = { has_councilor = { COUNCILOR = councilor_civic_guided_sapience } }
+				}
+				AND = {
+					has_valid_civic = civic_private_healthcare_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_private_healthcare_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_hedonism
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_hedonism } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_toxic_baths
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_toxic_baths } }
+				}
+				AND = {
+					has_valid_civic = civic_franchising
+					NOT = { has_councilor = { COUNCILOR = councilor_franchising } }
+				}
+				AND = {
+					has_valid_civic = civic_private_prospectors
+					NOT = { has_councilor = { COUNCILOR = councilor_private_prospectors } }
+				}
+				AND = {
+					has_valid_civic = civic_worker_coop
+					NOT = { has_councilor = { COUNCILOR = councilor_worker_coop } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_guided_sapience
+					NOT = { has_councilor = { COUNCILOR = councilor_civic_guided_sapience_corperate } }
+				}
+				AND = {
+					has_valid_civic = civic_psionic_sovereign
+					NOT = { has_councilor = { COUNCILOR = councilor_psionic_sovereign } }
+				}
+				AND = {
+					has_valid_civic = civic_hyperspace_specialty
+					NOT = { has_councilor = { COUNCILOR = councilor_hyperspace_specialty } }
+				}
+				AND = {
+					has_valid_civic = civic_dimensional_worship
+					NOT = { has_councilor = { COUNCILOR = councilor_dimensional_worship } }
+				}
+				AND = {
+					has_valid_civic = civic_dark_consortium
+					NOT = { has_councilor = { COUNCILOR = councilor_dark_consortium } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_dark_consortium
+					NOT = { has_councilor = { COUNCILOR = councilor_dark_consortium_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_augmentation_bazaars
+					NOT = { has_councilor = { COUNCILOR = councilor_augmentation_bazaars } }
+				}
+				AND = {
+					has_valid_civic = civic_natural_design
+					NOT = { has_councilor = { COUNCILOR = councilor_natural_design } }
+				}
+				AND = {
+					has_valid_civic = civic_individual_machine_replication
+					NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_replication } }
+				}
+				AND = {
+					has_valid_civic = civic_galactic_curators
+					NOT = { has_councilor = { COUNCILOR = councilor_galactic_curators } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_galactic_curators
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_galactic_curators } }
+				}
+				AND = {
+					has_valid_civic = civic_beastmasters
+					NOT = { has_councilor = { COUNCILOR = councilor_beastmasters } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_beastmasters
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_beastmasters } }
+				}
+				AND = {
+					has_country_flag = unlocks_head_treasure_hunter_council
+								is_megacorp = no
+					NOT = { has_councilor = { COUNCILOR = councilor_head_treasure_hunter } }
+				}
+				AND = {
+					has_valid_civic = civic_genetic_identification
+					NOT = { has_councilor = { COUNCILOR = councilor_genetic_identification } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_genetic_identification
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_genetic_identification } }
+				}
+				AND = {
+					has_valid_civic = civic_civil_education
+					NOT = { has_councilor = { COUNCILOR = councilor_head_of_education } }
+				}
+				AND = {
+					has_valid_civic = civic_world_forgers
+					NOT = { has_councilor = { COUNCILOR = councilor_thermal_engineer } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_world_forgers
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_thermal_engineer } }
+				}
+				AND = {
+					has_valid_civic = civic_pyrolatry
+					NOT = { has_councilor = { COUNCILOR = councilor_pyromanic_priest } }
+				}
+				AND = {
+					has_valid_civic = civic_galvanic_symbiosis
+					NOT = { has_councilor = { COUNCILOR = councilor_imbuement_officer } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_galvanic_symbiosis
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_imbuement_officer } }
+				}
+				AND = {
+					has_valid_civic = civic_entropy_drinkers
+					NOT = { has_councilor = { COUNCILOR = councilor_energy_curator } }
+				}
+				AND = {
+					has_valid_civic = civic_superstitious_beliefs
+					NOT = { has_councilor = { COUNCILOR = councilor_chief_medium } }
+				}
+				AND = {
+					has_valid_civic = civic_twisted_experimenters
+					NOT = { has_councilor = { COUNCILOR = councilor_experimentation_overseer } }
+				}
+				AND = {
+					has_valid_civic = civic_secret_societies
+					NOT = { has_councilor = { COUNCILOR = councilor_secret_societies } }
+				}
+				AND = {
+					has_valid_civic = civic_tankbound
+					NOT = { has_councilor = { COUNCILOR = councilor_grand_vessel } }
+				}
+				AND = {
+					has_valid_civic = civic_entropy_drinkers_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_executive_thrall_manager } }
+				}
+				AND = {
+					has_valid_civic = civic_secret_societies_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_secret_societies_corporate } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_superstitious_beliefs
+					NOT = { has_councilor = { COUNCILOR = councilor_executive_astrologist } }
+				}
+				AND = {
+					has_valid_civic = civic_twisted_experimenters_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_test_marketer } }
+				}
+				AND = {
+					has_valid_civic = civic_tankbound_corporate
+					NOT = { has_councilor = { COUNCILOR = councilor_executive_vessel } }
+				}
+				AND = {
+					has_valid_civic = civic_void_reavers
+					NOT = { has_councilor = { COUNCILOR = councilor_master_gunner } }
+				}
+				AND = {
+					has_valid_civic = civic_star_seekers
+					NOT = { has_councilor = { COUNCILOR = councilor_star_seekers } }
+				}
+				AND = {
+					has_valid_civic = civic_hired_guns
+					NOT = { has_councilor = { COUNCILOR = councilor_paymaster } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_hired_guns
+					NOT = { has_councilor = { COUNCILOR = councilor_asset_security_manager } }
+				}
+				AND = {
+					has_valid_civic = civic_corporate_star_seekers
+					NOT = { has_councilor = { COUNCILOR = councilor_corporate_star_seekers } }
+				}
+				AND = {
+					has_valid_civic = civic_cor_celestial_military
+					NOT = { has_councilor = { COUNCILOR = councilor_celestial_military } }
+				}
+				AND = {
+					has_valid_civic = civic_cor_time_honored
+					NOT = { has_councilor = { COUNCILOR = councilor_time_honored } }
+				}
+				AND = {
+					has_valid_civic = ai_tianming_civic
+					NOT = { has_councilor = { COUNCILOR = councilor_ai_tianming } }
+				}
+				AND = {
+					has_valid_civic = civic_leader_lost
+					NOT = { has_councilor = { COUNCILOR = councilor_play_leader_lost } }
+				}
+				AND = {
+					always = no
+					OR = { has_authority = auth_herta has_authority = auth_Astral_Express }
+					NOT = { has_councilor = { COUNCILOR = councilor_ruler_herta } }
+				}
+				AND = {
+					has_valid_civic = civic_herta_1
+					NOT = { has_councilor = { COUNCILOR = councilor_herta_1 } }
+				}
+				AND = {
+					has_valid_civic = civic_herta_2
+					NOT = { has_councilor = { COUNCILOR = councilor_herta_2 } }
+				}
+				AND = {
+					has_valid_civic = civic_luosi_1
+					NOT = { has_councilor = { COUNCILOR = councilor_luosi_1 } }
+				}
+				AND = {
+					has_valid_civic = civic_luosi_2
+					NOT = { has_councilor = { COUNCILOR = councilor_luosi_2 } }
+				}
+				AND = {
+					has_country_flag = tr_cunhu_fengrao_1
+					NOT = { has_councilor = { COUNCILOR = councilor_cunhu_fengrao_1 } }
+				}
+				AND = {
+					has_country_flag = tr_cunhu_huanyu_1
+					NOT = { has_councilor = { COUNCILOR = councilor_cunhu_huanyu_1 } }
+				}
+				AND = {
+					has_country_flag = tr_cunhu_huimie_1
+					NOT = { has_councilor = { COUNCILOR = councilor_cunhu_huimie_1 } }
+				}
+				AND = {
+					has_country_flag = tr_cunhu_jiyi_1
+					NOT = { has_councilor = { COUNCILOR = councilor_cunhu_jiyi_1 } }
+				}
+				AND = {
+					has_country_flag = tr_cunhu_xuwu_1
+					NOT = { has_councilor = { COUNCILOR = councilor_cunhu_xuwu_1 } }
+				}
+				AND = {
+					has_country_flag = tr_xunlie_fanyu_1
+					NOT = { has_councilor = { COUNCILOR = councilor_xunlie_fanyu_1 } }
+				}
+				AND = {
+					has_country_flag = tr_xunlie_zhishi_1
+					NOT = { has_councilor = { COUNCILOR = councilor_xunlie_zhishi_1 } }
+				}
+				AND = {
+					has_country_flag = tr_xunlie_cunhu_1
+					NOT = { has_councilor = { COUNCILOR = councilor_xunlie_cunhu_1 } }
+				}
+				AND = {
+					has_country_flag = tr_xunlie_jiyi_1
+					NOT = { has_councilor = { COUNCILOR = councilor_xunlie_jiyi_1 } }
+				}
+				AND = {
+					has_country_flag = tr_xunlie_fengrao_1
+					NOT = { has_councilor = { COUNCILOR = councilor_xunlie_fengrao_1 } }
+				}
+				AND = {
+					has_country_flag = tr_zhishi_jiyi_1
+					NOT = { has_councilor = { COUNCILOR = councilor_zhishi_jiyi_1 } }
+				}
+				AND = {
+					has_authority = auth_lieshou
+					NOT = { has_councilor = { COUNCILOR = councilor_ruler_administrator } }
+				}
+				AND = {
+					has_valid_civic = civic_StellaronHunter_1
+					NOT = { has_councilor = { COUNCILOR = councilor_StellaronHunter_1 } }
+				}
+				AND = {
+					has_valid_civic = civic_StellaronHunter_2
+					NOT = { has_councilor = { COUNCILOR = councilor_StellaronHunter_2 } }
+				}
+				AND = {
+					has_authority = auth_global_giant_enterprise
+					always = no
+					NOT = { has_councilor = { COUNCILOR = councilor_ruler_ipc_chairman } }
+				}
+				AND = {
+					has_valid_civic = civic_marketing_expansion_department
+					NOT = { has_councilor = { COUNCILOR = councilor_marketing_expansion_department } }
+				}
+				AND = {
+					has_valid_civic = civic_business_consolidation_department
+					NOT = { has_councilor = { COUNCILOR = councilor_business_consolidation_department } }
+				}
+				AND = {
+					has_valid_civic = civic_strategic_investment_department
+					NOT = { has_councilor = { COUNCILOR = councilor_strategic_investment_department } }
+				}
+				AND = {
+					has_valid_civic = civic_building_materials_logistics_department
+					NOT = { has_councilor = { COUNCILOR = councilor_building_materials_logistics_department } }
+				}
+				AND = {
+					has_valid_civic = civic_techniques_developing_department
+					NOT = { has_councilor = { COUNCILOR = councilor_techniques_developing_department } }
+				}
+				AND = {
+					has_valid_civic = civic_human_resources_incentive_department
+					NOT = { has_councilor = { COUNCILOR = councilor_human_resources_incentive_department } }
+				}
+				AND = {
+					has_valid_civic = civic_traditional_project_department
+					NOT = { has_councilor = { COUNCILOR = councilor_traditional_project_department } }
+				}
+				AND = {
+					has_valid_civic = civic_publicity_Propaganda_department
+					NOT = { has_councilor = { COUNCILOR = councilor_publicity_Propaganda_department } }
+				}
+				AND = {
+					has_valid_civic = civic_loading_unloading_department
+					NOT = { has_councilor = { COUNCILOR = councilor_loading_unloading_department } }
+				}
+				AND = {
+					has_valid_civic = civic_confidential_code_breaking_department
+					NOT = { has_councilor = { COUNCILOR = councilor_confidential_code_breaking_department } }
+				}
+				AND = {
+					has_valid_civic = civic_erxiangleyuan_1
+					NOT = { has_councilor = { COUNCILOR = councilor_civic_erxiangleyuan_1 } }
+				}
+				AND = {
+					has_valid_civic = civic_erxiangleyuan_2
+					NOT = { has_councilor = { COUNCILOR = councilor_civic_erxiangleyuan_2 } }
+				}
+				AND = {
+					has_valid_civic = civic_The_Destruction
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_destruction } }
+				}
+				AND = {
+					has_valid_civic = civic_The_Harmony
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_harmony } }
+				}
+				AND = {
+					has_valid_civic = civic_The_Abundance
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_abundance } }
+				}
+				AND = {
+					has_valid_civic = civic_The_Hunt
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_hunt } }
+				}
+				AND = {
+					has_valid_civic = civic_The_Preservation
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_preservation } }
+				}
+				AND = {
+					has_valid_civic = civic_The_Nihility
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_nihility } }
+				}
+				AND = {
+					has_valid_civic = civic_jiyi
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_jiyi } }
+				}
+				AND = {
+					has_valid_civic = civic_huanyu
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_huanyu } }
+				}
+				AND = {
+					has_valid_civic = civic_The_Propagation
+					NOT = { has_councilor = { COUNCILOR = councilor_oracle_fanyu } }
+				}
+				AND = {
+					has_valid_civic = civic_gongzao
+					NOT = { has_councilor = { COUNCILOR = councilor_gongzao_shi } }
+				}
+				AND = {
+					has_valid_civic = civic_zhuxing
+					NOT = { has_councilor = { COUNCILOR = councilor_yunqi_commander } }
+				}
+				AND = {
+					has_valid_civic = civic_yongshou
+					NOT = { has_councilor = { COUNCILOR = councilor_shiwang_si } }
+				}
+				AND = {
+					has_valid_civic = civic_yonghen
+					NOT = { has_councilor = { COUNCILOR = councilor_fangshi_commander } }
+				}
+				AND = {
+					always = no
+					has_authority = auth_yaliluo
+					NOT = { has_councilor = { COUNCILOR = councilor_ruler_great_guardian } }
+				}
+				AND = {
+					always = yes
+								has_valid_civic = civic_tiewei
+					NOT = { has_councilor = { COUNCILOR = councilor_tiewei } }
+				}
+				AND = {
+					always = yes
+								has_valid_civic = civic_yaliluo_tech
+					NOT = { has_councilor = { COUNCILOR = councilor_yaliluo_tech } }
+				}
+				AND = {
+					has_civic = civic_SRARociviaEmpire
+								has_country_flag = SRA_RE_Rocivia_Empire_story
+					has_valid_civic = civic_SRARociviaEmpire
+					NOT = { has_councilor = { COUNCILOR = councilor_SRA_RE_minister_of_security } }
+				}
+				AND = {
+					has_country_flag = SRA_SD_Shadow_Of_Hidra_story
+					NOT = { has_councilor = { COUNCILOR = councilor_SRA_SD_lost_presbyter } }
+				}
+				AND = {
+					always = no
+					OR = { has_authority = auth_warshipgirls has_authority = auth_shenhai has_authority = auth_wg_fe has_authority = auth_sh_fe has_authority = auth_great_ming has_authority = auth_united_fleet }
+					NOT = { has_councilor = { COUNCILOR = councilor_ruler_warshipgirls } }
+				}
+				AND = {
+					has_valid_civic = civic_wg_knight
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_knight } }
+				}
+				AND = {
+					has_valid_civic = civic_yamato
+					NOT = { has_councilor = { COUNCILOR = councilor_sh_yamato } }
+				}
+				AND = {
+					has_valid_civic = civic_BOSSAP
+					NOT = { has_councilor = { COUNCILOR = councilor_sh_BOSSAP } }
+				}
+				AND = {
+					has_valid_civic = civic_CM
+					NOT = { has_councilor = { COUNCILOR = councilor_sh_CM } }
+				}
+				AND = {
+					has_valid_civic = civic_sh_criminal_syndicate
+					NOT = { has_councilor = { COUNCILOR = councilor_sh_criminal_syndicate } }
+				}
+				AND = {
+					has_valid_civic = civic_AP_NET
+					NOT = { has_councilor = { COUNCILOR = councilor_sh_AP_NET } }
+				}
+				AND = {
+					has_valid_civic = civic_uf_4
+					NOT = { has_councilor = { COUNCILOR = councilor_uf_4 } }
+				}
+				AND = {
+					has_origin = origin_wg_warhammer
+								has_authority = auth_warshipgirls
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_war_apostles } }
+				}
+				AND = {
+					has_origin = origin_wg_warhammer
+								has_authority = auth_shenhai
+					NOT = { has_councilor = { COUNCILOR = councilor_wg_war_apostles_2 } }
+				}
+			}
+		}
+		name = "auto_qol_council_assign.cat_multi"
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						has_valid_civic = civic_agrarian_idyll
+						NOT = { has_councilor = { COUNCILOR = councilor_agrarian_idyll } }
+					}
+					AND = {
+						has_valid_civic = civic_aristocratic_elite
+						NOT = { has_councilor = { COUNCILOR = councilor_aristocratic_elite } }
+					}
+					AND = {
+						has_valid_civic = civic_fanatic_purifiers
+						NOT = { has_councilor = { COUNCILOR = councilor_fanatic_purifiers } }
+					}
+					AND = {
+						has_valid_civic = civic_meritocracy
+						NOT = { has_councilor = { COUNCILOR = councilor_meritocracy } }
+					}
+					AND = {
+						has_valid_civic = civic_philosopher_king
+						NOT = { has_councilor = { COUNCILOR = councilor_philosopher_king } }
+					}
+					AND = {
+						has_valid_civic = civic_pleasure_seekers
+						NOT = { has_councilor = { COUNCILOR = councilor_pleasure_seekers } }
+					}
+					AND = {
+						has_valid_civic = civic_reanimated_armies
+						NOT = { has_councilor = { COUNCILOR = councilor_reanimated_armies } }
+					}
+					AND = {
+						has_valid_civic = civic_relentless_industrialists
+						NOT = { has_councilor = { COUNCILOR = councilor_relentless_industrialists } }
+					}
+					AND = {
+						has_valid_civic = civic_scavengers
+						NOT = { has_councilor = { COUNCILOR = councilor_scavengers } }
+					}
+					AND = {
+						has_valid_civic = civic_shadow_council
+						NOT = { has_councilor = { COUNCILOR = councilor_shadow_council } }
+					}
+					AND = {
+						has_valid_civic = civic_shared_burden
+						NOT = { has_councilor = { COUNCILOR = councilor_shared_burden } }
+					}
+					AND = {
+						has_valid_civic = civic_slaver_guilds
+						NOT = { has_councilor = { COUNCILOR = councilor_slaver_guilds } }
+					}
+					AND = {
+						has_valid_civic = civic_toxic_baths
+						NOT = { has_councilor = { COUNCILOR = councilor_toxic_baths } }
+					}
+					AND = {
+						has_valid_civic = civic_toxic_baths_individual_machine
+						NOT = { has_councilor = { COUNCILOR = councilor_toxic_baths_individual_machine } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_toxic_baths_individual_machine
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_toxic_baths_individual_machine } }
+					}
+					AND = {
+						has_valid_civic = civic_heroic_tales
+						NOT = { has_councilor = { COUNCILOR = councilor_heroic_tales } }
+					}
+					AND = {
+						has_valid_civic = civic_dystopian_society
+						NOT = { has_councilor = { COUNCILOR = councilor_dystopian_society } }
+					}
+					AND = {
+						has_valid_civic = civic_guided_sapience
+						NOT = { has_councilor = { COUNCILOR = councilor_civic_guided_sapience } }
+					}
+					AND = {
+						has_valid_civic = civic_private_healthcare_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_private_healthcare_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_hedonism
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_hedonism } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_toxic_baths
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_toxic_baths } }
+					}
+					AND = {
+						has_valid_civic = civic_franchising
+						NOT = { has_councilor = { COUNCILOR = councilor_franchising } }
+					}
+					AND = {
+						has_valid_civic = civic_private_prospectors
+						NOT = { has_councilor = { COUNCILOR = councilor_private_prospectors } }
+					}
+					AND = {
+						has_valid_civic = civic_worker_coop
+						NOT = { has_councilor = { COUNCILOR = councilor_worker_coop } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_guided_sapience
+						NOT = { has_councilor = { COUNCILOR = councilor_civic_guided_sapience_corperate } }
+					}
+					AND = {
+						has_valid_civic = civic_psionic_sovereign
+						NOT = { has_councilor = { COUNCILOR = councilor_psionic_sovereign } }
+					}
+					AND = {
+						has_valid_civic = civic_hyperspace_specialty
+						NOT = { has_councilor = { COUNCILOR = councilor_hyperspace_specialty } }
+					}
+					AND = {
+						has_valid_civic = civic_dimensional_worship
+						NOT = { has_councilor = { COUNCILOR = councilor_dimensional_worship } }
+					}
+					AND = {
+						has_valid_civic = civic_dark_consortium
+						NOT = { has_councilor = { COUNCILOR = councilor_dark_consortium } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_dark_consortium
+						NOT = { has_councilor = { COUNCILOR = councilor_dark_consortium_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_augmentation_bazaars
+						NOT = { has_councilor = { COUNCILOR = councilor_augmentation_bazaars } }
+					}
+					AND = {
+						has_valid_civic = civic_natural_design
+						NOT = { has_councilor = { COUNCILOR = councilor_natural_design } }
+					}
+					AND = {
+						has_valid_civic = civic_individual_machine_replication
+						NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_replication } }
+					}
+					AND = {
+						has_valid_civic = civic_galactic_curators
+						NOT = { has_councilor = { COUNCILOR = councilor_galactic_curators } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_galactic_curators
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_galactic_curators } }
+					}
+					AND = {
+						has_valid_civic = civic_beastmasters
+						NOT = { has_councilor = { COUNCILOR = councilor_beastmasters } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_beastmasters
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_beastmasters } }
+					}
+					AND = {
+						has_country_flag = unlocks_head_treasure_hunter_council
+									is_megacorp = no
+						NOT = { has_councilor = { COUNCILOR = councilor_head_treasure_hunter } }
+					}
+					AND = {
+						has_valid_civic = civic_genetic_identification
+						NOT = { has_councilor = { COUNCILOR = councilor_genetic_identification } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_genetic_identification
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_genetic_identification } }
+					}
+					AND = {
+						has_valid_civic = civic_civil_education
+						NOT = { has_councilor = { COUNCILOR = councilor_head_of_education } }
+					}
+					AND = {
+						has_valid_civic = civic_world_forgers
+						NOT = { has_councilor = { COUNCILOR = councilor_thermal_engineer } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_world_forgers
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_thermal_engineer } }
+					}
+					AND = {
+						has_valid_civic = civic_pyrolatry
+						NOT = { has_councilor = { COUNCILOR = councilor_pyromanic_priest } }
+					}
+					AND = {
+						has_valid_civic = civic_galvanic_symbiosis
+						NOT = { has_councilor = { COUNCILOR = councilor_imbuement_officer } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_galvanic_symbiosis
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_imbuement_officer } }
+					}
+					AND = {
+						has_valid_civic = civic_entropy_drinkers
+						NOT = { has_councilor = { COUNCILOR = councilor_energy_curator } }
+					}
+					AND = {
+						has_valid_civic = civic_superstitious_beliefs
+						NOT = { has_councilor = { COUNCILOR = councilor_chief_medium } }
+					}
+					AND = {
+						has_valid_civic = civic_twisted_experimenters
+						NOT = { has_councilor = { COUNCILOR = councilor_experimentation_overseer } }
+					}
+					AND = {
+						has_valid_civic = civic_secret_societies
+						NOT = { has_councilor = { COUNCILOR = councilor_secret_societies } }
+					}
+				}
+			}
+			country_event = { id = auto_qol_council_assign.60 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						has_valid_civic = civic_tankbound
+						NOT = { has_councilor = { COUNCILOR = councilor_grand_vessel } }
+					}
+					AND = {
+						has_valid_civic = civic_entropy_drinkers_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_executive_thrall_manager } }
+					}
+					AND = {
+						has_valid_civic = civic_secret_societies_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_secret_societies_corporate } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_superstitious_beliefs
+						NOT = { has_councilor = { COUNCILOR = councilor_executive_astrologist } }
+					}
+					AND = {
+						has_valid_civic = civic_twisted_experimenters_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_test_marketer } }
+					}
+					AND = {
+						has_valid_civic = civic_tankbound_corporate
+						NOT = { has_councilor = { COUNCILOR = councilor_executive_vessel } }
+					}
+					AND = {
+						has_valid_civic = civic_void_reavers
+						NOT = { has_councilor = { COUNCILOR = councilor_master_gunner } }
+					}
+					AND = {
+						has_valid_civic = civic_star_seekers
+						NOT = { has_councilor = { COUNCILOR = councilor_star_seekers } }
+					}
+					AND = {
+						has_valid_civic = civic_hired_guns
+						NOT = { has_councilor = { COUNCILOR = councilor_paymaster } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_hired_guns
+						NOT = { has_councilor = { COUNCILOR = councilor_asset_security_manager } }
+					}
+					AND = {
+						has_valid_civic = civic_corporate_star_seekers
+						NOT = { has_councilor = { COUNCILOR = councilor_corporate_star_seekers } }
+					}
+					AND = {
+						has_valid_civic = civic_cor_celestial_military
+						NOT = { has_councilor = { COUNCILOR = councilor_celestial_military } }
+					}
+					AND = {
+						has_valid_civic = civic_cor_time_honored
+						NOT = { has_councilor = { COUNCILOR = councilor_time_honored } }
+					}
+					AND = {
+						has_valid_civic = ai_tianming_civic
+						NOT = { has_councilor = { COUNCILOR = councilor_ai_tianming } }
+					}
+					AND = {
+						has_valid_civic = civic_leader_lost
+						NOT = { has_councilor = { COUNCILOR = councilor_play_leader_lost } }
+					}
+					AND = {
+						always = no
+						OR = { has_authority = auth_herta has_authority = auth_Astral_Express }
+						NOT = { has_councilor = { COUNCILOR = councilor_ruler_herta } }
+					}
+					AND = {
+						has_valid_civic = civic_herta_1
+						NOT = { has_councilor = { COUNCILOR = councilor_herta_1 } }
+					}
+					AND = {
+						has_valid_civic = civic_herta_2
+						NOT = { has_councilor = { COUNCILOR = councilor_herta_2 } }
+					}
+					AND = {
+						has_valid_civic = civic_luosi_1
+						NOT = { has_councilor = { COUNCILOR = councilor_luosi_1 } }
+					}
+					AND = {
+						has_valid_civic = civic_luosi_2
+						NOT = { has_councilor = { COUNCILOR = councilor_luosi_2 } }
+					}
+					AND = {
+						has_country_flag = tr_cunhu_fengrao_1
+						NOT = { has_councilor = { COUNCILOR = councilor_cunhu_fengrao_1 } }
+					}
+					AND = {
+						has_country_flag = tr_cunhu_huanyu_1
+						NOT = { has_councilor = { COUNCILOR = councilor_cunhu_huanyu_1 } }
+					}
+					AND = {
+						has_country_flag = tr_cunhu_huimie_1
+						NOT = { has_councilor = { COUNCILOR = councilor_cunhu_huimie_1 } }
+					}
+					AND = {
+						has_country_flag = tr_cunhu_jiyi_1
+						NOT = { has_councilor = { COUNCILOR = councilor_cunhu_jiyi_1 } }
+					}
+					AND = {
+						has_country_flag = tr_cunhu_xuwu_1
+						NOT = { has_councilor = { COUNCILOR = councilor_cunhu_xuwu_1 } }
+					}
+					AND = {
+						has_country_flag = tr_xunlie_fanyu_1
+						NOT = { has_councilor = { COUNCILOR = councilor_xunlie_fanyu_1 } }
+					}
+					AND = {
+						has_country_flag = tr_xunlie_zhishi_1
+						NOT = { has_councilor = { COUNCILOR = councilor_xunlie_zhishi_1 } }
+					}
+					AND = {
+						has_country_flag = tr_xunlie_cunhu_1
+						NOT = { has_councilor = { COUNCILOR = councilor_xunlie_cunhu_1 } }
+					}
+					AND = {
+						has_country_flag = tr_xunlie_jiyi_1
+						NOT = { has_councilor = { COUNCILOR = councilor_xunlie_jiyi_1 } }
+					}
+					AND = {
+						has_country_flag = tr_xunlie_fengrao_1
+						NOT = { has_councilor = { COUNCILOR = councilor_xunlie_fengrao_1 } }
+					}
+					AND = {
+						has_country_flag = tr_zhishi_jiyi_1
+						NOT = { has_councilor = { COUNCILOR = councilor_zhishi_jiyi_1 } }
+					}
+					AND = {
+						has_authority = auth_lieshou
+						NOT = { has_councilor = { COUNCILOR = councilor_ruler_administrator } }
+					}
+					AND = {
+						has_valid_civic = civic_StellaronHunter_1
+						NOT = { has_councilor = { COUNCILOR = councilor_StellaronHunter_1 } }
+					}
+					AND = {
+						has_valid_civic = civic_StellaronHunter_2
+						NOT = { has_councilor = { COUNCILOR = councilor_StellaronHunter_2 } }
+					}
+					AND = {
+						has_authority = auth_global_giant_enterprise
+						always = no
+						NOT = { has_councilor = { COUNCILOR = councilor_ruler_ipc_chairman } }
+					}
+					AND = {
+						has_valid_civic = civic_marketing_expansion_department
+						NOT = { has_councilor = { COUNCILOR = councilor_marketing_expansion_department } }
+					}
+					AND = {
+						has_valid_civic = civic_business_consolidation_department
+						NOT = { has_councilor = { COUNCILOR = councilor_business_consolidation_department } }
+					}
+					AND = {
+						has_valid_civic = civic_strategic_investment_department
+						NOT = { has_councilor = { COUNCILOR = councilor_strategic_investment_department } }
+					}
+					AND = {
+						has_valid_civic = civic_building_materials_logistics_department
+						NOT = { has_councilor = { COUNCILOR = councilor_building_materials_logistics_department } }
+					}
+					AND = {
+						has_valid_civic = civic_techniques_developing_department
+						NOT = { has_councilor = { COUNCILOR = councilor_techniques_developing_department } }
+					}
+					AND = {
+						has_valid_civic = civic_human_resources_incentive_department
+						NOT = { has_councilor = { COUNCILOR = councilor_human_resources_incentive_department } }
+					}
+					AND = {
+						has_valid_civic = civic_traditional_project_department
+						NOT = { has_councilor = { COUNCILOR = councilor_traditional_project_department } }
+					}
+					AND = {
+						has_valid_civic = civic_publicity_Propaganda_department
+						NOT = { has_councilor = { COUNCILOR = councilor_publicity_Propaganda_department } }
+					}
+					AND = {
+						has_valid_civic = civic_loading_unloading_department
+						NOT = { has_councilor = { COUNCILOR = councilor_loading_unloading_department } }
+					}
+					AND = {
+						has_valid_civic = civic_confidential_code_breaking_department
+						NOT = { has_councilor = { COUNCILOR = councilor_confidential_code_breaking_department } }
+					}
+					AND = {
+						has_valid_civic = civic_erxiangleyuan_1
+						NOT = { has_councilor = { COUNCILOR = councilor_civic_erxiangleyuan_1 } }
+					}
+					AND = {
+						has_valid_civic = civic_erxiangleyuan_2
+						NOT = { has_councilor = { COUNCILOR = councilor_civic_erxiangleyuan_2 } }
+					}
+					AND = {
+						has_valid_civic = civic_The_Destruction
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_destruction } }
+					}
+					AND = {
+						has_valid_civic = civic_The_Harmony
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_harmony } }
+					}
+					AND = {
+						has_valid_civic = civic_The_Abundance
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_abundance } }
+					}
+				}
+			}
+			country_event = { id = auto_qol_council_assign.61 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						has_valid_civic = civic_The_Hunt
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_hunt } }
+					}
+					AND = {
+						has_valid_civic = civic_The_Preservation
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_preservation } }
+					}
+					AND = {
+						has_valid_civic = civic_The_Nihility
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_nihility } }
+					}
+					AND = {
+						has_valid_civic = civic_jiyi
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_jiyi } }
+					}
+					AND = {
+						has_valid_civic = civic_huanyu
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_huanyu } }
+					}
+					AND = {
+						has_valid_civic = civic_The_Propagation
+						NOT = { has_councilor = { COUNCILOR = councilor_oracle_fanyu } }
+					}
+					AND = {
+						has_valid_civic = civic_gongzao
+						NOT = { has_councilor = { COUNCILOR = councilor_gongzao_shi } }
+					}
+					AND = {
+						has_valid_civic = civic_zhuxing
+						NOT = { has_councilor = { COUNCILOR = councilor_yunqi_commander } }
+					}
+					AND = {
+						has_valid_civic = civic_yongshou
+						NOT = { has_councilor = { COUNCILOR = councilor_shiwang_si } }
+					}
+					AND = {
+						has_valid_civic = civic_yonghen
+						NOT = { has_councilor = { COUNCILOR = councilor_fangshi_commander } }
+					}
+					AND = {
+						always = no
+						has_authority = auth_yaliluo
+						NOT = { has_councilor = { COUNCILOR = councilor_ruler_great_guardian } }
+					}
+					AND = {
+						always = yes
+									has_valid_civic = civic_tiewei
+						NOT = { has_councilor = { COUNCILOR = councilor_tiewei } }
+					}
+					AND = {
+						always = yes
+									has_valid_civic = civic_yaliluo_tech
+						NOT = { has_councilor = { COUNCILOR = councilor_yaliluo_tech } }
+					}
+					AND = {
+						has_civic = civic_SRARociviaEmpire
+									has_country_flag = SRA_RE_Rocivia_Empire_story
+						has_valid_civic = civic_SRARociviaEmpire
+						NOT = { has_councilor = { COUNCILOR = councilor_SRA_RE_minister_of_security } }
+					}
+					AND = {
+						has_country_flag = SRA_SD_Shadow_Of_Hidra_story
+						NOT = { has_councilor = { COUNCILOR = councilor_SRA_SD_lost_presbyter } }
+					}
+					AND = {
+						always = no
+						OR = { has_authority = auth_warshipgirls has_authority = auth_shenhai has_authority = auth_wg_fe has_authority = auth_sh_fe has_authority = auth_great_ming has_authority = auth_united_fleet }
+						NOT = { has_councilor = { COUNCILOR = councilor_ruler_warshipgirls } }
+					}
+					AND = {
+						has_valid_civic = civic_wg_knight
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_knight } }
+					}
+					AND = {
+						has_valid_civic = civic_yamato
+						NOT = { has_councilor = { COUNCILOR = councilor_sh_yamato } }
+					}
+					AND = {
+						has_valid_civic = civic_BOSSAP
+						NOT = { has_councilor = { COUNCILOR = councilor_sh_BOSSAP } }
+					}
+					AND = {
+						has_valid_civic = civic_CM
+						NOT = { has_councilor = { COUNCILOR = councilor_sh_CM } }
+					}
+					AND = {
+						has_valid_civic = civic_sh_criminal_syndicate
+						NOT = { has_councilor = { COUNCILOR = councilor_sh_criminal_syndicate } }
+					}
+					AND = {
+						has_valid_civic = civic_AP_NET
+						NOT = { has_councilor = { COUNCILOR = councilor_sh_AP_NET } }
+					}
+					AND = {
+						has_valid_civic = civic_uf_4
+						NOT = { has_councilor = { COUNCILOR = councilor_uf_4 } }
+					}
+					AND = {
+						has_origin = origin_wg_warhammer
+									has_authority = auth_warshipgirls
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_war_apostles } }
+					}
+					AND = {
+						has_origin = origin_wg_warhammer
+									has_authority = auth_shenhai
+						NOT = { has_councilor = { COUNCILOR = councilor_wg_war_apostles_2 } }
+					}
+				}
+			}
+			country_event = { id = auto_qol_council_assign.62 }
+		}
+	}
+	option = {
+		name = "auto_qol_council_assign.view_roster"
+		country_event = { id = auto_qol_council_assign.90 }
+	}
+
+	option = {
+		name = "auto_qol_council_assign.back_to_council_menu"
+		country_event = { id = auto_qol_council_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+# ========================================================
+country_event = {
+	id = auto_qol_council_assign.99
+	title = "auto_qol_council_assign.99.name"
+	desc = "auto_qol_council_assign.99.desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	option = {
+		name = "auto_qol_council_assign.success.continue"
+		country_event = { id = auto_qol_council_assign.1 }
+	}
+
+	option = {
+		name = "auto_qol_council_assign.success.view_roster"
+		country_event = { id = auto_qol_council_assign.90 }
+	}
+
+	option = {
+		name = "auto_qol_council_assign.success.close"
+		default_hide_option = yes
+	}
+}
+
+# ========================================================
+country_event = {
+	id = auto_qol_council_assign.999
+	title = "auto_qol_council_assign.999.name"
+	desc = "auto_qol_council_assign.999.desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	option = {
+		name = "auto_qol_council_assign.back_to_assign_menu"
+		country_event = { id = auto_qol_council_assign.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+# ========================================================
+country_event = {
+	id = auto_qol_council_assign.90
+	title = "auto_qol_council_assign.90.name"
+	desc = "auto_qol_council_assign.90.desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_leader = {
+			remove_leader_flag = auto_qol_roster_flag_1
+			remove_leader_flag = auto_qol_roster_flag_2
+			remove_leader_flag = auto_qol_roster_flag_3
+			remove_leader_flag = auto_qol_roster_flag_4
+			remove_leader_flag = auto_qol_roster_flag_5
+			remove_leader_flag = auto_qol_roster_flag_6
+			remove_leader_flag = auto_qol_roster_flag_7
+			remove_leader_flag = auto_qol_roster_flag_8
+			remove_leader_flag = auto_qol_roster_flag_9
+			remove_leader_flag = auto_qol_roster_flag_10
+			remove_leader_flag = auto_qol_roster_flag_11
+			remove_leader_flag = auto_qol_roster_flag_12
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+			}
+			set_leader_flag = auto_qol_roster_flag_1
+			save_event_target_as = auto_qol_in_office_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+			}
+			set_leader_flag = auto_qol_roster_flag_2
+			save_event_target_as = auto_qol_in_office_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+			}
+			set_leader_flag = auto_qol_roster_flag_3
+			save_event_target_as = auto_qol_in_office_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+			}
+			set_leader_flag = auto_qol_roster_flag_4
+			save_event_target_as = auto_qol_in_office_4
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+			}
+			set_leader_flag = auto_qol_roster_flag_5
+			save_event_target_as = auto_qol_in_office_5
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_5 }
+			}
+			set_leader_flag = auto_qol_roster_flag_6
+			save_event_target_as = auto_qol_in_office_6
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_5 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_6 }
+			}
+			set_leader_flag = auto_qol_roster_flag_7
+			save_event_target_as = auto_qol_in_office_7
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_5 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_6 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_7 }
+			}
+			set_leader_flag = auto_qol_roster_flag_8
+			save_event_target_as = auto_qol_in_office_8
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_5 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_6 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_7 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_8 }
+			}
+			set_leader_flag = auto_qol_roster_flag_9
+			save_event_target_as = auto_qol_in_office_9
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_5 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_6 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_7 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_8 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_9 }
+			}
+			set_leader_flag = auto_qol_roster_flag_10
+			save_event_target_as = auto_qol_in_office_10
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_5 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_6 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_7 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_8 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_9 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_10 }
+			}
+			set_leader_flag = auto_qol_roster_flag_11
+			save_event_target_as = auto_qol_in_office_11
+		}
+		random_owned_leader = {
+			limit = {
+				is_councilor = yes
+				NOT = { has_leader_flag = auto_qol_roster_flag_1 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_2 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_3 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_4 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_5 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_6 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_7 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_8 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_9 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_10 }
+				NOT = { has_leader_flag = auto_qol_roster_flag_11 }
+			}
+			set_leader_flag = auto_qol_roster_flag_12
+			save_event_target_as = auto_qol_in_office_12
+		}
+	}
+
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_1 } }
+		name = "auto_qol_assign.roster_1"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_2 } }
+		name = "auto_qol_assign.roster_2"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_3 } }
+		name = "auto_qol_assign.roster_3"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_4 } }
+		name = "auto_qol_assign.roster_4"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_5 } }
+		name = "auto_qol_assign.roster_5"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_6 } }
+		name = "auto_qol_assign.roster_6"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_7 } }
+		name = "auto_qol_assign.roster_7"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_8 } }
+		name = "auto_qol_assign.roster_8"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_9 } }
+		name = "auto_qol_assign.roster_9"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_10 } }
+		name = "auto_qol_assign.roster_10"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_11 } }
+		name = "auto_qol_assign.roster_11"
+	}
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_roster_flag_12 } }
+		name = "auto_qol_assign.roster_12"
+	}
+
+	option = {
+		name = "auto_qol_assign.roster_refresh"
+		country_event = { id = auto_qol_council_assign.90 }
+	}
+
+	option = {
+		name = "auto_qol_council_assign.back_to_assign_menu"
+		country_event = { id = auto_qol_council_assign.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}

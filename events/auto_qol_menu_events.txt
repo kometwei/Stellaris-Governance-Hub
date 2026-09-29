@@ -1,0 +1,181 @@
+namespace = auto_qol_init
+namespace = auto_qol_menu
+
+# 初始化与存档迁移配置
+country_event = {
+	id = auto_qol_init.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		# 新档初次初始化
+		if = {
+			limit = { NOT = { has_country_flag = auto_qol_initialized } }
+			set_country_flag = auto_qol_initialized
+			set_country_flag = leader_pool_opt_enabled
+			# auto_envoy_enabled 默认保持关闭，不予启用
+		}
+		# 旧存档迁移修复：清理早期版本遗留默认打上的 auto_envoy_enabled，恢复默认关闭状态
+		if = {
+			limit = { NOT = { has_country_flag = auto_qol_envoy_default_off_migrated } }
+			set_country_flag = auto_qol_envoy_default_off_migrated
+			remove_country_flag = auto_envoy_enabled
+		}
+		if = {
+			limit = { has_country_flag = leader_pool_opt_enabled }
+			auto_qol_trim_leader_pool_to_10 = yes
+		}
+
+		# 内阁结构只在玩家明确点击内阁修复/指派时修改，避免打开菜单时与原版内阁刷新撞车。
+	}
+}
+
+# 助手主控制面板 UI
+country_event = {
+	id = auto_qol_menu.1
+	title = "auto_qol_menu.1.name"
+	desc = "auto_qol_menu.1.desc"
+	picture = GFX_evt_galactic_senate
+	is_triggered_only = yes
+
+	immediate = {
+		# 首次打开菜单时，若为旧版本遗留存档，自动修正为默认关闭
+		if = {
+			limit = { NOT = { has_country_flag = auto_qol_envoy_default_off_migrated } }
+			set_country_flag = auto_qol_envoy_default_off_migrated
+			remove_country_flag = auto_envoy_enabled
+		}
+
+		# 不在打开菜单时自动修改内阁结构；原版内阁面板可能同时刷新同一批数据。
+	}
+
+	# 1. 自动指派特使：开启状态下显示的按钮
+	option = {
+		name = "auto_qol_menu.envoy_on"
+		custom_tooltip = "auto_qol_menu.toggle_envoy_tt"
+		trigger = { has_country_flag = auto_envoy_enabled }
+		remove_country_flag = auto_envoy_enabled
+		hidden_effect = {
+			country_event = { id = auto_qol_menu.1 }
+		}
+	}
+
+	# 1. 自动指派特使：关闭状态下显示的按钮
+	option = {
+		name = "auto_qol_menu.envoy_off"
+		custom_tooltip = "auto_qol_menu.toggle_envoy_tt"
+		trigger = { NOT = { has_country_flag = auto_envoy_enabled } }
+		set_country_flag = auto_envoy_enabled
+		country_event = { id = auto_envoy.100 }
+		hidden_effect = {
+			country_event = { id = auto_qol_menu.1 }
+		}
+	}
+
+	# 2. 领袖池防卡顿：开启状态下显示的按钮
+	option = {
+		name = "auto_qol_menu.leader_on"
+		custom_tooltip = "auto_qol_menu.toggle_leader_opt_tt"
+		trigger = { has_country_flag = leader_pool_opt_enabled }
+		remove_country_flag = leader_pool_opt_enabled
+		hidden_effect = {
+			country_event = { id = auto_qol_menu.1 }
+		}
+	}
+
+	# 2. 领袖池防卡顿：关闭状态下显示的按钮
+	option = {
+		name = "auto_qol_menu.leader_off"
+		custom_tooltip = "auto_qol_menu.toggle_leader_opt_tt"
+		trigger = { NOT = { has_country_flag = leader_pool_opt_enabled } }
+		set_country_flag = leader_pool_opt_enabled
+		auto_qol_trim_leader_pool_to_10 = yes
+		hidden_effect = {
+			country_event = { id = auto_qol_menu.1 }
+		}
+	}
+
+
+	# 3. 进入舰队容量与指挥上限调节子菜单
+	option = {
+		name = "auto_qol_menu.fleet_menu"
+		custom_tooltip = "auto_qol_menu.fleet_menu_tt"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	# 4. 进入内阁席位与领袖指派助手子菜单
+	option = {
+		name = "auto_qol_menu.council_menu"
+		custom_tooltip = "auto_qol_menu.council_menu_tt"
+		country_event = { id = auto_qol_council_menu.1 }
+	}
+
+	# 5. 灵能三件套：完成灵能传统后，直接授予旧版随机奖励科技。
+	# 不覆盖原版传统定义，保持兼容 4.5 的虚境与契约流程。
+	option = {
+		name = "auto_qol_menu.psionic_bundle_ready"
+		custom_tooltip = "auto_qol_menu.psionic_bundle_ready_tt"
+		trigger = {
+			has_finished_psionic_tradition = yes
+			NOT = {
+				AND = {
+					has_technology = tech_precognition_interface
+					has_technology = tech_psi_jump_drive_1
+					has_technology = tech_psionic_shield
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_technology = tech_precognition_interface } }
+				give_technology = { tech = tech_precognition_interface message = no }
+			}
+			if = {
+				limit = { NOT = { has_technology = tech_psi_jump_drive_1 } }
+				give_technology = { tech = tech_psi_jump_drive_1 message = no }
+			}
+			if = {
+				limit = { NOT = { has_technology = tech_psionic_shield } }
+				give_technology = { tech = tech_psionic_shield message = no }
+			}
+			country_event = { id = auto_qol_menu.1 }
+		}
+	}
+
+	option = {
+		name = "auto_qol_menu.psionic_bundle_complete"
+		custom_tooltip = "auto_qol_menu.psionic_bundle_complete_tt"
+		trigger = {
+			has_technology = tech_precognition_interface
+			has_technology = tech_psi_jump_drive_1
+			has_technology = tech_psionic_shield
+		}
+		default_hide_option = yes
+	}
+
+	option = {
+		name = "auto_qol_menu.psionic_bundle_locked"
+		custom_tooltip = "auto_qol_menu.psionic_bundle_locked_tt"
+		trigger = { NOT = { has_finished_psionic_tradition = yes } }
+		default_hide_option = yes
+	}
+
+	# 6. 进入 Mod 传统一键/批量解锁子菜单 (专属 Custom GUI 仪表盘)
+	option = {
+		name = "auto_qol_menu.tradition_menu"
+		custom_tooltip = "auto_qol_menu.tradition_menu_tt"
+		country_event = { id = tradition_unlock_menu.1 }
+	}
+
+	# 7. 退出控制面板
+	option = {
+		name = "auto_qol_menu.close"
+		default_hide_option = yes
+	}
+}
+
+

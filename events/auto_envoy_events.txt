@@ -1,0 +1,62 @@
+namespace = auto_envoy
+
+# 1. 周期性检查与菜单开启时，仅结算当前已真实遭遇的常规AI首触
+country_event = {
+	id = auto_envoy.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = auto_envoy_enabled
+	}
+
+	immediate = {
+		# 严格仅遍历当前玩家实际遭遇并正在进行的“首次接触”对象
+		# 绝不全银河盲开！只有真实遭遇且属于常规AI帝国才秒开通讯
+		every_first_contact = {
+			limit = {
+				contact_country = {
+					is_ai = yes
+					is_country_type = default
+					is_primitive = no
+					NOT = { is_same_value = root }
+					NOT = { has_communications = root }
+				}
+			}
+			contact_country = {
+				establish_communications_no_message = root
+			}
+			finish_first_contact = yes
+		}
+	}
+}
+
+# 2. 当舰队/科研船在太空中新遭遇未知文明时实时触发秒开通讯
+first_contact_event = {
+	id = auto_envoy.200
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			is_ai = no
+			has_country_flag = auto_envoy_enabled
+		}
+		contact_country = {
+			is_ai = yes
+			is_country_type = default
+			is_primitive = no
+		}
+	}
+
+	immediate = {
+		owner = {
+			save_event_target_as = auto_qol_contact_owner
+		}
+		contact_country = {
+			establish_communications_no_message = event_target:auto_qol_contact_owner
+		}
+		finish_first_contact = yes
+	}
+}

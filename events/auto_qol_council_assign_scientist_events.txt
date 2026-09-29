@@ -1,0 +1,5622 @@
+namespace = auto_qol_council_assign
+
+# ========================================================
+country_event = {
+	id = auto_qol_council_assign.20
+	title = "auto_qol_council_assign.20.name"
+	desc = "auto_qol_council_assign.20.desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			is_gestalt = no is_nomadic = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+		}
+
+		name = "auto_qol_council_assign.councilor_research_nomadic.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_research_nomadic.tt"
+		country_event = { id = auto_qol_council_assign.201 }
+	}
+	option = {
+		trigger = {
+			is_gestalt = no is_nomadic = no
+			NOT = { has_councilor = { COUNCILOR = councilor_research } }
+		}
+
+		name = "auto_qol_council_assign.councilor_research.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_research.tt"
+		country_event = { id = auto_qol_council_assign.202 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+		}
+
+		name = "auto_qol_council_assign.councilor_catalytic_processing.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_catalytic_processing.tt"
+		country_event = { id = auto_qol_council_assign.1007 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_eager_explorers
+			NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+		}
+
+		name = "auto_qol_council_assign.councilor_eager_explorers.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_eager_explorers.tt"
+		country_event = { id = auto_qol_council_assign.1017 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_environmentalist
+			NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+		}
+
+		name = "auto_qol_council_assign.councilor_environmentalist.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_environmentalist.tt"
+		country_event = { id = auto_qol_council_assign.1019 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_idyllic_bloom
+			NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+		}
+
+		name = "auto_qol_council_assign.councilor_idyllic_bloom.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_idyllic_bloom.tt"
+		country_event = { id = auto_qol_council_assign.1026 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_memory_vault
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+		}
+
+		name = "auto_qol_council_assign.councilor_memory_vaults.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_memory_vaults.tt"
+		country_event = { id = auto_qol_council_assign.1030 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_technocracy
+			NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+		}
+
+		name = "auto_qol_council_assign.councilor_technocracy.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_technocracy.tt"
+		country_event = { id = auto_qol_council_assign.1046 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_memory_vault_corporate
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+		}
+
+		name = "auto_qol_council_assign.councilor_memory_vault_corporate.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_memory_vault_corporate.tt"
+		country_event = { id = auto_qol_council_assign.1056 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_corporate_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+		}
+
+		name = "auto_qol_council_assign.councilor_corporate_catalytic_processing.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_corporate_catalytic_processing.tt"
+		country_event = { id = auto_qol_council_assign.1063 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_ruthless_competition
+			NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+		}
+
+		name = "auto_qol_council_assign.councilor_ruthless_competition.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_ruthless_competition.tt"
+		country_event = { id = auto_qol_council_assign.1079 }
+	}
+	option = {
+		trigger = {
+			is_gestalt = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+		}
+
+		name = "auto_qol_council_assign.councilor_gestalt_cognitive.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_gestalt_cognitive.tt"
+		country_event = { id = auto_qol_council_assign.1085 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = {
+				has_trait = leader_trait_curator
+			}
+			NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+		}
+
+		name = "auto_qol_council_assign.councilor_curator_archivist.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_curator_archivist.tt"
+		country_event = { id = auto_qol_council_assign.1097 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_individual_machine_predictive_analysis
+			NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+		}
+
+		name = "auto_qol_council_assign.councilor_individual_machine_predictive_analysis.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_individual_machine_predictive_analysis.tt"
+		country_event = { id = auto_qol_council_assign.1101 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_astrometeorology
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+		}
+
+		name = "auto_qol_council_assign.councilor_astrometeorology.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_astrometeorology.tt"
+		country_event = { id = auto_qol_council_assign.1104 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_astrometeorology_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+		}
+
+		name = "auto_qol_council_assign.councilor_astrometeorology_megacorp.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_astrometeorology_megacorp.tt"
+		country_event = { id = auto_qol_council_assign.1105 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_storm_callers
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+		}
+
+		name = "auto_qol_council_assign.councilor_storm_callers.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_storm_callers.tt"
+		country_event = { id = auto_qol_council_assign.1106 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_storm_callers_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+		}
+
+		name = "auto_qol_council_assign.councilor_storm_callers_megacorp.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_storm_callers_megacorp.tt"
+		country_event = { id = auto_qol_council_assign.1107 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_environmental_architects
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+		}
+
+		name = "auto_qol_council_assign.councilor_environmental_architects.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_environmental_architects.tt"
+		country_event = { id = auto_qol_council_assign.1108 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_environmental_architects_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+		}
+
+		name = "auto_qol_council_assign.councilor_environmental_architects_megacorp.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_environmental_architects_megacorp.tt"
+		country_event = { id = auto_qol_council_assign.1109 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+		}
+
+		name = "auto_qol_council_assign.councilor_crowdsourcing.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_crowdsourcing.tt"
+		country_event = { id = auto_qol_council_assign.1117 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_corporate_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+		}
+
+		name = "auto_qol_council_assign.councilor_corporate_crowdsourcing.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_corporate_crowdsourcing.tt"
+		country_event = { id = auto_qol_council_assign.1118 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_SH_tech
+			NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+		}
+
+		name = "auto_qol_council_assign.councilor_SH_tech.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_SH_tech.tt"
+		country_event = { id = auto_qol_council_assign.1153 }
+	}
+	option = {
+		trigger = {
+			has_valid_civic = civic_wgaurora
+			NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+		}
+
+		name = "auto_qol_council_assign.councilor_wg_aurora.btn"
+		custom_tooltip = "auto_qol_council_assign.councilor_wg_aurora.tt"
+		country_event = { id = auto_qol_council_assign.1209 }
+	}
+	option = {
+		name = "auto_qol_council_assign.back_to_assign_menu"
+		country_event = { id = auto_qol_council_assign.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.201
+	title = "auto_qol_council_assign.councilor_research_nomadic.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			is_gestalt = no is_nomadic = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research_nomadic
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_research_nomadic }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				set_country_flag = auto_qol_slot_councilor_research_nomadic
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research_nomadic
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_research_nomadic
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			is_gestalt = no is_nomadic = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research_nomadic
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_research_nomadic }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				set_country_flag = auto_qol_slot_councilor_research_nomadic
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research_nomadic
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_research_nomadic
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			is_gestalt = no is_nomadic = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research_nomadic
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_research_nomadic }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				set_country_flag = auto_qol_slot_councilor_research_nomadic
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research_nomadic
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_research_nomadic
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			is_gestalt = no is_nomadic = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research_nomadic
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_research_nomadic }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				set_country_flag = auto_qol_slot_councilor_research_nomadic
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research_nomadic
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_research_nomadic
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				is_gestalt = no is_nomadic = yes
+				NOT = { has_councilor = { COUNCILOR = councilor_research_nomadic } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.201 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.202
+	title = "auto_qol_council_assign.councilor_research.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			is_gestalt = no is_nomadic = no
+			NOT = { has_councilor = { COUNCILOR = councilor_research } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_research }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				set_country_flag = auto_qol_slot_councilor_research
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_research
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			is_gestalt = no is_nomadic = no
+			NOT = { has_councilor = { COUNCILOR = councilor_research } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_research }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				set_country_flag = auto_qol_slot_councilor_research
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_research
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			is_gestalt = no is_nomadic = no
+			NOT = { has_councilor = { COUNCILOR = councilor_research } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_research }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				set_country_flag = auto_qol_slot_councilor_research
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_research
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			is_gestalt = no is_nomadic = no
+			NOT = { has_councilor = { COUNCILOR = councilor_research } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_research
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_research }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				set_country_flag = auto_qol_slot_councilor_research
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_research
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_research
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				is_gestalt = no is_nomadic = no
+				NOT = { has_councilor = { COUNCILOR = councilor_research } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.202 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1007
+	title = "auto_qol_council_assign.councilor_catalytic_processing.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_catalytic_processing
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_catalytic_processing
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_catalytic_processing
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_catalytic_processing
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_catalytic_processing
+				NOT = { has_councilor = { COUNCILOR = councilor_catalytic_processing } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1007 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1017
+	title = "auto_qol_council_assign.councilor_eager_explorers.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_eager_explorers
+			NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_eager_explorers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_eager_explorers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				set_country_flag = auto_qol_slot_councilor_eager_explorers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_eager_explorers
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_eager_explorers
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_eager_explorers
+			NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_eager_explorers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_eager_explorers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				set_country_flag = auto_qol_slot_councilor_eager_explorers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_eager_explorers
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_eager_explorers
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_eager_explorers
+			NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_eager_explorers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_eager_explorers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				set_country_flag = auto_qol_slot_councilor_eager_explorers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_eager_explorers
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_eager_explorers
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_eager_explorers
+			NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_eager_explorers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_eager_explorers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				set_country_flag = auto_qol_slot_councilor_eager_explorers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_eager_explorers
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_eager_explorers
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_eager_explorers
+				NOT = { has_councilor = { COUNCILOR = councilor_eager_explorers } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1017 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1019
+	title = "auto_qol_council_assign.councilor_environmentalist.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_environmentalist
+			NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmentalist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_environmentalist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				set_country_flag = auto_qol_slot_councilor_environmentalist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmentalist
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_environmentalist
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_environmentalist
+			NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmentalist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_environmentalist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				set_country_flag = auto_qol_slot_councilor_environmentalist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmentalist
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_environmentalist
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_environmentalist
+			NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmentalist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_environmentalist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				set_country_flag = auto_qol_slot_councilor_environmentalist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmentalist
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_environmentalist
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_environmentalist
+			NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmentalist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_environmentalist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				set_country_flag = auto_qol_slot_councilor_environmentalist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmentalist
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_environmentalist
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_environmentalist
+				NOT = { has_councilor = { COUNCILOR = councilor_environmentalist } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1019 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1026
+	title = "auto_qol_council_assign.councilor_idyllic_bloom.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_idyllic_bloom
+			NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_idyllic_bloom
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_idyllic_bloom }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_idyllic_bloom
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_idyllic_bloom
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_idyllic_bloom
+			NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_idyllic_bloom
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_idyllic_bloom }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_idyllic_bloom
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_idyllic_bloom
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_idyllic_bloom
+			NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_idyllic_bloom
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_idyllic_bloom }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_idyllic_bloom
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_idyllic_bloom
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_idyllic_bloom
+			NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_idyllic_bloom
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_idyllic_bloom }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_idyllic_bloom
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_idyllic_bloom
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_idyllic_bloom
+				NOT = { has_councilor = { COUNCILOR = councilor_idyllic_bloom } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1026 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1030
+	title = "auto_qol_council_assign.councilor_memory_vaults.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_memory_vault
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vaults
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_memory_vaults }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				set_country_flag = auto_qol_slot_councilor_memory_vaults
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vaults
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_memory_vaults
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_memory_vault
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vaults
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_memory_vaults }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				set_country_flag = auto_qol_slot_councilor_memory_vaults
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vaults
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_memory_vaults
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_memory_vault
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vaults
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_memory_vaults }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				set_country_flag = auto_qol_slot_councilor_memory_vaults
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vaults
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_memory_vaults
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_memory_vault
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vaults
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_memory_vaults }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				set_country_flag = auto_qol_slot_councilor_memory_vaults
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vaults
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_memory_vaults
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_memory_vault
+				NOT = { has_councilor = { COUNCILOR = councilor_memory_vaults } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1030 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1046
+	title = "auto_qol_council_assign.councilor_technocracy.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_technocracy
+			NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_technocracy
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_technocracy }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				set_country_flag = auto_qol_slot_councilor_technocracy
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_technocracy
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_technocracy
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_technocracy
+			NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_technocracy
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_technocracy }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				set_country_flag = auto_qol_slot_councilor_technocracy
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_technocracy
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_technocracy
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_technocracy
+			NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_technocracy
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_technocracy }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				set_country_flag = auto_qol_slot_councilor_technocracy
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_technocracy
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_technocracy
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_technocracy
+			NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_technocracy
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_technocracy }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				set_country_flag = auto_qol_slot_councilor_technocracy
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_technocracy
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_technocracy
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_technocracy
+				NOT = { has_councilor = { COUNCILOR = councilor_technocracy } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1046 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1056
+	title = "auto_qol_council_assign.councilor_memory_vault_corporate.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_memory_vault_corporate
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vault_corporate
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_memory_vault_corporate }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vault_corporate
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_memory_vault_corporate
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vault_corporate
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_memory_vault_corporate }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vault_corporate
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_memory_vault_corporate
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vault_corporate
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_memory_vault_corporate }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vault_corporate
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_memory_vault_corporate
+			NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_memory_vault_corporate
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_memory_vault_corporate }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_memory_vault_corporate
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_memory_vault_corporate
+				NOT = { has_councilor = { COUNCILOR = councilor_memory_vault_corporate } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1056 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1063
+	title = "auto_qol_council_assign.councilor_corporate_catalytic_processing.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_corporate_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_catalytic_processing
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_corporate_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_catalytic_processing
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_corporate_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_catalytic_processing
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_corporate_catalytic_processing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_catalytic_processing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_catalytic_processing
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_corporate_catalytic_processing
+				NOT = { has_councilor = { COUNCILOR = councilor_corporate_catalytic_processing } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1063 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1079
+	title = "auto_qol_council_assign.councilor_ruthless_competition.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_ruthless_competition
+			NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_ruthless_competition
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_ruthless_competition }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				set_country_flag = auto_qol_slot_councilor_ruthless_competition
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_ruthless_competition
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_ruthless_competition
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_ruthless_competition
+			NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_ruthless_competition
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_ruthless_competition }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				set_country_flag = auto_qol_slot_councilor_ruthless_competition
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_ruthless_competition
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_ruthless_competition
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_ruthless_competition
+			NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_ruthless_competition
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_ruthless_competition }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				set_country_flag = auto_qol_slot_councilor_ruthless_competition
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_ruthless_competition
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_ruthless_competition
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_ruthless_competition
+			NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_ruthless_competition
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_ruthless_competition }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				set_country_flag = auto_qol_slot_councilor_ruthless_competition
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_ruthless_competition
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_ruthless_competition
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_ruthless_competition
+				NOT = { has_councilor = { COUNCILOR = councilor_ruthless_competition } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1079 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1085
+	title = "auto_qol_council_assign.councilor_gestalt_cognitive.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			is_gestalt = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_gestalt_cognitive
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_gestalt_cognitive }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_gestalt_cognitive
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			is_gestalt = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_gestalt_cognitive
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_gestalt_cognitive }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_gestalt_cognitive
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			is_gestalt = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_gestalt_cognitive
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_gestalt_cognitive }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_gestalt_cognitive
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			is_gestalt = yes
+			NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_gestalt_cognitive
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_gestalt_cognitive }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_gestalt_cognitive
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				is_gestalt = yes
+				NOT = { has_councilor = { COUNCILOR = councilor_gestalt_cognitive } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1085 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1097
+	title = "auto_qol_council_assign.councilor_curator_archivist.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			any_owned_leader = {
+				has_trait = leader_trait_curator
+			}
+			NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_curator_archivist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_curator_archivist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				set_country_flag = auto_qol_slot_councilor_curator_archivist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_curator_archivist
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_curator_archivist
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			any_owned_leader = {
+				has_trait = leader_trait_curator
+			}
+			NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_curator_archivist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_curator_archivist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				set_country_flag = auto_qol_slot_councilor_curator_archivist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_curator_archivist
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_curator_archivist
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			any_owned_leader = {
+				has_trait = leader_trait_curator
+			}
+			NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_curator_archivist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_curator_archivist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				set_country_flag = auto_qol_slot_councilor_curator_archivist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_curator_archivist
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_curator_archivist
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			any_owned_leader = {
+				has_trait = leader_trait_curator
+			}
+			NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_curator_archivist
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_curator_archivist }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				set_country_flag = auto_qol_slot_councilor_curator_archivist
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_curator_archivist
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_curator_archivist
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				any_owned_leader = {
+				has_trait = leader_trait_curator
+			}
+				NOT = { has_councilor = { COUNCILOR = councilor_curator_archivist } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1097 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1101
+	title = "auto_qol_council_assign.councilor_individual_machine_predictive_analysis.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_individual_machine_predictive_analysis
+			NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_individual_machine_predictive_analysis
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_individual_machine_predictive_analysis
+			NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_individual_machine_predictive_analysis
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_individual_machine_predictive_analysis
+			NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_individual_machine_predictive_analysis
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_individual_machine_predictive_analysis
+			NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_individual_machine_predictive_analysis
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_individual_machine_predictive_analysis
+				NOT = { has_councilor = { COUNCILOR = councilor_individual_machine_predictive_analysis } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1101 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1104
+	title = "auto_qol_council_assign.councilor_astrometeorology.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_astrometeorology
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_astrometeorology }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_astrometeorology
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_astrometeorology
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_astrometeorology }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_astrometeorology
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_astrometeorology
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_astrometeorology }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_astrometeorology
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_astrometeorology
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_astrometeorology }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_astrometeorology
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_astrometeorology
+				NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1104 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1105
+	title = "auto_qol_council_assign.councilor_astrometeorology_megacorp.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_astrometeorology_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology_megacorp
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_astrometeorology_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology_megacorp
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_astrometeorology_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology_megacorp
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_astrometeorology_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_astrometeorology_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_astrometeorology_megacorp
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_astrometeorology_megacorp
+				NOT = { has_councilor = { COUNCILOR = councilor_astrometeorology_megacorp } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1105 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1106
+	title = "auto_qol_council_assign.councilor_storm_callers.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_storm_callers
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_storm_callers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_storm_callers
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_storm_callers
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_storm_callers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_storm_callers
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_storm_callers
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_storm_callers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_storm_callers
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_storm_callers
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_storm_callers }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_storm_callers
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_storm_callers
+				NOT = { has_councilor = { COUNCILOR = councilor_storm_callers } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1106 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1107
+	title = "auto_qol_council_assign.councilor_storm_callers_megacorp.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_storm_callers_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers_megacorp
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_storm_callers_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers_megacorp
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_storm_callers_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers_megacorp
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_storm_callers_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_storm_callers_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_storm_callers_megacorp
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_storm_callers_megacorp
+				NOT = { has_councilor = { COUNCILOR = councilor_storm_callers_megacorp } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1107 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1108
+	title = "auto_qol_council_assign.councilor_environmental_architects.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_environmental_architects
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_environmental_architects }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_environmental_architects
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_environmental_architects
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_environmental_architects }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_environmental_architects
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_environmental_architects
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_environmental_architects }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_environmental_architects
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_environmental_architects
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_environmental_architects }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_environmental_architects
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_environmental_architects
+				NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1108 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1109
+	title = "auto_qol_council_assign.councilor_environmental_architects_megacorp.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_environmental_architects_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects_megacorp
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_environmental_architects_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects_megacorp
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_environmental_architects_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects_megacorp
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_environmental_architects_megacorp
+			NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_environmental_architects_megacorp
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_environmental_architects_megacorp
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_environmental_architects_megacorp
+				NOT = { has_councilor = { COUNCILOR = councilor_environmental_architects_megacorp } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1109 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1117
+	title = "auto_qol_council_assign.councilor_crowdsourcing.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_crowdsourcing
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_crowdsourcing
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_crowdsourcing
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_crowdsourcing
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_crowdsourcing
+				NOT = { has_councilor = { COUNCILOR = councilor_crowdsourcing } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1117 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1118
+	title = "auto_qol_council_assign.councilor_corporate_crowdsourcing.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_corporate_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_crowdsourcing
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_corporate_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_crowdsourcing
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_corporate_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_crowdsourcing
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_corporate_crowdsourcing
+			NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_corporate_crowdsourcing
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_corporate_crowdsourcing
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_corporate_crowdsourcing
+				NOT = { has_councilor = { COUNCILOR = councilor_corporate_crowdsourcing } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1118 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1153
+	title = "auto_qol_council_assign.councilor_SH_tech.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_SH_tech
+			NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_SH_tech
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_SH_tech }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				set_country_flag = auto_qol_slot_councilor_SH_tech
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_SH_tech
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_SH_tech
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_SH_tech
+			NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_SH_tech
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_SH_tech }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				set_country_flag = auto_qol_slot_councilor_SH_tech
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_SH_tech
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_SH_tech
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_SH_tech
+			NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_SH_tech
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_SH_tech }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				set_country_flag = auto_qol_slot_councilor_SH_tech
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_SH_tech
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_SH_tech
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_SH_tech
+			NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_SH_tech
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_SH_tech }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				set_country_flag = auto_qol_slot_councilor_SH_tech
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_SH_tech
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_SH_tech
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_SH_tech
+				NOT = { has_councilor = { COUNCILOR = councilor_SH_tech } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1153 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}
+
+country_event = {
+	id = auto_qol_council_assign.1209
+	title = "auto_qol_council_assign.councilor_wg_aurora.pick_name"
+	desc = "auto_qol_council_assign.pick_desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		auto_qol_clear_council_candidate_flags = yes
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_1
+			save_event_target_as = auto_qol_cand_1
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_2
+			save_event_target_as = auto_qol_cand_2
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_3
+			save_event_target_as = auto_qol_cand_3
+		}
+		random_owned_leader = {
+			limit = {
+				is_pool_leader = no
+				is_ruler = no
+				is_councilor = no
+				NOT = { exists = fleet }
+				NOT = { has_leader_flag = auto_qol_cand_flag_1 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_2 }
+				NOT = { has_leader_flag = auto_qol_cand_flag_3 }
+				leader_class = scientist
+			}
+			set_leader_flag = auto_qol_cand_flag_4
+			save_event_target_as = auto_qol_cand_4
+		}
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }
+			has_valid_civic = civic_wgaurora
+			NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+		}
+		name = "auto_qol_assign.cand_1"
+		event_target:auto_qol_cand_1 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_wg_aurora
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_1 = {
+					NOT = { is_councilor_type = councilor_wg_aurora }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				set_country_flag = auto_qol_slot_councilor_wg_aurora
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_wg_aurora
+			}
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_wg_aurora
+			}
+		}
+		event_target:auto_qol_cand_1 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_2 }
+			has_valid_civic = civic_wgaurora
+			NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+		}
+		name = "auto_qol_assign.cand_2"
+		event_target:auto_qol_cand_2 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_wg_aurora
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_2 = {
+					NOT = { is_councilor_type = councilor_wg_aurora }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				set_country_flag = auto_qol_slot_councilor_wg_aurora
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_wg_aurora
+			}
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_wg_aurora
+			}
+		}
+		event_target:auto_qol_cand_2 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_3 }
+			has_valid_civic = civic_wgaurora
+			NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+		}
+		name = "auto_qol_assign.cand_3"
+		event_target:auto_qol_cand_3 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_wg_aurora
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_3 = {
+					NOT = { is_councilor_type = councilor_wg_aurora }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				set_country_flag = auto_qol_slot_councilor_wg_aurora
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_wg_aurora
+			}
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_wg_aurora
+			}
+		}
+		event_target:auto_qol_cand_3 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			any_owned_leader = { has_leader_flag = auto_qol_cand_flag_4 }
+			has_valid_civic = civic_wgaurora
+			NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+		}
+		name = "auto_qol_assign.cand_4"
+		event_target:auto_qol_cand_4 = {
+			# 优先复用原版 UI 或本 Mod 已经创建的空席位。
+			set_council_position = councilor_wg_aurora
+		}
+		if = {
+			limit = {
+				event_target:auto_qol_cand_4 = {
+					NOT = { is_councilor_type = councilor_wg_aurora }
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				set_country_flag = auto_qol_slot_councilor_wg_aurora
+				unlock_council_slots = 1
+				set_council_position_to_council = councilor_wg_aurora
+			}
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_wg_aurora
+			}
+		}
+		event_target:auto_qol_cand_4 = {
+			save_event_target_as = auto_qol_last_assigned
+		}
+		auto_qol_clear_council_candidate_flags = yes
+		country_event = { id = auto_qol_council_assign.99 }
+	}
+	option = {
+		trigger = {
+			OR = {
+				NOT = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+				NOT = {
+				has_valid_civic = civic_wgaurora
+				NOT = { has_councilor = { COUNCILOR = councilor_wg_aurora } }
+				}
+			}
+		}
+		name = "auto_qol_assign.no_candidate"
+		country_event = { id = auto_qol_council_assign.999 }
+	}
+	# 刷新换一批
+	option = {
+		trigger = { any_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 } }
+		name = "auto_qol_assign.refresh"
+		country_event = { id = auto_qol_council_assign.1209 }
+	}
+	# 返回分类子菜单
+	option = {
+		name = "auto_qol_assign.back_to_cat"
+		country_event = { id = auto_qol_council_assign.20 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+	}
+}

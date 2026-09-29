@@ -1,0 +1,24 @@
+# ========================================================
+# 助手控制面板法案入口 (保持唯一清爽入口，绝不污染法令界面)
+# ========================================================
+auto_qol_menu = {
+	# The edict UI divides elapsed time by this value when its progress bar updates.
+	# A zero duration therefore crashes the game after the menu event is closed.
+	length = 1
+	icon = "GFX_edict_type_policy"
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		custom_tooltip = edict_auto_qol_menu_effect_desc
+		hidden_effect = {
+			country_event = { id = auto_qol_menu.1 }
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

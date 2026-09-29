@@ -1,0 +1,17 @@
+# Hard cap for the player's combined recruitable leader pool.
+# Third-party modifiers can add dozens of candidates, so a negative size
+# modifier alone cannot guarantee the advertised limit.
+auto_qol_trim_leader_pool_to_10 = {
+	while = {
+		limit = {
+			count_pool_leader = {
+				limit = { always = yes }
+				count > 10
+			}
+		}
+		random_pool_leader = {
+			limit = { always = yes }
+			kill_leader = { show_notification = no }
+		}
+	}
+}

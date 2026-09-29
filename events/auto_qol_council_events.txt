@@ -1,0 +1,182 @@
+namespace = auto_qol_council_menu
+namespace = auto_qol_council_pool
+
+# Schedule one deferred trim when generation crosses the cap. Killing the new
+# leader directly inside on_added_to_leader_pool can make the engine refill it
+# repeatedly, so the actual trim runs after pool generation has settled.
+country_event = {
+	id = auto_qol_council_pool.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = leader_pool_opt_enabled
+		NOT = { has_country_flag = auto_qol_pool_trim_scheduled }
+		count_pool_leader = {
+			limit = { always = yes }
+			count > 10
+		}
+	}
+
+	immediate = {
+		set_timed_country_flag = { flag = auto_qol_pool_trim_scheduled days = 2 }
+		country_event = { id = auto_qol_council_pool.3 days = 1 }
+	}
+}
+
+country_event = {
+	id = auto_qol_council_pool.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = leader_pool_opt_enabled
+	}
+
+	immediate = {
+		auto_qol_trim_leader_pool_to_10 = yes
+	}
+}
+
+# ========================================================
+# 帝国政务内阁席位助手主界面 (安全精炼版，绝无 288 选项 UI 崩溃)
+# ========================================================
+country_event = {
+	id = auto_qol_council_menu.1
+	title = "auto_qol_council_menu.1.name"
+	desc = "auto_qol_council_menu.1.desc"
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	# 1. 核心席位点名指派中枢 (突破 6 席位限制)
+	option = {
+		name = "auto_qol_council_menu.manual_assign"
+		custom_tooltip = "auto_qol_council_menu.manual_assign_tt"
+		country_event = { id = auto_qol_council_assign.1 }
+	}
+
+	# 2. 待选领袖招募池精简与大扫除
+	option = {
+		name = "auto_qol_council_menu.pool_mgr"
+		custom_tooltip = "auto_qol_council_menu.pool_mgr_tt"
+		country_event = { id = auto_qol_council_pool.1 }
+	}
+
+	# 3. 启用内阁领袖专注协议
+	option = {
+		name = "auto_qol_council_menu.buff_council"
+		custom_tooltip = "auto_qol_council_menu.buff_council_tt"
+		add_modifier = {
+			modifier = auto_qol_council_buff
+			days = -1
+		}
+		country_event = { id = auto_qol_council_menu.1 }
+	}
+
+	# 4. 返回助手主控制台
+	option = {
+		name = "auto_qol_council_menu.back"
+		country_event = { id = auto_qol_menu.1 }
+	}
+
+	# 5. 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}
+
+# ========================================================
+# 待选领袖池治理中枢 (彻底解决多 Mod 待选池人满为患卡顿)
+# ========================================================
+country_event = {
+	id = auto_qol_council_pool.1
+	title = "auto_qol_council_pool.1.name"
+	desc = "auto_qol_council_pool.1.desc"
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+
+	# 一键清退当前全部待选闲人并立即刷新
+	option = {
+		name = "auto_qol_council_pool.clean"
+		custom_tooltip = "auto_qol_council_pool.clean_tt"
+		every_pool_leader = {
+			kill_leader = { show_notification = no }
+		}
+		refresh_leader_pool = yes
+		hidden_effect = {
+			country_event = { id = auto_qol_council_pool.1 }
+		}
+	}
+
+	# 启用待选池温和精简 (-5)
+	option = {
+		name = "auto_qol_council_pool.clamp_5"
+		custom_tooltip = "auto_qol_council_pool.clamp_5_tt"
+		remove_modifier = auto_qol_pool_clamp_5
+		remove_modifier = auto_qol_pool_clamp_10
+		remove_modifier = auto_qol_pool_clamp_20
+		add_modifier = { modifier = auto_qol_pool_clamp_5 days = -1 }
+		every_pool_leader = { kill_leader = { show_notification = no } }
+		refresh_leader_pool = yes
+		hidden_effect = {
+			country_event = { id = auto_qol_council_pool.1 }
+		}
+	}
+
+	# 启用待选池强力精简 (-10)
+	option = {
+		name = "auto_qol_council_pool.clamp_10"
+		custom_tooltip = "auto_qol_council_pool.clamp_10_tt"
+		remove_modifier = auto_qol_pool_clamp_5
+		remove_modifier = auto_qol_pool_clamp_10
+		remove_modifier = auto_qol_pool_clamp_20
+		add_modifier = { modifier = auto_qol_pool_clamp_10 days = -1 }
+		every_pool_leader = { kill_leader = { show_notification = no } }
+		refresh_leader_pool = yes
+		hidden_effect = {
+			country_event = { id = auto_qol_council_pool.1 }
+		}
+	}
+
+	# 启用待选池极限精简 (-20)
+	option = {
+		name = "auto_qol_council_pool.clamp_20"
+		custom_tooltip = "auto_qol_council_pool.clamp_20_tt"
+		remove_modifier = auto_qol_pool_clamp_5
+		remove_modifier = auto_qol_pool_clamp_10
+		remove_modifier = auto_qol_pool_clamp_20
+		add_modifier = { modifier = auto_qol_pool_clamp_20 days = -1 }
+		every_pool_leader = { kill_leader = { show_notification = no } }
+		refresh_leader_pool = yes
+		hidden_effect = {
+			country_event = { id = auto_qol_council_pool.1 }
+		}
+	}
+
+	# 关闭精简协议
+	option = {
+		name = "auto_qol_council_pool.reset"
+		custom_tooltip = "auto_qol_council_pool.reset_tt"
+		remove_modifier = auto_qol_pool_clamp_5
+		remove_modifier = auto_qol_pool_clamp_10
+		remove_modifier = auto_qol_pool_clamp_20
+		hidden_effect = {
+			country_event = { id = auto_qol_council_pool.1 }
+		}
+	}
+
+	# 返回内阁主菜单
+	option = {
+		name = "auto_qol_council_pool.back"
+		country_event = { id = auto_qol_council_menu.1 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}

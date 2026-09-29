@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment / IDE
+.vscode/
+.idea/
+*.log
+
+# Python virtual environment
+.venv/
+env/
+venv/
+scratch/
+dist/
+
+# Images (keep thumbnail.png)
+*.jpg
+*.dds
+

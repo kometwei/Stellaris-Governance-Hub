@@ -1,0 +1,26 @@
+# 动态 1 单位乘数 Static Modifier (配合 multiplier 使用实现 100% 自由自定义数值)
+
+qol_custom_navy_cap_modifier = {
+	country_naval_cap_add = 1
+}
+
+qol_custom_cmd_limit_modifier = {
+	command_limit_add = 1
+}
+
+auto_qol_council_buff = {
+	councilor_exp_gain = 0.50
+	leaders_upkeep_mult = -0.25
+}
+
+auto_qol_pool_clamp_5 = {
+	country_leader_pool_size = -5
+}
+
+auto_qol_pool_clamp_10 = {
+	country_leader_pool_size = -10
+}
+
+auto_qol_pool_clamp_20 = {
+	country_leader_pool_size = -20
+}

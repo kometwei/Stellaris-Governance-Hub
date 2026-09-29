@@ -1,0 +1,8 @@
+namespace = auto_qol_delay
+
+# 月初调度器
+country_event = {
+	id = auto_qol_delay.1
+	hide_window = yes
+	is_triggered_only = yes
+}

@@ -1,0 +1,35 @@
+# 舰队数值加减计算器动态生效脚本
+
+auto_qol_reapply_navy_cap = {
+	# 移除旧的动态舰容加成
+	remove_modifier = qol_custom_navy_cap_modifier
+	
+	# 如果变量大于 0，应用当前的自定义数值
+	if = {
+		limit = {
+			check_variable = { which = qol_custom_navy_cap value > 0 }
+		}
+		add_modifier = {
+			modifier = qol_custom_navy_cap_modifier
+			days = -1
+			multiplier = qol_custom_navy_cap
+		}
+	}
+}
+
+auto_qol_reapply_cmd_limit = {
+	# 移除旧的动态指挥上限加成
+	remove_modifier = qol_custom_cmd_limit_modifier
+	
+	# 如果变量大于 0，应用当前的自定义数值
+	if = {
+		limit = {
+			check_variable = { which = qol_custom_cmd_limit value > 0 }
+		}
+		add_modifier = {
+			modifier = qol_custom_cmd_limit_modifier
+			days = -1
+			multiplier = qol_custom_cmd_limit
+		}
+	}
+}

@@ -1,0 +1,6 @@
+# Keep the engine-side council UI capacity above the number of dynamically
+# added positions. The vanilla value of 6 can enter an invalid layout path
+# when an extended council is opened in Stellaris 4.5.x.
+NInterface = {
+	MAX_COUNCIL_POSITIONS = 256
+}

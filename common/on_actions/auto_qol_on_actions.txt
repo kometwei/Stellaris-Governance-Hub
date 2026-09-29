@@ -1,0 +1,29 @@
+# 自动助手与性能优化 On-Actions 挂钩
+
+on_game_start_country = {
+	events = {
+		auto_qol_init.1 # 游戏开启/新档初始化默认 Flag
+	}
+}
+
+on_first_contact_started = {
+	events = {
+		auto_envoy.200 # 仅在遭遇未知文明时实时秒开常规AI国家通讯
+	}
+}
+
+on_monthly_pulse_country = {
+	events = {
+		auto_qol_init.1 # 每月兜底安全检查
+		auto_envoy.100 # 每月兜底安全检查并结清当前已遭遇的常规AI首触
+	}
+}
+
+# When generation exceeds the enabled cap, schedule one deferred trim after
+# the engine has finished filling the pool. Scope is country; from is leader.
+on_added_to_leader_pool = {
+	events = {
+		auto_qol_council_pool.2
+	}
+}
+

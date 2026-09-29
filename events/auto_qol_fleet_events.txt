@@ -1,0 +1,272 @@
+namespace = auto_qol_fleet
+namespace = auto_qol_fleet_menu
+namespace = auto_qol_navy_cap_menu
+namespace = auto_qol_cmd_limit_menu
+
+# ========================================================
+# 舰队容量与指挥上限控制台
+# ========================================================
+country_event = {
+	id = auto_qol_fleet_menu.1
+	title = "auto_qol_fleet_menu.1.name"
+	desc = "auto_qol_fleet_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_navy_cap } }
+			set_variable = { which = qol_custom_navy_cap value = 0 }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_cmd_limit } }
+			set_variable = { which = qol_custom_cmd_limit value = 0 }
+		}
+	}
+
+	# 1. 进入舰队容量调节子菜单
+	option = {
+		name = "auto_qol_fleet_menu.go_navy_cap"
+		custom_tooltip = "auto_qol_fleet_menu.go_navy_cap_tt"
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+
+	# 2. 进入指挥上限调节子菜单
+	option = {
+		name = "auto_qol_fleet_menu.go_cmd_limit"
+		custom_tooltip = "auto_qol_fleet_menu.go_cmd_limit_tt"
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+
+	# 3. 预设：无敌巨舰 (+10000 舰容, +500 指挥上限)
+	option = {
+		name = "auto_qol_fleet_menu.preset_super"
+		custom_tooltip = "auto_qol_fleet_menu.preset_super_tt"
+		change_variable = { which = qol_custom_navy_cap value = 10000 }
+		change_variable = { which = qol_custom_cmd_limit value = 500 }
+		auto_qol_reapply_navy_cap = yes
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	# 4. 清空所有额外舰容与指挥上限
+	option = {
+		name = "auto_qol_fleet_menu.clear_all"
+		custom_tooltip = "auto_qol_fleet_menu.clear_all_tt"
+		set_variable = { which = qol_custom_navy_cap value = 0 }
+		set_variable = { which = qol_custom_cmd_limit value = 0 }
+		auto_qol_reapply_navy_cap = yes
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	# 5. 返回助手主控制台
+	option = {
+		name = "auto_qol_fleet_menu.back"
+		country_event = { id = auto_qol_menu.1 }
+	}
+
+	# 6. 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}
+
+# ========================================================
+# 舰队容量调节子菜单
+# ========================================================
+country_event = {
+	id = auto_qol_navy_cap_menu.1
+	title = "auto_qol_navy_cap_menu.1.name"
+	desc = "auto_qol_navy_cap_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_navy_cap } }
+			set_variable = { which = qol_custom_navy_cap value = 0 }
+		}
+	}
+
+	# 快速增加选项
+	option = {
+		name = "auto_qol_navy_cap.add_500"
+		change_variable = { which = qol_custom_navy_cap value = 500 }
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+	option = {
+		name = "auto_qol_navy_cap.add_1000"
+		change_variable = { which = qol_custom_navy_cap value = 1000 }
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+	option = {
+		name = "auto_qol_navy_cap.add_2500"
+		change_variable = { which = qol_custom_navy_cap value = 2500 }
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+	option = {
+		name = "auto_qol_navy_cap.add_5000"
+		change_variable = { which = qol_custom_navy_cap value = 5000 }
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+	option = {
+		name = "auto_qol_navy_cap.add_10000"
+		change_variable = { which = qol_custom_navy_cap value = 10000 }
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+	option = {
+		name = "auto_qol_navy_cap.add_50000"
+		change_variable = { which = qol_custom_navy_cap value = 50000 }
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+
+	# 快速扣减选项
+	option = {
+		name = "auto_qol_navy_cap.sub_500"
+		subtract_variable = { which = qol_custom_navy_cap value = 500 }
+		if = {
+			limit = { check_variable = { which = qol_custom_navy_cap value < 0 } }
+			set_variable = { which = qol_custom_navy_cap value = 0 }
+		}
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+	option = {
+		name = "auto_qol_navy_cap.sub_1000"
+		subtract_variable = { which = qol_custom_navy_cap value = 1000 }
+		if = {
+			limit = { check_variable = { which = qol_custom_navy_cap value < 0 } }
+			set_variable = { which = qol_custom_navy_cap value = 0 }
+		}
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+	option = {
+		name = "auto_qol_navy_cap.sub_5000"
+		subtract_variable = { which = qol_custom_navy_cap value = 5000 }
+		if = {
+			limit = { check_variable = { which = qol_custom_navy_cap value < 0 } }
+			set_variable = { which = qol_custom_navy_cap value = 0 }
+		}
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+
+	# 清零
+	option = {
+		name = "auto_qol_navy_cap.reset"
+		set_variable = { which = qol_custom_navy_cap value = 0 }
+		auto_qol_reapply_navy_cap = yes
+		country_event = { id = auto_qol_navy_cap_menu.1 }
+	}
+
+	# 返回舰队控制台
+	option = {
+		name = "auto_qol_navy_cap.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+}
+
+# ========================================================
+# 指挥上限调节子菜单
+# ========================================================
+country_event = {
+	id = auto_qol_cmd_limit_menu.1
+	title = "auto_qol_cmd_limit_menu.1.name"
+	desc = "auto_qol_cmd_limit_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_cmd_limit } }
+			set_variable = { which = qol_custom_cmd_limit value = 0 }
+		}
+	}
+
+	# 快速增加选项
+	option = {
+		name = "auto_qol_cmd_limit.add_20"
+		change_variable = { which = qol_custom_cmd_limit value = 20 }
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+	option = {
+		name = "auto_qol_cmd_limit.add_50"
+		change_variable = { which = qol_custom_cmd_limit value = 50 }
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+	option = {
+		name = "auto_qol_cmd_limit.add_100"
+		change_variable = { which = qol_custom_cmd_limit value = 100 }
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+	option = {
+		name = "auto_qol_cmd_limit.add_200"
+		change_variable = { which = qol_custom_cmd_limit value = 200 }
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+	option = {
+		name = "auto_qol_cmd_limit.add_500"
+		change_variable = { which = qol_custom_cmd_limit value = 500 }
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+
+	# 快速扣减选项
+	option = {
+		name = "auto_qol_cmd_limit.sub_20"
+		subtract_variable = { which = qol_custom_cmd_limit value = 20 }
+		if = {
+			limit = { check_variable = { which = qol_custom_cmd_limit value < 0 } }
+			set_variable = { which = qol_custom_cmd_limit value = 0 }
+		}
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+	option = {
+		name = "auto_qol_cmd_limit.sub_50"
+		subtract_variable = { which = qol_custom_cmd_limit value = 50 }
+		if = {
+			limit = { check_variable = { which = qol_custom_cmd_limit value < 0 } }
+			set_variable = { which = qol_custom_cmd_limit value = 0 }
+		}
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+	option = {
+		name = "auto_qol_cmd_limit.sub_100"
+		subtract_variable = { which = qol_custom_cmd_limit value = 100 }
+		if = {
+			limit = { check_variable = { which = qol_custom_cmd_limit value < 0 } }
+			set_variable = { which = qol_custom_cmd_limit value = 0 }
+		}
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+
+	# 清零
+	option = {
+		name = "auto_qol_cmd_limit.reset"
+		set_variable = { which = qol_custom_cmd_limit value = 0 }
+		auto_qol_reapply_cmd_limit = yes
+		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+
+	# 返回舰队控制台
+	option = {
+		name = "auto_qol_cmd_limit.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+}

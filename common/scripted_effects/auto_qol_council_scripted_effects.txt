@@ -1,0 +1,335 @@
+# 一次性核心内阁底座迁移/修复，避免每月重复扩槽或重复挂底座
+auto_qol_clear_council_candidate_flags = {
+	every_owned_leader = {
+		remove_leader_flag = auto_qol_cand_flag_1
+		remove_leader_flag = auto_qol_cand_flag_2
+		remove_leader_flag = auto_qol_cand_flag_3
+		remove_leader_flag = auto_qol_cand_flag_4
+	}
+}
+
+auto_qol_repair_core_council_once = {
+	if = {
+		limit = {
+			is_ai = no
+			NOT = { has_country_flag = auto_qol_core_council_repaired }
+		}
+		set_country_flag = auto_qol_core_council_repaired
+		if = {
+			limit = { is_gestalt = no is_nomadic = yes }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_defense_nomadic } has_councilor = { COUNCILOR = councilor_defense_nomadic } } set_country_flag = auto_qol_core_pos_defense_nomadic }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_research_nomadic } has_councilor = { COUNCILOR = councilor_research_nomadic } } set_country_flag = auto_qol_core_pos_research_nomadic }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_state_nomadic } has_councilor = { COUNCILOR = councilor_state_nomadic } } set_country_flag = auto_qol_core_pos_state_nomadic }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_defense_nomadic } } set_country_flag = auto_qol_core_pos_defense_nomadic unlock_council_slots = 1 set_council_position_to_council = councilor_defense_nomadic }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_research_nomadic } } set_country_flag = auto_qol_core_pos_research_nomadic unlock_council_slots = 1 set_council_position_to_council = councilor_research_nomadic }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_state_nomadic } } set_country_flag = auto_qol_core_pos_state_nomadic unlock_council_slots = 1 set_council_position_to_council = councilor_state_nomadic }
+		}
+		if = {
+			limit = { is_gestalt = no is_nomadic = no }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_defense } has_councilor = { COUNCILOR = councilor_defense } } set_country_flag = auto_qol_core_pos_defense }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_research } has_councilor = { COUNCILOR = councilor_research } } set_country_flag = auto_qol_core_pos_research }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_state } has_councilor = { COUNCILOR = councilor_state } } set_country_flag = auto_qol_core_pos_state }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_defense } } set_country_flag = auto_qol_core_pos_defense unlock_council_slots = 1 set_council_position_to_council = councilor_defense }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_research } } set_country_flag = auto_qol_core_pos_research unlock_council_slots = 1 set_council_position_to_council = councilor_research }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_state } } set_country_flag = auto_qol_core_pos_state unlock_council_slots = 1 set_council_position_to_council = councilor_state }
+		}
+		if = {
+			limit = { is_gestalt = yes }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_growth } has_councilor = { COUNCILOR = councilor_gestalt_growth } } set_country_flag = auto_qol_core_pos_gestalt_growth }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_cognitive } has_councilor = { COUNCILOR = councilor_gestalt_cognitive } } set_country_flag = auto_qol_core_pos_gestalt_cognitive }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_legion } has_councilor = { COUNCILOR = councilor_gestalt_legion } } set_country_flag = auto_qol_core_pos_gestalt_legion }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_regulatory } has_councilor = { COUNCILOR = councilor_gestalt_regulatory } } set_country_flag = auto_qol_core_pos_gestalt_regulatory }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_growth } } set_country_flag = auto_qol_core_pos_gestalt_growth unlock_council_slots = 1 set_council_position_to_council = councilor_gestalt_growth }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_cognitive } } set_country_flag = auto_qol_core_pos_gestalt_cognitive unlock_council_slots = 1 set_council_position_to_council = councilor_gestalt_cognitive }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_legion } } set_country_flag = auto_qol_core_pos_gestalt_legion unlock_council_slots = 1 set_council_position_to_council = councilor_gestalt_legion }
+			if = { limit = { NOT = { has_country_flag = auto_qol_core_pos_gestalt_regulatory } } set_country_flag = auto_qol_core_pos_gestalt_regulatory unlock_council_slots = 1 set_council_position_to_council = councilor_gestalt_regulatory }
+		}
+	}
+}
+
+# 自动清空所有内阁席位选定标志
+clr_all_council_selection_flags = {
+	clr_country_flag = council_sel_councilor_research
+	clr_country_flag = council_sel_councilor_defense
+	clr_country_flag = council_sel_councilor_state
+	clr_country_flag = council_sel_councilor_agrarian_idyll
+	clr_country_flag = council_sel_councilor_anglers
+	clr_country_flag = council_sel_councilor_machine_anglers
+	clr_country_flag = council_sel_councilor_aristocratic_elite
+	clr_country_flag = council_sel_councilor_ascensionists
+	clr_country_flag = council_sel_councilor_barbaric_despoilers
+	clr_country_flag = council_sel_councilor_beacon_of_liberty
+	clr_country_flag = council_sel_councilor_byzantine_bureaucracy
+	clr_country_flag = council_sel_councilor_catalytic_processing
+	clr_country_flag = council_sel_councilor_citizen_service
+	clr_country_flag = council_sel_councilor_corporate_dominion
+	clr_country_flag = council_sel_councilor_corvee_system
+	clr_country_flag = council_sel_councilor_crafters
+	clr_country_flag = council_sel_councilor_crusader_spirit
+	clr_country_flag = council_sel_councilor_cutthroat_politics
+	clr_country_flag = council_sel_councilor_death_cult
+	clr_country_flag = council_sel_councilor_diplomatic_corps
+	clr_country_flag = council_sel_councilor_distinguished_admiralty
+	clr_country_flag = council_sel_councilor_eager_explorers
+	clr_country_flag = council_sel_councilor_efficient_bureaucracy
+	clr_country_flag = council_sel_councilor_environmentalist
+	clr_country_flag = council_sel_councilor_exalted_priesthood
+	clr_country_flag = council_sel_councilor_fanatic_purifiers
+	clr_country_flag = council_sel_councilor_feudal_realm
+	clr_country_flag = council_sel_councilor_free_haven
+	clr_country_flag = council_sel_councilor_functional_architecture
+	clr_country_flag = council_sel_councilor_idealistic_foundation
+	clr_country_flag = council_sel_councilor_idyllic_bloom
+	clr_country_flag = council_sel_councilor_imperial_cult
+	clr_country_flag = council_sel_councilor_inwards_perfection
+	clr_country_flag = council_sel_councilor_memorialist
+	clr_country_flag = council_sel_councilor_memory_vaults
+	clr_country_flag = council_sel_councilor_merchant_guilds
+	clr_country_flag = council_sel_councilor_meritocracy
+	clr_country_flag = council_sel_councilor_mining_guilds
+	clr_country_flag = council_sel_councilor_nationalistic_zeal
+	clr_country_flag = council_sel_councilor_parliamentary_system
+	clr_country_flag = council_sel_councilor_philosopher_king
+	clr_country_flag = council_sel_councilor_pleasure_seekers
+	clr_country_flag = council_sel_councilor_police_state
+	clr_country_flag = council_sel_councilor_pompous_purists
+	clr_country_flag = council_sel_councilor_reanimated_armies
+	clr_country_flag = council_sel_councilor_relentless_industrialists
+	clr_country_flag = council_sel_councilor_scavengers
+	clr_country_flag = council_sel_councilor_shadow_council
+	clr_country_flag = council_sel_councilor_shared_burden
+	clr_country_flag = council_sel_councilor_slaver_guilds
+	clr_country_flag = council_sel_councilor_technocracy
+	clr_country_flag = council_sel_councilor_toxic_baths
+	clr_country_flag = council_sel_councilor_toxic_baths_individual_machine
+	clr_country_flag = council_sel_councilor_corporate_toxic_baths_individual_machine
+	clr_country_flag = council_sel_councilor_warrior_culture
+	clr_country_flag = council_sel_councilor_heroic_tales
+	clr_country_flag = council_sel_councilor_dystopian_society
+	clr_country_flag = council_sel_councilor_selective_kinship
+	clr_country_flag = council_sel_councilor_civic_guided_sapience
+	clr_country_flag = council_sel_councilor_head_flight_operations
+	clr_country_flag = council_sel_councilor_memory_vault_corporate
+	clr_country_flag = council_sel_councilor_crusader_spirit_corporate
+	clr_country_flag = council_sel_councilor_task_delegation_corporate
+	clr_country_flag = council_sel_councilor_private_healthcare_corporate
+	clr_country_flag = council_sel_councilor_brand_loyalty
+	clr_country_flag = council_sel_councilor_corporate_anglers
+	clr_country_flag = council_sel_councilor_corporate_machine_anglers
+	clr_country_flag = council_sel_councilor_corporate_ascensionists
+	clr_country_flag = council_sel_councilor_corporate_catalytic_processing
+	clr_country_flag = council_sel_councilor_corporate_crafters
+	clr_country_flag = council_sel_councilor_corporate_hedonism
+	clr_country_flag = council_sel_councilor_corporate_scavengers
+	clr_country_flag = council_sel_councilor_corporate_relentless_industrialists
+	clr_country_flag = council_sel_councilor_corporate_toxic_baths
+	clr_country_flag = council_sel_councilor_criminal_heritage
+	clr_country_flag = council_sel_councilor_franchising
+	clr_country_flag = council_sel_councilor_death_cult_corporate
+	clr_country_flag = council_sel_councilor_free_traders
+	clr_country_flag = council_sel_councilor_gospel_of_the_masses
+	clr_country_flag = council_sel_councilor_indentured_assets
+	clr_country_flag = council_sel_councilor_media_conglomerate
+	clr_country_flag = council_sel_councilor_naval_contractors
+	clr_country_flag = council_sel_councilor_permanent_employment
+	clr_country_flag = council_sel_councilor_private_military_companies
+	clr_country_flag = council_sel_councilor_private_prospectors
+	clr_country_flag = council_sel_councilor_privatized_exploration
+	clr_country_flag = council_sel_councilor_public_relations_specialists
+	clr_country_flag = council_sel_councilor_ruthless_competition
+	clr_country_flag = council_sel_councilor_trading_posts
+	clr_country_flag = council_sel_councilor_worker_coop
+	clr_country_flag = council_sel_councilor_civic_guided_sapience_corperate
+	clr_country_flag = council_sel_councilor_flight_director
+	clr_country_flag = council_sel_councilor_psionic_sovereign
+	clr_country_flag = council_sel_councilor_galactic_sovereign
+	clr_country_flag = council_sel_councilor_galactic_sovereign_megacorp
+	clr_country_flag = council_sel_councilor_diadochi
+	clr_country_flag = council_sel_councilor_great_khans_legacy
+	clr_country_flag = council_sel_councilor_revanchist_fervor
+	clr_country_flag = council_sel_councilor_ancient_caches_of_technology
+	clr_country_flag = council_sel_councilor_hyperspace_specialty
+	clr_country_flag = council_sel_councilor_dimensional_worship
+	clr_country_flag = council_sel_councilor_dark_consortium
+	clr_country_flag = council_sel_councilor_sovereign_guardianship
+	clr_country_flag = council_sel_councilor_hyperspace_specialty_corporate
+	clr_country_flag = council_sel_councilor_dimensional_worship_corporate
+	clr_country_flag = council_sel_councilor_dark_consortium_corporate
+	clr_country_flag = council_sel_councilor_sovereign_guardianship_corporate
+	clr_country_flag = council_sel_councilor_augmentation_bazaars
+	clr_country_flag = council_sel_councilor_natural_design
+	clr_country_flag = council_sel_councilor_individual_machine_predictive_analysis
+	clr_country_flag = council_sel_councilor_individual_machine_warbots
+	clr_country_flag = council_sel_councilor_individual_machine_replication
+	clr_country_flag = council_sel_councilor_astrometeorology
+	clr_country_flag = council_sel_councilor_astrometeorology_megacorp
+	clr_country_flag = council_sel_councilor_storm_callers
+	clr_country_flag = council_sel_councilor_storm_callers_megacorp
+	clr_country_flag = council_sel_councilor_environmental_architects
+	clr_country_flag = council_sel_councilor_environmental_architects_megacorp
+	clr_country_flag = council_sel_councilor_galactic_curators
+	clr_country_flag = council_sel_councilor_corporate_galactic_curators
+	clr_country_flag = council_sel_councilor_beastmasters
+	clr_country_flag = council_sel_councilor_corporate_beastmasters
+	clr_country_flag = council_sel_councilor_genetic_identification
+	clr_country_flag = council_sel_councilor_corporate_genetic_identification
+	clr_country_flag = council_sel_councilor_crowdsourcing
+	clr_country_flag = council_sel_councilor_corporate_crowdsourcing
+	clr_country_flag = council_sel_councilor_head_of_education
+	clr_country_flag = council_sel_councilor_infernal_scorcher
+	clr_country_flag = council_sel_councilor_thermal_engineer
+	clr_country_flag = council_sel_councilor_corporate_thermal_engineer
+	clr_country_flag = council_sel_councilor_pyromanic_priest
+	clr_country_flag = council_sel_councilor_imbuement_officer
+	clr_country_flag = council_sel_councilor_corporate_imbuement_officer
+	clr_country_flag = council_sel_councilor_energy_curator
+	clr_country_flag = council_sel_councilor_chief_medium
+	clr_country_flag = council_sel_councilor_experimentation_overseer
+	clr_country_flag = council_sel_councilor_secret_societies
+	clr_country_flag = council_sel_councilor_chosen
+	clr_country_flag = council_sel_councilor_grand_vessel
+	clr_country_flag = council_sel_councilor_executive_thrall_manager
+	clr_country_flag = council_sel_councilor_secret_societies_corporate
+	clr_country_flag = council_sel_councilor_executive_astrologist
+	clr_country_flag = council_sel_councilor_test_marketer
+	clr_country_flag = council_sel_councilor_chosen_corporate
+	clr_country_flag = council_sel_councilor_executive_vessel
+	clr_country_flag = council_sel_councilor_waystation_bosun
+	clr_country_flag = council_sel_councilor_deep_sleep
+	clr_country_flag = council_sel_councilor_master_gunner
+	clr_country_flag = council_sel_councilor_star_seekers
+	clr_country_flag = council_sel_councilor_paymaster
+	clr_country_flag = council_sel_councilor_waystation_quota_auditor
+	clr_country_flag = council_sel_councilor_corporate_deep_sleep
+	clr_country_flag = council_sel_councilor_asset_security_manager
+	clr_country_flag = council_sel_councilor_corporate_star_seekers
+	clr_country_flag = council_sel_councilor_wg_ella
+	clr_country_flag = council_sel_councilor_wg_victoria
+	clr_country_flag = council_sel_councilor_wg_aurora
+	clr_country_flag = council_sel_councilor_wg_elves
+	clr_country_flag = council_sel_councilor_wg_sunflower
+	clr_country_flag = council_sel_councilor_wg_knight
+	clr_country_flag = council_sel_councilor_wsg_super_harbor
+	clr_country_flag = council_sel_councilor_sh_yamato
+	clr_country_flag = council_sel_councilor_sh_yaosai
+	clr_country_flag = council_sel_councilor_sh_eat_and_drink
+	clr_country_flag = council_sel_councilor_sh_BOSSAP
+	clr_country_flag = council_sel_councilor_sh_CM
+	clr_country_flag = council_sel_councilor_sh_criminal_syndicate
+	clr_country_flag = council_sel_councilor_sh_AP_NET
+	clr_country_flag = council_sel_councilor_uf_1
+	clr_country_flag = council_sel_councilor_uf_2
+	clr_country_flag = council_sel_councilor_uf_3
+	clr_country_flag = council_sel_councilor_uf_4
+	clr_country_flag = council_sel_councilor_uf_5
+	clr_country_flag = council_sel_councilor_wg_war_apostles
+	clr_country_flag = council_sel_councilor_wg_war_apostles_2
+	clr_country_flag = council_sel_councilor_systematic_cultivation
+	clr_country_flag = council_sel_councilor_Hport
+	clr_country_flag = council_sel_councilor_sage_worshipping
+	clr_country_flag = council_sel_councilor_pure_white_eden
+	clr_country_flag = council_sel_councilor_jihad_inherit
+	clr_country_flag = council_sel_councilor_glorious_aristocracy
+	clr_country_flag = council_sel_councilor_pure_racial
+	clr_country_flag = council_sel_councilor_platonic_love
+	clr_country_flag = council_sel_councilor_punish_for_sodom
+	clr_country_flag = council_sel_councilor_holy_tree
+	clr_country_flag = council_sel_councilor_god_loves_people
+	clr_country_flag = council_sel_councilor_inn_galactic_sovereign
+	clr_country_flag = council_sel_councilor_holylight_convict
+	clr_country_flag = council_sel_councilor_loving_virgin
+	clr_country_flag = council_sel_councilor_holylight_usual
+	clr_country_flag = council_sel_councilor_help_weak
+	clr_country_flag = council_sel_councilor_joy_death
+	clr_country_flag = council_sel_councilor_abandoned_people
+	clr_country_flag = council_sel_councilor_gentleness_in_dark
+	clr_country_flag = council_sel_councilor_flirtatious_regime
+	clr_country_flag = council_sel_councilor_semen_squeezing
+	clr_country_flag = council_sel_councilor_sex_freedom
+	clr_country_flag = council_sel_councilor_sex_everything
+	clr_country_flag = council_sel_councilor_fanatic_feminism
+	clr_country_flag = council_sel_councilor_Religion
+	clr_country_flag = council_sel_councilor_collective_climax
+	clr_country_flag = council_sel_councilor_pleasure_neural_network
+	clr_country_flag = council_sel_councilor_seedbed_reproduction
+	clr_country_flag = council_sel_councilor_gluttonous_feast
+	clr_country_flag = council_sel_councilor_lust_duty
+	clr_country_flag = council_sel_councilor_love_juice_squeeze
+	clr_country_flag = council_sel_councilor_group_sex
+	clr_country_flag = council_sel_councilor_garden_world
+	clr_country_flag = council_sel_councilor_brain_remodeling
+	clr_country_flag = council_sel_councilor_master
+	clr_country_flag = council_sel_councilor_slave_tradition
+	clr_country_flag = council_sel_councilor_appease_regulations
+	clr_country_flag = council_sel_councilor_lust_guro
+	clr_country_flag = council_sel_councilor_all_slave
+	clr_country_flag = council_sel_councilor_mechanical_intercourse
+	clr_country_flag = council_sel_councilor_crazy_brain
+	clr_country_flag = council_sel_councilor_penis_craving
+	clr_country_flag = council_sel_councilor_sacrifice_lustgod
+	clr_country_flag = council_sel_councilor_sex_baby
+	clr_country_flag = council_sel_councilor_bereavement
+	clr_country_flag = council_sel_councilor_abyssal_ascendancy
+	clr_country_flag = council_sel_councilor_pregnant_prostitute
+	clr_country_flag = council_sel_councilor_suc_galactic_sovereign
+	clr_country_flag = council_sel_councilor_origin_female_in_shadow
+	clr_country_flag = council_sel_councilor_parasite_society
+	clr_country_flag = council_sel_councilor_parasite_ascendancy
+	clr_country_flag = council_sel_councilor_parasite_expansion
+	clr_country_flag = council_sel_councilor_parasite_camouflage
+	clr_country_flag = council_sel_councilor_parasite_conditioning_specialization
+	clr_country_flag = council_sel_councilor_parasite_embrace_of_pleasure
+	clr_country_flag = council_sel_councilor_parasite_uterus_database
+	clr_country_flag = council_sel_councilor_parasite_symbiotic_hotbed
+	clr_country_flag = council_sel_councilor_parasite_predator
+	clr_country_flag = council_sel_councilor_parasite_and_nature
+	clr_country_flag = council_sel_councilor_parasite_rise_and_all
+	clr_country_flag = council_sel_councilor_parasite_dark_forest
+	clr_country_flag = council_sel_councilor_parasite_sword_and_sorcery
+	clr_country_flag = council_sel_councilor_parasite_approaching_science
+	clr_country_flag = council_sel_councilor_celestial_military
+	clr_country_flag = council_sel_councilor_time_honored
+	clr_country_flag = council_sel_councilor_herta_1
+	clr_country_flag = council_sel_councilor_herta_2
+	clr_country_flag = council_sel_councilor_luosi_1
+	clr_country_flag = council_sel_councilor_luosi_2
+	clr_country_flag = council_sel_councilor_StellaronHunter_1
+	clr_country_flag = council_sel_councilor_StellaronHunter_2
+	clr_country_flag = council_sel_councilor_marketing_expansion_department
+	clr_country_flag = council_sel_councilor_business_consolidation_department
+	clr_country_flag = council_sel_councilor_strategic_investment_department
+	clr_country_flag = council_sel_councilor_building_materials_logistics_department
+	clr_country_flag = council_sel_councilor_techniques_developing_department
+	clr_country_flag = council_sel_councilor_human_resources_incentive_department
+	clr_country_flag = council_sel_councilor_traditional_project_department
+	clr_country_flag = council_sel_councilor_publicity_Propaganda_department
+	clr_country_flag = council_sel_councilor_loading_unloading_department
+	clr_country_flag = council_sel_councilor_confidential_code_breaking_department
+	clr_country_flag = council_sel_councilor_civic_erxiangleyuan_1
+	clr_country_flag = council_sel_councilor_civic_erxiangleyuan_2
+	clr_country_flag = council_sel_councilor_oracle_destruction
+	clr_country_flag = council_sel_councilor_oracle_harmony
+	clr_country_flag = council_sel_councilor_oracle_abundance
+	clr_country_flag = council_sel_councilor_oracle_hunt
+	clr_country_flag = council_sel_councilor_oracle_preservation
+	clr_country_flag = council_sel_councilor_oracle_nihility
+	clr_country_flag = council_sel_councilor_oracle_jiyi
+	clr_country_flag = council_sel_councilor_oracle_huanyu
+	clr_country_flag = council_sel_councilor_oracle_fanyu
+	clr_country_flag = council_sel_councilor_gongzao_shi
+	clr_country_flag = council_sel_councilor_yunqi_commander
+	clr_country_flag = council_sel_councilor_shiwang_si
+	clr_country_flag = council_sel_councilor_fangshi_commander
+	clr_country_flag = council_sel_councilor_tiewei
+	clr_country_flag = council_sel_councilor_yaliluo_tech
+	clr_country_flag = council_sel_councilor_SH_yihui
+	clr_country_flag = council_sel_councilor_SH_ship
+	clr_country_flag = council_sel_councilor_SH_tech
+	clr_country_flag = council_sel_councilor_ai_tianming
+	clr_country_flag = council_sel_councilor_play_leader_lost
+	clr_country_flag = council_sel_councilor_mem_subterranean
+	clr_country_flag = council_sel_councilor_mem_subterranean_machine
+	clr_country_flag = council_sel_councilor_mem_subterranean_megacorp
+	clr_country_flag = council_sel_councilor_mem_subterranean_megacorp_machine
+	clr_country_flag = council_sel_councilor_teachings_of_mem_vir
+}

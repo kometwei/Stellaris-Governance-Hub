@@ -271,6 +271,108 @@ def get_loc_dict(active_mod_dirs):
 
     return loc_dict
 
+def collect_scripted_variables(active_mod_dirs):
+    variables = {}
+    roots = [GAME_INSTALL_DIR / "common" / "scripted_variables"]
+    roots.extend(ad / "common" / "scripted_variables" for ad in active_mod_dirs)
+
+    for root in roots:
+        if not root.exists():
+            continue
+        for path in root.rglob("*.txt"):
+            try:
+                content = strip_comments(path.read_text(encoding="utf-8", errors="ignore"))
+            except Exception:
+                continue
+            for key, value in re.findall(
+                r'(?m)^\s*(@[a-zA-Z0-9_]+)\s*=\s*(-?\d+(?:\.\d+)?)\s*$',
+                content,
+            ):
+                variables[key] = value
+    return variables
+
+def get_modifier_loc_name(modifier_key, loc_dict):
+    aliases = {
+        "all_technology_research_speed": "MOD_COUNTRY_ALL_TECH_RESEARCH_SPEED",
+        "commander_exp_gain": "MOD_LEADER_COMMANDER_EXP_GAIN",
+        "councilor_exp_gain": "MOD_LEADER_COUNCILOR_EXP_GAIN",
+        "edict_length_mult": "MOD_COUNTRY_EDICT_LENGTH_MULT",
+        "envoys_add": "MOD_COUNTRY_ENVOYS_ADD",
+        "species_leader_exp_gain": "MOD_LEADER_SPECIES_EXP_GAIN",
+    }
+    candidates = [
+        aliases.get(modifier_key, ""),
+        modifier_key,
+        modifier_key.lower(),
+        f"MOD_{modifier_key.upper()}",
+        f"mod_{modifier_key.lower()}",
+    ]
+    for suffix in ("_mult", "_add"):
+        if modifier_key.endswith(suffix):
+            stem = modifier_key[:-len(suffix)]
+            candidates.extend((
+                stem,
+                stem.lower(),
+                f"MOD_{stem.upper()}",
+                f"mod_{stem.lower()}",
+            ))
+    for candidate in candidates:
+        if candidate in loc_dict:
+            return loc_dict[candidate]
+    return modifier_key.replace("_", " ")
+
+def is_percent_modifier(modifier_key):
+    if modifier_key.endswith(("_mult", "_factor")):
+        return True
+    return modifier_key.endswith((
+        "_speed",
+        "_damage",
+        "_happiness",
+        "_political_power",
+        "_tolerance",
+        "_attraction",
+        "_attractiveness",
+        "_fee",
+        "_growth",
+        "_exp_gain",
+        "_death",
+    ))
+
+def format_modifier_value(modifier_key, raw_value, scripted_variables):
+    resolved = scripted_variables.get(raw_value, raw_value)
+    try:
+        number = float(resolved)
+    except (TypeError, ValueError):
+        return str(resolved)
+
+    if is_percent_modifier(modifier_key):
+        number *= 100
+        suffix = "%"
+    else:
+        suffix = ""
+
+    if abs(number - round(number)) < 1e-9:
+        number_text = str(int(round(number)))
+    else:
+        number_text = f"{number:.3f}".rstrip("0").rstrip(".")
+    sign = "+" if number > 0 else ""
+    return f"{sign}{number_text}{suffix}"
+
+def build_councilor_effect_desc(modifier_block, loc_dict, scripted_variables):
+    effects = re.findall(
+        r'(?m)^\s*([a-zA-Z0-9_]+)\s*=\s*([^\s#}]+)',
+        modifier_block or "",
+    )
+    if not effects:
+        return "§L该席位没有每技能等级的帝国修正。§!"
+
+    lines = ["每§Y技能等级§!的£empire£ §Y帝国§!§E效果§!："]
+    for modifier_key, raw_value in effects:
+        name = get_modifier_loc_name(modifier_key, loc_dict)
+        value = format_modifier_value(modifier_key, raw_value, scripted_variables)
+        lines.append(f"  {name}：§Y{value}§!")
+    return "\\n".join(lines)
+
 def collect_defined_symbols(active_mod_dirs):
     defined = set()
     scan_roots = [
@@ -332,6 +434,7 @@ def collect_ruler_position_authorities(active_mod_dirs, loc_dict):
 def scan_all_positions(active_mod_dirs, loc_dict):
     raw_positions = []
     ruler_authorities = collect_ruler_position_authorities(active_mod_dirs, loc_dict)
+    scripted_variables = collect_scripted_variables(active_mod_dirs)
 
     VANILLA_RULERS = {
         "councilor_name_key",
@@ -398,6 +501,7 @@ def scan_all_positions(active_mod_dirs, loc_dict):
             civic = civic_m.group(1) if civic_m else None
 
             possible = extract_block_value(body, "possible")
+            modifier = extract_block_value(body, "modifier") or ""
 
             title = loc_dict.get(key, key)
             if title == key or (title.startswith("$") and title.endswith("$")):
@@ -410,6 +514,9 @@ def scan_all_positions(active_mod_dirs, loc_dict):
                 "civic": civic,
                 "ruler_authorities": ruler_authorities.get(key, []),
                 "possible": possible,
+                "effect_desc": build_councilor_effect_desc(
+                    modifier, loc_dict, scripted_variables
+                ),
                 "title": title,
                 "civic_title": civic_title,
                 "file": path.name,
@@ -534,17 +641,9 @@ def organize_categories(positions):
         p_copy["id"] = event_id_counter
         event_id_counter += 1
 
-        if p.get("more_council_condition"):
-            p_copy["desc"] = "沿用《更多内阁》的席位显示条件"
-        elif p.get("civic_title"):
-            p_copy["desc"] = f"前置国民理念：【{p['civic_title']}】"
-        elif p.get("ruler_authorities"):
-            auth_names = " / ".join(a["title"] for a in p["ruler_authorities"])
-            p_copy["desc"] = f"前置政体：【{auth_names}】"
-        elif p.get("possible"):
-            p_copy["desc"] = "前置特殊解锁条件"
-        else:
-            p_copy["desc"] = "通用专属内阁席位"
+        p_copy["desc"] = p.get(
+            "effect_desc", "§L该席位没有每技能等级的帝国修正。§!"
+        )
 
         if classes == ["scientist"]:
             cat_scientist["positions"].append(p_copy)

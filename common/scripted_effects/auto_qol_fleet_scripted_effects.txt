@@ -33,3 +33,29 @@ auto_qol_reapply_cmd_limit = {
 		}
 	}
 }
+
+# 替换旧加成，清零时只移除本模组的自定义修正
+auto_qol_reapply_starbase_module_speed = {
+	remove_modifier = qol_custom_starbase_module_speed_modifier
+	if = {
+		limit = { check_variable = { which = qol_custom_starbase_module_speed value > 0 } }
+		add_modifier = {
+			modifier = qol_custom_starbase_module_speed_modifier
+			days = -1
+			multiplier = qol_custom_starbase_module_speed
+		}
+	}
+}
+
+# 替换旧加成，清零时只移除本模组的自定义修正
+auto_qol_reapply_defense_platform_speed = {
+	remove_modifier = qol_custom_defense_platform_speed_modifier
+	if = {
+		limit = { check_variable = { which = qol_custom_defense_platform_speed value > 0 } }
+		add_modifier = {
+			modifier = qol_custom_defense_platform_speed_modifier
+			days = -1
+			multiplier = qol_custom_defense_platform_speed
+		}
+	}
+}

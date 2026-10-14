@@ -336,8 +336,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research_nomadic }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research_nomadic
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_research_nomadic
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_research_nomadic } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic }
+				}
 				set_country_flag = auto_qol_slot_councilor_research_nomadic
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research_nomadic
@@ -369,8 +377,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research_nomadic }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research_nomadic
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_research_nomadic
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_research_nomadic } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic }
+				}
 				set_country_flag = auto_qol_slot_councilor_research_nomadic
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research_nomadic
@@ -402,8 +418,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research_nomadic }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research_nomadic
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_research_nomadic
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_research_nomadic } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic }
+				}
 				set_country_flag = auto_qol_slot_councilor_research_nomadic
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research_nomadic
@@ -435,8 +459,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research_nomadic }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research_nomadic
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_research_nomadic
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_research_nomadic } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research_nomadic }
+				}
 				set_country_flag = auto_qol_slot_councilor_research_nomadic
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research_nomadic
@@ -559,8 +591,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_research
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_research } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research }
+				}
 				set_country_flag = auto_qol_slot_councilor_research
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research
@@ -592,8 +632,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_research
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_research } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research }
+				}
 				set_country_flag = auto_qol_slot_councilor_research
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research
@@ -625,8 +673,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_research
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_research } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research }
+				}
 				set_country_flag = auto_qol_slot_councilor_research
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research
@@ -658,8 +714,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_research }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_research
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_research
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_research } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_research } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_research }
+				}
 				set_country_flag = auto_qol_slot_councilor_research
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_research
@@ -782,8 +846,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_catalytic_processing
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_catalytic_processing
@@ -815,8 +887,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_catalytic_processing
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_catalytic_processing
@@ -848,8 +928,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_catalytic_processing
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_catalytic_processing
@@ -881,8 +969,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_catalytic_processing
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_catalytic_processing
@@ -1005,8 +1101,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_eager_explorers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_eager_explorers
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_eager_explorers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_eager_explorers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers }
+				}
 				set_country_flag = auto_qol_slot_councilor_eager_explorers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_eager_explorers
@@ -1038,8 +1142,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_eager_explorers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_eager_explorers
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_eager_explorers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_eager_explorers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers }
+				}
 				set_country_flag = auto_qol_slot_councilor_eager_explorers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_eager_explorers
@@ -1071,8 +1183,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_eager_explorers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_eager_explorers
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_eager_explorers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_eager_explorers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers }
+				}
 				set_country_flag = auto_qol_slot_councilor_eager_explorers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_eager_explorers
@@ -1104,8 +1224,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_eager_explorers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_eager_explorers
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_eager_explorers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_eager_explorers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_eager_explorers }
+				}
 				set_country_flag = auto_qol_slot_councilor_eager_explorers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_eager_explorers
@@ -1228,8 +1356,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmentalist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmentalist
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_environmentalist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_environmentalist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmentalist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmentalist
@@ -1261,8 +1397,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmentalist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmentalist
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_environmentalist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_environmentalist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmentalist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmentalist
@@ -1294,8 +1438,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmentalist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmentalist
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_environmentalist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_environmentalist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmentalist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmentalist
@@ -1327,8 +1479,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmentalist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmentalist
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_environmentalist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_environmentalist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmentalist }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmentalist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmentalist
@@ -1451,8 +1611,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_idyllic_bloom }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_idyllic_bloom
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_idyllic_bloom
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_idyllic_bloom } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom }
+				}
 				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_idyllic_bloom
@@ -1484,8 +1652,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_idyllic_bloom }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_idyllic_bloom
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_idyllic_bloom
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_idyllic_bloom } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom }
+				}
 				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_idyllic_bloom
@@ -1517,8 +1693,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_idyllic_bloom }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_idyllic_bloom
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_idyllic_bloom
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_idyllic_bloom } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom }
+				}
 				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_idyllic_bloom
@@ -1550,8 +1734,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_idyllic_bloom }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_idyllic_bloom
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_idyllic_bloom
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_idyllic_bloom } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_idyllic_bloom }
+				}
 				set_country_flag = auto_qol_slot_councilor_idyllic_bloom
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_idyllic_bloom
@@ -1674,8 +1866,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vaults }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vaults
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_memory_vaults
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_memory_vaults } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vaults
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vaults
@@ -1707,8 +1907,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vaults }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vaults
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_memory_vaults
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_memory_vaults } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vaults
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vaults
@@ -1740,8 +1948,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vaults }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vaults
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_memory_vaults
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_memory_vaults } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vaults
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vaults
@@ -1773,8 +1989,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vaults }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vaults
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_memory_vaults
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_memory_vaults } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vaults }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vaults
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vaults
@@ -1897,8 +2121,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_technocracy }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_technocracy
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_technocracy
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_technocracy } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_technocracy }
+				}
 				set_country_flag = auto_qol_slot_councilor_technocracy
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_technocracy
@@ -1930,8 +2162,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_technocracy }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_technocracy
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_technocracy
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_technocracy } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_technocracy }
+				}
 				set_country_flag = auto_qol_slot_councilor_technocracy
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_technocracy
@@ -1963,8 +2203,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_technocracy }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_technocracy
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_technocracy
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_technocracy } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_technocracy }
+				}
 				set_country_flag = auto_qol_slot_councilor_technocracy
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_technocracy
@@ -1996,8 +2244,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_technocracy }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_technocracy
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_technocracy
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_technocracy } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_technocracy } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_technocracy }
+				}
 				set_country_flag = auto_qol_slot_councilor_technocracy
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_technocracy
@@ -2120,8 +2376,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vault_corporate }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vault_corporate
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_memory_vault_corporate } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vault_corporate
@@ -2153,8 +2417,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vault_corporate }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vault_corporate
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_memory_vault_corporate } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vault_corporate
@@ -2186,8 +2458,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vault_corporate }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vault_corporate
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_memory_vault_corporate } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vault_corporate
@@ -2219,8 +2499,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_memory_vault_corporate }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_memory_vault_corporate
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_memory_vault_corporate
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_memory_vault_corporate } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_memory_vault_corporate }
+				}
 				set_country_flag = auto_qol_slot_councilor_memory_vault_corporate
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_memory_vault_corporate
@@ -2343,8 +2631,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_catalytic_processing
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_corporate_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_catalytic_processing
@@ -2376,8 +2672,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_catalytic_processing
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_corporate_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_catalytic_processing
@@ -2409,8 +2713,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_catalytic_processing
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_corporate_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_catalytic_processing
@@ -2442,8 +2754,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_catalytic_processing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_catalytic_processing
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_corporate_catalytic_processing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_corporate_catalytic_processing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_catalytic_processing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_catalytic_processing
@@ -2566,8 +2886,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_ruthless_competition }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_ruthless_competition
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_ruthless_competition
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_ruthless_competition } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition }
+				}
 				set_country_flag = auto_qol_slot_councilor_ruthless_competition
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_ruthless_competition
@@ -2599,8 +2927,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_ruthless_competition }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_ruthless_competition
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_ruthless_competition
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_ruthless_competition } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition }
+				}
 				set_country_flag = auto_qol_slot_councilor_ruthless_competition
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_ruthless_competition
@@ -2632,8 +2968,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_ruthless_competition }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_ruthless_competition
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_ruthless_competition
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_ruthless_competition } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition }
+				}
 				set_country_flag = auto_qol_slot_councilor_ruthless_competition
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_ruthless_competition
@@ -2665,8 +3009,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_ruthless_competition }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_ruthless_competition
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_ruthless_competition
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_ruthless_competition } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_ruthless_competition }
+				}
 				set_country_flag = auto_qol_slot_councilor_ruthless_competition
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_ruthless_competition
@@ -2789,8 +3141,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_gestalt_cognitive }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_gestalt_cognitive
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_gestalt_cognitive } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive }
+				}
 				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_gestalt_cognitive
@@ -2822,8 +3182,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_gestalt_cognitive }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_gestalt_cognitive
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_gestalt_cognitive } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive }
+				}
 				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_gestalt_cognitive
@@ -2855,8 +3223,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_gestalt_cognitive }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_gestalt_cognitive
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_gestalt_cognitive } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive }
+				}
 				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_gestalt_cognitive
@@ -2888,8 +3264,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_gestalt_cognitive }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_gestalt_cognitive
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_gestalt_cognitive
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_gestalt_cognitive } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_gestalt_cognitive }
+				}
 				set_country_flag = auto_qol_slot_councilor_gestalt_cognitive
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_gestalt_cognitive
@@ -3014,8 +3398,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_curator_archivist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_curator_archivist
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_curator_archivist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_curator_archivist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist }
+				}
 				set_country_flag = auto_qol_slot_councilor_curator_archivist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_curator_archivist
@@ -3049,8 +3441,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_curator_archivist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_curator_archivist
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_curator_archivist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_curator_archivist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist }
+				}
 				set_country_flag = auto_qol_slot_councilor_curator_archivist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_curator_archivist
@@ -3084,8 +3484,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_curator_archivist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_curator_archivist
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_curator_archivist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_curator_archivist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist }
+				}
 				set_country_flag = auto_qol_slot_councilor_curator_archivist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_curator_archivist
@@ -3119,8 +3527,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_curator_archivist }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_curator_archivist
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_curator_archivist
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_curator_archivist } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_curator_archivist }
+				}
 				set_country_flag = auto_qol_slot_councilor_curator_archivist
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_curator_archivist
@@ -3245,8 +3661,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis }
+				}
 				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_individual_machine_predictive_analysis
@@ -3278,8 +3702,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis }
+				}
 				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_individual_machine_predictive_analysis
@@ -3311,8 +3743,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis }
+				}
 				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_individual_machine_predictive_analysis
@@ -3344,8 +3784,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_individual_machine_predictive_analysis
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_individual_machine_predictive_analysis
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_individual_machine_predictive_analysis } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis }
+				}
 				set_country_flag = auto_qol_slot_councilor_individual_machine_predictive_analysis
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_individual_machine_predictive_analysis
@@ -3468,8 +3916,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_astrometeorology
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_astrometeorology } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology
@@ -3501,8 +3957,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_astrometeorology
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_astrometeorology } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology
@@ -3534,8 +3998,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_astrometeorology
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_astrometeorology } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology
@@ -3567,8 +4039,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_astrometeorology
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_astrometeorology } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology
@@ -3691,8 +4171,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology_megacorp
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_astrometeorology_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology_megacorp
@@ -3724,8 +4212,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology_megacorp
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_astrometeorology_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology_megacorp
@@ -3757,8 +4253,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology_megacorp
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_astrometeorology_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology_megacorp
@@ -3790,8 +4294,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_astrometeorology_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_astrometeorology_megacorp
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_astrometeorology_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_astrometeorology_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_astrometeorology_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_astrometeorology_megacorp
@@ -3914,8 +4426,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_storm_callers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_storm_callers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers
@@ -3947,8 +4467,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_storm_callers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_storm_callers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers
@@ -3980,8 +4508,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_storm_callers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_storm_callers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers
@@ -4013,8 +4549,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_storm_callers
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_storm_callers } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers
@@ -4137,8 +4681,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers_megacorp
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_storm_callers_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers_megacorp
@@ -4170,8 +4722,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers_megacorp
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_storm_callers_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers_megacorp
@@ -4203,8 +4763,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers_megacorp
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_storm_callers_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers_megacorp
@@ -4236,8 +4804,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_storm_callers_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_storm_callers_megacorp
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_storm_callers_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_storm_callers_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_storm_callers_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_storm_callers_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_storm_callers_megacorp
@@ -4360,8 +4936,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_environmental_architects
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_environmental_architects } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects
@@ -4393,8 +4977,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_environmental_architects
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_environmental_architects } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects
@@ -4426,8 +5018,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_environmental_architects
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_environmental_architects } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects
@@ -4459,8 +5059,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_environmental_architects
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_environmental_architects } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects
@@ -4583,8 +5191,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects_megacorp
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_environmental_architects_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects_megacorp
@@ -4616,8 +5232,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects_megacorp
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_environmental_architects_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects_megacorp
@@ -4649,8 +5273,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects_megacorp
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_environmental_architects_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects_megacorp
@@ -4682,8 +5314,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_environmental_architects_megacorp }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_environmental_architects_megacorp
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_environmental_architects_megacorp
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_environmental_architects_megacorp } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp }
+				}
 				set_country_flag = auto_qol_slot_councilor_environmental_architects_megacorp
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_environmental_architects_megacorp
@@ -4806,8 +5446,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_crowdsourcing
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_crowdsourcing
@@ -4839,8 +5487,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_crowdsourcing
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_crowdsourcing
@@ -4872,8 +5528,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_crowdsourcing
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_crowdsourcing
@@ -4905,8 +5569,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_crowdsourcing
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_crowdsourcing
@@ -5029,8 +5701,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_crowdsourcing
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_corporate_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_crowdsourcing
@@ -5062,8 +5742,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_crowdsourcing
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_corporate_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_crowdsourcing
@@ -5095,8 +5783,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_crowdsourcing
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_corporate_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_crowdsourcing
@@ -5128,8 +5824,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_corporate_crowdsourcing }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_corporate_crowdsourcing
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_corporate_crowdsourcing
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_corporate_crowdsourcing } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing }
+				}
 				set_country_flag = auto_qol_slot_councilor_corporate_crowdsourcing
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_corporate_crowdsourcing
@@ -5252,8 +5956,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_SH_tech }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_SH_tech
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_SH_tech
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_SH_tech } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech }
+				}
 				set_country_flag = auto_qol_slot_councilor_SH_tech
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_SH_tech
@@ -5285,8 +5997,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_SH_tech }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_SH_tech
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_SH_tech
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_SH_tech } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech }
+				}
 				set_country_flag = auto_qol_slot_councilor_SH_tech
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_SH_tech
@@ -5318,8 +6038,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_SH_tech }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_SH_tech
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_SH_tech
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_SH_tech } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech }
+				}
 				set_country_flag = auto_qol_slot_councilor_SH_tech
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_SH_tech
@@ -5351,8 +6079,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_SH_tech }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_SH_tech
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_SH_tech
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_SH_tech } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_SH_tech }
+				}
 				set_country_flag = auto_qol_slot_councilor_SH_tech
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_SH_tech
@@ -5475,8 +6211,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_wg_aurora }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_wg_aurora
+			event_target:auto_qol_cand_1 = {
+				set_council_position = councilor_wg_aurora
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				limit = {
+					event_target:auto_qol_cand_1 = { NOT = { is_councilor_type = councilor_wg_aurora } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora }
+				}
 				set_country_flag = auto_qol_slot_councilor_wg_aurora
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_wg_aurora
@@ -5508,8 +6252,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_wg_aurora }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_wg_aurora
+			event_target:auto_qol_cand_2 = {
+				set_council_position = councilor_wg_aurora
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				limit = {
+					event_target:auto_qol_cand_2 = { NOT = { is_councilor_type = councilor_wg_aurora } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora }
+				}
 				set_country_flag = auto_qol_slot_councilor_wg_aurora
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_wg_aurora
@@ -5541,8 +6293,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_wg_aurora }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_wg_aurora
+			event_target:auto_qol_cand_3 = {
+				set_council_position = councilor_wg_aurora
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				limit = {
+					event_target:auto_qol_cand_3 = { NOT = { is_councilor_type = councilor_wg_aurora } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora }
+				}
 				set_country_flag = auto_qol_slot_councilor_wg_aurora
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_wg_aurora
@@ -5574,8 +6334,16 @@ country_event = {
 					NOT = { is_councilor_type = councilor_wg_aurora }
 				}
 			}
+			# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+			set_council_position_to_council = councilor_wg_aurora
+			event_target:auto_qol_cand_4 = {
+				set_council_position = councilor_wg_aurora
+			}
 			if = {
-				limit = { NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora } }
+				limit = {
+					event_target:auto_qol_cand_4 = { NOT = { is_councilor_type = councilor_wg_aurora } }
+					NOT = { has_country_flag = auto_qol_slot_councilor_wg_aurora }
+				}
 				set_country_flag = auto_qol_slot_councilor_wg_aurora
 				unlock_council_slots = 1
 				set_council_position_to_council = councilor_wg_aurora

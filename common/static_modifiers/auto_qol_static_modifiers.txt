@@ -24,3 +24,13 @@ auto_qol_pool_clamp_10 = {
 auto_qol_pool_clamp_20 = {
 	country_leader_pool_size = -20
 }
+
+# 1 单位乘数 = 模块建造速度 +1%
+qol_custom_starbase_module_speed_modifier = {
+	starbase_module_build_speed_mult = 0.01
+}
+
+# 1 单位乘数 = 防御平台建造速度 +1%
+qol_custom_defense_platform_speed_modifier = {
+	shipsize_military_station_small_build_speed_mult = 0.01
+}

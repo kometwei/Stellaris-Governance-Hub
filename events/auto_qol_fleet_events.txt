@@ -2,6 +2,8 @@ namespace = auto_qol_fleet
 namespace = auto_qol_fleet_menu
 namespace = auto_qol_navy_cap_menu
 namespace = auto_qol_cmd_limit_menu
+namespace = auto_qol_starbase_module_menu
+namespace = auto_qol_defense_platform_menu
 
 # ========================================================
 # 舰队容量与指挥上限控制台
@@ -22,6 +24,14 @@ country_event = {
 			limit = { NOT = { is_variable_set = qol_custom_cmd_limit } }
 			set_variable = { which = qol_custom_cmd_limit value = 0 }
 		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_starbase_module_speed } }
+			set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_defense_platform_speed } }
+			set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+		}
 	}
 
 	# 1. 进入舰队容量调节子菜单
@@ -36,6 +46,20 @@ country_event = {
 		name = "auto_qol_fleet_menu.go_cmd_limit"
 		custom_tooltip = "auto_qol_fleet_menu.go_cmd_limit_tt"
 		country_event = { id = auto_qol_cmd_limit_menu.1 }
+	}
+
+	# 恒星基地模块建造速度调节
+	option = {
+		name = "auto_qol_fleet_menu.go_starbase_module_speed"
+		custom_tooltip = "auto_qol_fleet_menu.go_starbase_module_speed_tt"
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	# 防御平台建造速度调节
+	option = {
+		name = "auto_qol_fleet_menu.go_defense_platform_speed"
+		custom_tooltip = "auto_qol_fleet_menu.go_defense_platform_speed_tt"
+		country_event = { id = auto_qol_defense_platform_menu.1 }
 	}
 
 	# 3. 预设：无敌巨舰 (+10000 舰容, +500 指挥上限)
@@ -268,5 +292,253 @@ country_event = {
 	option = {
 		name = "auto_qol_cmd_limit.back"
 		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+}
+
+# 恒星基地模块建造速度：变量以百分点保存，1 单位 = +1%
+country_event = {
+	id = auto_qol_starbase_module_menu.1
+	title = "auto_qol_starbase_module_menu.1.name"
+	desc = "auto_qol_starbase_module_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_starbase_module_speed } }
+			set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+		}
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.add_50"
+		hidden_effect = {
+			change_variable = { which = qol_custom_starbase_module_speed value = 50 }
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.add_100"
+		hidden_effect = {
+			change_variable = { which = qol_custom_starbase_module_speed value = 100 }
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.add_200"
+		hidden_effect = {
+			change_variable = { which = qol_custom_starbase_module_speed value = 200 }
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.add_500"
+		hidden_effect = {
+			change_variable = { which = qol_custom_starbase_module_speed value = 500 }
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.sub_50"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_starbase_module_speed value = 50 }
+			if = {
+				limit = { check_variable = { which = qol_custom_starbase_module_speed value < 0 } }
+				set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+			}
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.sub_100"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_starbase_module_speed value = 100 }
+			if = {
+				limit = { check_variable = { which = qol_custom_starbase_module_speed value < 0 } }
+				set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+			}
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.sub_200"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_starbase_module_speed value = 200 }
+			if = {
+				limit = { check_variable = { which = qol_custom_starbase_module_speed value < 0 } }
+				set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+			}
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.sub_500"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_starbase_module_speed value = 500 }
+			if = {
+				limit = { check_variable = { which = qol_custom_starbase_module_speed value < 0 } }
+				set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+			}
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.reset"
+		hidden_effect = {
+			set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}
+
+# 防御平台建造速度：变量以百分点保存，1 单位 = +1%
+country_event = {
+	id = auto_qol_defense_platform_menu.1
+	title = "auto_qol_defense_platform_menu.1.name"
+	desc = "auto_qol_defense_platform_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_defense_platform_speed } }
+			set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+		}
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.add_50"
+		hidden_effect = {
+			change_variable = { which = qol_custom_defense_platform_speed value = 50 }
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.add_100"
+		hidden_effect = {
+			change_variable = { which = qol_custom_defense_platform_speed value = 100 }
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.add_200"
+		hidden_effect = {
+			change_variable = { which = qol_custom_defense_platform_speed value = 200 }
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.add_500"
+		hidden_effect = {
+			change_variable = { which = qol_custom_defense_platform_speed value = 500 }
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.sub_50"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_defense_platform_speed value = 50 }
+			if = {
+				limit = { check_variable = { which = qol_custom_defense_platform_speed value < 0 } }
+				set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+			}
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.sub_100"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_defense_platform_speed value = 100 }
+			if = {
+				limit = { check_variable = { which = qol_custom_defense_platform_speed value < 0 } }
+				set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+			}
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.sub_200"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_defense_platform_speed value = 200 }
+			if = {
+				limit = { check_variable = { which = qol_custom_defense_platform_speed value < 0 } }
+				set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+			}
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.sub_500"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_defense_platform_speed value = 500 }
+			if = {
+				limit = { check_variable = { which = qol_custom_defense_platform_speed value < 0 } }
+				set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+			}
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.reset"
+		hidden_effect = {
+			set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
 	}
 }

@@ -5,7 +5,7 @@
    - 彻底删除所有负数 `unlock_council_slots = -1`（底层不支持负数，会导致槽位计数下溢为0造成除零崩溃）。
    - 提供安全的槽位修复选项。
 2. 降低席位底座克隆/多生风险（如两个同名席位）：
-   - 先尝试把领袖放入已有空席；只有确认目标职务仍未任命时才扩槽和新增席位。
+   - 先复用已有职位；失败后先在已解锁空槽设置职位并重试，仍失败才尝试一次扩槽。
    - 用永久 Flag 保证由本 Mod 新增的每个席位最多扩槽一次。
    - 采用 `set_council_position_to_council` + `set_council_position = <pos_key>` 的原流程。
 3. 严格仅索引当前正在生效的 Mod（通过读取 dlc_load.json）：
@@ -1025,8 +1025,16 @@ country_event = {{
 \t\t\t\t\tNOT = {{ is_councilor_type = {pos_key} }}
 \t\t\t\t}}
 \t\t\t}}
+\t\t\t# 重组后先用已解锁的空槽恢复职位，再尝试任命。
+\t\t\tset_council_position_to_council = {pos_key}
+\t\t\tevent_target:auto_qol_cand_{c_idx} = {{
+\t\t\t\tset_council_position = {pos_key}
+\t\t\t}}
 \t\t\tif = {{
-\t\t\t\tlimit = {{ NOT = {{ has_country_flag = auto_qol_slot_{pos_key} }} }}
+\t\t\t\tlimit = {{
+\t\t\t\t\tevent_target:auto_qol_cand_{c_idx} = {{ NOT = {{ is_councilor_type = {pos_key} }} }}
+\t\t\t\t\tNOT = {{ has_country_flag = auto_qol_slot_{pos_key} }}
+\t\t\t\t}}
 \t\t\t\tset_country_flag = auto_qol_slot_{pos_key}
 \t\t\t\tunlock_council_slots = 1
 \t\t\t\tset_council_position_to_council = {pos_key}

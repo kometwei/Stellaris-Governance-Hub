@@ -59,3 +59,29 @@ auto_qol_reapply_defense_platform_speed = {
 		}
 	}
 }
+
+# 陆军招募速度：替换旧修正，清零时移除本项加成
+auto_qol_reapply_army_recruit_speed = {
+	remove_modifier = qol_custom_army_recruit_speed_modifier
+	if = {
+		limit = { check_variable = { which = qol_custom_army_recruit_speed value > 0 } }
+		add_modifier = {
+			modifier = qol_custom_army_recruit_speed_modifier
+			days = -1
+			multiplier = qol_custom_army_recruit_speed
+		}
+	}
+}
+
+# 恒星基地升级速度：替换旧修正，清零时移除本项加成
+auto_qol_reapply_starbase_upgrade_speed = {
+	remove_modifier = qol_custom_starbase_upgrade_speed_modifier
+	if = {
+		limit = { check_variable = { which = qol_custom_starbase_upgrade_speed value > 0 } }
+		add_modifier = {
+			modifier = qol_custom_starbase_upgrade_speed_modifier
+			days = -1
+			multiplier = qol_custom_starbase_upgrade_speed
+		}
+	}
+}

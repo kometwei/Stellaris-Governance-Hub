@@ -37,6 +37,8 @@ auto_qol_reapply_cmd_limit = {
 # 替换旧加成，清零时只移除本模组的自定义修正
 auto_qol_reapply_starbase_module_speed = {
 	remove_modifier = qol_custom_starbase_module_speed_modifier
+	remove_modifier = qol_custom_starbase_upgrade_speed_modifier
+	set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
 	if = {
 		limit = { check_variable = { which = qol_custom_starbase_module_speed value > 0 } }
 		add_modifier = {
@@ -74,14 +76,82 @@ auto_qol_reapply_army_recruit_speed = {
 }
 
 # 恒星基地升级速度：替换旧修正，清零时移除本项加成
+# 兼容旧事件或控制台调用，统一转到基地建设加成。
 auto_qol_reapply_starbase_upgrade_speed = {
-	remove_modifier = qol_custom_starbase_upgrade_speed_modifier
+	auto_qol_prepare_starbase_construction = yes
+}
+
+
+# 舰船建造速度：清零仅移除本项自定义加成
+auto_qol_reapply_ship_build_speed = {
+	remove_modifier = qol_custom_ship_build_speed_modifier
 	if = {
-		limit = { check_variable = { which = qol_custom_starbase_upgrade_speed value > 0 } }
+		limit = { check_variable = { which = qol_custom_ship_build_speed value > 0 } }
 		add_modifier = {
-			modifier = qol_custom_starbase_upgrade_speed_modifier
+			modifier = qol_custom_ship_build_speed_modifier
 			days = -1
-			multiplier = qol_custom_starbase_upgrade_speed
+			multiplier = qol_custom_ship_build_speed
+		}
+	}
+}
+
+# 合并旧存档的基地建设/升级加成，只迁移一次，取两者较高值。
+auto_qol_prepare_starbase_construction = {
+	if = {
+		limit = { NOT = { has_country_flag = auto_qol_starbase_construction_merged } }
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_starbase_module_speed } }
+			set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_starbase_upgrade_speed } }
+			set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
+		}
+		if = {
+			limit = { check_variable = { which = qol_custom_starbase_upgrade_speed value > qol_custom_starbase_module_speed } }
+			set_variable = { which = qol_custom_starbase_module_speed value = qol_custom_starbase_upgrade_speed }
+		}
+		set_country_flag = auto_qol_starbase_construction_merged
+	}
+	auto_qol_reapply_starbase_module_speed = yes
+}
+
+
+# 星球额外施工名额，仅替换本菜单的加成
+auto_qol_reapply_planet_construction = {
+	remove_modifier = qol_custom_planet_construction_modifier
+	if = {
+		limit = { check_variable = { which = qol_custom_planet_construction value > 0 } }
+		add_modifier = {
+			modifier = qol_custom_planet_construction_modifier
+			days = -1
+			multiplier = qol_custom_planet_construction
+		}
+	}
+}
+
+
+auto_qol_reapply_planet_build_speed = {
+	remove_modifier = qol_custom_planet_build_speed_modifier
+	if = {
+		limit = { check_variable = { which = qol_custom_planet_build_speed value > 0 } }
+		add_modifier = {
+			modifier = qol_custom_planet_build_speed_modifier
+			days = -1
+			multiplier = qol_custom_planet_build_speed
+		}
+	}
+}
+
+
+auto_qol_reapply_planet_jobs_speed = {
+	remove_modifier = qol_custom_planet_jobs_speed_modifier
+	if = {
+		limit = { check_variable = { which = qol_custom_planet_jobs_speed value > 0 } }
+		add_modifier = {
+			modifier = qol_custom_planet_jobs_speed_modifier
+			days = -1
+			multiplier = qol_custom_planet_jobs_speed
 		}
 	}
 }

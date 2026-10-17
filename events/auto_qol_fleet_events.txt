@@ -1,3 +1,5 @@
+namespace = auto_qol_planet_jobs_menu
+namespace = auto_qol_planet_build_menu
 namespace = auto_qol_fleet
 namespace = auto_qol_fleet_menu
 namespace = auto_qol_navy_cap_menu
@@ -5,6 +7,8 @@ namespace = auto_qol_cmd_limit_menu
 namespace = auto_qol_starbase_module_menu
 namespace = auto_qol_defense_platform_menu
 namespace = auto_qol_starbase_upgrade_menu
+namespace = auto_qol_ship_build_menu
+namespace = auto_qol_planet_construction_menu
 namespace = auto_qol_army_recruit_menu
 
 # ========================================================
@@ -42,6 +46,23 @@ country_event = {
 			limit = { NOT = { is_variable_set = qol_custom_starbase_upgrade_speed } }
 			set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
 		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_ship_build_speed } }
+			set_variable = { which = qol_custom_ship_build_speed value = 0 }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_planet_construction } }
+			set_variable = { which = qol_custom_planet_construction value = 0 }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_planet_build_speed } }
+			set_variable = { which = qol_custom_planet_build_speed value = 0 }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_planet_jobs_speed } }
+			set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+		}
+		auto_qol_prepare_starbase_construction = yes
 	}
 
 	# 1. 进入舰队容量调节子菜单
@@ -79,11 +100,32 @@ country_event = {
 		country_event = { id = auto_qol_army_recruit_menu.1 }
 	}
 
-	# 恒星基地升级速度调节
+
+
+	# 舰船建造速度调节
 	option = {
-		name = "auto_qol_fleet_menu.go_starbase_upgrade_speed"
-		custom_tooltip = "auto_qol_fleet_menu.go_starbase_upgrade_speed_tt"
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		name = "auto_qol_fleet_menu.go_ship_build_speed"
+		custom_tooltip = "auto_qol_fleet_menu.go_ship_build_speed_tt"
+		country_event = { id = auto_qol_ship_build_menu.1 }
+	}
+
+	# 星球额外同时施工数量
+	option = {
+		name = "auto_qol_fleet_menu.go_planet_construction"
+		custom_tooltip = "auto_qol_fleet_menu.go_planet_construction_tt"
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_fleet_menu.go_planet_build_speed"
+		custom_tooltip = "auto_qol_fleet_menu.go_planet_build_speed_tt"
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_fleet_menu.go_planet_jobs_speed"
+		custom_tooltip = "auto_qol_fleet_menu.go_planet_jobs_speed_tt"
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
 	}
 
 	# 3. 预设：无敌巨舰 (+10000 舰容, +500 指挥上限)
@@ -333,6 +375,7 @@ country_event = {
 			limit = { NOT = { is_variable_set = qol_custom_starbase_module_speed } }
 			set_variable = { which = qol_custom_starbase_module_speed value = 0 }
 		}
+		auto_qol_prepare_starbase_construction = yes
 	}
 
 	option = {
@@ -366,6 +409,15 @@ country_event = {
 		name = "auto_qol_starbase_module_speed.add_500"
 		hidden_effect = {
 			change_variable = { which = qol_custom_starbase_module_speed value = 500 }
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.add_1000"
+		hidden_effect = {
+			change_variable = { which = qol_custom_starbase_module_speed value = 1000 }
 			auto_qol_reapply_starbase_module_speed = yes
 		}
 		country_event = { id = auto_qol_starbase_module_menu.1 }
@@ -414,6 +466,19 @@ country_event = {
 		name = "auto_qol_starbase_module_speed.sub_500"
 		hidden_effect = {
 			subtract_variable = { which = qol_custom_starbase_module_speed value = 500 }
+			if = {
+				limit = { check_variable = { which = qol_custom_starbase_module_speed value < 0 } }
+				set_variable = { which = qol_custom_starbase_module_speed value = 0 }
+			}
+			auto_qol_reapply_starbase_module_speed = yes
+		}
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_starbase_module_speed.sub_1000"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_starbase_module_speed value = 1000 }
 			if = {
 				limit = { check_variable = { which = qol_custom_starbase_module_speed value < 0 } }
 				set_variable = { which = qol_custom_starbase_module_speed value = 0 }
@@ -496,6 +561,15 @@ country_event = {
 	}
 
 	option = {
+		name = "auto_qol_defense_platform_speed.add_1000"
+		hidden_effect = {
+			change_variable = { which = qol_custom_defense_platform_speed value = 1000 }
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
 		name = "auto_qol_defense_platform_speed.sub_50"
 		hidden_effect = {
 			subtract_variable = { which = qol_custom_defense_platform_speed value = 50 }
@@ -538,6 +612,19 @@ country_event = {
 		name = "auto_qol_defense_platform_speed.sub_500"
 		hidden_effect = {
 			subtract_variable = { which = qol_custom_defense_platform_speed value = 500 }
+			if = {
+				limit = { check_variable = { which = qol_custom_defense_platform_speed value < 0 } }
+				set_variable = { which = qol_custom_defense_platform_speed value = 0 }
+			}
+			auto_qol_reapply_defense_platform_speed = yes
+		}
+		country_event = { id = auto_qol_defense_platform_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_defense_platform_speed.sub_1000"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_defense_platform_speed value = 1000 }
 			if = {
 				limit = { check_variable = { which = qol_custom_defense_platform_speed value < 0 } }
 				set_variable = { which = qol_custom_defense_platform_speed value = 0 }
@@ -620,6 +707,15 @@ country_event = {
 	}
 
 	option = {
+		name = "auto_qol_army_recruit_speed.add_1000"
+		hidden_effect = {
+			change_variable = { which = qol_custom_army_recruit_speed value = 1000 }
+			auto_qol_reapply_army_recruit_speed = yes
+		}
+		country_event = { id = auto_qol_army_recruit_menu.1 }
+	}
+
+	option = {
 		name = "auto_qol_army_recruit_speed.sub_50"
 		hidden_effect = {
 			subtract_variable = { which = qol_custom_army_recruit_speed value = 50 }
@@ -672,6 +768,19 @@ country_event = {
 	}
 
 	option = {
+		name = "auto_qol_army_recruit_speed.sub_1000"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_army_recruit_speed value = 1000 }
+			if = {
+				limit = { check_variable = { which = qol_custom_army_recruit_speed value < 0 } }
+				set_variable = { which = qol_custom_army_recruit_speed value = 0 }
+			}
+			auto_qol_reapply_army_recruit_speed = yes
+		}
+		country_event = { id = auto_qol_army_recruit_menu.1 }
+	}
+
+	option = {
 		name = "auto_qol_army_recruit_speed.reset"
 		hidden_effect = {
 			set_variable = { which = qol_custom_army_recruit_speed value = 0 }
@@ -694,118 +803,557 @@ country_event = {
 # 恒星基地升级速度：变量以百分点保存，1 单位 = +1%
 country_event = {
 	id = auto_qol_starbase_upgrade_menu.1
-	title = "auto_qol_starbase_upgrade_menu.1.name"
-	desc = "auto_qol_starbase_upgrade_menu.1.desc"
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+	immediate = {
+		auto_qol_prepare_starbase_construction = yes
+		country_event = { id = auto_qol_starbase_module_menu.1 }
+	}
+}
+
+
+# 舰船建造速度：变量以百分点保存，1 单位 = +1%
+country_event = {
+	id = auto_qol_ship_build_menu.1
+	title = "auto_qol_ship_build_menu.1.name"
+	desc = "auto_qol_ship_build_menu.1.desc"
 	picture = GFX_evt_fleet_neutral
 	is_triggered_only = yes
 	trigger = { is_ai = no }
 
 	immediate = {
 		if = {
-			limit = { NOT = { is_variable_set = qol_custom_starbase_upgrade_speed } }
-			set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
+			limit = { NOT = { is_variable_set = qol_custom_ship_build_speed } }
+			set_variable = { which = qol_custom_ship_build_speed value = 0 }
 		}
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.add_50"
+		name = "auto_qol_ship_build_speed.add_50"
 		hidden_effect = {
-			change_variable = { which = qol_custom_starbase_upgrade_speed value = 50 }
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			change_variable = { which = qol_custom_ship_build_speed value = 50 }
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.add_100"
+		name = "auto_qol_ship_build_speed.add_100"
 		hidden_effect = {
-			change_variable = { which = qol_custom_starbase_upgrade_speed value = 100 }
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			change_variable = { which = qol_custom_ship_build_speed value = 100 }
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.add_200"
+		name = "auto_qol_ship_build_speed.add_200"
 		hidden_effect = {
-			change_variable = { which = qol_custom_starbase_upgrade_speed value = 200 }
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			change_variable = { which = qol_custom_ship_build_speed value = 200 }
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.add_500"
+		name = "auto_qol_ship_build_speed.add_500"
 		hidden_effect = {
-			change_variable = { which = qol_custom_starbase_upgrade_speed value = 500 }
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			change_variable = { which = qol_custom_ship_build_speed value = 500 }
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.sub_50"
+		name = "auto_qol_ship_build_speed.add_1000"
 		hidden_effect = {
-			subtract_variable = { which = qol_custom_starbase_upgrade_speed value = 50 }
+			change_variable = { which = qol_custom_ship_build_speed value = 1000 }
+			auto_qol_reapply_ship_build_speed = yes
+		}
+		country_event = { id = auto_qol_ship_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_ship_build_speed.sub_50"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_ship_build_speed value = 50 }
 			if = {
-				limit = { check_variable = { which = qol_custom_starbase_upgrade_speed value < 0 } }
-				set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
+				limit = { check_variable = { which = qol_custom_ship_build_speed value < 0 } }
+				set_variable = { which = qol_custom_ship_build_speed value = 0 }
 			}
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.sub_100"
+		name = "auto_qol_ship_build_speed.sub_100"
 		hidden_effect = {
-			subtract_variable = { which = qol_custom_starbase_upgrade_speed value = 100 }
+			subtract_variable = { which = qol_custom_ship_build_speed value = 100 }
 			if = {
-				limit = { check_variable = { which = qol_custom_starbase_upgrade_speed value < 0 } }
-				set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
+				limit = { check_variable = { which = qol_custom_ship_build_speed value < 0 } }
+				set_variable = { which = qol_custom_ship_build_speed value = 0 }
 			}
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.sub_200"
+		name = "auto_qol_ship_build_speed.sub_200"
 		hidden_effect = {
-			subtract_variable = { which = qol_custom_starbase_upgrade_speed value = 200 }
+			subtract_variable = { which = qol_custom_ship_build_speed value = 200 }
 			if = {
-				limit = { check_variable = { which = qol_custom_starbase_upgrade_speed value < 0 } }
-				set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
+				limit = { check_variable = { which = qol_custom_ship_build_speed value < 0 } }
+				set_variable = { which = qol_custom_ship_build_speed value = 0 }
 			}
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.sub_500"
+		name = "auto_qol_ship_build_speed.sub_500"
 		hidden_effect = {
-			subtract_variable = { which = qol_custom_starbase_upgrade_speed value = 500 }
+			subtract_variable = { which = qol_custom_ship_build_speed value = 500 }
 			if = {
-				limit = { check_variable = { which = qol_custom_starbase_upgrade_speed value < 0 } }
-				set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
+				limit = { check_variable = { which = qol_custom_ship_build_speed value < 0 } }
+				set_variable = { which = qol_custom_ship_build_speed value = 0 }
 			}
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.reset"
+		name = "auto_qol_ship_build_speed.sub_1000"
 		hidden_effect = {
-			set_variable = { which = qol_custom_starbase_upgrade_speed value = 0 }
-			auto_qol_reapply_starbase_upgrade_speed = yes
+			subtract_variable = { which = qol_custom_ship_build_speed value = 1000 }
+			if = {
+				limit = { check_variable = { which = qol_custom_ship_build_speed value < 0 } }
+				set_variable = { which = qol_custom_ship_build_speed value = 0 }
+			}
+			auto_qol_reapply_ship_build_speed = yes
 		}
-		country_event = { id = auto_qol_starbase_upgrade_menu.1 }
+		country_event = { id = auto_qol_ship_build_menu.1 }
 	}
 
 	option = {
-		name = "auto_qol_starbase_upgrade_speed.back"
+		name = "auto_qol_ship_build_speed.reset"
+		hidden_effect = {
+			set_variable = { which = qol_custom_ship_build_speed value = 0 }
+			auto_qol_reapply_ship_build_speed = yes
+		}
+		country_event = { id = auto_qol_ship_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_ship_build_speed.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}
+
+
+# 星球同时施工数量：每单位增加一个并行施工名额
+country_event = {
+	id = auto_qol_planet_construction_menu.1
+	title = "auto_qol_planet_construction_menu.1.name"
+	desc = "auto_qol_planet_construction_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_planet_construction } }
+			set_variable = { which = qol_custom_planet_construction value = 0 }
+		}
+	}
+
+	option = {
+		name = "auto_qol_planet_construction.add_1"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_construction value = 1 }
+			auto_qol_reapply_planet_construction = yes
+		}
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_construction.add_2"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_construction value = 2 }
+			auto_qol_reapply_planet_construction = yes
+		}
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_construction.add_5"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_construction value = 5 }
+			auto_qol_reapply_planet_construction = yes
+		}
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+
+
+
+
+	option = {
+		name = "auto_qol_planet_construction.sub_1"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_construction value = 1 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_construction value < 0 } }
+				set_variable = { which = qol_custom_planet_construction value = 0 }
+			}
+			auto_qol_reapply_planet_construction = yes
+		}
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_construction.sub_2"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_construction value = 2 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_construction value < 0 } }
+				set_variable = { which = qol_custom_planet_construction value = 0 }
+			}
+			auto_qol_reapply_planet_construction = yes
+		}
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_construction.sub_5"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_construction value = 5 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_construction value < 0 } }
+				set_variable = { which = qol_custom_planet_construction value = 0 }
+			}
+			auto_qol_reapply_planet_construction = yes
+		}
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+
+
+
+
+	option = {
+		name = "auto_qol_planet_construction.reset"
+		hidden_effect = {
+			set_variable = { which = qol_custom_planet_construction value = 0 }
+			auto_qol_reapply_planet_construction = yes
+		}
+		country_event = { id = auto_qol_planet_construction_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_construction.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}
+
+
+# 星球建设速度：每单位为一个百分点
+country_event = {
+	id = auto_qol_planet_build_menu.1
+	title = "auto_qol_planet_build_menu.1.name"
+	desc = "auto_qol_planet_build_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_planet_build_speed } }
+			set_variable = { which = qol_custom_planet_build_speed value = 0 }
+		}
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.add_50"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_build_speed value = 50 }
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.add_100"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_build_speed value = 100 }
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.add_200"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_build_speed value = 200 }
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.add_500"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_build_speed value = 500 }
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.add_1000"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_build_speed value = 1000 }
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.sub_50"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_build_speed value = 50 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_build_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_build_speed value = 0 }
+			}
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.sub_100"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_build_speed value = 100 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_build_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_build_speed value = 0 }
+			}
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.sub_200"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_build_speed value = 200 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_build_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_build_speed value = 0 }
+			}
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.sub_500"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_build_speed value = 500 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_build_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_build_speed value = 0 }
+			}
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.sub_1000"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_build_speed value = 1000 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_build_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_build_speed value = 0 }
+			}
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.reset"
+		hidden_effect = {
+			set_variable = { which = qol_custom_planet_build_speed value = 0 }
+			auto_qol_reapply_planet_build_speed = yes
+		}
+		country_event = { id = auto_qol_planet_build_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_build_speed.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}
+
+# 星球岗位产出：每单位为一个百分点
+country_event = {
+	id = auto_qol_planet_jobs_menu.1
+	title = "auto_qol_planet_jobs_menu.1.name"
+	desc = "auto_qol_planet_jobs_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_planet_jobs_speed } }
+			set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+		}
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.add_10"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_jobs_speed value = 10 }
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.add_25"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_jobs_speed value = 25 }
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.add_50"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_jobs_speed value = 50 }
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.add_100"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_jobs_speed value = 100 }
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.add_200"
+		hidden_effect = {
+			change_variable = { which = qol_custom_planet_jobs_speed value = 200 }
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.sub_10"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_jobs_speed value = 10 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_jobs_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+			}
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.sub_25"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_jobs_speed value = 25 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_jobs_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+			}
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.sub_50"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_jobs_speed value = 50 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_jobs_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+			}
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.sub_100"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_jobs_speed value = 100 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_jobs_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+			}
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.sub_200"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_planet_jobs_speed value = 200 }
+			if = {
+				limit = { check_variable = { which = qol_custom_planet_jobs_speed value < 0 } }
+				set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+			}
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.reset"
+		hidden_effect = {
+			set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
+			auto_qol_reapply_planet_jobs_speed = yes
+		}
+		country_event = { id = auto_qol_planet_jobs_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_planet_jobs_speed.back"
 		country_event = { id = auto_qol_fleet_menu.1 }
 	}
 

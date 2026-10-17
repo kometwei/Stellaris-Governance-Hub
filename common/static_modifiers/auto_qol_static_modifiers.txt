@@ -25,14 +25,16 @@ auto_qol_pool_clamp_20 = {
 	country_leader_pool_size = -20
 }
 
-# 1 单位乘数 = 模块建造速度 +1%
+# 1 单位乘数 = 模块、建筑建造与基地升级速度各 +1%
 qol_custom_starbase_module_speed_modifier = {
 	starbase_module_build_speed_mult = 0.01
+	starbase_building_build_speed_mult = 0.01
+	starbase_upgrade_speed_mult = 0.01
 }
 
-# 1 单位乘数 = 防御平台建造速度 +1%
+# 1 单位乘数 = 军事空间站类别建造速度 +1%（含防御平台与离子炮）
 qol_custom_defense_platform_speed_modifier = {
-	shipsize_military_station_small_build_speed_mult = 0.01
+	shipclass_military_station_build_speed_mult = 0.01
 }
 
 # 1 单位乘数 = 陆军招募速度 +1%
@@ -43,4 +45,26 @@ qol_custom_army_recruit_speed_modifier = {
 # 1 单位乘数 = 恒星基地升级速度 +1%
 qol_custom_starbase_upgrade_speed_modifier = {
 	starbase_upgrade_speed_mult = 0.01
+}
+
+# 1 单位乘数 = 舰船建造速度 +1%
+qol_custom_ship_build_speed_modifier = {
+	starbase_shipyard_build_speed_mult = 0.01
+}
+
+# 1 单位乘数 = 每颗星球额外一个同时施工名额
+qol_custom_planet_construction_modifier = {
+	planet_building_capacity_add = 1
+}
+
+# 1单位 = +1%
+qol_custom_planet_build_speed_modifier = {
+	planet_building_build_speed_mult = 0.01
+	planet_clear_blocker_speed_mult = 0.01
+	terraform_speed_mult = 0.01
+}
+
+# 1单位 = +1%
+qol_custom_planet_jobs_speed_modifier = {
+	planet_jobs_produces_mult = 0.01
 }

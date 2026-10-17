@@ -46,6 +46,10 @@ CORE_FILES = (
 )
 
 IMPLICIT_LOCALISATION_KEYS = {
+    "qol_custom_planet_jobs_speed_modifier",
+    "qol_custom_planet_jobs_speed_modifier_desc",
+    "qol_custom_planet_build_speed_modifier",
+    "qol_custom_planet_build_speed_modifier_desc",
     "auto_qol_menu",
     "auto_qol_menu_desc",
     "edict_auto_qol_menu",
@@ -63,6 +67,10 @@ IMPLICIT_LOCALISATION_KEYS = {
     "qol_custom_army_recruit_speed_modifier_desc",
     "qol_custom_starbase_upgrade_speed_modifier",
     "qol_custom_starbase_upgrade_speed_modifier_desc",
+    "qol_custom_ship_build_speed_modifier",
+    "qol_custom_ship_build_speed_modifier_desc",
+    "qol_custom_planet_construction_modifier",
+    "qol_custom_planet_construction_modifier_desc",
     "auto_qol_council_buff",
     "auto_qol_council_buff_desc",
     "auto_qol_pool_clamp_5",
@@ -75,16 +83,16 @@ IMPLICIT_LOCALISATION_KEYS = {
 
 PUBLIC_LOC_OVERRIDES = {
     "auto_qol_menu_desc": (
-        "打开星政中枢，管理内阁席位、舰队容量、模块建造、防御平台建造、基地升级与陆军招募速度、领袖池、灵能科技与智能建交。"
+        "打开星政中枢，管理内阁席位、舰队容量、基地建设、防御平台建造、陆军招募、舰船建造速度、星球施工数量、星球建设与岗位产出、领袖池、灵能科技与智能建交。"
     ),
     "edict_auto_qol_menu_desc": (
-        "打开星政中枢，管理内阁席位、舰队容量、模块建造、防御平台建造、基地升级与陆军招募速度、领袖池、灵能科技与智能建交。"
+        "打开星政中枢，管理内阁席位、舰队容量、基地建设、防御平台建造、陆军招募、舰船建造速度、星球施工数量、星球建设与岗位产出、领袖池、灵能科技与智能建交。"
     ),
     "auto_qol_menu.1.desc": (
         "欢迎使用 §H星政中枢§!。\\n\\n"
         "§E【核心功能模块】§!\\n"
         "· §H特使智能建交§!：按需与常规 AI 建立通讯\\n"
-        "· §H舰队容量计算器§!：调整舰容、指挥上限、模块建造、防御平台建造、基地升级与陆军招募速度\\n"
+        "· §H舰队容量计算器§!：调整舰容、指挥上限、基地建设、防御平台建造、陆军招募、舰船建造速度、星球施工数量、星球建设与岗位产出\\n"
         "· §H政务内阁指派§!：通过独立界面管理额外席位\\n"
         "· §H招募池智能治理§!：限制候选领袖总量\\n"
         "· §H灵能三件套§!：完成灵能传统后一键完成三项科技\\n\\n"

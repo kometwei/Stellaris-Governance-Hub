@@ -1,0 +1,51 @@
+# Fleet scope. Explicit ownership/control checks are repeated before execution.
+auto_qol_reassembly_owned_military = {
+ exists = owner
+ owner = { is_ai = no }
+ is_controlled_by = owner
+ is_mobile = yes
+ is_leased = no
+ is_alliance_fleet = no
+ is_ship_class = shipclass_military
+ num_ships > 0
+ exists = solar_system
+ # Exclude event vessels, juggernauts, transports and civilian vessels.
+ NOT = {
+  any_owned_ship = {
+   NOR = {
+    is_ship_size = corvette
+    is_ship_size = frigate
+    is_ship_size = destroyer
+    is_ship_size = cruiser
+    is_ship_size = battleship
+    is_ship_size = titan
+   }
+  }
+ }
+}
+
+auto_qol_reassembly_target = {
+ auto_qol_reassembly_owned_military = yes
+ NOT = { has_fleet_flag = auto_qol_reassembly_active }
+ NOT = { has_fleet_order = merge_fleet_order }
+}
+
+auto_qol_reassembly_worker_source = {
+ auto_qol_reassembly_owned_military = yes
+ num_ships <= 3
+ NOT = { exists = leader }
+ NOT = { has_fleet_order = merge_fleet_order }
+ NOT = { is_same_value = event_target:auto_qol_reassembly_destination }
+}
+
+auto_qol_reassembly_source = {
+ auto_qol_reassembly_worker_source = yes
+ is_in_combat = no
+ NOT = { has_fleet_flag = auto_qol_reassembly_active }
+ exists = event_target:auto_qol_reassembly_destination
+ # Conservative first version: sources must already share the destination's
+ # system. It never orders a stray vessel to cross a war zone on its own.
+ solar_system = {
+  is_same_value = event_target:auto_qol_reassembly_destination.solar_system
+ }
+}

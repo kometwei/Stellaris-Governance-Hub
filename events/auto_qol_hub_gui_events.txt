@@ -46,6 +46,7 @@ country_event = {
 
 
 
+
  
 
 option = {
@@ -148,5 +149,11 @@ option = {
 		custom_tooltip = "auto_qol_menu.psionic_bundle_locked_tt"
 		trigger = { NOT = { has_finished_psionic_tradition = yes } }
 		default_hide_option = yes
+	}
+option = {
+ custom_gui = "auto_qol_hub_card_8"
+		name = "auto_qol_menu.tradition_menu"
+		custom_tooltip = "auto_qol_menu.tradition_menu_tt"
+		country_event = { id = tradition_unlock_menu.1 }
 	}
 }

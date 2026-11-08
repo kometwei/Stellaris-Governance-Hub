@@ -53,7 +53,7 @@ class HubGuiTests(unittest.TestCase):
 
         before = options(self.menu["auto_qol_menu.900"])
         after = options(self.page("auto_qol_hub.1"))
-        for key in ("auto_qol_menu.planet_ascension_10", "auto_qol_military_open", "auto_qol_council_gui_open", "auto_qol_menu.assimilation", "auto_qol_menu.ascension_slots", "auto_qol_menu.psionic_bundle_ready", "auto_qol_menu.psionic_bundle_complete", "auto_qol_menu.psionic_bundle_locked"):
+        for key in ("auto_qol_menu.tradition_menu", "auto_qol_menu.planet_ascension_10", "auto_qol_military_open", "auto_qol_council_gui_open", "auto_qol_menu.assimilation", "auto_qol_menu.ascension_slots", "auto_qol_menu.psionic_bundle_ready", "auto_qol_menu.psionic_bundle_complete", "auto_qol_menu.psionic_bundle_locked"):
             has_tooltip = any(row[0] == "custom_tooltip" for row in before[key])
             self.assertEqual([row for row in after[key] if row[0] != "custom_gui" and (row[0] != "custom_tooltip" or has_tooltip)], route(before[key]))
         self.assertNotIn("auto_qol_menu.fleet_menu", after)
@@ -69,13 +69,14 @@ class HubGuiTests(unittest.TestCase):
             "auto_qol_menu.assimilation", "auto_qol_menu.ascension_slots",
             "auto_qol_menu.planet_ascension_10", "auto_qol_menu.psionic_bundle_ready",
             "auto_qol_menu.psionic_bundle_complete", "auto_qol_menu.psionic_bundle_locked",
+            "auto_qol_menu.tradition_menu",
         ])
 
     def test_native_cards_fit_workspace_and_conditional_states_share_one_slot(self):
         types = value(parse(self.files["interface/auto_qol_hub.gui"]), "guiTypes")
         rectangles = []
         flow_height = 0
-        for index in range(8):
+        for index in range(9):
             template = next(v for _, _, v in types if value(v, "name") == f"auto_qol_hub_card_{index}")
             entry_height = int(value(value(template, "size"), "height"))
             # All-zero content disappeared in the engine even though the

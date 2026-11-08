@@ -8,7 +8,7 @@ from console_theme import panel
 from native_dashboard_footer import blocks, top_blocks, option_name
 
 # Keep source option order for native list flow; group their display separately.
-POSITIONS = ((0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (0, 3), (1, 3))
+POSITIONS = ((0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (0, 3), (1, 3), (0, 4))
 
 CARDS = (
     ("auto_qol_military_open", "舰队编制 · 军事施工 · 星球经济"),
@@ -19,6 +19,7 @@ CARDS = (
     ("auto_qol_menu.ascension_slots", "调整目标槽位，按需补齐缺额"),
     ("auto_qol_menu.planet_ascension_10", "将自有殖民地的飞升等级补齐至 10 级"),
     ("auto_qol_menu.psionic_bundle_ready", "满足灵能传统条件后解锁科技组合"),
+    ("auto_qol_menu.tradition_menu", "打开开发版传统批量解锁工具"),
 )
 
 
@@ -61,7 +62,7 @@ def decorate_gui(gui, list_y):
         # A list made entirely of zero-height entries did not render in the
         # user's 4.5.3 test, including its footer. Match the military footer's
         # positive-height contract and compensate preceding card entries.
-        y = 136 + row * 60 - list_y - index
+        y = 136 + row * 50 - list_y - index
         templates += f''' containerWindowType = {{
   name = "auto_qol_hub_card_{index}"
   size = {{ width = 836 height = 1 }}

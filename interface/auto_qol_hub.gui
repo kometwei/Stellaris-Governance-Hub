@@ -311,7 +311,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 0 y = 71 }
+   position = { x = 0 y = 61 }
    size = { x = 406 y = 38 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -326,7 +326,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 0 y = 130 }
+   position = { x = 0 y = 110 }
    size = { x = 406 y = 38 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -356,7 +356,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 430 y = 68 }
+   position = { x = 430 y = 58 }
    size = { x = 406 y = 38 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -371,7 +371,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 430 y = 127 }
+   position = { x = 430 y = 107 }
    size = { x = 406 y = 38 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -386,7 +386,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 0 y = 186 }
+   position = { x = 0 y = 156 }
    size = { x = 406 y = 38 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -401,7 +401,22 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 430 y = 185 }
+   position = { x = 430 y = 155 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_8"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 204 }
    size = { x = 406 y = 38 }
    font = "cg_16b"
    text = "OPTION_TEXT"

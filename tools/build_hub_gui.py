@@ -18,6 +18,7 @@ VISIBLE = {
     "auto_qol_military_open", "auto_qol_council_gui_open",
     "auto_qol_menu.ascension_slots", "auto_qol_menu.assimilation",
     "auto_qol_menu.planet_ascension_10",
+    "auto_qol_menu.tradition_menu",
     "auto_qol_menu.psionic_bundle_ready", "auto_qol_menu.psionic_bundle_complete",
     "auto_qol_menu.psionic_bundle_locked",
 }
@@ -35,6 +36,7 @@ MODULE_ORDER = (
     "auto_qol_menu.psionic_bundle_ready",
     "auto_qol_menu.psionic_bundle_complete",
     "auto_qol_menu.psionic_bundle_locked",
+    "auto_qol_menu.tradition_menu",
 )
 
 

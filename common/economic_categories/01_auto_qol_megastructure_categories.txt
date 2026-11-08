@@ -1,0 +1,18 @@
+# Vanilla 4.5 megastructure economy category, with production modifiers enabled.
+# Load after 00_common_categories.txt and before AOW_economic_categories.txt.
+# AOW supplies its own production-enabled category and triggered modifiers;
+# its later definition must remain authoritative when that mod is enabled.
+megastructures = {
+    use_for_ai_budget = yes
+    ai_use_parent_for_resources_upkeep = {
+        energy
+        consumer_goods
+    }
+    parent = country
+    generate_mult_modifiers = {
+        cost
+        produces
+        upkeep
+    }
+    modifier_category = megastructure
+}

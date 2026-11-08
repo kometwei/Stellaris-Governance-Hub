@@ -1,0 +1,269 @@
+namespace = auto_qol_assimilation
+
+# Monthly fallback also catches immigration, conquest and newly recruited leaders.
+country_event = {
+	id = auto_qol_assimilation.100
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = auto_qol_assimilation_enabled
+		exists = event_target:auto_qol_assimilation_source@root
+	}
+	immediate = { auto_qol_assimilation_apply = yes }
+}
+
+country_event = {
+	id = auto_qol_assimilation.1
+	title = "auto_qol_assimilation.title"
+	desc = {
+		trigger = { exists = event_target:auto_qol_assimilation_source@root }
+		text = "auto_qol_assimilation.desc_selected"
+	}
+	desc = {
+		trigger = { NOT = { exists = event_target:auto_qol_assimilation_source@root } }
+		text = "auto_qol_assimilation.desc_empty"
+	}
+	picture = GFX_evt_genetic_modification
+	is_triggered_only = yes
+	trigger = { is_ai = no exists = species }
+	immediate = {
+		if = {
+			limit = { exists = event_target:auto_qol_assimilation_source@root }
+			event_target:auto_qol_assimilation_source@root = {
+				save_event_target_as = auto_qol_assimilation_current
+			}
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.choose"
+		custom_tooltip = "auto_qol_assimilation.choose_tt"
+		hidden_effect = {
+			auto_qol_assimilation_reset_picker = yes
+			country_event = { id = auto_qol_assimilation.2 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.pause"
+		custom_tooltip = "auto_qol_assimilation.pause_tt"
+		trigger = { has_country_flag = auto_qol_assimilation_enabled }
+		hidden_effect = {
+			remove_country_flag = auto_qol_assimilation_enabled
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.resume"
+		custom_tooltip = "auto_qol_assimilation.resume_tt"
+		trigger = {
+			NOT = { has_country_flag = auto_qol_assimilation_enabled }
+			exists = event_target:auto_qol_assimilation_source@root
+			NOT = { is_same_species = event_target:auto_qol_assimilation_source@root }
+		}
+		hidden_effect = {
+			set_country_flag = auto_qol_assimilation_enabled
+			auto_qol_assimilation_apply = yes
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.leaders_off"
+		custom_tooltip = "auto_qol_assimilation.leaders_tt"
+		trigger = { NOT = { has_country_flag = auto_qol_assimilation_leaders } }
+		hidden_effect = { country_event = { id = auto_qol_assimilation.4 } }
+	}
+	option = {
+		name = "auto_qol_assimilation.leaders_on"
+		custom_tooltip = "auto_qol_assimilation.leaders_tt"
+		trigger = { has_country_flag = auto_qol_assimilation_leaders }
+		hidden_effect = {
+			remove_country_flag = auto_qol_assimilation_leaders
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.clear"
+		custom_tooltip = "auto_qol_assimilation.clear_tt"
+		trigger = { exists = event_target:auto_qol_assimilation_source@root }
+		hidden_effect = {
+			remove_country_flag = auto_qol_assimilation_enabled
+			clear_global_event_target = auto_qol_assimilation_source@root
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.back"
+		hidden_effect = { country_event = { id = auto_qol_menu.1 } }
+	}
+}
+
+country_event = {
+	id = auto_qol_assimilation.2
+	title = "auto_qol_assimilation.picker_title"
+	desc = "auto_qol_assimilation.picker_desc"
+	picture = GFX_evt_genetic_modification
+	is_triggered_only = yes
+	trigger = { is_ai = no exists = species }
+	immediate = { auto_qol_assimilation_prepare_page = yes }
+	option = {
+		name = "auto_qol_assimilation.slot_1"
+		trigger = {
+			has_country_flag = auto_qol_assimilation_slot_1_valid
+			exists = event_target:auto_qol_assimilation_slot_1
+		}
+		hidden_effect = {
+			event_target:auto_qol_assimilation_slot_1 = {
+				save_event_target_as = auto_qol_assimilation_candidate
+			}
+			country_event = { id = auto_qol_assimilation.3 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.slot_2"
+		trigger = {
+			has_country_flag = auto_qol_assimilation_slot_2_valid
+			exists = event_target:auto_qol_assimilation_slot_2
+		}
+		hidden_effect = {
+			event_target:auto_qol_assimilation_slot_2 = {
+				save_event_target_as = auto_qol_assimilation_candidate
+			}
+			country_event = { id = auto_qol_assimilation.3 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.slot_3"
+		trigger = {
+			has_country_flag = auto_qol_assimilation_slot_3_valid
+			exists = event_target:auto_qol_assimilation_slot_3
+		}
+		hidden_effect = {
+			event_target:auto_qol_assimilation_slot_3 = {
+				save_event_target_as = auto_qol_assimilation_candidate
+			}
+			country_event = { id = auto_qol_assimilation.3 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.slot_4"
+		trigger = {
+			has_country_flag = auto_qol_assimilation_slot_4_valid
+			exists = event_target:auto_qol_assimilation_slot_4
+		}
+		hidden_effect = {
+			event_target:auto_qol_assimilation_slot_4 = {
+				save_event_target_as = auto_qol_assimilation_candidate
+			}
+			country_event = { id = auto_qol_assimilation.3 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.slot_5"
+		trigger = {
+			has_country_flag = auto_qol_assimilation_slot_5_valid
+			exists = event_target:auto_qol_assimilation_slot_5
+		}
+		hidden_effect = {
+			event_target:auto_qol_assimilation_slot_5 = {
+				save_event_target_as = auto_qol_assimilation_candidate
+			}
+			country_event = { id = auto_qol_assimilation.3 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.slot_6"
+		trigger = {
+			has_country_flag = auto_qol_assimilation_slot_6_valid
+			exists = event_target:auto_qol_assimilation_slot_6
+		}
+		hidden_effect = {
+			event_target:auto_qol_assimilation_slot_6 = {
+				save_event_target_as = auto_qol_assimilation_candidate
+			}
+			country_event = { id = auto_qol_assimilation.3 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.next"
+		trigger = {
+			any_owned_species = {
+				NOT = { is_same_species = root }
+				NOT = { has_species_flag = auto_qol_assimilation_seen@root }
+				is_sapient = yes
+			}
+		}
+		hidden_effect = { country_event = { id = auto_qol_assimilation.2 } }
+	}
+	option = {
+		name = "auto_qol_assimilation.restart"
+		hidden_effect = {
+			auto_qol_assimilation_reset_picker = yes
+			country_event = { id = auto_qol_assimilation.2 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.back"
+		hidden_effect = {
+			auto_qol_assimilation_reset_picker = yes
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+}
+
+country_event = {
+	id = auto_qol_assimilation.3
+	title = "auto_qol_assimilation.confirm_title"
+	desc = "auto_qol_assimilation.confirm_desc"
+	picture = GFX_evt_genetic_modification
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+	option = {
+		name = "auto_qol_assimilation.confirm"
+		custom_tooltip = "auto_qol_assimilation.confirm_tt"
+		trigger = {
+			exists = species
+			exists = event_target:auto_qol_assimilation_candidate
+			NOT = { is_same_species = event_target:auto_qol_assimilation_candidate }
+			any_owned_species = { is_same_value = event_target:auto_qol_assimilation_candidate }
+		}
+		hidden_effect = {
+			event_target:auto_qol_assimilation_candidate = {
+				save_global_event_target_as = auto_qol_assimilation_source@root
+			}
+			set_country_flag = auto_qol_assimilation_enabled
+			auto_qol_assimilation_reset_picker = yes
+			auto_qol_assimilation_apply = yes
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.cancel"
+		hidden_effect = {
+			auto_qol_assimilation_reset_picker = yes
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+}
+
+# Enabling leaders is explicit; entering a menu or selecting a species never enables it.
+country_event = {
+	id = auto_qol_assimilation.4
+	title = "auto_qol_assimilation.leader_title"
+	desc = "auto_qol_assimilation.leader_desc"
+	picture = GFX_evt_genetic_modification
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+	option = {
+		name = "auto_qol_assimilation.enable_leaders"
+		hidden_effect = {
+			set_country_flag = auto_qol_assimilation_leaders
+			auto_qol_assimilation_apply = yes
+			country_event = { id = auto_qol_assimilation.1 }
+		}
+	}
+	option = {
+		name = "auto_qol_assimilation.cancel"
+		hidden_effect = { country_event = { id = auto_qol_assimilation.1 } }
+	}
+}
+

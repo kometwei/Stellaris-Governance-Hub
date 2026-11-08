@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ auto_qol_ascension_gui_header:0 "星政中枢 · 飞升槽位"
+ auto_qol_ascension_gui_note:0 "右侧单击操作；左侧查看当前状态与说明。"
+ auto_qol_ascension_gui_footer:0 "先调整目标，再补齐缺额；降低目标不收回槽位，飞升天赋自行选择。"
+ auto_qol_ascension_gui_home:0 "返回星政中枢首页"
+ auto_qol_ascension_gui_close:0 "关闭面板（Esc）"
+ auto_qol_ascension_gui_prev:0 "← 上一页"
+ auto_qol_ascension_gui_next:0 "下一页 →"

@@ -1,0 +1,120 @@
+namespace = auto_qol_district_expansion
+planet_event = {
+    id = auto_qol_district_expansion.1
+    diplomatic = yes
+    custom_gui = "auto_qol_district_expansion_window"
+    custom_gui_option = "auto_qol_district_expansion_option"
+    title = "auto_qol_district_expansion.title"
+    desc = "auto_qol_district_expansion.desc"
+    picture = GFX_evt_galactic_senate
+    is_triggered_only = yes
+    trigger = { is_colony = yes owner = { is_ai = no } }
+    immediate = {
+        owner = { save_event_target_as = auto_qol_district_expansion_actor }
+        if = {
+            limit = { NOT = { is_variable_set = auto_qol_district_expansion_total } }
+            set_variable = { which = auto_qol_district_expansion_total value = 0 }
+        }
+    }
+    option = {
+        name = "auto_qol_district_expansion.add_1"
+        custom_tooltip = "auto_qol_district_expansion.add_1_tt"
+        allow = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+        hidden_effect = {
+            if = {
+                limit = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+                change_variable = { which = auto_qol_district_expansion_total value = 1 }
+                remove_modifier = auto_qol_district_expansion_bonus
+                add_modifier = { modifier = auto_qol_district_expansion_bonus days = -1 mult = auto_qol_district_expansion_total }
+                planet_event = { id = auto_qol_district_expansion.1 }
+            }
+        }
+    }
+    option = {
+        name = "auto_qol_district_expansion.add_3"
+        custom_tooltip = "auto_qol_district_expansion.add_3_tt"
+        allow = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+        hidden_effect = {
+            if = {
+                limit = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+                change_variable = { which = auto_qol_district_expansion_total value = 3 }
+                remove_modifier = auto_qol_district_expansion_bonus
+                add_modifier = { modifier = auto_qol_district_expansion_bonus days = -1 mult = auto_qol_district_expansion_total }
+                planet_event = { id = auto_qol_district_expansion.1 }
+            }
+        }
+    }
+    option = {
+        name = "auto_qol_district_expansion.add_5"
+        custom_tooltip = "auto_qol_district_expansion.add_5_tt"
+        allow = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+        hidden_effect = {
+            if = {
+                limit = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+                change_variable = { which = auto_qol_district_expansion_total value = 5 }
+                remove_modifier = auto_qol_district_expansion_bonus
+                add_modifier = { modifier = auto_qol_district_expansion_bonus days = -1 mult = auto_qol_district_expansion_total }
+                planet_event = { id = auto_qol_district_expansion.1 }
+            }
+        }
+    }
+    option = {
+        name = "auto_qol_district_expansion.add_10"
+        custom_tooltip = "auto_qol_district_expansion.add_10_tt"
+        allow = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+        hidden_effect = {
+            if = {
+                limit = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+                change_variable = { which = auto_qol_district_expansion_total value = 10 }
+                remove_modifier = auto_qol_district_expansion_bonus
+                add_modifier = { modifier = auto_qol_district_expansion_bonus days = -1 mult = auto_qol_district_expansion_total }
+                planet_event = { id = auto_qol_district_expansion.1 }
+            }
+        }
+    }
+    option = {
+        name = "auto_qol_district_expansion.add_30"
+        custom_tooltip = "auto_qol_district_expansion.add_30_tt"
+        allow = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+        hidden_effect = {
+            if = {
+                limit = { is_colony = yes
+                exists = event_target:auto_qol_district_expansion_actor
+                is_owned_by = event_target:auto_qol_district_expansion_actor
+                owner = { is_ai = no } }
+                change_variable = { which = auto_qol_district_expansion_total value = 30 }
+                remove_modifier = auto_qol_district_expansion_bonus
+                add_modifier = { modifier = auto_qol_district_expansion_bonus days = -1 mult = auto_qol_district_expansion_total }
+                planet_event = { id = auto_qol_district_expansion.1 }
+            }
+        }
+    }
+    option = { name = "auto_qol_district_expansion.close" default_hide_option = yes }
+}

@@ -1,5 +1,9 @@
 # 动态 1 单位乘数 Static Modifier (配合 multiplier 使用实现 100% 自由自定义数值)
 
+auto_qol_ascension_slots = {
+	ascension_perks_add = 1
+}
+
 qol_custom_navy_cap_modifier = {
 	country_naval_cap_add = 1
 }
@@ -14,15 +18,15 @@ auto_qol_council_buff = {
 }
 
 auto_qol_pool_clamp_5 = {
-	country_leader_pool_size = -5
+	# Legacy save compatibility only; the unsafe size penalty has been retired.
 }
 
 auto_qol_pool_clamp_10 = {
-	country_leader_pool_size = -10
+	# Legacy save compatibility only; the unsafe size penalty has been retired.
 }
 
 auto_qol_pool_clamp_20 = {
-	country_leader_pool_size = -20
+	# Legacy save compatibility only; the unsafe size penalty has been retired.
 }
 
 # 1 单位乘数 = 模块、建筑建造与基地升级速度各 +1%
@@ -67,4 +71,24 @@ qol_custom_planet_build_speed_modifier = {
 # 1单位 = +1%
 qol_custom_planet_jobs_speed_modifier = {
 	planet_jobs_produces_mult = 0.01
+}
+
+# 1 unit = +1% generic megastructure construction speed.
+qol_custom_mega_build_speed_modifier = {
+    megastructure_build_speed_mult = 0.01
+}
+
+# 1 unit = +1 generic simultaneous megastructure construction slot.
+qol_custom_mega_construction_modifier = {
+    country_megastructure_build_cap_add = 1
+}
+
+# 1 unit = +1% resource production through the megastructures economy category.
+qol_custom_mega_production_modifier = {
+    megastructures_produces_mult = 0.01
+}
+
+# Same native modifier used by Tankbound technologies; +1% per saved unit.
+qol_custom_automated_output_modifier = {
+    bonus_automated_workforce_mult = 0.01
 }

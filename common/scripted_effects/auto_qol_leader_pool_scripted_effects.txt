@@ -15,3 +15,24 @@ auto_qol_trim_leader_pool_to_10 = {
 		}
 	}
 }
+
+# Remove unsafe legacy size penalties before asking the engine to refill.
+# Also repair an empty pool when optimisation is disabled. Never kill candidates
+# here: refresh is only requested for legacy penalties or a completely empty pool.
+auto_qol_repair_leader_pool = {
+	if = {
+		limit = {
+			OR = {
+				has_modifier = auto_qol_pool_clamp_5
+				has_modifier = auto_qol_pool_clamp_10
+				has_modifier = auto_qol_pool_clamp_20
+				count_pool_leader = { limit = { always = yes } count = 0 }
+			}
+		}
+		remove_modifier = auto_qol_pool_clamp_5
+		remove_modifier = auto_qol_pool_clamp_10
+		remove_modifier = auto_qol_pool_clamp_20
+		refresh_leader_pool = yes
+		country_event = { id = auto_qol_council_pool.2 }
+	}
+}

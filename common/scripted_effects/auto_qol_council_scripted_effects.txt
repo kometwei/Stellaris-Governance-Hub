@@ -5,6 +5,12 @@ auto_qol_clear_council_candidate_flags = {
 		remove_leader_flag = auto_qol_cand_flag_2
 		remove_leader_flag = auto_qol_cand_flag_3
 		remove_leader_flag = auto_qol_cand_flag_4
+		remove_leader_flag = auto_qol_cand_flag_5
+		remove_leader_flag = auto_qol_cand_flag_6
+		remove_leader_flag = auto_qol_cand_flag_7
+		remove_leader_flag = auto_qol_cand_flag_8
+		remove_leader_flag = auto_qol_cand_flag_9
+		remove_leader_flag = auto_qol_cand_flag_10
 	}
 }
 

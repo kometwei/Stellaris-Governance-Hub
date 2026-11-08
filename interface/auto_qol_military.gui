@@ -1,0 +1,2425 @@
+guiTypes = {
+ containerWindowType = {
+  name = "auto_qol_military_option"
+  size = { width = 235 height = 34 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 0 }
+   size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_military_window"
+  orientation = center
+  origo = center
+  moveable = yes
+  size = { width = 1030 height = 720 }
+  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  buttonType = {
+   name = "close"
+   quadTextureSprite = "GFX_main_close_button"
+   orientation = upper_right
+   position = { x = -57 y = 14 }
+   shortcut = "ESCAPE"
+   clicksound = "back_click"
+  }
+  buttonType = { name = "focus_button" spriteType = "GFX_fleetview_focus" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "tts_button" spriteType = "GFX_button_tts_start" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "alien_message_background" spriteType = "GFX_tiles_dark_area_cut_8" position = { x = -10000 y = -10000 } }
+  # Native event code resets this text box's scroll position on opening.
+  # Its scrollbar must exist even while the text box is offscreen.
+  instantTextBoxType = {
+   name = "alien_message"
+   font = "cg_16b"
+   position = { x = -10000 y = -10000 }
+   maxWidth = 465
+   maxHeight = 220
+   format = left
+   scrollbarType = "standardtext_slider"
+  }
+  buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "portrait_background"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_character" }
+  }
+  containerWindowType = {
+   name = "portrait"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" }
+   iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" }
+   iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" }
+   iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" }
+  }
+  iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_government_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "empire_flag" quadTextureSprite = "GFX_empire_flag_128" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "leader_details"
+   position = { x = -10000 y = -10000 }
+   containerWindowType = { name = "leader_traits_box" }
+   instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_traits_label" font = "cg_16b" }
+   overlappingElementsBoxType = { name = "leader_traits" }
+   instantTextBoxType = { name = "leader_name" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_species" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "opinion_window"
+   position = { x = -10000 y = -10000 }
+   background = { name = "opinion_bg" spriteType = "GFX_tiled_window_transparent" }
+   iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" }
+   instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "EVENT_DIPLO"
+   position = { x = 0 y = 0 }
+   instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+   instantTextBoxType = { name = "action_desc" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+   listBoxType = {
+    name = "option_list"
+    position = { x = 22 y = 668 }
+    size = { x = 986 y = 38 }
+    spacing = 0
+    scrollbarType = "standardlistbox_slider"
+    backGround = ""
+    borderSize = { x = 0 y = 0 }
+   }
+  }
+  instantTextBoxType = {
+   name = "panel_title"
+   text = "auto_qol_military_title"
+   font = "malgun_goth_24"
+   position = { x = 22 y = 15 }
+   maxWidth = 900
+   maxHeight = 30
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "panel_note"
+   text = "auto_qol_military_note"
+   font = "cg_16b"
+   position = { x = 22 y = 60 }
+   maxWidth = 980
+   maxHeight = 32
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "label_navy_cap"
+   text = "auto_qol_military_label_navy_cap"
+   font = "cg_16b"
+   position = { x = 22 y = 124 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_navy_cap"
+   buttonText = "auto_qol_military_value_navy_cap"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 154 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_add_500"
+   buttonText = "auto_qol_military_add_500"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_sub_500"
+   buttonText = "auto_qol_military_sub_500"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_add_1000"
+   buttonText = "auto_qol_military_add_1000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_sub_1000"
+   buttonText = "auto_qol_military_sub_1000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_add_2500"
+   buttonText = "auto_qol_military_add_2500"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_add_2500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_sub_2500"
+   buttonText = "auto_qol_military_sub_2500"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_sub_2500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_add_5000"
+   buttonText = "auto_qol_military_add_5000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_add_5000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_sub_5000"
+   buttonText = "auto_qol_military_sub_5000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_sub_5000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_add_10000"
+   buttonText = "auto_qol_military_add_10000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_add_10000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_sub_10000"
+   buttonText = "auto_qol_military_sub_10000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_sub_10000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_add_50000"
+   buttonText = "auto_qol_military_add_50000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_add_50000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_sub_50000"
+   buttonText = "auto_qol_military_sub_50000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_sub_50000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_navy_cap_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 140 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_navy_cap_reset"
+  }
+  instantTextBoxType = {
+   name = "label_cmd_limit"
+   text = "auto_qol_military_label_cmd_limit"
+   font = "cg_16b"
+   position = { x = 22 y = 204 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_cmd_limit"
+   buttonText = "auto_qol_military_value_cmd_limit"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 234 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_add_50"
+   buttonText = "auto_qol_military_add_50"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_sub_50"
+   buttonText = "auto_qol_military_sub_50"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_add_100"
+   buttonText = "auto_qol_military_add_100"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_sub_100"
+   buttonText = "auto_qol_military_sub_100"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_add_200"
+   buttonText = "auto_qol_military_add_200"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_sub_200"
+   buttonText = "auto_qol_military_sub_200"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_add_500"
+   buttonText = "auto_qol_military_add_500"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_sub_500"
+   buttonText = "auto_qol_military_sub_500"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_add_1000"
+   buttonText = "auto_qol_military_add_1000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_sub_1000"
+   buttonText = "auto_qol_military_sub_1000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_add_5000"
+   buttonText = "auto_qol_military_add_5000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_add_5000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_sub_5000"
+   buttonText = "auto_qol_military_sub_5000"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_sub_5000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_cmd_limit_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 220 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_cmd_limit_reset"
+  }
+  instantTextBoxType = {
+   name = "label_starbase_module_speed"
+   text = "auto_qol_military_label_starbase_module_speed"
+   font = "cg_16b"
+   position = { x = 22 y = 284 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_starbase_module_speed"
+   buttonText = "auto_qol_military_value_starbase_module_speed"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 314 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_add_500"
+   buttonText = "auto_qol_military_add_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_sub_500"
+   buttonText = "auto_qol_military_sub_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_add_2000"
+   buttonText = "auto_qol_military_add_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_add_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_sub_2000"
+   buttonText = "auto_qol_military_sub_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_sub_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_starbase_module_speed_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 300 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_starbase_module_speed_reset"
+  }
+  instantTextBoxType = {
+   name = "label_defense_platform_speed"
+   text = "auto_qol_military_label_defense_platform_speed"
+   font = "cg_16b"
+   position = { x = 22 y = 364 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_defense_platform_speed"
+   buttonText = "auto_qol_military_value_defense_platform_speed"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 394 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_add_500"
+   buttonText = "auto_qol_military_add_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_sub_500"
+   buttonText = "auto_qol_military_sub_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_add_2000"
+   buttonText = "auto_qol_military_add_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_add_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_sub_2000"
+   buttonText = "auto_qol_military_sub_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_sub_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_defense_platform_speed_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 380 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_defense_platform_speed_reset"
+  }
+  instantTextBoxType = {
+   name = "label_army_recruit_speed"
+   text = "auto_qol_military_label_army_recruit_speed"
+   font = "cg_16b"
+   position = { x = 22 y = 444 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_army_recruit_speed"
+   buttonText = "auto_qol_military_value_army_recruit_speed"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 474 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_add_500"
+   buttonText = "auto_qol_military_add_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_sub_500"
+   buttonText = "auto_qol_military_sub_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_add_2000"
+   buttonText = "auto_qol_military_add_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_add_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_sub_2000"
+   buttonText = "auto_qol_military_sub_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_sub_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_army_recruit_speed_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 460 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_army_recruit_speed_reset"
+  }
+  instantTextBoxType = {
+   name = "label_ship_build_speed"
+   text = "auto_qol_military_label_ship_build_speed"
+   font = "cg_16b"
+   position = { x = 22 y = 524 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_ship_build_speed"
+   buttonText = "auto_qol_military_value_ship_build_speed"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 554 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 524 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 557 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 524 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 557 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 524 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 557 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_add_500"
+   buttonText = "auto_qol_military_add_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 524 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_sub_500"
+   buttonText = "auto_qol_military_sub_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 557 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 524 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 557 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_add_2000"
+   buttonText = "auto_qol_military_add_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 524 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_add_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_sub_2000"
+   buttonText = "auto_qol_military_sub_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 557 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_sub_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_ship_build_speed_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 540 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_ship_build_speed_reset"
+  }
+  instantTextBoxType = {
+   name = "panel_footer"
+   text = "auto_qol_military_military_footer"
+   font = "cg_16b"
+   position = { x = 22 y = 608 }
+   maxWidth = 980
+   maxHeight = 48
+   alwaysTransparent = yes
+  }
+
+ }
+
+ containerWindowType = {
+  name = "auto_qol_military_planet_option"
+  size = { width = 235 height = 34 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 0 }
+   size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_military_planet_window"
+  orientation = center
+  origo = center
+  moveable = yes
+  size = { width = 1030 height = 720 }
+  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  buttonType = {
+   name = "close"
+   quadTextureSprite = "GFX_main_close_button"
+   orientation = upper_right
+   position = { x = -57 y = 14 }
+   shortcut = "ESCAPE"
+   clicksound = "back_click"
+  }
+  buttonType = { name = "focus_button" spriteType = "GFX_fleetview_focus" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "tts_button" spriteType = "GFX_button_tts_start" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "alien_message_background" spriteType = "GFX_tiles_dark_area_cut_8" position = { x = -10000 y = -10000 } }
+  # Native event code resets this text box's scroll position on opening.
+  # Its scrollbar must exist even while the text box is offscreen.
+  instantTextBoxType = {
+   name = "alien_message"
+   font = "cg_16b"
+   position = { x = -10000 y = -10000 }
+   maxWidth = 465
+   maxHeight = 220
+   format = left
+   scrollbarType = "standardtext_slider"
+  }
+  buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "portrait_background"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_character" }
+  }
+  containerWindowType = {
+   name = "portrait"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" }
+   iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" }
+   iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" }
+   iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" }
+  }
+  iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_government_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "empire_flag" quadTextureSprite = "GFX_empire_flag_128" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "leader_details"
+   position = { x = -10000 y = -10000 }
+   containerWindowType = { name = "leader_traits_box" }
+   instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_traits_label" font = "cg_16b" }
+   overlappingElementsBoxType = { name = "leader_traits" }
+   instantTextBoxType = { name = "leader_name" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_species" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "opinion_window"
+   position = { x = -10000 y = -10000 }
+   background = { name = "opinion_bg" spriteType = "GFX_tiled_window_transparent" }
+   iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" }
+   instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "EVENT_DIPLO"
+   position = { x = 0 y = 0 }
+   instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+   instantTextBoxType = { name = "action_desc" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+   listBoxType = {
+    name = "option_list"
+    position = { x = 22 y = 668 }
+    size = { x = 986 y = 38 }
+    spacing = 0
+    scrollbarType = "standardlistbox_slider"
+    backGround = ""
+    borderSize = { x = 0 y = 0 }
+   }
+  }
+  instantTextBoxType = {
+   name = "panel_title"
+   text = "auto_qol_military_planet_title"
+   font = "malgun_goth_24"
+   position = { x = 22 y = 15 }
+   maxWidth = 900
+   maxHeight = 30
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "panel_note"
+   text = "auto_qol_military_note"
+   font = "cg_16b"
+   position = { x = 22 y = 60 }
+   maxWidth = 980
+   maxHeight = 32
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "label_planet_construction"
+   text = "auto_qol_military_label_planet_construction"
+   font = "cg_16b"
+   position = { x = 22 y = 124 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_planet_construction"
+   buttonText = "auto_qol_military_value_planet_construction"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 154 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_add_1"
+   buttonText = "auto_qol_military_add_1"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_add_1"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_sub_1"
+   buttonText = "auto_qol_military_sub_1"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_sub_1"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_add_2"
+   buttonText = "auto_qol_military_add_2"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_add_2"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_sub_2"
+   buttonText = "auto_qol_military_sub_2"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_sub_2"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_add_5"
+   buttonText = "auto_qol_military_add_5"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_add_5"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_sub_5"
+   buttonText = "auto_qol_military_sub_5"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_sub_5"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_add_10"
+   buttonText = "auto_qol_military_add_10"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_add_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_sub_10"
+   buttonText = "auto_qol_military_sub_10"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_sub_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_construction_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 140 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_construction_reset"
+  }
+  instantTextBoxType = {
+   name = "label_planet_build_speed"
+   text = "auto_qol_military_label_planet_build_speed"
+   font = "cg_16b"
+   position = { x = 22 y = 204 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_planet_build_speed"
+   buttonText = "auto_qol_military_value_planet_build_speed"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 234 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_add_500"
+   buttonText = "auto_qol_military_add_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_sub_500"
+   buttonText = "auto_qol_military_sub_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_add_2000"
+   buttonText = "auto_qol_military_add_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_add_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_sub_2000"
+   buttonText = "auto_qol_military_sub_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_sub_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_build_speed_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 220 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_build_speed_reset"
+  }
+  instantTextBoxType = {
+   name = "label_planet_jobs_speed"
+   text = "auto_qol_military_label_planet_jobs_speed"
+   font = "cg_16b"
+   position = { x = 22 y = 284 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_planet_jobs_speed"
+   buttonText = "auto_qol_military_value_planet_jobs_speed"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 314 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_add_10"
+   buttonText = "auto_qol_military_add_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_add_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_sub_10"
+   buttonText = "auto_qol_military_sub_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_sub_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_add_25"
+   buttonText = "auto_qol_military_add_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_add_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_sub_25"
+   buttonText = "auto_qol_military_sub_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_sub_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_planet_jobs_speed_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 300 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_planet_jobs_speed_reset"
+  }
+  instantTextBoxType = {
+   name = "label_automated_ratio"
+   text = "auto_qol_military_label_automated_ratio"
+   font = "cg_16b"
+   position = { x = 22 y = 364 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_automated_ratio"
+   buttonText = "auto_qol_military_value_automated_ratio"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 394 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_add_1"
+   buttonText = "auto_qol_military_add_1_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_add_1"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_sub_1"
+   buttonText = "auto_qol_military_sub_1_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_sub_1"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_add_5"
+   buttonText = "auto_qol_military_add_5_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_add_5"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_sub_5"
+   buttonText = "auto_qol_military_sub_5_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_sub_5"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_add_10"
+   buttonText = "auto_qol_military_add_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_add_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_sub_10"
+   buttonText = "auto_qol_military_sub_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_sub_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_add_25"
+   buttonText = "auto_qol_military_add_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_add_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_sub_25"
+   buttonText = "auto_qol_military_sub_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_sub_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 364 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 397 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_ratio_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 380 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_ratio_reset"
+  }
+  instantTextBoxType = {
+   name = "label_automated_output"
+   text = "auto_qol_military_label_automated_output"
+   font = "cg_16b"
+   position = { x = 22 y = 444 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_automated_output"
+   buttonText = "auto_qol_military_value_automated_output"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 474 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_add_10"
+   buttonText = "auto_qol_military_add_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_add_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_sub_10"
+   buttonText = "auto_qol_military_sub_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_sub_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_add_25"
+   buttonText = "auto_qol_military_add_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_add_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_sub_25"
+   buttonText = "auto_qol_military_sub_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_sub_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 444 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 477 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_automated_output_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 460 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_automated_output_reset"
+  }
+  instantTextBoxType = {
+   name = "panel_footer"
+   text = "auto_qol_military_planet_footer"
+   font = "cg_16b"
+   position = { x = 22 y = 608 }
+   maxWidth = 980
+   maxHeight = 48
+   alwaysTransparent = yes
+  }
+
+ }
+
+ containerWindowType = {
+  name = "auto_qol_military_mega_option"
+  size = { width = 235 height = 34 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 0 }
+   size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_military_mega_window"
+  orientation = center
+  origo = center
+  moveable = yes
+  size = { width = 1030 height = 720 }
+  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  buttonType = {
+   name = "close"
+   quadTextureSprite = "GFX_main_close_button"
+   orientation = upper_right
+   position = { x = -57 y = 14 }
+   shortcut = "ESCAPE"
+   clicksound = "back_click"
+  }
+  buttonType = { name = "focus_button" spriteType = "GFX_fleetview_focus" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "tts_button" spriteType = "GFX_button_tts_start" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "alien_message_background" spriteType = "GFX_tiles_dark_area_cut_8" position = { x = -10000 y = -10000 } }
+  # Native event code resets this text box's scroll position on opening.
+  # Its scrollbar must exist even while the text box is offscreen.
+  instantTextBoxType = {
+   name = "alien_message"
+   font = "cg_16b"
+   position = { x = -10000 y = -10000 }
+   maxWidth = 465
+   maxHeight = 220
+   format = left
+   scrollbarType = "standardtext_slider"
+  }
+  buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "portrait_background"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_character" }
+  }
+  containerWindowType = {
+   name = "portrait"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" }
+   iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" }
+   iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" }
+   iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" }
+  }
+  iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_government_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "empire_flag" quadTextureSprite = "GFX_empire_flag_128" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "leader_details"
+   position = { x = -10000 y = -10000 }
+   containerWindowType = { name = "leader_traits_box" }
+   instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_traits_label" font = "cg_16b" }
+   overlappingElementsBoxType = { name = "leader_traits" }
+   instantTextBoxType = { name = "leader_name" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_species" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "opinion_window"
+   position = { x = -10000 y = -10000 }
+   background = { name = "opinion_bg" spriteType = "GFX_tiled_window_transparent" }
+   iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" }
+   instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "EVENT_DIPLO"
+   position = { x = 0 y = 0 }
+   instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+   instantTextBoxType = { name = "action_desc" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+   listBoxType = {
+    name = "option_list"
+    position = { x = 22 y = 668 }
+    size = { x = 986 y = 38 }
+    spacing = 0
+    scrollbarType = "standardlistbox_slider"
+    backGround = ""
+    borderSize = { x = 0 y = 0 }
+   }
+  }
+  instantTextBoxType = {
+   name = "panel_title"
+   text = "auto_qol_military_mega_title"
+   font = "malgun_goth_24"
+   position = { x = 22 y = 15 }
+   maxWidth = 900
+   maxHeight = 30
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "panel_note"
+   text = "auto_qol_military_note"
+   font = "cg_16b"
+   position = { x = 22 y = 60 }
+   maxWidth = 980
+   maxHeight = 32
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "label_mega_build_speed"
+   text = "auto_qol_military_label_mega_build_speed"
+   font = "cg_16b"
+   position = { x = 22 y = 124 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_mega_build_speed"
+   buttonText = "auto_qol_military_value_mega_build_speed"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 154 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_add_500"
+   buttonText = "auto_qol_military_add_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_add_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_sub_500"
+   buttonText = "auto_qol_military_sub_500_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_sub_500"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_add_2000"
+   buttonText = "auto_qol_military_add_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 124 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_add_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_sub_2000"
+   buttonText = "auto_qol_military_sub_2000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 157 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_sub_2000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_build_speed_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 140 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_build_speed_reset"
+  }
+  instantTextBoxType = {
+   name = "label_mega_construction"
+   text = "auto_qol_military_label_mega_construction"
+   font = "cg_16b"
+   position = { x = 22 y = 204 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_mega_construction"
+   buttonText = "auto_qol_military_value_mega_construction"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 234 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_add_1"
+   buttonText = "auto_qol_military_add_1"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_add_1"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_sub_1"
+   buttonText = "auto_qol_military_sub_1"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_sub_1"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_add_2"
+   buttonText = "auto_qol_military_add_2"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_add_2"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_sub_2"
+   buttonText = "auto_qol_military_sub_2"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_sub_2"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_add_5"
+   buttonText = "auto_qol_military_add_5"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_add_5"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_sub_5"
+   buttonText = "auto_qol_military_sub_5"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_sub_5"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_add_10"
+   buttonText = "auto_qol_military_add_10"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 204 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_add_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_sub_10"
+   buttonText = "auto_qol_military_sub_10"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 237 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_sub_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_construction_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 220 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_construction_reset"
+  }
+  instantTextBoxType = {
+   name = "label_mega_production"
+   text = "auto_qol_military_label_mega_production"
+   font = "cg_16b"
+   position = { x = 22 y = 284 }
+   maxWidth = 248
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  effectButtonType = {
+   name = "value_mega_production"
+   buttonText = "auto_qol_military_value_mega_production"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 22 y = 314 }
+   size = { x = 248 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_add_10"
+   buttonText = "auto_qol_military_add_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_add_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_sub_10"
+   buttonText = "auto_qol_military_sub_10_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 288 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_sub_10"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_add_25"
+   buttonText = "auto_qol_military_add_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_add_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_sub_25"
+   buttonText = "auto_qol_military_sub_25_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 378 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_sub_25"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_add_50"
+   buttonText = "auto_qol_military_add_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_add_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_sub_50"
+   buttonText = "auto_qol_military_sub_50_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 468 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_sub_50"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_add_100"
+   buttonText = "auto_qol_military_add_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_add_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_sub_100"
+   buttonText = "auto_qol_military_sub_100_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 558 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_sub_100"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_add_200"
+   buttonText = "auto_qol_military_add_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_add_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_sub_200"
+   buttonText = "auto_qol_military_sub_200_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 648 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_sub_200"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_add_1000"
+   buttonText = "auto_qol_military_add_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 284 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_add_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_sub_1000"
+   buttonText = "auto_qol_military_sub_1000_pct"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 738 y = 317 }
+   size = { x = 84 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_sub_1000"
+  }
+  effectButtonType = {
+   name = "auto_qol_military_mega_production_reset"
+   buttonText = "auto_qol_military_reset"
+   buttonFont = "cg_16b"
+   format = center
+   position = { x = 846 y = 300 }
+   size = { x = 150 y = 25 }
+   quadTextureSprite = "GFX_button_light"
+   effect = "auto_qol_military_mega_production_reset"
+  }
+  instantTextBoxType = {
+   name = "panel_footer"
+   text = "auto_qol_military_footer"
+   font = "cg_16b"
+   position = { x = 22 y = 608 }
+   maxWidth = 980
+   maxHeight = 48
+   alwaysTransparent = yes
+  }
+
+ }
+
+ containerWindowType = {
+  name = "auto_qol_military_footer_0"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 1 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 0 }
+   size = { x = 300 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+
+ containerWindowType = {
+  name = "auto_qol_military_footer_1"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 1 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 330 y = -1 }
+   size = { x = 300 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+
+ containerWindowType = {
+  name = "auto_qol_military_footer_2"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 1 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 660 y = -2 }
+   size = { x = 300 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+}

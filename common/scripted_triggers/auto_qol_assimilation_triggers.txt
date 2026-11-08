@@ -1,0 +1,12 @@
+# Leader scope. Mod authors may protect additional characters with this flag.
+# There is no universal test for custom portraits or species-dependent stories.
+auto_qol_assimilation_eligible_leader = {
+	is_same_species = event_target:auto_qol_assimilation_source@root
+	is_event_leader = no
+	is_leader_tier = leader_tier_default
+	is_gestalt_node = no
+	has_any_chosen_one_leader_trait = no
+	NOT = { has_leader_flag = renowned_leader }
+	NOT = { has_leader_flag = auto_qol_assimilation_protected }
+}
+

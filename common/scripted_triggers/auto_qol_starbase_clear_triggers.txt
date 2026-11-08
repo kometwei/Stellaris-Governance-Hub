@@ -1,0 +1,23 @@
+auto_qol_starbase_clear_normal = { OR = { has_starbase_size = starbase_starport has_starbase_size = starbase_starhold has_starbase_size = starbase_starfortress has_starbase_size = starbase_citadel } }
+auto_qol_starbase_clear_protected = { OR = {
+has_starbase_module = arkship_grand_archive
+has_starbase_module = orbital_ring_habitation
+has_starbase_module = waystation_aetherophasic_anchor
+has_starbase_module = waystation_logistics_hub
+has_starbase_module = waystation_reaver_stronghold
+has_starbase_module = waystation_recruitment_office
+has_starbase_module = waystation_treasure_vault
+has_starbase_building = arkship_embassy_complex
+has_starbase_building = arkship_galactic_stock_exchange
+has_starbase_building = arkship_noble_estates
+has_starbase_building = arkship_psi_corps
+has_starbase_building = arkship_slave_processing_facility
+has_starbase_building = recruitment_office
+has_starbase_building = ring_embassy_complex
+has_starbase_building = ring_galactic_stock_exchange
+has_starbase_building = ring_noble_estates
+has_starbase_building = ring_psi_corps
+has_starbase_building = ring_slave_processing_facility
+AND = { root = { NOT = { has_country_flag = aqsc_force } } OR = { has_starbase_module = archaeo_rampart has_starbase_module = arkship_beastport has_starbase_module = beastport has_starbase_module = orbital_ring_amoeba_hangar_bay has_starbase_module = orbital_ring_archaeo_hangar_bay has_starbase_module = orbital_ring_archaeo_laser_battery has_starbase_module = orbital_ring_archaeo_mass_driver_battery has_starbase_module = orbital_ring_beastport has_starbase_module = orbital_ring_hangar_bay has_starbase_module = orbital_ring_laser_battery has_starbase_module = orbital_ring_mass_driver_battery has_starbase_module = orbital_ring_particle_launcher has_starbase_module = orbital_ring_psionic_hangar_bay has_starbase_module = orbital_ring_psionic_torpedo has_starbase_module = orbital_ring_scourge_missile_battery has_starbase_module = orbital_ring_shipyard has_starbase_module = orbital_ring_swarm_hangar_bay has_starbase_module = orbital_ring_swarmer_missile_battery has_starbase_module = shipyard has_starbase_building = defense_grid has_starbase_building = reloading_bay } }
+} }
+auto_qol_starbase_clear_unknown = { always = no }

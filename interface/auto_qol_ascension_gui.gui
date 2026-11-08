@@ -1,0 +1,230 @@
+guiTypes = {
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_option"
+  size = { width = 986 height = 34 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 330 y = 0 }
+   size = { x = 630 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_window"
+  orientation = center
+  origo = center
+  moveable = yes
+  size = { width = 1030 height = 720 }
+  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  buttonType = {
+   name = "close"
+   quadTextureSprite = "GFX_main_close_button"
+   orientation = upper_right
+   position = { x = -57 y = 14 }
+   shortcut = "ESCAPE"
+   clicksound = "back_click"
+  }
+  buttonType = { name = "focus_button" spriteType = "GFX_fleetview_focus" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "tts_button" spriteType = "GFX_button_tts_start" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "alien_message_background" spriteType = "GFX_tiles_dark_area_cut_8" position = { x = -10000 y = -10000 } }
+  # Native event code resets this text box's scroll position on opening.
+  # Its scrollbar must exist even while the text box is offscreen.
+  instantTextBoxType = {
+   name = "alien_message"
+   font = "cg_16b"
+   position = { x = 22 y = 112 }
+   maxWidth = 300
+   maxHeight = 450
+   format = left
+   scrollbarType = "standardtext_slider"
+  }
+  buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "portrait_background"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_character" }
+  }
+  containerWindowType = {
+   name = "portrait"
+   position = { x = -10000 y = -10000 }
+   iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" }
+   iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" }
+   iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" }
+   iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" }
+  }
+  iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_government_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -10000 y = -10000 } }
+  overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -10000 y = -10000 } }
+  buttonType = { name = "empire_flag" quadTextureSprite = "GFX_empire_flag_128" position = { x = -10000 y = -10000 } }
+  containerWindowType = {
+   name = "leader_details"
+   position = { x = -10000 y = -10000 }
+   containerWindowType = { name = "leader_traits_box" }
+   instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_traits_label" font = "cg_16b" }
+   overlappingElementsBoxType = { name = "leader_traits" }
+   instantTextBoxType = { name = "leader_name" font = "cg_16b" }
+   instantTextBoxType = { name = "leader_species" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "opinion_window"
+   position = { x = -10000 y = -10000 }
+   background = { name = "opinion_bg" spriteType = "GFX_tiled_window_transparent" }
+   iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" }
+   instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+  }
+  containerWindowType = {
+   name = "EVENT_DIPLO"
+   position = { x = 0 y = 0 }
+   instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = 352 y = 116 } maxWidth = 630 maxHeight = 52 }
+   instantTextBoxType = { name = "action_desc" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
+   listBoxType = {
+    name = "option_list"
+    position = { x = 22 y = 184 }
+    size = { x = 986 y = 524 }
+    spacing = 0
+    scrollbarType = "standardlistbox_slider"
+    backGround = ""
+    borderSize = { x = 0 y = 0 }
+   }
+  }
+  instantTextBoxType = {
+   name = "feature_header"
+   text = "auto_qol_ascension_gui_header"
+   font = "malgun_goth_24"
+   position = { x = 22 y = 15 }
+   maxWidth = 930
+   maxHeight = 30
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "feature_note"
+   text = "auto_qol_ascension_gui_note"
+   font = "cg_16b"
+   position = { x = 22 y = 66 }
+   maxWidth = 980
+   maxHeight = 28
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "feature_footer"
+   text = "auto_qol_ascension_gui_footer"
+   font = "cg_16b"
+   position = { x = 22 y = 606 }
+   maxWidth = 980
+   maxHeight = 48
+   alwaysTransparent = yes
+  }
+
+ }
+
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_nav2_0"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 0 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 165 y = 484 }
+   size = { x = 300 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_nav2_1"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 0 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 495 y = 484 }
+   size = { x = 300 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_nav4_0"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 0 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 484 }
+   size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_nav4_1"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 0 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 247 y = 484 }
+   size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_nav4_2"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 0 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 494 y = 484 }
+   size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+
+ containerWindowType = {
+  name = "auto_qol_ascension_gui_nav4_3"
+  position = { x = 0 y = 0 }
+  size = { width = 986 height = 0 }
+  moveable = no
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 741 y = 484 }
+   size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+}

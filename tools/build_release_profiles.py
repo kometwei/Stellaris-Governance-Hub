@@ -15,6 +15,14 @@ import shutil
 from pathlib import Path
 
 import build_smart_council_system as council
+from build_council_gui import build as build_council_gui
+from build_hub_gui import build as build_hub_gui
+from build_species_ascension_gui import build as build_species_ascension_gui
+from build_megastructure_office import build as build_megastructure_office
+from build_starbase_clear import build as build_starbase_clear
+from build_district_expansion import build as build_district_expansion
+from ascension_slots import configure_slot_cap
+from automated_workforce import build as build_automation_ratio
 from paths import MOD_ROOT
 
 
@@ -28,6 +36,17 @@ THUMBNAIL_NAME = "thumbnail.png"
 OUTPUT_MARKER = ".auto_qol_generated_output"
 
 CORE_FILES = (
+    "common/static_modifiers/auto_qol_automation_ratio_modifiers.txt",
+    "common/economic_categories/01_auto_qol_megastructure_categories.txt",
+    "common/scripted_effects/auto_qol_planet_ascension_effects.txt",
+    "interface/auto_qol_military.gui",
+    "common/button_effects/auto_qol_military_buttons.txt",
+    "common/scripted_effects/auto_qol_military_gui_effects.txt",
+    "events/auto_qol_military_gui_events.txt",
+    "events/auto_qol_assimilation_events.txt",
+    "common/scripted_effects/auto_qol_assimilation_effects.txt",
+    "common/scripted_triggers/auto_qol_assimilation_triggers.txt",
+    "events/auto_qol_ascension_events.txt",
     "common/defines/zzz_auto_qol_fleet_defines.txt",
     "common/edicts/auto_qol_edicts.txt",
     "common/on_actions/auto_qol_on_actions.txt",
@@ -46,6 +65,19 @@ CORE_FILES = (
 )
 
 IMPLICIT_LOCALISATION_KEYS = {
+    "qol_custom_automated_ratio_modifier",
+    "qol_custom_automated_ratio_modifier_desc",
+    "qol_custom_automated_output_modifier",
+    "qol_custom_automated_output_modifier_desc",
+    "mod_megastructures_produces_mult",
+    "qol_custom_mega_production_modifier",
+    "qol_custom_mega_production_modifier_desc",
+    "qol_custom_mega_build_speed_modifier",
+    "qol_custom_mega_build_speed_modifier_desc",
+    "qol_custom_mega_construction_modifier",
+    "qol_custom_mega_construction_modifier_desc",
+    "auto_qol_ascension_slots",
+    "auto_qol_ascension_slots_desc",
     "qol_custom_planet_jobs_speed_modifier",
     "qol_custom_planet_jobs_speed_modifier_desc",
     "qol_custom_planet_build_speed_modifier",
@@ -81,7 +113,15 @@ IMPLICIT_LOCALISATION_KEYS = {
     "auto_qol_pool_clamp_20_desc",
 }
 
+ASCENSION_DESCRIPTION = (
+    "当前已解锁 §Y[Root.auto_qol_ascension_current]§! 格，补齐目标为 §Y[Root.auto_qol_ascension_target]§! 格。\\n\\n"
+    "用【目标－8 / ＋8】快速调整，【目标－1 / ＋1】微调目标（最小 1，最大 4096），再点击【补齐至目标】生效。降低目标不会收回已解锁槽位。\\n\\n"
+    "§Y请按槽位模组提供的实际总格数设置；此处不自动识别槽位上限，也不扩展传统界面的槽位。§!\\n\\n"
+    "不会自动选择天赋、完成传统或授予科技；天赋条件仍然生效。"
+)
+
 PUBLIC_LOC_OVERRIDES = {
+    "auto_qol_ascension.desc": ASCENSION_DESCRIPTION,
     "auto_qol_menu_desc": (
         "打开星政中枢，管理内阁席位、舰队容量、基地建设、防御平台建造、陆军招募、舰船建造速度、星球施工数量、星球建设与岗位产出、领袖池、灵能科技与智能建交。"
     ),
@@ -95,6 +135,7 @@ PUBLIC_LOC_OVERRIDES = {
         "· §H舰队容量计算器§!：调整舰容、指挥上限、基地建设、防御平台建造、陆军招募、舰船建造速度、星球施工数量、星球建设与岗位产出\\n"
         "· §H政务内阁指派§!：通过独立界面管理额外席位\\n"
         "· §H招募池智能治理§!：限制候选领袖总量\\n"
+        "· §H物种持续同化§!：指定境内物种，按月转化为主体物种；领袖可独立开关\\n"
         "· §H灵能三件套§!：完成灵能传统后一键完成三项科技\\n\\n"
         "§L请选择需要操作的功能模块：§!"
     ),
@@ -103,16 +144,17 @@ PUBLIC_LOC_OVERRIDES = {
         "公开核心版仅收录游戏本体及官方内容；第三方席位可使用仓库中的"
         "本地生成器创建专属版本。"
     ),
-    "auto_qol_pool_clamp_5": "领袖池轻度精简",
-    "auto_qol_pool_clamp_5_desc": "降低待招募领袖池的额外容量。",
-    "auto_qol_pool_clamp_10": "领袖池中度精简",
-    "auto_qol_pool_clamp_10_desc": "进一步降低待招募领袖池的额外容量。",
-    "auto_qol_pool_clamp_20": "领袖池高度精简",
-    "auto_qol_pool_clamp_20_desc": "大幅降低待招募领袖池的额外容量。",
+    "auto_qol_pool_clamp_5": "旧版领袖池压制（已停用）",
+    "auto_qol_pool_clamp_5_desc": "旧版存档兼容标记；不再减少候选名额，打开助手即可移除。",
+    "auto_qol_pool_clamp_10": "旧版领袖池压制（已停用）",
+    "auto_qol_pool_clamp_10_desc": "旧版存档兼容标记；不再减少候选名额，打开助手即可移除。",
+    "auto_qol_pool_clamp_20": "旧版领袖池压制（已停用）",
+    "auto_qol_pool_clamp_20_desc": "旧版存档兼容标记；不再减少候选名额，打开助手即可移除。",
 }
 
 LOCAL_LOC_OVERRIDES = {
     **PUBLIC_LOC_OVERRIDES,
+    "auto_qol_ascension.desc": ASCENSION_DESCRIPTION,
     "auto_qol_council_menu.1.desc": (
         "本模块提供内阁席位点名指派、在任名册与候选池治理。\\n\\n"
         "当前版本由本地生成器根据 Paradox Launcher 中实际启用的播放集构建；"
@@ -290,6 +332,13 @@ def write_council_catalog(
     (loc_dir / "auto_qol_council_assign_l_simp_chinese.yml").write_text(
         council_loc, encoding="utf-8-sig"
     )
+    build_automation_ratio(output_root)
+    build_council_gui(output_root)
+    build_hub_gui(output_root)
+    build_species_ascension_gui(output_root)
+    build_megastructure_office(output_root, active_dirs=active_mod_dirs)
+    build_starbase_clear(output_root, active_dirs=active_mod_dirs)
+    build_district_expansion(output_root)
 
     ui_source = None
     if include_ui_compat:
@@ -322,14 +371,54 @@ def write_council_catalog(
     }
 
 
+def validate_list_scrollbar_types(output_root: Path) -> None:
+    """List widgets need scrollbarType, not the container-only extended type."""
+    paths = list((output_root / "interface").rglob("*.gui"))
+    texts = {path: path.read_text(encoding="utf-8-sig") for path in paths}
+    extended = {"invisible_horizontal_slider", "bottom_horizontal_slider", "right_vertical_slider"}
+    for text in texts.values():
+        for match in re.finditer(r"\bextendedScrollbarType\s*=\s*\{", text, re.I):
+            end = council.find_matching_brace(text, text.index("{", match.start()))
+            name = re.search(r'\bname\s*=\s*"([^"\n]+)"', text[match.end():end])
+            if name:
+                extended.add(name[1])
+    for path, text in texts.items():
+        for match in re.finditer(r"\b(?:smooth)?listBoxType\s*=\s*\{", text, re.I):
+            end = council.find_matching_brace(text, text.index("{", match.start()))
+            block = text[match.end():end]
+            if re.match(r"smooth", match.group(), re.I) and "EVENT_DIPLO" in text and re.search(r'\bname\s*=\s*"option_list"', block):
+                raise ValueError(f"Native event list binding mismatch in {path}: EVENT_DIPLO.option_list must be listBoxType, not smoothListBoxType.")
+            for name in re.findall(r'\bscrollbarType\s*=\s*"([^"\n]+)"', block, re.I):
+                if name in extended:
+                    raise ValueError(f"List scrollbar type mismatch in {path}: {name} is an extendedScrollbarType; use a complete scrollbarType.")
+
+
+def validate_megastructure_production_category(output_root: Path) -> None:
+    """A static modifier is invalid unless its economic category generates it."""
+    static_path = output_root / "common/static_modifiers/auto_qol_static_modifiers.txt"
+    if not static_path.exists() or "megastructures_produces_mult" not in static_path.read_text(encoding="utf-8-sig"):
+        return
+    enabled = False
+    for path in sorted((output_root / "common/economic_categories").glob("*.txt")):
+        text = council.strip_comments(path.read_text(encoding="utf-8-sig"))
+        for match in re.finditer(r"(?m)^megastructures\s*=\s*\{", text):
+            start = text.index("{", match.start())
+            block = text[start + 1:council.find_matching_brace(text, start)]
+            enabled = any("produces" in part.split() for part in re.findall(r"generate_mult_modifiers\s*=\s*\{([^{}]*)\}", block))
+    if not enabled:
+        raise ValueError("megastructures_produces_mult requires megastructures.generate_mult_modifiers = { ... produces ... }")
+
+
 def validate_build(output_root: Path) -> None:
+    validate_megastructure_production_category(output_root)
     descriptor = output_root / "descriptor.mod"
     if not descriptor.exists():
         raise ValueError(f"Build is missing descriptor.mod: {output_root}")
+    validate_list_scrollbar_types(output_root)
 
     event_ids: dict[str, Path] = {}
     duplicate_ids = []
-    for path in output_root.rglob("*.txt"):
+    for path in (*output_root.rglob("*.txt"), *output_root.rglob("*.gui")):
         text = path.read_text(encoding="utf-8-sig", errors="strict")
         clean = council.strip_comments(text)
         if clean.count("{") != clean.count("}"):
@@ -373,7 +462,7 @@ def validate_build(output_root: Path) -> None:
 def collect_localisation_references(output_root: Path) -> set[str]:
     references = set(IMPLICIT_LOCALISATION_KEYS)
     pattern = re.compile(
-        r'\b(?:name|title|desc|custom_tooltip)\s*=\s*"([A-Za-z0-9_.-]+)"'
+        r'\b(?:name|title|desc|text|custom_tooltip)\s*=\s*"([A-Za-z0-9_.-]+)"'
     )
     for folder in ("common", "events"):
         root = output_root / folder
@@ -382,6 +471,10 @@ def collect_localisation_references(output_root: Path) -> set[str]:
         for path in root.rglob("*.txt"):
             text = path.read_text(encoding="utf-8-sig", errors="ignore")
             references.update(pattern.findall(text))
+    gui_pattern = re.compile(r'\b(?:text|buttonText)\s*=\s*"([A-Za-z0-9_.-]+)"')
+    for path in (output_root / "interface").glob("auto_qol_*.gui"):
+        references.update(gui_pattern.findall(path.read_text(encoding="utf-8-sig")))
+    references.discard("OPTION_TEXT")  # Native event-option placeholder.
     return references
 
 
@@ -389,7 +482,9 @@ def write_filtered_main_localisation(
     output_root: Path, overrides: dict[str, str]
 ) -> None:
     source = MOD_ROOT / "localisation" / "simp_chinese" / "auto_qol_l_simp_chinese.yml"
+    gui_source = source.with_name("auto_qol_military_gui_l_simp_chinese.yml")
     lines = source.read_text(encoding="utf-8-sig").splitlines()
+    lines += gui_source.read_text(encoding="utf-8-sig").splitlines()
     by_key: dict[str, str] = {}
     order: list[str] = []
     for line in lines:
@@ -401,6 +496,15 @@ def write_filtered_main_localisation(
         order.append(key)
 
     references = collect_localisation_references(output_root)
+    # Additional generated GUI localisation lives in its own BOM-prefixed file.
+    external_keys = set()
+    for path in (output_root / "localisation").rglob("*.yml"):
+        if path.name == "auto_qol_l_simp_chinese.yml":
+            continue
+        external_keys.update(re.findall(
+            r'(?m)^\s*([^#\s][^:]*):\d+\s+"',
+            path.read_text(encoding="utf-8-sig"),
+        ))
     selected: list[str] = []
     for key in order:
         if key not in references:
@@ -418,6 +522,7 @@ def write_filtered_main_localisation(
     missing = sorted(
         key for key in references
         if key not in by_key
+        and key not in external_keys
         and key not in overrides
         and not key.startswith("auto_qol_council_assign.")
         and not key.startswith("auto_qol_assign.")
@@ -454,6 +559,8 @@ def build_public(
     reset_generated_dir(output_root)
     for relative in CORE_FILES:
         copy_relative(relative, output_root)
+
+    configure_slot_cap(output_root)
 
     menu_path = output_root / "events" / "auto_qol_menu_events.txt"
     menu_text = menu_path.read_text(encoding="utf-8-sig")
@@ -509,6 +616,8 @@ def build_local(output_root: Path, install: bool) -> dict[str, object]:
     reset_generated_dir(output_root)
     for relative in CORE_FILES:
         copy_relative(relative, output_root)
+
+    configure_slot_cap(output_root, active_dirs)
 
     menu_path = output_root / "events" / "auto_qol_menu_events.txt"
     menu_text = menu_path.read_text(encoding="utf-8-sig")

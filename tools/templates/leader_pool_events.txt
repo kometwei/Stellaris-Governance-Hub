@@ -1,0 +1,79 @@
+country_event = {
+	id = auto_qol_council_pool.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = leader_pool_opt_enabled
+		NOT = { has_country_flag = auto_qol_pool_trim_scheduled }
+		count_pool_leader = {
+			limit = { always = yes }
+			count > 10
+		}
+	}
+
+	immediate = {
+		set_timed_country_flag = { flag = auto_qol_pool_trim_scheduled days = 2 }
+		country_event = { id = auto_qol_council_pool.3 days = 1 }
+	}
+}
+
+country_event = {
+	id = auto_qol_council_pool.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = leader_pool_opt_enabled
+	}
+
+	immediate = {
+		auto_qol_trim_leader_pool_to_10 = yes
+	}
+}
+
+country_event = {
+	id = auto_qol_council_pool.1
+	title = "auto_qol_council_pool.1.name"
+	desc = "auto_qol_council_pool.1.desc"
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+
+	immediate = { auto_qol_repair_leader_pool = yes }
+
+	# 只裁剪超过 10 人的部分；空池先解除旧压制并请求补充
+	option = {
+		name = "auto_qol_council_pool.clean"
+		custom_tooltip = "auto_qol_council_pool.clean_tt"
+		auto_qol_repair_leader_pool = yes
+		auto_qol_trim_leader_pool_to_10 = yes
+		hidden_effect = {
+			country_event = { id = auto_qol_council_pool.1 }
+		}
+	}
+
+	# 关闭自动裁剪，并修复旧压制留下的空池
+	option = {
+		name = "auto_qol_council_pool.reset"
+		custom_tooltip = "auto_qol_council_pool.reset_tt"
+		remove_country_flag = leader_pool_opt_enabled
+		auto_qol_repair_leader_pool = yes
+		hidden_effect = {
+			country_event = { id = auto_qol_council_pool.1 }
+		}
+	}
+
+	# 返回内阁主菜单
+	option = {
+		name = "auto_qol_council_pool.back"
+		country_event = { id = auto_qol_council_menu.1 }
+	}
+
+	# 离开并关闭界面 (支持右上角X与ESC)
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}

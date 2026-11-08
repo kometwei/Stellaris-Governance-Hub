@@ -1,0 +1,274 @@
+namespace = auto_qol_mega
+namespace = auto_qol_mega_page
+country_event = {
+ id = auto_qol_mega.1
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = {  is_ai = no  }
+ immediate = {
+  
+if = {
+ limit = { always = yes }
+ country_event = { id = auto_qol_mega_page.1 }
+}
+else_if = {
+ limit = { always = yes }
+ country_event = { id = auto_qol_mega_page.2 }
+}
+else = { country_event = { id = auto_qol_mega_page.1 } }
+ }
+}
+country_event = {
+ id = auto_qol_mega_page.1
+ diplomatic = yes
+ custom_gui = "auto_qol_mega_window"
+ custom_gui_option = "auto_qol_mega_option"
+ title = "auto_qol_mega_title"
+ desc = "auto_qol_mega_intro"
+ is_triggered_only = yes
+ trigger = { is_ai = no }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+option = {
+ name = "auto_qol_mega_next"
+ custom_gui = "auto_qol_mega_nav4_1"
+ trigger = { OR = {
+AND = {  always = yes  }
+} }
+ hidden_effect = {
+if = {
+ limit = { always = yes }
+ country_event = { id = auto_qol_mega_page.2 }
+}
+else = { country_event = { id = auto_qol_mega_page.2 } }
+ }
+}
+option = {
+ name = "auto_qol_mega_home"
+ custom_gui = "auto_qol_mega_nav4_2"
+ hidden_effect = {
+country_event = { id = auto_qol_menu.1 }
+ }
+}
+option = {
+ name = "auto_qol_mega_close"
+ custom_gui = "auto_qol_mega_nav4_3"
+ default_hide_option = yes
+}
+option = { name = "auto_qol_mega_all"
+ hidden_effect = { set_variable = { which = aqm_family value = 0 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_dyson_sphere"
+ hidden_effect = { set_variable = { which = aqm_family value = 1 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_think_tank"
+ hidden_effect = { set_variable = { which = aqm_family value = 2 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_spy_orb"
+ hidden_effect = { set_variable = { which = aqm_family value = 3 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_matter_decompressor"
+ hidden_effect = { set_variable = { which = aqm_family value = 4 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_strategic_coordination_center"
+ hidden_effect = { set_variable = { which = aqm_family value = 5 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_mega_art_installation"
+ hidden_effect = { set_variable = { which = aqm_family value = 6 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_interstellar_assembly"
+ hidden_effect = { set_variable = { which = aqm_family value = 7 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_mega_shipyard"
+ hidden_effect = { set_variable = { which = aqm_family value = 8 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_quantum_catapult"
+ hidden_effect = { set_variable = { which = aqm_family value = 9 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_orbital_arc_furnace"
+ hidden_effect = { set_variable = { which = aqm_family value = 10 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_dyson_swarm"
+ hidden_effect = { set_variable = { which = aqm_family value = 11 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+}
+country_event = {
+ id = auto_qol_mega_page.2
+ diplomatic = yes
+ custom_gui = "auto_qol_mega_window"
+ custom_gui_option = "auto_qol_mega_option"
+ title = "auto_qol_mega_title"
+ desc = "auto_qol_mega_intro"
+ is_triggered_only = yes
+ trigger = { is_ai = no }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+option = {
+ name = "auto_qol_mega_prev"
+ custom_gui = "auto_qol_mega_nav4_0"
+ trigger = { OR = {
+AND = {  always = yes  }
+} }
+ hidden_effect = {
+if = {
+ limit = { always = yes }
+ country_event = { id = auto_qol_mega_page.1 }
+}
+else = { country_event = { id = auto_qol_mega_page.1 } }
+ }
+}
+option = {
+ name = "auto_qol_mega_home"
+ custom_gui = "auto_qol_mega_nav4_2"
+ hidden_effect = {
+country_event = { id = auto_qol_menu.1 }
+ }
+}
+option = {
+ name = "auto_qol_mega_close"
+ custom_gui = "auto_qol_mega_nav4_3"
+ default_hide_option = yes
+}
+option = { name = "auto_qol_mega_ring_world"
+ hidden_effect = { set_variable = { which = aqm_family value = 12 }
+country_event = { id = auto_qol_mega.2 } }
+ }
+}
+country_event = {
+ id = auto_qol_mega.2
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = {  is_ai = no  }
+ immediate = {
+ remove_country_flag = aqm_execute
+auto_qol_mega_scan = yes 
+if = {
+ limit = { always = yes }
+ country_event = { id = auto_qol_mega_page.3 }
+}
+else = { country_event = { id = auto_qol_mega_page.3 } }
+ }
+}
+country_event = {
+ id = auto_qol_mega_page.3
+ diplomatic = yes
+ custom_gui = "auto_qol_mega_window"
+ custom_gui_option = "auto_qol_mega_option"
+ title = "auto_qol_mega_title"
+ desc = "auto_qol_mega_preview"
+ is_triggered_only = yes
+ trigger = { is_ai = no }
+ 
+ 
+ 
+ 
+
+option = {
+ name = "auto_qol_mega_home"
+ custom_gui = "auto_qol_mega_nav2_0"
+ hidden_effect = {
+country_event = { id = auto_qol_menu.1 }
+ }
+}
+option = {
+ name = "auto_qol_mega_close"
+ custom_gui = "auto_qol_mega_nav2_1"
+ default_hide_option = yes
+}
+option = { name = "auto_qol_mega_confirm"
+ trigger = { check_variable = { which = aqm_ready value > 0 } }
+ hidden_effect = { set_country_flag = aqm_execute
+auto_qol_mega_scan = yes
+country_event = { id = auto_qol_mega.3 } }
+ }
+option = { name = "auto_qol_mega_refresh"
+ hidden_effect = { country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_back"
+ hidden_effect = { country_event = { id = auto_qol_mega.1 } }
+ }
+}
+country_event = {
+ id = auto_qol_mega.3
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = {  is_ai = no  }
+ immediate = {
+  
+if = {
+ limit = { always = yes }
+ country_event = { id = auto_qol_mega_page.4 }
+}
+else = { country_event = { id = auto_qol_mega_page.4 } }
+ }
+}
+country_event = {
+ id = auto_qol_mega_page.4
+ diplomatic = yes
+ custom_gui = "auto_qol_mega_window"
+ custom_gui_option = "auto_qol_mega_option"
+ title = "auto_qol_mega_title"
+ desc = "auto_qol_mega_result"
+ is_triggered_only = yes
+ trigger = { is_ai = no }
+ 
+ 
+ 
+
+option = {
+ name = "auto_qol_mega_home"
+ custom_gui = "auto_qol_mega_nav2_0"
+ hidden_effect = {
+country_event = { id = auto_qol_menu.1 }
+ }
+}
+option = {
+ name = "auto_qol_mega_close"
+ custom_gui = "auto_qol_mega_nav2_1"
+ default_hide_option = yes
+}
+option = { name = "auto_qol_mega_refresh"
+ hidden_effect = { country_event = { id = auto_qol_mega.2 } }
+ }
+option = { name = "auto_qol_mega_back"
+ hidden_effect = { country_event = { id = auto_qol_mega.1 } }
+ }
+}

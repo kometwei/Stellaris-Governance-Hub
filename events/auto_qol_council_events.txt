@@ -98,71 +98,25 @@ country_event = {
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
 
-	# 一键清退当前全部待选闲人并立即刷新
+	immediate = { auto_qol_repair_leader_pool = yes }
+
+	# 只裁剪超过 10 人的部分；空池先解除旧压制并请求补充
 	option = {
 		name = "auto_qol_council_pool.clean"
 		custom_tooltip = "auto_qol_council_pool.clean_tt"
-		every_pool_leader = {
-			kill_leader = { show_notification = no }
-		}
-		refresh_leader_pool = yes
+		auto_qol_repair_leader_pool = yes
+		auto_qol_trim_leader_pool_to_10 = yes
 		hidden_effect = {
 			country_event = { id = auto_qol_council_pool.1 }
 		}
 	}
 
-	# 启用待选池温和精简 (-5)
-	option = {
-		name = "auto_qol_council_pool.clamp_5"
-		custom_tooltip = "auto_qol_council_pool.clamp_5_tt"
-		remove_modifier = auto_qol_pool_clamp_5
-		remove_modifier = auto_qol_pool_clamp_10
-		remove_modifier = auto_qol_pool_clamp_20
-		add_modifier = { modifier = auto_qol_pool_clamp_5 days = -1 }
-		every_pool_leader = { kill_leader = { show_notification = no } }
-		refresh_leader_pool = yes
-		hidden_effect = {
-			country_event = { id = auto_qol_council_pool.1 }
-		}
-	}
-
-	# 启用待选池强力精简 (-10)
-	option = {
-		name = "auto_qol_council_pool.clamp_10"
-		custom_tooltip = "auto_qol_council_pool.clamp_10_tt"
-		remove_modifier = auto_qol_pool_clamp_5
-		remove_modifier = auto_qol_pool_clamp_10
-		remove_modifier = auto_qol_pool_clamp_20
-		add_modifier = { modifier = auto_qol_pool_clamp_10 days = -1 }
-		every_pool_leader = { kill_leader = { show_notification = no } }
-		refresh_leader_pool = yes
-		hidden_effect = {
-			country_event = { id = auto_qol_council_pool.1 }
-		}
-	}
-
-	# 启用待选池极限精简 (-20)
-	option = {
-		name = "auto_qol_council_pool.clamp_20"
-		custom_tooltip = "auto_qol_council_pool.clamp_20_tt"
-		remove_modifier = auto_qol_pool_clamp_5
-		remove_modifier = auto_qol_pool_clamp_10
-		remove_modifier = auto_qol_pool_clamp_20
-		add_modifier = { modifier = auto_qol_pool_clamp_20 days = -1 }
-		every_pool_leader = { kill_leader = { show_notification = no } }
-		refresh_leader_pool = yes
-		hidden_effect = {
-			country_event = { id = auto_qol_council_pool.1 }
-		}
-	}
-
-	# 关闭精简协议
+	# 关闭自动裁剪，并修复旧压制留下的空池
 	option = {
 		name = "auto_qol_council_pool.reset"
 		custom_tooltip = "auto_qol_council_pool.reset_tt"
-		remove_modifier = auto_qol_pool_clamp_5
-		remove_modifier = auto_qol_pool_clamp_10
-		remove_modifier = auto_qol_pool_clamp_20
+		remove_country_flag = leader_pool_opt_enabled
+		auto_qol_repair_leader_pool = yes
 		hidden_effect = {
 			country_event = { id = auto_qol_council_pool.1 }
 		}

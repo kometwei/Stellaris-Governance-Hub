@@ -155,3 +155,74 @@ auto_qol_reapply_planet_jobs_speed = {
 		}
 	}
 }
+
+# Only replace this tool's own bonus, preserving all third-party modifiers.
+auto_qol_reapply_mega_build_speed = {
+    remove_modifier = qol_custom_mega_build_speed_modifier
+    if = {
+        limit = { check_variable = { which = qol_custom_mega_build_speed value > 0 } }
+        add_modifier = {
+            modifier = qol_custom_mega_build_speed_modifier
+            days = -1
+            multiplier = qol_custom_mega_build_speed
+        }
+    }
+}
+
+# Only replace this tool's own bonus, preserving all third-party modifiers.
+auto_qol_reapply_mega_construction = {
+    remove_modifier = qol_custom_mega_construction_modifier
+    if = {
+        limit = { check_variable = { which = qol_custom_mega_construction value > 0 } }
+        add_modifier = {
+            modifier = qol_custom_mega_construction_modifier
+            days = -1
+            multiplier = qol_custom_mega_construction
+        }
+    }
+}
+
+# Resource output only; do not change third-party structure definitions.
+auto_qol_reapply_mega_production = {
+    remove_modifier = qol_custom_mega_production_modifier
+    if = {
+        limit = { check_variable = { which = qol_custom_mega_production value > 0 } }
+        add_modifier = {
+            modifier = qol_custom_mega_production_modifier
+            days = -1
+            multiplier = qol_custom_mega_production
+        }
+    }
+}
+
+auto_qol_reapply_automated_output = {
+    remove_modifier = qol_custom_automated_output_modifier
+    if = {
+        limit = { check_variable = { which = qol_custom_automated_output value > 0 } }
+        add_modifier = {
+            modifier = qol_custom_automated_output_modifier
+            days = -1
+            multiplier = qol_custom_automated_output
+        }
+    }
+}
+
+auto_qol_reapply_automated_ratio = {
+    if = {
+        limit = { check_variable = { which = qol_custom_automated_ratio value > 100 } }
+        set_variable = { which = qol_custom_automated_ratio value = 100 }
+    }
+    if = {
+        limit = { check_variable = { which = qol_custom_automated_ratio value < 0 } }
+        set_variable = { which = qol_custom_automated_ratio value = 0 }
+    }
+    remove_modifier = qol_custom_automated_ratio_modifier
+    if = {
+        limit = { check_variable = { which = qol_custom_automated_ratio value > 0 } }
+        add_modifier = {
+            modifier = qol_custom_automated_ratio_modifier
+            days = -1
+            multiplier = qol_custom_automated_ratio
+        }
+    }
+}

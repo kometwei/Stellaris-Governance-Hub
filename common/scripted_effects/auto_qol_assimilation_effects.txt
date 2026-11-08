@@ -1,0 +1,108 @@
+# Country scope; ROOT must be the owning player country.
+# Persistent targets are qualified by country, never shared between players.
+auto_qol_assimilation_apply = {
+	if = {
+		limit = {
+			is_ai = no
+			has_country_flag = auto_qol_assimilation_enabled
+			exists = species
+			exists = event_target:auto_qol_assimilation_source@root
+			NOT = { is_same_species = event_target:auto_qol_assimilation_source@root }
+		}
+		species = { save_event_target_as = auto_qol_assimilation_destination }
+		# Do leaders first. No cloning, name randomization or portrait effects.
+		if = {
+			limit = { has_country_flag = auto_qol_assimilation_leaders }
+			every_owned_leader = {
+				limit = { auto_qol_assimilation_eligible_leader = yes }
+				change_species = event_target:auto_qol_assimilation_destination
+			}
+			every_pool_leader = {
+				limit = { auto_qol_assimilation_eligible_leader = yes }
+				change_species = event_target:auto_qol_assimilation_destination
+			}
+		}
+		every_owned_pop_group = {
+			limit = { is_same_species = event_target:auto_qol_assimilation_source@root }
+			change_species = event_target:auto_qol_assimilation_destination
+		}
+	}
+}
+
+# Start a fresh browse session. The seen flag only controls pagination.
+auto_qol_assimilation_reset_picker = {
+	every_owned_species = {
+		remove_species_flag = auto_qol_assimilation_seen@root
+	}
+}
+
+# Each page gets event-chain targets. Valid flags hide stale targets on short pages.
+auto_qol_assimilation_prepare_page = {
+	remove_country_flag = auto_qol_assimilation_slot_1_valid
+	random_owned_species = {
+		limit = {
+			NOT = { is_same_species = root }
+			NOT = { has_species_flag = auto_qol_assimilation_seen@root }
+			is_sapient = yes
+		}
+		set_species_flag = auto_qol_assimilation_seen@root
+		save_event_target_as = auto_qol_assimilation_slot_1
+		root = { set_country_flag = auto_qol_assimilation_slot_1_valid }
+	}
+	remove_country_flag = auto_qol_assimilation_slot_2_valid
+	random_owned_species = {
+		limit = {
+			NOT = { is_same_species = root }
+			NOT = { has_species_flag = auto_qol_assimilation_seen@root }
+			is_sapient = yes
+		}
+		set_species_flag = auto_qol_assimilation_seen@root
+		save_event_target_as = auto_qol_assimilation_slot_2
+		root = { set_country_flag = auto_qol_assimilation_slot_2_valid }
+	}
+	remove_country_flag = auto_qol_assimilation_slot_3_valid
+	random_owned_species = {
+		limit = {
+			NOT = { is_same_species = root }
+			NOT = { has_species_flag = auto_qol_assimilation_seen@root }
+			is_sapient = yes
+		}
+		set_species_flag = auto_qol_assimilation_seen@root
+		save_event_target_as = auto_qol_assimilation_slot_3
+		root = { set_country_flag = auto_qol_assimilation_slot_3_valid }
+	}
+	remove_country_flag = auto_qol_assimilation_slot_4_valid
+	random_owned_species = {
+		limit = {
+			NOT = { is_same_species = root }
+			NOT = { has_species_flag = auto_qol_assimilation_seen@root }
+			is_sapient = yes
+		}
+		set_species_flag = auto_qol_assimilation_seen@root
+		save_event_target_as = auto_qol_assimilation_slot_4
+		root = { set_country_flag = auto_qol_assimilation_slot_4_valid }
+	}
+	remove_country_flag = auto_qol_assimilation_slot_5_valid
+	random_owned_species = {
+		limit = {
+			NOT = { is_same_species = root }
+			NOT = { has_species_flag = auto_qol_assimilation_seen@root }
+			is_sapient = yes
+		}
+		set_species_flag = auto_qol_assimilation_seen@root
+		save_event_target_as = auto_qol_assimilation_slot_5
+		root = { set_country_flag = auto_qol_assimilation_slot_5_valid }
+	}
+	remove_country_flag = auto_qol_assimilation_slot_6_valid
+	random_owned_species = {
+		limit = {
+			NOT = { is_same_species = root }
+			NOT = { has_species_flag = auto_qol_assimilation_seen@root }
+			is_sapient = yes
+		}
+		set_species_flag = auto_qol_assimilation_seen@root
+		save_event_target_as = auto_qol_assimilation_slot_6
+		root = { set_country_flag = auto_qol_assimilation_slot_6_valid }
+	}
+}
+

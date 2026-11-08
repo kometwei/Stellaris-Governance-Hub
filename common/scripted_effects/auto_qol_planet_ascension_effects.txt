@@ -1,0 +1,11 @@
+# Country scope. One-shot action; no monthly hook or resource cost.
+# Use the 4.5 colony iterator, including ship colonies supported by vanilla.
+auto_qol_ascend_owned_colonies_to_10 = {
+ if = {
+  limit = { is_ai = no }
+  every_owned_colony = {
+   limit = { has_planetary_ascension_tier < 10 }
+   set_planetary_ascension_tier = 10
+  }
+ }
+}

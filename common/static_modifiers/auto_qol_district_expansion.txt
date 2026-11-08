@@ -1,0 +1,6 @@
+auto_qol_district_expansion_bonus = {
+    planet_max_districts_add = 1
+    district_mining_max_add = 1
+    district_generator_max_add = 1
+    district_farming_max_add = 1
+}

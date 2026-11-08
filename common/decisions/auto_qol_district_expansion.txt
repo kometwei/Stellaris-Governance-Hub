@@ -1,0 +1,8 @@
+auto_qol_district_expansion = {
+    owned_planets_only = yes
+    enactment_time = 0
+    potential = { is_colony = yes owner = { is_ai = no } }
+    allow = { is_colony = yes owner = { is_ai = no } }
+    effect = { planet_event = { id = auto_qol_district_expansion.1 } }
+    ai_weight = { weight = 0 }
+}

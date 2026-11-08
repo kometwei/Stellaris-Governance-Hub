@@ -1,0 +1,35 @@
+auto_qol_hub_envoy_on = {
+ potential = { from = { is_ai = no has_country_flag = auto_envoy_enabled } }
+ allow = { from = { is_ai = no has_country_flag = auto_envoy_enabled } }
+ effect = {
+  custom_tooltip = "auto_qol_menu.toggle_envoy_tt"
+  hidden_effect = { from = { remove_country_flag = auto_envoy_enabled } }
+ }
+}
+
+auto_qol_hub_envoy_off = {
+ potential = { from = { is_ai = no NOT = { has_country_flag = auto_envoy_enabled } } }
+ allow = { from = { is_ai = no NOT = { has_country_flag = auto_envoy_enabled } } }
+ effect = {
+  custom_tooltip = "auto_qol_menu.toggle_envoy_tt"
+  hidden_effect = { from = { set_country_flag = auto_envoy_enabled country_event = { id = auto_envoy.100 } } }
+ }
+}
+
+auto_qol_hub_pool_on = {
+ potential = { from = { is_ai = no has_country_flag = leader_pool_opt_enabled } }
+ allow = { from = { is_ai = no has_country_flag = leader_pool_opt_enabled } }
+ effect = {
+  custom_tooltip = "auto_qol_menu.toggle_leader_opt_tt"
+  hidden_effect = { from = { remove_country_flag = leader_pool_opt_enabled auto_qol_repair_leader_pool = yes } }
+ }
+}
+
+auto_qol_hub_pool_off = {
+ potential = { from = { is_ai = no NOT = { has_country_flag = leader_pool_opt_enabled } } }
+ allow = { from = { is_ai = no NOT = { has_country_flag = leader_pool_opt_enabled } } }
+ effect = {
+  custom_tooltip = "auto_qol_menu.toggle_leader_opt_tt"
+  hidden_effect = { from = { set_country_flag = leader_pool_opt_enabled auto_qol_repair_leader_pool = yes auto_qol_trim_leader_pool_to_10 = yes } }
+ }
+}

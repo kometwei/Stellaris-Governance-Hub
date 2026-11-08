@@ -22,6 +22,7 @@ from paths import GAME_INSTALL_DIR, MOD_ROOT, WORKSHOP_MOD_DIR
 # entries).  The much larger mixed catalogue is still split so the event UI
 # never has to build all 100+ third-party options at once.
 PAGE_SIZE = 50
+CANDIDATE_PAGE_SIZE = 10
 ROSTER_PAGE_SIZE = 12
 # Code-level display mode. Keep this false for the stable in-game flow:
 # only seats that can actually be selected are shown. Set true and regenerate
@@ -798,6 +799,66 @@ def build_page_route(page_indexes, pages, category_id, defined_symbols, fallback
         )
     return "\n".join(route)
 
+def candidate_unseen_conditions(pos_key, class_filter):
+    """Use the same eligibility rules for selection, wraparound and navigation."""
+    return "\n".join(filter(None, (
+        "is_pool_leader = no",
+        "is_ruler = no",
+        "is_councilor = no",
+        "NOT = { exists = fleet }",
+        class_filter,
+        f"NOT = {{ has_leader_flag = auto_qol_seen_{pos_key} }}",
+    )))
+
+
+def generate_candidate_immediate(pos_key, class_filter):
+    """Draw a page without replacement; reset only before a new full cycle."""
+    unseen = candidate_unseen_conditions(pos_key, class_filter)
+    lines = [
+        "\timmediate = {\n",
+        "\t\tauto_qol_clear_council_candidate_flags = yes\n",
+        "\t\t# Each seat keeps its own browsing history. Wrap only between pages.\n",
+        "\t\tif = {\n",
+        "\t\t\tlimit = {\n",
+        "\t\t\t\tNOT = {\n\t\t\t\t\tany_owned_leader = {\n",
+        indent_script(unseen, 6) + "\n",
+        "\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n",
+        "\t\t\tevery_owned_leader = {\n",
+        f"\t\t\t\tremove_leader_flag = auto_qol_seen_{pos_key}\n",
+        "\t\t\t}\n\t\t}\n",
+    ]
+    for index in range(1, CANDIDATE_PAGE_SIZE + 1):
+        lines.extend((
+            "\t\trandom_owned_leader = {\n\t\t\tlimit = {\n",
+            indent_script(unseen, 4) + "\n",
+            "\t\t\t}\n",
+            f"\t\t\tset_leader_flag = auto_qol_seen_{pos_key}\n",
+            f"\t\t\tset_leader_flag = auto_qol_cand_flag_{index}\n",
+            f"\t\t\tsave_event_target_as = auto_qol_cand_{index}\n",
+            "\t\t}\n",
+        ))
+    lines.append("\t}\n")
+    return "".join(lines)
+
+
+def generate_candidate_navigation(pos_id, pos_key, class_filter):
+    unseen = candidate_unseen_conditions(pos_key, class_filter)
+    lines = []
+    for restart in (False, True):
+        condition = "any_owned_leader = {\n" + indent_script(unseen, 1) + "\n}"
+        if restart:
+            condition = "NOT = {\n" + indent_script(condition, 1) + "\n}"
+        name = "restart" if restart else "refresh"
+        lines.append(
+            "\toption = {\n\t\ttrigger = {\n"
+            "\t\t\tany_owned_leader = { has_leader_flag = auto_qol_cand_flag_1 }\n"
+            + indent_script(condition, 3) + "\n\t\t}\n"
+            f'\t\tname = "auto_qol_assign.{name}"\n'
+            f"\t\tcountry_event = {{ id = auto_qol_council_assign.{pos_id} }}\n\t}}\n"
+        )
+    return "".join(lines)
+
+
 def generate_events(categories, defined_symbols):
     lines = []
     lines.append("namespace = auto_qol_council_assign\n")
@@ -952,63 +1013,12 @@ country_event = {{
 \tpicture = GFX_evt_throne_room
 \tis_triggered_only = yes
 
-\timmediate = {{
-\t\tauto_qol_clear_council_candidate_flags = yes
-\t\trandom_owned_leader = {{
-\t\t\tlimit = {{
-\t\t\t\tis_pool_leader = no
-\t\t\t\tis_ruler = no
-\t\t\t\tis_councilor = no
-\t\t\t\tNOT = {{ exists = fleet }}
-\t\t\t\t{class_filter}
-\t\t\t}}
-\t\t\tset_leader_flag = auto_qol_cand_flag_1
-\t\t\tsave_event_target_as = auto_qol_cand_1
-\t\t}}
-\t\trandom_owned_leader = {{
-\t\t\tlimit = {{
-\t\t\t\tis_pool_leader = no
-\t\t\t\tis_ruler = no
-\t\t\t\tis_councilor = no
-\t\t\t\tNOT = {{ exists = fleet }}
-\t\t\t\tNOT = {{ has_leader_flag = auto_qol_cand_flag_1 }}
-\t\t\t\t{class_filter}
-\t\t\t}}
-\t\t\tset_leader_flag = auto_qol_cand_flag_2
-\t\t\tsave_event_target_as = auto_qol_cand_2
-\t\t}}
-\t\trandom_owned_leader = {{
-\t\t\tlimit = {{
-\t\t\t\tis_pool_leader = no
-\t\t\t\tis_ruler = no
-\t\t\t\tis_councilor = no
-\t\t\t\tNOT = {{ exists = fleet }}
-\t\t\t\tNOT = {{ has_leader_flag = auto_qol_cand_flag_1 }}
-\t\t\t\tNOT = {{ has_leader_flag = auto_qol_cand_flag_2 }}
-\t\t\t\t{class_filter}
-\t\t\t}}
-\t\t\tset_leader_flag = auto_qol_cand_flag_3
-\t\t\tsave_event_target_as = auto_qol_cand_3
-\t\t}}
-\t\trandom_owned_leader = {{
-\t\t\tlimit = {{
-\t\t\t\tis_pool_leader = no
-\t\t\t\tis_ruler = no
-\t\t\t\tis_councilor = no
-\t\t\t\tNOT = {{ exists = fleet }}
-\t\t\t\tNOT = {{ has_leader_flag = auto_qol_cand_flag_1 }}
-\t\t\t\tNOT = {{ has_leader_flag = auto_qol_cand_flag_2 }}
-\t\t\t\tNOT = {{ has_leader_flag = auto_qol_cand_flag_3 }}
-\t\t\t\t{class_filter}
-\t\t\t}}
-\t\t\tset_leader_flag = auto_qol_cand_flag_4
-\t\t\tsave_event_target_as = auto_qol_cand_4
-\t\t}}
-\t}}
-""")
 
-            # 4 个任命选项 (严格依赖 Flag 存在；一步完成席位准备与领袖派驻)
-            for c_idx in [1, 2, 3, 4]:
+""")
+            lines.append(generate_candidate_immediate(pos_key, class_filter))
+
+            # 每页八个任命选项 (严格依赖 Flag 存在；一步完成席位准备与领袖派驻)
+            for c_idx in range(1, CANDIDATE_PAGE_SIZE + 1):
                 lines.append(f"""\toption = {{
 \t\ttrigger = {{
 \t\t\tany_owned_leader = {{ has_leader_flag = auto_qol_cand_flag_{c_idx} }}
@@ -1065,13 +1075,9 @@ country_event = {{
 \t}}
 """)
 
-            # 刷新、返回分类与关闭
-            lines.append(f"""\t# 刷新换一批
-\toption = {{
-\t\ttrigger = {{ any_owned_leader = {{ has_leader_flag = auto_qol_cand_flag_1 }} }}
-\t\tname = "auto_qol_assign.refresh"
-\t\tcountry_event = {{ id = auto_qol_council_assign.{pos_id} }}
-\t}}
+            # 下一页或完整浏览后的新一轮；不在不足十人的末页中提前补齐。
+            lines.append(generate_candidate_navigation(pos_id, pos_key, class_filter))
+            lines.append(f"""
 \t# 返回分类子菜单
 \toption = {{
 \t\tname = "auto_qol_assign.back_to_cat"
@@ -1210,19 +1216,18 @@ def generate_loc(categories):
     loc.append(' auto_qol_council_assign.back_to_assign_menu:0 "返回席位职能分类"')
     loc.append(' auto_qol_council_assign.back_to_cat:0 "返回当前分类"')
     loc.append(' auto_qol_assign.back_to_cat:0 "返回当前分类"')
-    loc.append(' auto_qol_assign.refresh:0 "【换一批候选领袖 (随机刷新)】"')
+    loc.append(' auto_qol_assign.refresh:0 "【下一页候选领袖】"')
+    loc.append(' auto_qol_assign.restart:0 "【已浏览全部候选领袖 · 从头浏览】"')
     loc.append(' auto_qol.close_direct:0 "离开并关闭界面 (X / ESC)"')
 
     loc.append(' auto_qol_assign.no_candidate:0 "【暂无空闲可用领袖】点击查看原因与指引"')
     loc.append(' auto_qol_council_assign.999.name:0 "暂无可委派的空闲领袖"')
     loc.append(' auto_qol_council_assign.999.desc:0 "§H当前名下未检测到可派驻该职位的空闲领袖！§!\\n\\n§E排查建议：§!\\n1. §Y一人不可身兼数职§!：已经在其他内阁席位任职的领袖无法重复指派。\\n2. §Y下船要求§!：正在指挥科研船执行探索/考古，或正在率领作战舰队的领袖无法直接调入内阁。请先让其停止任务/右键下船。\\n3. §Y招募新人§!：若当前职业领袖已全部在职，请先前往领袖面板招募新的专家，随后即可在此处直接点名上岗！"')
-    loc.append(' auto_qol_assign.cand_1:0 "任命：[auto_qol_cand_1.GetName] ([auto_qol_cand_1.GetClass])"')
-    loc.append(' auto_qol_assign.cand_2:0 "任命：[auto_qol_cand_2.GetName] ([auto_qol_cand_2.GetClass])"')
-    loc.append(' auto_qol_assign.cand_3:0 "任命：[auto_qol_cand_3.GetName] ([auto_qol_cand_3.GetClass])"')
-    loc.append(' auto_qol_assign.cand_4:0 "任命：[auto_qol_cand_4.GetName] ([auto_qol_cand_4.GetClass])"')
+    for index in range(1, CANDIDATE_PAGE_SIZE + 1):
+        loc.append(f' auto_qol_assign.cand_{index}:0 "任命：[auto_qol_cand_{index}.GetName] ([auto_qol_cand_{index}.GetClass])"')
 
-    loc.append(' auto_qol_council_assign.pick_desc:0 "选择一名可用领袖即可完成派驻；可用【换一批候选领袖】刷新名单。\\n\\n§Y原版界面未显示的席位可在本 Mod 的【在任名册】查看。§!"')
-    loc.append(' auto_qol_assign.pick_desc:0 "选择一名可用领袖即可完成派驻；可用【换一批候选领袖】刷新名单。\\n\\n§Y原版界面未显示的席位可在本 Mod 的【在任名册】查看。§!"')
+    loc.append(' auto_qol_council_assign.pick_desc:0 "选择一名可用领袖即可完成派驻。每页最多 10 位，点击【下一页候选领袖】不重复浏览；全部看完后可【从头浏览】。\\n\\n§Y原版界面未显示的席位可在本 Mod 的【在任名册】查看。§!"')
+    loc.append(' auto_qol_assign.pick_desc:0 "选择一名可用领袖即可完成派驻。每页最多 10 位，点击【下一页候选领袖】不重复浏览；全部看完后可【从头浏览】。\\n\\n§Y原版界面未显示的席位可在本 Mod 的【在任名册】查看。§!"')
 
     loc.append(' auto_qol_council_assign.99.name:0 "内阁席位任命成功！"')
     loc.append(' auto_qol_council_assign.99.desc:0 "§G任命已顺利完成！§!\\n\\n领袖 §H[auto_qol_last_assigned.GetName]§! 已经正式履职，其岗位增益会在后台生效。未显示的额外席位可在【在任名册】查看。"')
@@ -1380,6 +1385,9 @@ def main():
     loc_file.write_text("l_simp_chinese:\n" + loc_content + "\n", encoding="utf-8-sig")
     print(f"Updated {loc_file}")
 
+    from build_council_gui import build as build_council_gui
+    build_council_gui(MOD_ROOT)
+
     print("8. Generating safe multi-row council UI compatibility layer...")
     ui_source, ui_file = generate_council_ui_compat(active_mod_dirs)
     print(f"Generated {ui_file} from {ui_source}")
@@ -1401,6 +1409,7 @@ def main():
         rel_interface_dir = release_dir / "interface"
         rel_interface_dir.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ui_file, rel_interface_dir / "council_view.gui")
+        build_council_gui(release_dir)
         print(f"Synced to release directory: {release_dir}")
 
     print("\n[SUCCESS] Clean council system generated successfully!")

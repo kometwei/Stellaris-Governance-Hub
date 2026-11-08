@@ -921,7 +921,8 @@ def validate():
 
 
 def build():
-    write("descriptor.mod", 'name="散舰整理工具（试验）"\nversion="0.2.4"\nsupported_version="4.5.*"')
+    write("descriptor.mod", 'name="散舰整理工具（试验）"\nversion="0.2.4"\npicture="thumbnail.png"\nsupported_version="4.5.*"')
+    (OUT / "thumbnail.png").write_bytes((ROOT / "assets/scattered-fleet-organizer/thumbnail.png").read_bytes())
     write("common/edicts/qol_fleet_sort.txt", f"""qol_fleet_sort = {{
  length = 1
  icon = "GFX_edict_type_policy"

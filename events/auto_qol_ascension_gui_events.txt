@@ -1,0 +1,163 @@
+namespace = auto_qol_ascension_gui
+
+# Initial target only; saved player adjustments take priority on subsequent visits.
+@auto_qol_ascension_gui_slot_target = 8
+
+namespace = auto_qol_ascension_native_page
+country_event = {
+ id = auto_qol_ascension_gui.1
+ hide_window = yes
+ is_triggered_only = yes
+ trigger = {  is_ai = no  }
+ immediate = {
+
+		if = {
+			limit = { NOT = { is_variable_set = auto_qol_ascension_target } }
+			set_variable = { which = auto_qol_ascension_target value = @auto_qol_ascension_gui_slot_target }
+		}
+		if = {
+			limit = { check_variable = { which = auto_qol_ascension_target value < 1 } }
+			set_variable = { which = auto_qol_ascension_target value = 1 }
+		}
+		if = {
+			limit = { check_variable = { which = auto_qol_ascension_target value > 4096 } }
+			set_variable = { which = auto_qol_ascension_target value = 4096 }
+		}
+		set_variable = { which = auto_qol_ascension_current value = trigger:num_ascension_perk_slots }
+	
+if = {
+ limit = { always = yes }
+ country_event = { id = auto_qol_ascension_native_page.1 }
+}
+else = { country_event = { id = auto_qol_ascension_native_page.1 } }
+ }
+}
+country_event = {
+ diplomatic = yes
+ custom_gui = "auto_qol_ascension_gui_window"
+ custom_gui_option = "auto_qol_ascension_gui_option"
+
+	id = auto_qol_ascension_native_page.1
+	title = "auto_qol_ascension.title"
+	desc = "auto_qol_ascension.desc"
+	picture = GFX_evt_galactic_senate
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+option = {
+ name = "auto_qol_ascension_gui_home"
+ custom_gui = "auto_qol_ascension_gui_nav2_0"
+ hidden_effect = {
+country_event = { id = auto_qol_menu.1 }
+ }
+}
+option = {
+ name = "auto_qol_ascension_gui_close"
+ custom_gui = "auto_qol_ascension_gui_nav2_1"
+ default_hide_option = yes
+}
+option = {
+		name = "auto_qol_ascension.decrease"
+		custom_tooltip = "auto_qol_ascension.adjust_tt"
+		trigger = { check_variable = { which = auto_qol_ascension_target value > 1 } }
+		hidden_effect = {
+			if = {
+				limit = { is_ai = no check_variable = { which = auto_qol_ascension_target value > 1 } }
+				subtract_variable = { which = auto_qol_ascension_target value = 8 }
+				if = {
+					limit = { check_variable = { which = auto_qol_ascension_target value < 1 } }
+					set_variable = { which = auto_qol_ascension_target value = 1 }
+				}
+			}
+			country_event = { id = auto_qol_ascension_gui.1 }
+		}
+	}
+option = {
+		name = "auto_qol_ascension.increase"
+		custom_tooltip = "auto_qol_ascension.adjust_tt"
+		trigger = { check_variable = { which = auto_qol_ascension_target value < 4096 } }
+		hidden_effect = {
+			if = {
+				limit = { is_ai = no check_variable = { which = auto_qol_ascension_target value < 4096 } }
+				change_variable = { which = auto_qol_ascension_target value = 8 }
+				if = {
+					limit = { check_variable = { which = auto_qol_ascension_target value > 4096 } }
+					set_variable = { which = auto_qol_ascension_target value = 4096 }
+				}
+			}
+			country_event = { id = auto_qol_ascension_gui.1 }
+		}
+	}
+option = {
+		name = "auto_qol_ascension.decrease_one"
+		custom_tooltip = "auto_qol_ascension.adjust_tt"
+		trigger = { check_variable = { which = auto_qol_ascension_target value > 1 } }
+		hidden_effect = {
+			if = {
+				limit = { is_ai = no check_variable = { which = auto_qol_ascension_target value > 1 } }
+				subtract_variable = { which = auto_qol_ascension_target value = 1 }
+				if = {
+					limit = { check_variable = { which = auto_qol_ascension_target value < 1 } }
+					set_variable = { which = auto_qol_ascension_target value = 1 }
+				}
+			}
+			country_event = { id = auto_qol_ascension_gui.1 }
+		}
+	}
+option = {
+		name = "auto_qol_ascension.increase_one"
+		custom_tooltip = "auto_qol_ascension.adjust_tt"
+		trigger = { check_variable = { which = auto_qol_ascension_target value < 4096 } }
+		hidden_effect = {
+			if = {
+				limit = { is_ai = no check_variable = { which = auto_qol_ascension_target value < 4096 } }
+				change_variable = { which = auto_qol_ascension_target value = 1 }
+				if = {
+					limit = { check_variable = { which = auto_qol_ascension_target value > 4096 } }
+					set_variable = { which = auto_qol_ascension_target value = 4096 }
+				}
+			}
+			country_event = { id = auto_qol_ascension_gui.1 }
+		}
+	}
+option = {
+		name = "auto_qol_ascension.unlock"
+		custom_tooltip = "auto_qol_ascension.unlock_tt"
+		trigger = { num_ascension_perk_slots < auto_qol_ascension_target }
+		hidden_effect = {
+			# Recheck at execution; repeated use never grants the same slots twice.
+			if = {
+				limit = { is_ai = no num_ascension_perk_slots < auto_qol_ascension_target }
+				set_variable = { which = auto_qol_ascension_missing value = auto_qol_ascension_target }
+				set_variable = { which = auto_qol_ascension_current value = trigger:num_ascension_perk_slots }
+				subtract_variable = { which = auto_qol_ascension_missing value = auto_qol_ascension_current }
+				change_variable = { which = auto_qol_ascension_granted value = auto_qol_ascension_missing }
+				remove_modifier = auto_qol_ascension_slots
+				add_modifier = {
+					modifier = auto_qol_ascension_slots
+					days = -1
+					multiplier = auto_qol_ascension_granted
+				}
+			}
+			country_event = { id = auto_qol_ascension_gui.1 }
+		}
+	}
+option = {
+		name = "auto_qol_ascension.complete"
+		trigger = { num_ascension_perk_slots >= auto_qol_ascension_target }
+		default_hide_option = yes
+	}
+option = {
+		name = "auto_qol_ascension.back"
+		country_event = { id = auto_qol_menu.1 }
+	}
+}

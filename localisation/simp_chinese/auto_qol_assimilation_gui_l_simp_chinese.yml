@@ -6,3 +6,6 @@
  auto_qol_assimilation_gui_close:0 "关闭面板（Esc）"
  auto_qol_assimilation_gui_prev:0 "← 上一页"
  auto_qol_assimilation_gui_next:0 "下一页 →"
+ auto_qol_assimilation_gui_status_selected:0 "同化来源：§H[event_target:auto_qol_assimilation_current.GetName]§!\n目标：帝国主体物种"
+ auto_qol_assimilation_gui_status_empty:0 "尚未选择同化来源。"
+ auto_qol_assimilation_gui_choose_tt:0 "选择境内外族及其同族亚种，持续转化为帝国主体物种；只处理本帝国境内人口。每次记录一个来源，重新选择会替换原记录。确认后立即处理人口，此后每月补漏；领袖同化独立设置，默认关闭。暂停或停止不会还原已完成的转化。"

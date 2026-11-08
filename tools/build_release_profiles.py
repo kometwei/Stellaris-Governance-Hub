@@ -29,13 +29,17 @@ from paths import MOD_ROOT
 DOCS_DIR = Path.home() / "Documents" / "Paradox Interactive" / "Stellaris"
 REPO_URL = "https://github.com/kometwei/Stellaris-Governance-Hub"
 SUPPORTED_VERSION = "v4.5.*"
-RELEASE_VERSION = "1.2.0"
+RELEASE_VERSION = "1.3.0"
 PUBLIC_NAME = "星政中枢｜内阁·舰队·领袖·灵能"
 LOCAL_NAME = "[本地生成] 星政中枢"
 THUMBNAIL_NAME = "thumbnail.png"
 OUTPUT_MARKER = ".auto_qol_generated_output"
 
 CORE_FILES = (
+    "interface/auto_qol_console.gfx",
+    "gfx/interface/auto_qol/console.dds",
+    "gfx/interface/auto_qol/panel.dds",
+    "gfx/interface/auto_qol/card.dds",
     "common/static_modifiers/auto_qol_automation_ratio_modifiers.txt",
     "common/economic_categories/01_auto_qol_megastructure_categories.txt",
     "common/scripted_effects/auto_qol_planet_ascension_effects.txt",
@@ -115,7 +119,7 @@ IMPLICIT_LOCALISATION_KEYS = {
 
 ASCENSION_DESCRIPTION = (
     "当前已解锁 §Y[Root.auto_qol_ascension_current]§! 格，补齐目标为 §Y[Root.auto_qol_ascension_target]§! 格。\\n\\n"
-    "用【目标－8 / ＋8】快速调整，【目标－1 / ＋1】微调目标（最小 1，最大 4096），再点击【补齐至目标】生效。降低目标不会收回已解锁槽位。\\n\\n"
+    "按 1、2、4、8、16 档位增减目标（最小 1，最大 4096），再点击【补齐至目标】生效。降低目标不会收回已解锁槽位。\\n\\n"
     "§Y请按槽位模组提供的实际总格数设置；此处不自动识别槽位上限，也不扩展传统界面的槽位。§!\\n\\n"
     "不会自动选择天赋、完成传统或授予科技；天赋条件仍然生效。"
 )
@@ -409,8 +413,29 @@ def validate_megastructure_production_category(output_root: Path) -> None:
         raise ValueError("megastructures_produces_mult requires megastructures.generate_mult_modifiers = { ... produces ... }")
 
 
+def validate_gui_references(output_root: Path) -> None:
+    """Reject missing event windows/options before the engine falls back and crashes."""
+    gui_names = set()
+    for path in (output_root / "interface").glob("*.gui"):
+        gui_names.update(re.findall(r'\bname\s*=\s*"([^"]+)"', path.read_text(encoding="utf-8-sig")))
+    for path in (output_root / "events").glob("*.txt"):
+        for name in re.findall(r'\bcustom_gui(?:_option)?\s*=\s*"([^"]+)"', path.read_text(encoding="utf-8-sig")):
+            if name.startswith("auto_qol_") and name not in gui_names:
+                raise ValueError(f"Missing custom GUI definition {name} referenced by {path.name}")
+
+
 def validate_build(output_root: Path) -> None:
     validate_megastructure_production_category(output_root)
+    validate_gui_references(output_root)
+    # Every native panel uses this shared opaque background; missing assets
+    # otherwise produce invisible panels even when all GUI syntax is valid.
+    gfx = output_root / "interface/auto_qol_console.gfx"
+    if not gfx.is_file():
+        raise ValueError("Build is missing the shared console sprite definitions")
+    for texture in re.findall(r'textureFile\s*=\s*"([^"]+)"', gfx.read_text(encoding="utf-8")):
+        asset = output_root / texture
+        if not asset.is_file() or asset.read_bytes()[:4] != b"DDS ":
+            raise ValueError(f"Build is missing a valid console texture: {texture}")
     descriptor = output_root / "descriptor.mod"
     if not descriptor.exists():
         raise ValueError(f"Build is missing descriptor.mod: {output_root}")

@@ -27,6 +27,44 @@ def destinations(rows):
 
 
 class FeatureGuiTests(unittest.TestCase):
+    def test_five_adjustment_tiers_and_fill_fit_one_page_with_footer_home(self):
+        events = definitions(self.files['events/auto_qol_ascension_gui_events.txt'])
+        pages = [event for event in events.values() if any(key == 'title' for key, _, _ in event)]
+        self.assertEqual(len(pages), 1)
+        names = [field(option, 'name') for key, _, option in pages[0] if key == 'option']
+        for step in (1, 2, 4, 8, 16):
+            for direction in ('decrease', 'increase'):
+                suffix = '_one' if step == 1 else '' if step == 8 else '_' + str(step)
+                self.assertIn('auto_qol_ascension.' + direction + suffix, names)
+        self.assertIn('auto_qol_ascension.unlock', names)
+        self.assertIn('auto_qol_ascension_gui_home', names)
+        self.assertNotIn('auto_qol_ascension.back', names)
+
+    def test_localisation_remapping_does_not_rename_windows_or_event_namespaces(self):
+        for feature in ("assimilation", "ascension"):
+            prefix = f"auto_qol_{feature}_gui"
+            pages = definitions(self.files[f"events/{prefix}_events.txt"])
+            for event_id, event in pages.items():
+                self.assertTrue(event_id.startswith((prefix + ".", f"auto_qol_{feature}_native_page.")), event_id)
+                if any(key == "title" for key, _, _ in event):
+                    self.assertEqual(field(event, "custom_gui"), prefix + "_window")
+                    self.assertEqual(field(event, "custom_gui_option"), prefix + "_option")
+            gui_names = set(re.findall(r'\bname\s*=\s*"([^"]+)"', self.files[f"interface/{prefix}.gui"]))
+            self.assertIn(prefix + "_window", gui_names)
+            self.assertIn(prefix + "_option", gui_names)
+
+    def test_build_validation_rejects_tooltip_key_used_as_window(self):
+        from build_release_profiles import validate_gui_references
+        scratch = ROOT / "scratch"
+        scratch.mkdir(exist_ok=True)
+        with TemporaryDirectory(dir=scratch) as directory:
+            root = Path(directory)
+            (root / "events").mkdir()
+            (root / "interface").mkdir()
+            (root / "events/broken.txt").write_text('country_event = { custom_gui = "auto_qol_ascension_gui_unlock_tt_window" }', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "auto_qol_ascension_gui_unlock_tt_window"):
+                validate_gui_references(root)
+
     @classmethod
     def setUpClass(cls):
         cls.files = generate()

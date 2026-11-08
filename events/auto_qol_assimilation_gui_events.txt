@@ -15,7 +15,7 @@ country_event = {
 				save_event_target_as = auto_qol_assimilation_current
 			}
 		}
-	
+
 if = {
  limit = { always = yes }
  country_event = { id = auto_qol_assimilation_native_page.1 }
@@ -32,23 +32,23 @@ country_event = {
 	title = "auto_qol_assimilation.title"
 	desc = {
 		trigger = { exists = event_target:auto_qol_assimilation_source@root }
-		text = "auto_qol_assimilation.desc_selected"
+		text = "auto_qol_assimilation_gui_status_selected"
 	}
 	desc = {
 		trigger = { NOT = { exists = event_target:auto_qol_assimilation_source@root } }
-		text = "auto_qol_assimilation.desc_empty"
+		text = "auto_qol_assimilation_gui_status_empty"
 	}
 	picture = GFX_evt_genetic_modification
 	is_triggered_only = yes
 	trigger = { is_ai = no exists = species }
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 option = {
  name = "auto_qol_assimilation_gui_home"
  custom_gui = "auto_qol_assimilation_gui_nav2_0"
@@ -63,7 +63,7 @@ option = {
 }
 option = {
 		name = "auto_qol_assimilation.choose"
-		custom_tooltip = "auto_qol_assimilation.choose_tt"
+		custom_tooltip = "auto_qol_assimilation_gui_choose_tt"
 		hidden_effect = {
 			auto_qol_assimilation_reset_picker = yes
 			country_event = { id = auto_qol_assimilation_gui.2 }
@@ -128,7 +128,7 @@ country_event = {
  is_triggered_only = yes
  trigger = {  is_ai = no exists = species  }
  immediate = {
- auto_qol_assimilation_prepare_page = yes 
+ auto_qol_assimilation_prepare_page = yes
 if = {
  limit = { always = yes }
  country_event = { id = auto_qol_assimilation_native_page.2 }
@@ -147,16 +147,16 @@ country_event = {
 	picture = GFX_evt_genetic_modification
 	is_triggered_only = yes
 	trigger = { is_ai = no exists = species }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 option = {
  name = "auto_qol_assimilation_gui_home"
  custom_gui = "auto_qol_assimilation_gui_nav2_0"
@@ -298,8 +298,8 @@ country_event = {
 	picture = GFX_evt_genetic_modification
 	is_triggered_only = yes
 	trigger = { is_ai = no }
-	
-	
+
+
 option = {
  name = "auto_qol_assimilation_gui_home"
  custom_gui = "auto_qol_assimilation_gui_nav2_0"
@@ -364,8 +364,8 @@ country_event = {
 	picture = GFX_evt_genetic_modification
 	is_triggered_only = yes
 	trigger = { is_ai = no }
-	
-	
+
+
 option = {
  name = "auto_qol_assimilation_gui_home"
  custom_gui = "auto_qol_assimilation_gui_nav2_0"

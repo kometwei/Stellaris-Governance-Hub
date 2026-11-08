@@ -19,7 +19,20 @@ guiTypes = {
   origo = center
   moveable = yes
   size = { width = 1030 height = 720 }
-  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  background = { name = "background" quadTextureSprite = "GFX_auto_qol_console" }
+  containerWindowType = {
+   name = "console_header"
+   position = { x = 12 y = 8 }
+   size = { width = 1006 height = 86 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+  containerWindowType = {
+   name = "console_footer"
+   position = { x = 12 y = 600 }
+   size = { width = 1006 height = 108 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+
   buttonType = {
    name = "close"
    quadTextureSprite = "GFX_main_close_button"
@@ -106,20 +119,26 @@ guiTypes = {
    alwaysTransparent = yes
   }
   instantTextBoxType = {
-   name = "panel_note"
-   text = "auto_qol_military_note"
+   name = "section"
+   text = "auto_qol_military_section_military"
    font = "cg_16b"
-   position = { x = 22 y = 60 }
+   position = { x = 22 y = 96 }
    maxWidth = 980
-   maxHeight = 32
+   maxHeight = 18
    alwaysTransparent = yes
+  }
+  containerWindowType = {
+   name = "setting_navy_cap"
+   position = { x = 22 y = 116 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
   }
   instantTextBoxType = {
    name = "label_navy_cap"
    text = "auto_qol_military_label_navy_cap"
    font = "cg_16b"
-   position = { x = 22 y = 124 }
-   maxWidth = 248
+   position = { x = 36 y = 124 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -128,8 +147,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_navy_cap"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 154 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 154 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -262,12 +281,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_navy_cap_reset"
   }
+  containerWindowType = {
+   name = "setting_cmd_limit"
+   position = { x = 22 y = 196 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_cmd_limit"
    text = "auto_qol_military_label_cmd_limit"
    font = "cg_16b"
-   position = { x = 22 y = 204 }
-   maxWidth = 248
+   position = { x = 36 y = 204 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -276,8 +301,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_cmd_limit"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 234 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 234 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -410,12 +435,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_cmd_limit_reset"
   }
+  containerWindowType = {
+   name = "setting_starbase_module_speed"
+   position = { x = 22 y = 276 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_starbase_module_speed"
    text = "auto_qol_military_label_starbase_module_speed"
    font = "cg_16b"
-   position = { x = 22 y = 284 }
-   maxWidth = 248
+   position = { x = 36 y = 284 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -424,8 +455,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_starbase_module_speed"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 314 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 314 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -558,12 +589,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_starbase_module_speed_reset"
   }
+  containerWindowType = {
+   name = "setting_defense_platform_speed"
+   position = { x = 22 y = 356 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_defense_platform_speed"
    text = "auto_qol_military_label_defense_platform_speed"
    font = "cg_16b"
-   position = { x = 22 y = 364 }
-   maxWidth = 248
+   position = { x = 36 y = 364 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -572,8 +609,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_defense_platform_speed"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 394 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 394 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -706,12 +743,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_defense_platform_speed_reset"
   }
+  containerWindowType = {
+   name = "setting_army_recruit_speed"
+   position = { x = 22 y = 436 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_army_recruit_speed"
    text = "auto_qol_military_label_army_recruit_speed"
    font = "cg_16b"
-   position = { x = 22 y = 444 }
-   maxWidth = 248
+   position = { x = 36 y = 444 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -720,8 +763,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_army_recruit_speed"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 474 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 474 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -854,12 +897,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_army_recruit_speed_reset"
   }
+  containerWindowType = {
+   name = "setting_ship_build_speed"
+   position = { x = 22 y = 516 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_ship_build_speed"
    text = "auto_qol_military_label_ship_build_speed"
    font = "cg_16b"
-   position = { x = 22 y = 524 }
-   maxWidth = 248
+   position = { x = 36 y = 524 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -868,8 +917,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_ship_build_speed"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 554 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 554 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -1002,15 +1051,6 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_ship_build_speed_reset"
   }
-  instantTextBoxType = {
-   name = "panel_footer"
-   text = "auto_qol_military_military_footer"
-   font = "cg_16b"
-   position = { x = 22 y = 608 }
-   maxWidth = 980
-   maxHeight = 48
-   alwaysTransparent = yes
-  }
 
  }
 
@@ -1034,7 +1074,20 @@ guiTypes = {
   origo = center
   moveable = yes
   size = { width = 1030 height = 720 }
-  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  background = { name = "background" quadTextureSprite = "GFX_auto_qol_console" }
+  containerWindowType = {
+   name = "console_header"
+   position = { x = 12 y = 8 }
+   size = { width = 1006 height = 86 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+  containerWindowType = {
+   name = "console_footer"
+   position = { x = 12 y = 600 }
+   size = { width = 1006 height = 108 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+
   buttonType = {
    name = "close"
    quadTextureSprite = "GFX_main_close_button"
@@ -1121,20 +1174,26 @@ guiTypes = {
    alwaysTransparent = yes
   }
   instantTextBoxType = {
-   name = "panel_note"
-   text = "auto_qol_military_note"
+   name = "section"
+   text = "auto_qol_military_section_planet"
    font = "cg_16b"
-   position = { x = 22 y = 60 }
+   position = { x = 22 y = 96 }
    maxWidth = 980
-   maxHeight = 32
+   maxHeight = 18
    alwaysTransparent = yes
+  }
+  containerWindowType = {
+   name = "setting_planet_construction"
+   position = { x = 22 y = 116 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
   }
   instantTextBoxType = {
    name = "label_planet_construction"
    text = "auto_qol_military_label_planet_construction"
    font = "cg_16b"
-   position = { x = 22 y = 124 }
-   maxWidth = 248
+   position = { x = 36 y = 124 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -1143,8 +1202,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_planet_construction"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 154 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 154 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -1237,12 +1296,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_planet_construction_reset"
   }
+  containerWindowType = {
+   name = "setting_planet_build_speed"
+   position = { x = 22 y = 196 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_planet_build_speed"
    text = "auto_qol_military_label_planet_build_speed"
    font = "cg_16b"
-   position = { x = 22 y = 204 }
-   maxWidth = 248
+   position = { x = 36 y = 204 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -1251,8 +1316,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_planet_build_speed"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 234 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 234 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -1385,12 +1450,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_planet_build_speed_reset"
   }
+  containerWindowType = {
+   name = "setting_planet_jobs_speed"
+   position = { x = 22 y = 276 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_planet_jobs_speed"
    text = "auto_qol_military_label_planet_jobs_speed"
    font = "cg_16b"
-   position = { x = 22 y = 284 }
-   maxWidth = 248
+   position = { x = 36 y = 284 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -1399,8 +1470,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_planet_jobs_speed"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 314 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 314 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -1533,12 +1604,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_planet_jobs_speed_reset"
   }
+  containerWindowType = {
+   name = "setting_automated_ratio"
+   position = { x = 22 y = 356 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_automated_ratio"
    text = "auto_qol_military_label_automated_ratio"
    font = "cg_16b"
-   position = { x = 22 y = 364 }
-   maxWidth = 248
+   position = { x = 36 y = 364 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -1547,8 +1624,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_automated_ratio"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 394 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 394 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -1681,12 +1758,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_automated_ratio_reset"
   }
+  containerWindowType = {
+   name = "setting_automated_output"
+   position = { x = 22 y = 436 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_automated_output"
    text = "auto_qol_military_label_automated_output"
    font = "cg_16b"
-   position = { x = 22 y = 444 }
-   maxWidth = 248
+   position = { x = 36 y = 444 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -1695,8 +1778,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_automated_output"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 474 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 474 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -1829,15 +1912,6 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_automated_output_reset"
   }
-  instantTextBoxType = {
-   name = "panel_footer"
-   text = "auto_qol_military_planet_footer"
-   font = "cg_16b"
-   position = { x = 22 y = 608 }
-   maxWidth = 980
-   maxHeight = 48
-   alwaysTransparent = yes
-  }
 
  }
 
@@ -1861,7 +1935,20 @@ guiTypes = {
   origo = center
   moveable = yes
   size = { width = 1030 height = 720 }
-  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  background = { name = "background" quadTextureSprite = "GFX_auto_qol_console" }
+  containerWindowType = {
+   name = "console_header"
+   position = { x = 12 y = 8 }
+   size = { width = 1006 height = 86 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+  containerWindowType = {
+   name = "console_footer"
+   position = { x = 12 y = 600 }
+   size = { width = 1006 height = 108 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+
   buttonType = {
    name = "close"
    quadTextureSprite = "GFX_main_close_button"
@@ -1948,20 +2035,26 @@ guiTypes = {
    alwaysTransparent = yes
   }
   instantTextBoxType = {
-   name = "panel_note"
-   text = "auto_qol_military_note"
+   name = "section"
+   text = "auto_qol_military_section_mega"
    font = "cg_16b"
-   position = { x = 22 y = 60 }
+   position = { x = 22 y = 96 }
    maxWidth = 980
-   maxHeight = 32
+   maxHeight = 18
    alwaysTransparent = yes
+  }
+  containerWindowType = {
+   name = "setting_mega_build_speed"
+   position = { x = 22 y = 116 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
   }
   instantTextBoxType = {
    name = "label_mega_build_speed"
    text = "auto_qol_military_label_mega_build_speed"
    font = "cg_16b"
-   position = { x = 22 y = 124 }
-   maxWidth = 248
+   position = { x = 36 y = 124 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -1970,8 +2063,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_mega_build_speed"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 154 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 154 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -2104,12 +2197,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_mega_build_speed_reset"
   }
+  containerWindowType = {
+   name = "setting_mega_construction"
+   position = { x = 22 y = 196 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_mega_construction"
    text = "auto_qol_military_label_mega_construction"
    font = "cg_16b"
-   position = { x = 22 y = 204 }
-   maxWidth = 248
+   position = { x = 36 y = 204 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -2118,8 +2217,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_mega_construction"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 234 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 234 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -2212,12 +2311,18 @@ guiTypes = {
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_mega_construction_reset"
   }
+  containerWindowType = {
+   name = "setting_mega_production"
+   position = { x = 22 y = 276 }
+   size = { width = 986 height = 74 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   instantTextBoxType = {
    name = "label_mega_production"
    text = "auto_qol_military_label_mega_production"
    font = "cg_16b"
-   position = { x = 22 y = 284 }
-   maxWidth = 248
+   position = { x = 36 y = 284 }
+   maxWidth = 234
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -2226,8 +2331,8 @@ guiTypes = {
    buttonText = "auto_qol_military_value_mega_production"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 314 }
-   size = { x = 248 y = 25 }
+   position = { x = 36 y = 314 }
+   size = { x = 234 y = 25 }
    quadTextureSprite = "GFX_button_light"
   }
   effectButtonType = {
@@ -2359,15 +2464,6 @@ guiTypes = {
    size = { x = 150 y = 25 }
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_military_mega_production_reset"
-  }
-  instantTextBoxType = {
-   name = "panel_footer"
-   text = "auto_qol_military_footer"
-   font = "cg_16b"
-   position = { x = 22 y = 608 }
-   maxWidth = 980
-   maxHeight = 48
-   alwaysTransparent = yes
   }
 
  }

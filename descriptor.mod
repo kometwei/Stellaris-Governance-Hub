@@ -1,4 +1,4 @@
-version="1.2.0"
+version="1.3.0"
 tags={
 	"Fixes"
 	"Utilities"
@@ -8,5 +8,5 @@ tags={
 }
 name="[开发版] 星政中枢｜内阁·舰队·领袖·灵能"
 picture="thumbnail.png"
-supported_version="v4.5.1*"
+supported_version="v4.5.*"
 path="mod/stellaris_mod_enhancer"

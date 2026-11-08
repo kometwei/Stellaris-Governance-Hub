@@ -68,6 +68,22 @@ class Empire:
 
 
 class UnlockTests(unittest.TestCase):
+    def test_all_five_adjustment_tiers_clamp_without_granting_slots(self):
+        text = (MOD_ROOT / 'events/auto_qol_ascension_events.txt').read_text(encoding='utf-8-sig')
+        for step in (1, 2, 4, 8, 16):
+            for direction, sign in (('decrease', -1), ('increase', 1)):
+                name = direction + ('_one' if step == 1 else '' if step == 8 else '_' + str(step))
+                effect = named(text[text.index(f'name = "auto_qol_ascension.{name}"'):], 'hidden_effect = {')
+                for target in (1, 2, 8, 16, 4090, 4096):
+                    empire = Empire(7, granted=3, target=target)
+                    empire.run(effect)
+                    self.assertEqual(empire.variables['auto_qol_ascension_target'], max(1, min(4096, target + sign * step)))
+                    self.assertEqual(empire.base + empire.bonus, 7)
+                    self.assertEqual(empire.variables['auto_qol_ascension_granted'], 3)
+                ai = Empire(7, ai=True, target=24)
+                ai.run(effect)
+                self.assertEqual(ai.variables['auto_qol_ascension_target'], 24)
+
     def test_fill_only_missing_slots_and_repeat(self):
         text = (MOD_ROOT / 'events/auto_qol_ascension_events.txt').read_text(encoding='utf-8-sig')
         effect = named(text[text.index('name = "auto_qol_ascension.unlock"'):], 'hidden_effect = {')

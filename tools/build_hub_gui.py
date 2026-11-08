@@ -10,6 +10,7 @@ from build_council_gui import dashboard_shell, DASHBOARD_LIST_Y, DASHBOARD_LIST_
 from native_dashboard_footer import transform_events, transform_gui
 from build_military_gui import button, text_box
 from build_smart_council_system import find_matching_brace
+from console_home_cards import CARDS, decorate_events, decorate_gui
 
 ROOT = Path(__file__).resolve().parents[1]
 MENU = "events/auto_qol_menu_events.txt"
@@ -110,22 +111,25 @@ def generate(root=ROOT):
     match = re.search(r"\bimmediate\s*=\s*\{", legacy)
     immediate = legacy[match.start():find_matching_brace(legacy, legacy.index("{", match.start())) + 1] if match else ""
     definitions = []
-    content = text_box("hub_title", "auto_qol_hub_title", 22, 15, 930, 30, "malgun_goth_24")
-    content += text_box("hub_note", "auto_qol_hub_note", 22, 66, 980, 28)
-    content += text_box("hub_settings", "auto_qol_hub_settings", 22, 370, 300)
+    content = text_box("hub_title", "auto_qol_hub_title", 22, 24, 786, 30, "malgun_goth_24")
+    content += text_box("hub_construction", "auto_qol_hub_construction", 22, 96, 406)
+    content += text_box("hub_governance", "auto_qol_hub_governance", 452, 96, 406)
+    content += text_box("hub_settings", "auto_qol_hub_settings", 22, 402, 836)
     loc = {
         "title": "星政中枢",
-        "note": "选择功能模块；各面板均可返回此首页。",
+        "note": "帝国控制台  /  总览     选择模块进入管理，设置与加成沿用当前存档。",
         "modules": "功能模块",
-        "megastructures": "巨构工程署：批量启动下一建设阶段",
-        "starbase_clear": "恒星基地清空：模块／建筑／全部",
-        "desc": "帝国管理入口。\\n\\n军事与建设：舰容、指挥、星球与巨构加成。\\n巨构工程署：批量启动下一阶段。\\n恒星基地清空：整理模块与建筑。\\n内阁与领袖：指派、名册与领袖池。\\n物种同化与飞升槽位：独立管理面板。\\n星球飞升：自有殖民地补齐至 10 级。\\n灵能科技：满足条件后解锁。",
-        "settings": "快捷开关（点击立即生效）",
+        "megastructures": "巨构工程署",
+        "starbase_clear": "恒星基地清空",
+        "desc": "选择模块进入管理。",
+        "settings": "快捷开关",
+        "construction": "§H建设与军备§!",
+        "governance": "§H治理与飞升§!",
         "envoy_on": "£trigger_yes£ §G【已开启】§! 遭遇 AI 通讯",
-        "envoy_off": "£trigger_no£ §R【已关闭】§! 遭遇 AI 通讯",
+        "envoy_off": "§L【已关闭】遭遇 AI 通讯§!",
         "pool_on": "£trigger_yes£ §G【已开启】§! 领袖池优化",
-        "pool_off": "£trigger_no£ §R【已关闭】§! 领袖池优化",
-        "footer": "左侧开关显示当前状态。\\n领袖池的裁剪、修复和内阁专注协议，可进入“内阁与领袖”管理。",
+        "pool_off": "§L【已关闭】领袖池优化§!",
+        "footer": "快捷开关点击立即生效。\\n候选裁剪、领袖池修复与内阁专注协议，可进入“内阁与领袖”管理。",
         "back": "返回星政中枢首页",
         "home": "返回星政中枢首页",
         "close": "关闭面板（Esc）",
@@ -133,7 +137,9 @@ def generate(root=ROOT):
         "next": "下一页 →",
     }
 
-    def toggle(suffix, condition, effect, y, tooltip):
+    loc.update({f"summary_{i}": summary for i, (_, summary) in enumerate(CARDS)})
+
+    def toggle(suffix, condition, effect, tooltip):
         name = "auto_qol_hub_" + suffix
         definitions.append(f'''{name} = {{
  potential = {{ from = {{ is_ai = no {condition} }} }}
@@ -144,14 +150,15 @@ def generate(root=ROOT):
  }}
 }}
 ''')
-        return button(name, name, 22, y, 300, name)
+        return button(name, name, 22 if suffix.startswith("envoy") else 452, 436, 406, name)
 
-    content += toggle("envoy_on", "has_country_flag = auto_envoy_enabled", "remove_country_flag = auto_envoy_enabled", 410, "auto_qol_menu.toggle_envoy_tt")
-    content += toggle("envoy_off", "NOT = { has_country_flag = auto_envoy_enabled }", "set_country_flag = auto_envoy_enabled country_event = { id = auto_envoy.100 }", 410, "auto_qol_menu.toggle_envoy_tt")
-    content += toggle("pool_on", "has_country_flag = leader_pool_opt_enabled", "remove_country_flag = leader_pool_opt_enabled auto_qol_repair_leader_pool = yes", 455, "auto_qol_menu.toggle_leader_opt_tt")
-    content += toggle("pool_off", "NOT = { has_country_flag = leader_pool_opt_enabled }", "set_country_flag = leader_pool_opt_enabled auto_qol_repair_leader_pool = yes auto_qol_trim_leader_pool_to_10 = yes", 455, "auto_qol_menu.toggle_leader_opt_tt")
-    content += text_box("hub_footer", "auto_qol_hub_footer", 22, 606, 980, 48)
+    content += toggle("envoy_on", "has_country_flag = auto_envoy_enabled", "remove_country_flag = auto_envoy_enabled", "auto_qol_menu.toggle_envoy_tt")
+    content += toggle("envoy_off", "NOT = { has_country_flag = auto_envoy_enabled }", "set_country_flag = auto_envoy_enabled country_event = { id = auto_envoy.100 }", "auto_qol_menu.toggle_envoy_tt")
+    content += toggle("pool_on", "has_country_flag = leader_pool_opt_enabled", "remove_country_flag = leader_pool_opt_enabled auto_qol_repair_leader_pool = yes", "auto_qol_menu.toggle_leader_opt_tt")
+    content += toggle("pool_off", "NOT = { has_country_flag = leader_pool_opt_enabled }", "set_country_flag = leader_pool_opt_enabled auto_qol_repair_leader_pool = yes auto_qol_trim_leader_pool_to_10 = yes", "auto_qol_menu.toggle_leader_opt_tt")
     gui = dashboard_shell("auto_qol_hub").replace("@CONTENT@", content)
+    home_list_y = 124
+    gui = gui.replace(f"x = 352 y = {DASHBOARD_LIST_Y}", f"x = 352 y = {home_list_y}")
     opening = '''# Generated by tools/build_hub_gui.py
 namespace = auto_qol_hub
 country_event = {
@@ -168,8 +175,8 @@ country_event = {
     closing = ' option = { name = "auto_qol.close_direct" default_hide_option = yes }\n}\n'
     opening += closing
     return {
-        "interface/auto_qol_hub.gui": transform_gui(gui, "auto_qol_hub", DASHBOARD_LIST_Y, DASHBOARD_LIST_HEIGHT),
-        "events/auto_qol_hub_gui_events.txt": transform_events(opening, "auto_qol_hub", "auto_qol_hub_native_page"),
+        "interface/auto_qol_hub.gui": decorate_gui(transform_gui(gui, "auto_qol_hub", home_list_y, DASHBOARD_LIST_HEIGHT), home_list_y),
+        "events/auto_qol_hub_gui_events.txt": decorate_events(transform_events(opening, "auto_qol_hub", "auto_qol_hub_native_page")),
         "common/button_effects/auto_qol_hub_buttons.txt": "\n".join(definitions),
         "localisation/simp_chinese/auto_qol_hub_gui_l_simp_chinese.yml": "l_simp_chinese:\n" + "".join(f' auto_qol_hub_{key}:0 "{value}"\n' for key, value in loc.items()),
     }

@@ -18,4 +18,5 @@ dist/
 # Images (keep thumbnail.png)
 *.jpg
 *.dds
+!gfx/interface/auto_qol/*.dds
 

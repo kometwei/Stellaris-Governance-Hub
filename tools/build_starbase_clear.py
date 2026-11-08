@@ -261,7 +261,7 @@ def generate(root=ROOT, game=GAME_INSTALL_DIR, active_dirs=()):
     effects += '}\n'
 
     loc = {
-        'title': '星政中枢 · 恒星基地清空 0.2.5', 'note': '先选择基地，再选择清空范围；操作前会再次检查保护条件。',
+        'title': '星政中枢 · 恒星基地清空', 'note': '先选择基地，再选择清空范围；操作前会再次检查保护条件。',
         'footer': '即时移除、不退款。强拆仅放宽防御容量设施及船坞／兽坞保护；换基地或重新进入时默认关闭。',
         'home': '返回星政中枢首页', 'close': '关闭面板（Esc）', 'prev': '← 上一页', 'next': '下一页 →',
         'picker': '选择一座自有普通恒星基地。每批最多十座，本轮不重复。\\n\\n选择后显示模块、建筑数量及是否允许清空。受保护基地可查看，但不能执行清空。',
@@ -282,12 +282,17 @@ def generate(root=ROOT, game=GAME_INSTALL_DIR, active_dirs=()):
         'reason_4': '已跳过：含受保护设施。\\n\\n强拆开关仅放宽防御平台容量设施和船坞／兽坞；全国限量、特殊移除条件、隐藏设施及额外模块／建筑槽位设施仍然保留。',
         'reason_5': '已跳过：检测到本次播放集中的未适配／被 Mod 改写设施，或数量超过检查上限。\\n\\n已识别模块：[Root.aqsc_modules]\\n已识别建筑：[Root.aqsc_buildings]\\n\\n更改设施 Mod 后请重新生成本地版。',
     }
+    loc['rules_tt'] = loc['footer'] + '\\n\\n' + loc['picker']
+    loc['picker'] = '选择恒星基地。'
+    loc['detail'] = loc['detail'].split('\\n\\n')[0]
+    loc['force_off'] = '【已关闭】强拆'
+    loc['force_on'] = '§R【已开启】强拆§!'
     loc['detail_force'] = loc['detail'] + '\\n\\n§R强拆已开启§!：允许拆除防御容量设施及船坞／兽坞，可能导致容量超限或影响造舰。'
     for key in ('modules', 'buildings', 'both'):
         loc['confirm_' + key + '_force'] = loc['confirm_' + key] + '\\n\\n§R强拆已开启：可能降低平台／离子炮容量或影响现有造舰订单。§! 本功能不主动拆除舰船、平台或取消订单；引擎后续处理尚待实测。'
 
     def option(key, effect, trigger=''):
-        return f'option = {{ name = "{PREFIX}_{key}"\n' + (f'trigger = {{ {trigger} }}\n' if trigger else '') + 'hidden_effect = { ' + effect + ' }\n}\n'
+        return f'option = {{ name = "{PREFIX}_{key}"\n custom_tooltip = "{PREFIX}_rules_tt"\n' + (f'trigger = {{ {trigger} }}\n' if trigger else '') + 'hidden_effect = { ' + effect + ' }\n}\n'
 
     def reason_desc():
         return ''.join(f'desc = {{ trigger = {{ check_variable = {{ which = aqsc_reason value = {n} }} }} text = "{PREFIX}_reason_{n}" }}\n' for n in range(1, 6))
@@ -348,8 +353,6 @@ country_event = {{
     result_desc = f'desc = {{ trigger = {{ has_country_flag = aqsc_done }} text = "{PREFIX}_success" }}\ndesc = {{ trigger = {{ NOT = {{ has_country_flag = aqsc_done }} }} text = "{PREFIX}_failed" }}'
     script += event(4, result_desc, '', refresh + back)
     content = text_box('clear_header', PREFIX + '_title', 22, 15, 930, 30, 'malgun_goth_24')
-    content += text_box('clear_note', PREFIX + '_note', 22, 66, 980, 28)
-    content += text_box('clear_footer', PREFIX + '_footer', 22, 606, 980, 48)
     shell = dashboard_shell(PREFIX).replace('maxHeight = 230', 'maxHeight = 450').replace('@CONTENT@', content)
     report = {'version': '0.2.5', 'known': known, 'protected': protected, 'forceable': force_catalog, 'excluded_mod_overrides': {k: sorted(v) for k, v in excluded.items()},
               'normal_ship_sizes': SIZES, 'count_limit': COUNT_LIMIT}

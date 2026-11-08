@@ -69,50 +69,62 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_mega_all"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 0 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_dyson_sphere"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 1 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_think_tank"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 2 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_spy_orb"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 3 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_matter_decompressor"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 4 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_strategic_coordination_center"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 5 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_mega_art_installation"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 6 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_interstellar_assembly"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 7 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_mega_shipyard"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 8 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_quantum_catapult"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 9 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_orbital_arc_furnace"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 10 }
 country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_dyson_swarm"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 11 }
 country_event = { id = auto_qol_mega.2 } }
  }
@@ -168,6 +180,7 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_mega_ring_world"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { set_variable = { which = aqm_family value = 12 }
 country_event = { id = auto_qol_mega.2 } }
  }
@@ -214,15 +227,18 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_mega_confirm"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  trigger = { check_variable = { which = aqm_ready value > 0 } }
  hidden_effect = { set_country_flag = aqm_execute
 auto_qol_mega_scan = yes
 country_event = { id = auto_qol_mega.3 } }
  }
 option = { name = "auto_qol_mega_refresh"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_back"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { country_event = { id = auto_qol_mega.1 } }
  }
 }
@@ -266,9 +282,11 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_mega_refresh"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { country_event = { id = auto_qol_mega.2 } }
  }
 option = { name = "auto_qol_mega_back"
+ custom_tooltip = "auto_qol_mega_rules_tt"
  hidden_effect = { country_event = { id = auto_qol_mega.1 } }
  }
 }

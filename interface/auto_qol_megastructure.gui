@@ -19,7 +19,32 @@ guiTypes = {
   origo = center
   moveable = yes
   size = { width = 1030 height = 720 }
-  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  background = { name = "background" quadTextureSprite = "GFX_auto_qol_console" }
+  containerWindowType = {
+   name = "console_header"
+   position = { x = 12 y = 8 }
+   size = { width = 1006 height = 86 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+  containerWindowType = {
+   name = "console_footer"
+   position = { x = 12 y = 600 }
+   size = { width = 1006 height = 108 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+
+  containerWindowType = {
+   name = "console_context"
+   position = { x = 12 y = 104 }
+   size = { width = 320 height = 486 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+  containerWindowType = {
+   name = "console_workspace"
+   position = { x = 342 y = 104 }
+   size = { width = 676 height = 486 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
   buttonType = {
    name = "close"
    quadTextureSprite = "GFX_main_close_button"
@@ -103,24 +128,6 @@ guiTypes = {
    position = { x = 22 y = 15 }
    maxWidth = 930
    maxHeight = 30
-   alwaysTransparent = yes
-  }
-  instantTextBoxType = {
-   name = "mega_note"
-   text = "auto_qol_mega_note"
-   font = "cg_16b"
-   position = { x = 22 y = 66 }
-   maxWidth = 980
-   maxHeight = 28
-   alwaysTransparent = yes
-  }
-  instantTextBoxType = {
-   name = "mega_footer"
-   text = "auto_qol_mega_footer"
-   font = "cg_16b"
-   position = { x = 22 y = 606 }
-   maxWidth = 980
-   maxHeight = 48
    alwaysTransparent = yes
   }
 

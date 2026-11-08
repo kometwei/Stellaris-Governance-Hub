@@ -47,47 +47,52 @@ country_event = {
 
 
  
-option = {
- name = "auto_qol_hub_home"
- custom_gui = "auto_qol_hub_nav2_0"
- hidden_effect = {
-country_event = { id = auto_qol_menu.1 }
- }
-}
+
 option = {
  name = "auto_qol_hub_close"
- custom_gui = "auto_qol_hub_nav2_1"
+ custom_gui = "auto_qol_hub_close_button"
  default_hide_option = yes
 }
 option = {
+ custom_gui = "auto_qol_hub_card_0"
+ custom_tooltip = "auto_qol_hub_summary_0"
 		name = "auto_qol_military_open"
 		hidden_effect = { country_event = { id = auto_qol_military.1 } }
 	}
 option = {
+ custom_gui = "auto_qol_hub_card_1"
+ custom_tooltip = "auto_qol_hub_summary_1"
   name = "auto_qol_hub_megastructures"
   hidden_effect = { country_event = { id = auto_qol_mega.1 } }
  }
 option = {
+ custom_gui = "auto_qol_hub_card_2"
+ custom_tooltip = "auto_qol_hub_summary_2"
   name = "auto_qol_hub_starbase_clear"
   hidden_effect = { country_event = { id = auto_qol_starbase_clear.1 } }
  }
 option = {
+ custom_gui = "auto_qol_hub_card_3"
+ custom_tooltip = "auto_qol_hub_summary_3"
 		name = "auto_qol_council_gui_open"
 		hidden_effect = { country_event = { id = auto_qol_council_gui.1 } }
 	}
 option = {
+ custom_gui = "auto_qol_hub_card_4"
 		name = "auto_qol_menu.assimilation"
 		custom_tooltip = "auto_qol_menu.assimilation_tt"
 		trigger = { is_ai = no exists = species }
 		hidden_effect = { country_event = { id = auto_qol_assimilation_gui.1 } }
 	}
 option = {
+ custom_gui = "auto_qol_hub_card_5"
 		name = "auto_qol_menu.ascension_slots"
 		custom_tooltip = "auto_qol_menu.ascension_slots_tt"
 		trigger = { is_ai = no }
 		country_event = { id = auto_qol_ascension_gui.1 }
 	}
 option = {
+ custom_gui = "auto_qol_hub_card_6"
 		name = "auto_qol_menu.planet_ascension_10"
 		custom_tooltip = "auto_qol_menu.planet_ascension_10_tt"
 		trigger = { is_ai = no }
@@ -97,6 +102,7 @@ option = {
 		}
 	}
 option = {
+ custom_gui = "auto_qol_hub_card_7"
 		name = "auto_qol_menu.psionic_bundle_ready"
 		custom_tooltip = "auto_qol_menu.psionic_bundle_ready_tt"
 		trigger = {
@@ -126,6 +132,7 @@ option = {
 		}
 	}
 option = {
+ custom_gui = "auto_qol_hub_card_7"
 		name = "auto_qol_menu.psionic_bundle_complete"
 		custom_tooltip = "auto_qol_menu.psionic_bundle_complete_tt"
 		trigger = {
@@ -136,6 +143,7 @@ option = {
 		default_hide_option = yes
 	}
 option = {
+ custom_gui = "auto_qol_hub_card_7"
 		name = "auto_qol_menu.psionic_bundle_locked"
 		custom_tooltip = "auto_qol_menu.psionic_bundle_locked_tt"
 		trigger = { NOT = { has_finished_psionic_tradition = yes } }

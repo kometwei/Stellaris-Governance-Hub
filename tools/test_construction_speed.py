@@ -8,7 +8,7 @@ MOD_ROOT = Path(__file__).resolve().parents[1]
 
 
 def parse(text):
-    tokens = re.findall(r'"[^"\n]*"|[{}=<>]|[^\s{}=<>]+', strip_comments(text))
+    tokens = re.findall(r'"[^"\n]*"|>=|<=|!=|[{}=<>]|[^\s{}=<>]+', strip_comments(text))
     def walk(index):
         rows = []
         while index < len(tokens) and tokens[index] != '}':

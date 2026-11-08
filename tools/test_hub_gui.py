@@ -54,14 +54,15 @@ class HubGuiTests(unittest.TestCase):
         before = options(self.menu["auto_qol_menu.900"])
         after = options(self.page("auto_qol_hub.1"))
         for key in ("auto_qol_menu.planet_ascension_10", "auto_qol_military_open", "auto_qol_council_gui_open", "auto_qol_menu.assimilation", "auto_qol_menu.ascension_slots", "auto_qol_menu.psionic_bundle_ready", "auto_qol_menu.psionic_bundle_complete", "auto_qol_menu.psionic_bundle_locked"):
-            self.assertEqual(after[key], route(before[key]))
+            has_tooltip = any(row[0] == "custom_tooltip" for row in before[key])
+            self.assertEqual([row for row in after[key] if row[0] != "custom_gui" and (row[0] != "custom_tooltip" or has_tooltip)], route(before[key]))
         self.assertNotIn("auto_qol_menu.fleet_menu", after)
         self.assertNotIn("auto_qol_menu.council_menu", after)
         self.assertNotIn("auto_qol_hub_compat", after)
 
     def test_home_module_order_groups_construction_and_keeps_conditional_actions(self):
         page = self.page("auto_qol_hub.1")
-        names = [value(rows, "name") for key, _, rows in page if key == "option" and not any(k == "custom_gui" for k, _, _ in rows)]
+        names = [value(rows, "name") for key, _, rows in page if key == "option" and value(rows, "name") != "auto_qol_hub_close" and not any(k == "custom_gui" and "_nav" in v for k, _, v in rows)]
         self.assertEqual(names, [
             "auto_qol_military_open", "auto_qol_hub_megastructures",
             "auto_qol_hub_starbase_clear", "auto_qol_council_gui_open",
@@ -69,6 +70,30 @@ class HubGuiTests(unittest.TestCase):
             "auto_qol_menu.planet_ascension_10", "auto_qol_menu.psionic_bundle_ready",
             "auto_qol_menu.psionic_bundle_complete", "auto_qol_menu.psionic_bundle_locked",
         ])
+
+    def test_native_cards_fit_workspace_and_conditional_states_share_one_slot(self):
+        types = value(parse(self.files["interface/auto_qol_hub.gui"]), "guiTypes")
+        rectangles = []
+        flow_height = 0
+        for index in range(8):
+            template = next(v for _, _, v in types if value(v, "name") == f"auto_qol_hub_card_{index}")
+            entry_height = int(value(value(template, "size"), "height"))
+            # All-zero content disappeared in the engine even though the
+            # option buttons had nonzero sizes. Keep real list extent.
+            self.assertGreater(entry_height, 0)
+            control = value(template, "buttonType")
+            pos = dict((k, int(v)) for k, _, v in value(control, "position"))
+            size = dict((k, int(v)) for k, _, v in value(control, "size"))
+            x, y, w, h = pos["x"], pos["y"] + 124 + flow_height, size["x"], size["y"]
+            self.assertTrue(0 <= x < x + w <= 836 and 124 <= y < y + h <= 374)
+            for bx, by, bw, bh in rectangles:
+                self.assertFalse(x < bx + bw and x + w > bx and y < by + bh and y + h > by)
+            rectangles.append((x, y, w, h))
+            flow_height += entry_height
+        self.assertGreater(flow_height, 0)
+        options = {value(v, "name"): v for k, _, v in self.page("auto_qol_hub.1") if k == "option"}
+        for state in ("ready", "complete", "locked"):
+            self.assertEqual(value(options["auto_qol_menu.psionic_bundle_" + state], "custom_gui"), "auto_qol_hub_card_7")
 
     def test_no_legacy_menu_entry_in_any_normal_gui(self):
         self.assertNotIn("auto_qol_hub.2", self.hub)

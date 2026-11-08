@@ -8885,7 +8885,7 @@ tr_node_blocked_tr_adaptability_homura:0 "£trigger_no£ §R【安全熔断已�
  auto_qol_menu.ascension_slots:0 "飞升槽位解锁"
  auto_qol_menu.ascension_slots_tt:0 "打开飞升槽位解锁面板；仅开放当前槽位，飞升天赋由你自行选择。"
  auto_qol_ascension.title:0 "飞升槽位解锁"
- auto_qol_ascension.desc:0 "当前已解锁 §Y[Root.auto_qol_ascension_current]§! 格，补齐目标为 §Y[Root.auto_qol_ascension_target]§! 格。\n\n用【目标－8 / ＋8】快速调整，【目标－1 / ＋1】微调目标（最小 1，最大 4096），再点击【补齐至目标】生效。降低目标不会收回已解锁槽位。\n\n§Y请按槽位模组提供的实际总格数设置；此处不自动识别槽位上限，也不扩展传统界面的槽位。§!\n\n不会自动选择天赋、完成传统或授予科技；天赋条件仍然生效。"
+ auto_qol_ascension.desc:0 "当前已解锁 §Y[Root.auto_qol_ascension_current]§! 格，补齐目标为 §Y[Root.auto_qol_ascension_target]§! 格。\n\n按 1、2、4、8、16 档位增减目标（最小 1，最大 4096），再点击【补齐至目标】生效。降低目标不会收回已解锁槽位。\n\n§Y请按槽位模组提供的实际总格数设置；此处不自动识别槽位上限，也不扩展传统界面的槽位。§!\n\n不会自动选择天赋、完成传统或授予科技；天赋条件仍然生效。"
  auto_qol_ascension.unlock:0 "补齐至目标：[Root.auto_qol_ascension_target] 格"
  auto_qol_ascension.unlock_tt:0 "只补足目标以内尚未解锁的数量；重复点击不叠加。目标低于当前数量时不收回槽位。请先核对槽位模组实际总格数。"
  auto_qol_ascension.complete:0 "已达到目标格数"
@@ -8898,15 +8898,12 @@ tr_node_blocked_tr_adaptability_homura:0 "£trigger_no£ §R【安全熔断已�
  auto_qol_pool_clamp_10_desc:0 "旧版存档兼容标记；不再减少候选名额，打开助手即可移除。"
  auto_qol_pool_clamp_20:0 "旧版领袖池压制（已停用）"
  auto_qol_pool_clamp_20_desc:0 "旧版存档兼容标记；不再减少候选名额，打开助手即可移除。"
-
- auto_qol_ascension.decrease:0 "目标－8（当前：[Root.auto_qol_ascension_target]）"
-
- auto_qol_ascension.increase:0 "目标＋8（当前：[Root.auto_qol_ascension_target]）"
+ auto_qol_ascension.decrease:0 "目标－8"
+ auto_qol_ascension.increase:0 "目标＋8"
 
  auto_qol_ascension.adjust_tt:0 "只调整补齐目标，不立即解锁；目标保存在本帝国。最小 1，最大 4096。降低目标不会收回槽位。"
-
- auto_qol_ascension.decrease_one:0 "目标－1（当前：[Root.auto_qol_ascension_target]）"
- auto_qol_ascension.increase_one:0 "目标＋1（当前：[Root.auto_qol_ascension_target]）"
+ auto_qol_ascension.decrease_one:0 "目标－1"
+ auto_qol_ascension.increase_one:0 "目标＋1"
 
  auto_qol_menu.planet_ascension_10:0 "一键星球飞升至 10 级"
  auto_qol_menu.planet_ascension_10_tt:0 "免费将本帝国当前所有自有殖民地的飞升级别补齐至 §Y10§! 级，包含居住站、环世界殖民地与殖民船型殖民地。已达 10 级或更高的保持原状。无需原版飞升前置，不消耗凝聚力；仅执行一次，新殖民或征服后可再次点击。"
@@ -8926,3 +8923,15 @@ tr_node_blocked_tr_adaptability_homura:0 "£trigger_no£ §R【安全熔断已�
 
  qol_custom_automated_ratio_modifier:0 "岗位自动化比例（星政中枢）"
  qol_custom_automated_ratio_modifier_desc:0 "为原版允许自动化的岗位提供额外自动化比例；保留建筑等其他来源，不改变自动劳动力效率。"
+
+ auto_qol_ascension.decrease_2:0 "目标－2"
+
+ auto_qol_ascension.increase_2:0 "目标＋2"
+
+ auto_qol_ascension.decrease_4:0 "目标－4"
+
+ auto_qol_ascension.increase_4:0 "目标＋4"
+
+ auto_qol_ascension.decrease_16:0 "目标－16"
+
+ auto_qol_ascension.increase_16:0 "目标＋16"

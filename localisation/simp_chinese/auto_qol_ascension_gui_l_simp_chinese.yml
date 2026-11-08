@@ -6,3 +6,6 @@
  auto_qol_ascension_gui_close:0 "关闭面板（Esc）"
  auto_qol_ascension_gui_prev:0 "← 上一页"
  auto_qol_ascension_gui_next:0 "下一页 →"
+ auto_qol_ascension_gui_status:0 "已解锁：§Y[Root.auto_qol_ascension_current]§! 格\n目标：§Y[Root.auto_qol_ascension_target]§! 格"
+ auto_qol_ascension_gui_adjust_tt:0 "按 1、2、4、8、16 档位增减目标，再点击补齐生效。调整本身不解锁；目标保存在本帝国，范围 1～4096。降低目标不会收回槽位。请按槽位 Mod 提供的实际格数设置；本面板不会扫描槽位上限或扩展传统界面。"
+ auto_qol_ascension_gui_unlock_tt:0 "仅补足目标以内尚未解锁的槽位；重复点击不叠加，降低目标不收回槽位。请先核对槽位 Mod 的实际格数。本功能不扩展传统界面，不自动选择天赋、完成传统或授予科技；天赋条件仍然生效。"

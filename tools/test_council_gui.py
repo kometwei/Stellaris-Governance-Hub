@@ -69,9 +69,9 @@ class CouncilGuiTests(unittest.TestCase):
         listing = value(native, "listBoxType")
         self.assertEqual(value(listing, "scrollbarType"), "standardlistbox_slider")
         self.assertEqual(value(value(listing, "size"), "y"), "524")
-        note = next(v for k, _, v in window if k == "instantTextBoxType" and value(v, "name") == "council_gui_note")
+        heading = next(v for k, _, v in window if k == "instantTextBoxType" and value(v, "name") == "council_gui_title")
         title = next(v for k, _, v in native if k == "instantTextBoxType" and value(v, "name") == "action_title")
-        self.assertLessEqual(int(value(value(note, "position"), "y")) + int(value(note, "maxHeight")) + 16,
+        self.assertLessEqual(int(value(value(heading, "position"), "y")) + int(value(heading, "maxHeight")) + 16,
                              int(value(value(title, "position"), "y")))
         self.assertLessEqual(int(value(value(title, "position"), "y")) + int(value(title, "maxHeight")) + 16,
                              int(value(value(listing, "position"), "y")))

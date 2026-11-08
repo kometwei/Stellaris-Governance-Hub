@@ -72,54 +72,67 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_starbase_clear_slot_1"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_1_valid exists = event_target:aqsc_slot_1 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_1 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_2"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_2_valid exists = event_target:aqsc_slot_2 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_2 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_3"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_3_valid exists = event_target:aqsc_slot_3 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_3 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_4"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_4_valid exists = event_target:aqsc_slot_4 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_4 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_5"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_5_valid exists = event_target:aqsc_slot_5 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_5 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_6"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_6_valid exists = event_target:aqsc_slot_6 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_6 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_7"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_7_valid exists = event_target:aqsc_slot_7 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_7 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_8"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_8_valid exists = event_target:aqsc_slot_8 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_8 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_9"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_9_valid exists = event_target:aqsc_slot_9 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_9 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_slot_10"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_slot_10_valid exists = event_target:aqsc_slot_10 }
 hidden_effect = { remove_country_flag = aqsc_force event_target:aqsc_slot_10 = { save_event_target_as = aqsc_selected } country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_more"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { any_owned_starbase = { auto_qol_starbase_clear_normal = yes NOT = { has_starbase_flag = aqsc_seen@root } } }
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.10 } }
 }
 option = { name = "auto_qol_starbase_clear_restart"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { NOT = { any_owned_starbase = { auto_qol_starbase_clear_normal = yes NOT = { has_starbase_flag = aqsc_seen@root } } } has_country_flag = aqsc_slot_1_valid }
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.1 } }
 }
 option = { name = "auto_qol_starbase_clear_empty"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { NOT = { has_country_flag = aqsc_slot_1_valid } }
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.1 } }
 }
@@ -176,32 +189,39 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_starbase_clear_modules"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_ready check_variable = { which = aqsc_modules value > 0 } }
 hidden_effect = { set_variable = { which = aqsc_mode value = 1 }
 country_event = { id = auto_qol_starbase_clear.3 } }
 }
 option = { name = "auto_qol_starbase_clear_buildings"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_ready check_variable = { which = aqsc_buildings value > 0 } }
 hidden_effect = { set_variable = { which = aqsc_mode value = 2 }
 country_event = { id = auto_qol_starbase_clear.3 } }
 }
 option = { name = "auto_qol_starbase_clear_both"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_ready OR = { check_variable = { which = aqsc_modules value > 0 } check_variable = { which = aqsc_buildings value > 0 } } }
 hidden_effect = { set_variable = { which = aqsc_mode value = 3 }
 country_event = { id = auto_qol_starbase_clear.3 } }
 }
 option = { name = "auto_qol_starbase_clear_force_off"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { NOT = { has_country_flag = aqsc_force } }
 hidden_effect = { set_country_flag = aqsc_force country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_force_on"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_force }
 hidden_effect = { remove_country_flag = aqsc_force country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_refresh"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_choose"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.1 } }
 }
 }
@@ -256,10 +276,12 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_starbase_clear_confirm"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 trigger = { has_country_flag = aqsc_ready }
 hidden_effect = { auto_qol_starbase_clear_execute = yes country_event = { id = auto_qol_starbase_clear.4 } }
 }
 option = { name = "auto_qol_starbase_clear_cancel"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.2 } }
 }
 }
@@ -304,9 +326,11 @@ option = {
  default_hide_option = yes
 }
 option = { name = "auto_qol_starbase_clear_refresh"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.2 } }
 }
 option = { name = "auto_qol_starbase_clear_choose"
+ custom_tooltip = "auto_qol_starbase_clear_rules_tt"
 hidden_effect = { country_event = { id = auto_qol_starbase_clear.1 } }
 }
 }

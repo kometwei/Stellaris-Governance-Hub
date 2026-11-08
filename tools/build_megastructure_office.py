@@ -244,7 +244,7 @@ def generate(root=ROOT, game=GAME_INSTALL_DIR, active_dirs=()):
     effects += 'remove_country_flag = aqm_price_supported\nremove_country_flag = aqm_execute\n}\n}\n'
 
     def option(name, effect, trigger=''):
-        return f' option = {{ name = "{PREFIX}_{name}"\n' + (f' trigger = {{ {trigger} }}\n' if trigger else '') + ' hidden_effect = { ' + effect + ' }\n }\n'
+        return f' option = {{ name = "{PREFIX}_{name}"\n custom_tooltip = "{PREFIX}_rules_tt"\n' + (f' trigger = {{ {trigger} }}\n' if trigger else '') + ' hidden_effect = { ' + effect + ' }\n }\n'
 
     def event(number, desc, immediate, options):
         return f'''country_event = {{
@@ -275,6 +275,8 @@ def generate(root=ROOT, game=GAME_INSTALL_DIR, active_dirs=()):
         'preview': '本批匹配 §Y[Root.aqm_found]§! 座建设阶段（含正在施工者）。\\n可开工 §G[Root.aqm_ready]§! 座（已考虑当前资源和并行额度）。\\n极端费用折扣跳过：[Root.aqm_price_skipped] 座。\\n\\n预计合计消耗：\\n£alloys£ [Root.aqm_total_alloys]　£unity£ [Root.aqm_total_unity]\\n£food£ [Root.aqm_total_food]　£energy£ [Root.aqm_total_energy]\\n£minerals£ [Root.aqm_total_minerals]　£minor_artifacts£ [Root.aqm_total_minor_artifacts]\\n\\n确认时重新检查；不足者跳过，遍历顺序由游戏决定。预览不扣资源、不下达命令。',
         'result': '本次成功启动 §G[Root.aqm_ready]§! 座，原生启动未成功 §Y[Root.aqm_failed]§! 座。\\n命中总数：[Root.aqm_found]；其余因资源、额度或条件不足跳过。\\n\\n成功启动项目的计算费用：\\n£alloys£ [Root.aqm_total_alloys]　£unity£ [Root.aqm_total_unity]\\n£food£ [Root.aqm_total_food]　£energy£ [Root.aqm_total_energy]\\n\\n已进入正常施工，不自动连续升级。',
     }
+    loc['rules_tt'] = loc['footer'] + '\\n\\n' + loc['intro']
+    loc['intro'] = '选择巨构类型。'
     for index, (family, title, _) in enumerate(FAMILIES, 1):
         options += option(family, var('set', 'family', index) + f'country_event = {{ id = {PREFIX}.2 }}')
         loc[family] = title + '：扫描并预览'
@@ -287,8 +289,6 @@ def generate(root=ROOT, game=GAME_INSTALL_DIR, active_dirs=()):
                            'check_variable = { which = aqm_ready value > 0 }') + refresh + back)
     script += event(3, 'result', '', refresh + back)
     content = text_box('mega_header', PREFIX + '_title', 22, 15, 930, 30, 'malgun_goth_24')
-    content += text_box('mega_note', PREFIX + '_note', 22, 66, 980, 28)
-    content += text_box('mega_footer', PREFIX + '_footer', 22, 606, 980, 48)
     shell = dashboard_shell(PREFIX).replace('maxHeight = 230', 'maxHeight = 450').replace('@CONTENT@', content)
     report = {'families': len(FAMILIES), 'edges': [[i, s, t] for i, s, t, _ in edges],
               'excluded_overrides_or_branches': skipped, 'base_build_cap': float(base),

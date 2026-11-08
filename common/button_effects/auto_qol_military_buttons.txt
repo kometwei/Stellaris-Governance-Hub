@@ -4,6 +4,7 @@ auto_qol_military_navy_cap_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -18,6 +19,7 @@ auto_qol_military_navy_cap_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -36,6 +38,7 @@ auto_qol_military_navy_cap_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -50,6 +53,7 @@ auto_qol_military_navy_cap_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -68,6 +72,7 @@ auto_qol_military_navy_cap_add_2500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -82,6 +87,7 @@ auto_qol_military_navy_cap_sub_2500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -100,6 +106,7 @@ auto_qol_military_navy_cap_add_5000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -114,6 +121,7 @@ auto_qol_military_navy_cap_sub_5000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -132,6 +140,7 @@ auto_qol_military_navy_cap_add_10000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -146,6 +155,7 @@ auto_qol_military_navy_cap_sub_10000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -164,6 +174,7 @@ auto_qol_military_navy_cap_add_50000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -178,6 +189,7 @@ auto_qol_military_navy_cap_sub_50000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -196,6 +208,7 @@ auto_qol_military_navy_cap_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_navy_cap_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -210,6 +223,7 @@ auto_qol_military_cmd_limit_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -224,6 +238,7 @@ auto_qol_military_cmd_limit_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -242,6 +257,7 @@ auto_qol_military_cmd_limit_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -256,6 +272,7 @@ auto_qol_military_cmd_limit_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -274,6 +291,7 @@ auto_qol_military_cmd_limit_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -288,6 +306,7 @@ auto_qol_military_cmd_limit_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -306,6 +325,7 @@ auto_qol_military_cmd_limit_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -320,6 +340,7 @@ auto_qol_military_cmd_limit_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -338,6 +359,7 @@ auto_qol_military_cmd_limit_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -352,6 +374,7 @@ auto_qol_military_cmd_limit_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -370,6 +393,7 @@ auto_qol_military_cmd_limit_add_5000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -384,6 +408,7 @@ auto_qol_military_cmd_limit_sub_5000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -402,6 +427,7 @@ auto_qol_military_cmd_limit_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_cmd_limit_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -416,6 +442,7 @@ auto_qol_military_starbase_module_speed_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -430,6 +457,7 @@ auto_qol_military_starbase_module_speed_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -448,6 +476,7 @@ auto_qol_military_starbase_module_speed_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -462,6 +491,7 @@ auto_qol_military_starbase_module_speed_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -480,6 +510,7 @@ auto_qol_military_starbase_module_speed_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -494,6 +525,7 @@ auto_qol_military_starbase_module_speed_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -512,6 +544,7 @@ auto_qol_military_starbase_module_speed_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -526,6 +559,7 @@ auto_qol_military_starbase_module_speed_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -544,6 +578,7 @@ auto_qol_military_starbase_module_speed_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -558,6 +593,7 @@ auto_qol_military_starbase_module_speed_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -576,6 +612,7 @@ auto_qol_military_starbase_module_speed_add_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -590,6 +627,7 @@ auto_qol_military_starbase_module_speed_sub_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -608,6 +646,7 @@ auto_qol_military_starbase_module_speed_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_starbase_module_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -622,6 +661,7 @@ auto_qol_military_defense_platform_speed_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -636,6 +676,7 @@ auto_qol_military_defense_platform_speed_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -654,6 +695,7 @@ auto_qol_military_defense_platform_speed_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -668,6 +710,7 @@ auto_qol_military_defense_platform_speed_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -686,6 +729,7 @@ auto_qol_military_defense_platform_speed_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -700,6 +744,7 @@ auto_qol_military_defense_platform_speed_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -718,6 +763,7 @@ auto_qol_military_defense_platform_speed_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -732,6 +778,7 @@ auto_qol_military_defense_platform_speed_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -750,6 +797,7 @@ auto_qol_military_defense_platform_speed_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -764,6 +812,7 @@ auto_qol_military_defense_platform_speed_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -782,6 +831,7 @@ auto_qol_military_defense_platform_speed_add_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -796,6 +846,7 @@ auto_qol_military_defense_platform_speed_sub_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -814,6 +865,7 @@ auto_qol_military_defense_platform_speed_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_defense_platform_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -828,6 +880,7 @@ auto_qol_military_army_recruit_speed_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -842,6 +895,7 @@ auto_qol_military_army_recruit_speed_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -860,6 +914,7 @@ auto_qol_military_army_recruit_speed_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -874,6 +929,7 @@ auto_qol_military_army_recruit_speed_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -892,6 +948,7 @@ auto_qol_military_army_recruit_speed_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -906,6 +963,7 @@ auto_qol_military_army_recruit_speed_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -924,6 +982,7 @@ auto_qol_military_army_recruit_speed_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -938,6 +997,7 @@ auto_qol_military_army_recruit_speed_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -956,6 +1016,7 @@ auto_qol_military_army_recruit_speed_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -970,6 +1031,7 @@ auto_qol_military_army_recruit_speed_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -988,6 +1050,7 @@ auto_qol_military_army_recruit_speed_add_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1002,6 +1065,7 @@ auto_qol_military_army_recruit_speed_sub_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1020,6 +1084,7 @@ auto_qol_military_army_recruit_speed_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_army_recruit_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1034,6 +1099,7 @@ auto_qol_military_ship_build_speed_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1048,6 +1114,7 @@ auto_qol_military_ship_build_speed_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1066,6 +1133,7 @@ auto_qol_military_ship_build_speed_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1080,6 +1148,7 @@ auto_qol_military_ship_build_speed_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1098,6 +1167,7 @@ auto_qol_military_ship_build_speed_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1112,6 +1182,7 @@ auto_qol_military_ship_build_speed_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1130,6 +1201,7 @@ auto_qol_military_ship_build_speed_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1144,6 +1216,7 @@ auto_qol_military_ship_build_speed_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1162,6 +1235,7 @@ auto_qol_military_ship_build_speed_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1176,6 +1250,7 @@ auto_qol_military_ship_build_speed_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1194,6 +1269,7 @@ auto_qol_military_ship_build_speed_add_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1208,6 +1284,7 @@ auto_qol_military_ship_build_speed_sub_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1226,6 +1303,7 @@ auto_qol_military_ship_build_speed_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_ship_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1240,6 +1318,7 @@ auto_qol_military_planet_construction_add_1 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1254,6 +1333,7 @@ auto_qol_military_planet_construction_sub_1 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1272,6 +1352,7 @@ auto_qol_military_planet_construction_add_2 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1286,6 +1367,7 @@ auto_qol_military_planet_construction_sub_2 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1304,6 +1386,7 @@ auto_qol_military_planet_construction_add_5 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1318,6 +1401,7 @@ auto_qol_military_planet_construction_sub_5 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1336,6 +1420,7 @@ auto_qol_military_planet_construction_add_10 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1350,6 +1435,7 @@ auto_qol_military_planet_construction_sub_10 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1368,6 +1454,7 @@ auto_qol_military_planet_construction_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1382,6 +1469,7 @@ auto_qol_military_planet_build_speed_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1396,6 +1484,7 @@ auto_qol_military_planet_build_speed_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1414,6 +1503,7 @@ auto_qol_military_planet_build_speed_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1428,6 +1518,7 @@ auto_qol_military_planet_build_speed_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1446,6 +1537,7 @@ auto_qol_military_planet_build_speed_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1460,6 +1552,7 @@ auto_qol_military_planet_build_speed_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1478,6 +1571,7 @@ auto_qol_military_planet_build_speed_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1492,6 +1586,7 @@ auto_qol_military_planet_build_speed_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1510,6 +1605,7 @@ auto_qol_military_planet_build_speed_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1524,6 +1620,7 @@ auto_qol_military_planet_build_speed_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1542,6 +1639,7 @@ auto_qol_military_planet_build_speed_add_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1556,6 +1654,7 @@ auto_qol_military_planet_build_speed_sub_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1574,6 +1673,7 @@ auto_qol_military_planet_build_speed_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1588,6 +1688,7 @@ auto_qol_military_planet_jobs_speed_add_10 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1602,6 +1703,7 @@ auto_qol_military_planet_jobs_speed_sub_10 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1620,6 +1722,7 @@ auto_qol_military_planet_jobs_speed_add_25 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1634,6 +1737,7 @@ auto_qol_military_planet_jobs_speed_sub_25 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1652,6 +1756,7 @@ auto_qol_military_planet_jobs_speed_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1666,6 +1771,7 @@ auto_qol_military_planet_jobs_speed_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1684,6 +1790,7 @@ auto_qol_military_planet_jobs_speed_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1698,6 +1805,7 @@ auto_qol_military_planet_jobs_speed_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1716,6 +1824,7 @@ auto_qol_military_planet_jobs_speed_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1730,6 +1839,7 @@ auto_qol_military_planet_jobs_speed_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1748,6 +1858,7 @@ auto_qol_military_planet_jobs_speed_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1762,6 +1873,7 @@ auto_qol_military_planet_jobs_speed_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -1780,6 +1892,7 @@ auto_qol_military_planet_jobs_speed_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_planet_jobs_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2238,6 +2351,7 @@ auto_qol_military_mega_build_speed_add_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2252,6 +2366,7 @@ auto_qol_military_mega_build_speed_sub_50 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2270,6 +2385,7 @@ auto_qol_military_mega_build_speed_add_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2284,6 +2400,7 @@ auto_qol_military_mega_build_speed_sub_100 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2302,6 +2419,7 @@ auto_qol_military_mega_build_speed_add_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2316,6 +2434,7 @@ auto_qol_military_mega_build_speed_sub_200 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2334,6 +2453,7 @@ auto_qol_military_mega_build_speed_add_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2348,6 +2468,7 @@ auto_qol_military_mega_build_speed_sub_500 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2366,6 +2487,7 @@ auto_qol_military_mega_build_speed_add_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2380,6 +2502,7 @@ auto_qol_military_mega_build_speed_sub_1000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2398,6 +2521,7 @@ auto_qol_military_mega_build_speed_add_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2412,6 +2536,7 @@ auto_qol_military_mega_build_speed_sub_2000 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2430,6 +2555,7 @@ auto_qol_military_mega_build_speed_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_build_speed_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2444,6 +2570,7 @@ auto_qol_military_mega_construction_add_1 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2458,6 +2585,7 @@ auto_qol_military_mega_construction_sub_1 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2476,6 +2604,7 @@ auto_qol_military_mega_construction_add_2 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2490,6 +2619,7 @@ auto_qol_military_mega_construction_sub_2 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2508,6 +2638,7 @@ auto_qol_military_mega_construction_add_5 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2522,6 +2653,7 @@ auto_qol_military_mega_construction_sub_5 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2540,6 +2672,7 @@ auto_qol_military_mega_construction_add_10 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2554,6 +2687,7 @@ auto_qol_military_mega_construction_sub_10 = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes
@@ -2572,6 +2706,7 @@ auto_qol_military_mega_construction_reset = {
  potential = { from = { is_ai = no } }
  allow = { from = { is_ai = no } }
  effect = {
+  custom_tooltip = "auto_qol_military_mega_construction_tt"
   hidden_effect = {
    from = {
     auto_qol_military_prepare = yes

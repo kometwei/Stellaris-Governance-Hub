@@ -97,7 +97,6 @@ planet_event = {{
     shell = shell.replace('spacing = 2', 'spacing = 4')
     content = text_box('expansion_header', PREFIX + '_header', 22, 15, 930, 34, 'malgun_goth_24')
     content += text_box('expansion_note', PREFIX + '_note', 22, 66, 980, 30)
-    content += text_box('expansion_footer', PREFIX + '_footer', 22, 624, 980, 60)
     files[f'interface/{PREFIX}.gui'] = shell.replace('@CONTENT@', content)
     files[f'localisation/simp_chinese/{PREFIX}_l_simp_chinese.yml'] = 'l_simp_chinese:\n' + ''.join(f' {key}:0 "{value}"\n' for key, value in loc.items())
     for relative, content in files.items():

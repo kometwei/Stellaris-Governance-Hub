@@ -18,8 +18,21 @@ guiTypes = {
   orientation = center
   origo = center
   moveable = yes
-  size = { width = 1030 height = 720 }
-  background = { name = "background" quadTextureSprite = "GFX_tile_large_bg" }
+  size = { width = 880 height = 560 }
+  background = { name = "background" quadTextureSprite = "GFX_auto_qol_console" }
+  containerWindowType = {
+   name = "console_header"
+   position = { x = 12 y = 8 }
+   size = { width = 856 height = 64 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+  containerWindowType = {
+   name = "console_footer"
+   position = { x = 12 y = 488 }
+   size = { width = 856 height = 60 }
+   background = { name = "background" quadTextureSprite = "GFX_auto_qol_panel" }
+  }
+
   buttonType = {
    name = "close"
    quadTextureSprite = "GFX_main_close_button"
@@ -37,7 +50,7 @@ guiTypes = {
   instantTextBoxType = {
    name = "alien_message"
    font = "cg_16b"
-   position = { x = 22 y = 112 }
+   position = { x = -10000 y = -10000 }
    maxWidth = 300
    maxHeight = 230
    format = left
@@ -84,12 +97,12 @@ guiTypes = {
   containerWindowType = {
    name = "EVENT_DIPLO"
    position = { x = 0 y = 0 }
-   instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = 352 y = 116 } maxWidth = 630 maxHeight = 52 }
+   instantTextBoxType = { name = "action_title" font = "malgun_goth_24" position = { x = -10000 y = -10000 } maxWidth = 630 maxHeight = 52 }
    instantTextBoxType = { name = "action_desc" font = "malgun_goth_24" position = { x = -10000 y = -10000 } }
    listBoxType = {
     name = "option_list"
-    position = { x = 22 y = 184 }
-    size = { x = 986 y = 524 }
+    position = { x = 22 y = 124 }
+    size = { x = 836 y = 424 }
     spacing = 0
     scrollbarType = "standardlistbox_slider"
     backGround = ""
@@ -100,26 +113,35 @@ guiTypes = {
    name = "hub_title"
    text = "auto_qol_hub_title"
    font = "malgun_goth_24"
-   position = { x = 22 y = 15 }
-   maxWidth = 930
+   position = { x = 22 y = 24 }
+   maxWidth = 786
    maxHeight = 30
    alwaysTransparent = yes
   }
   instantTextBoxType = {
-   name = "hub_note"
-   text = "auto_qol_hub_note"
+   name = "hub_construction"
+   text = "auto_qol_hub_construction"
    font = "cg_16b"
-   position = { x = 22 y = 66 }
-   maxWidth = 980
-   maxHeight = 28
+   position = { x = 22 y = 96 }
+   maxWidth = 406
+   maxHeight = 24
+   alwaysTransparent = yes
+  }
+  instantTextBoxType = {
+   name = "hub_governance"
+   text = "auto_qol_hub_governance"
+   font = "cg_16b"
+   position = { x = 452 y = 96 }
+   maxWidth = 406
+   maxHeight = 24
    alwaysTransparent = yes
   }
   instantTextBoxType = {
    name = "hub_settings"
    text = "auto_qol_hub_settings"
    font = "cg_16b"
-   position = { x = 22 y = 370 }
-   maxWidth = 300
+   position = { x = 22 y = 402 }
+   maxWidth = 836
    maxHeight = 24
    alwaysTransparent = yes
   }
@@ -128,8 +150,8 @@ guiTypes = {
    buttonText = "auto_qol_hub_envoy_on"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 410 }
-   size = { x = 300 y = 25 }
+   position = { x = 22 y = 436 }
+   size = { x = 406 y = 25 }
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_hub_envoy_on"
   }
@@ -138,8 +160,8 @@ guiTypes = {
    buttonText = "auto_qol_hub_envoy_off"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 410 }
-   size = { x = 300 y = 25 }
+   position = { x = 22 y = 436 }
+   size = { x = 406 y = 25 }
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_hub_envoy_off"
   }
@@ -148,8 +170,8 @@ guiTypes = {
    buttonText = "auto_qol_hub_pool_on"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 455 }
-   size = { x = 300 y = 25 }
+   position = { x = 452 y = 436 }
+   size = { x = 406 y = 25 }
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_hub_pool_on"
   }
@@ -158,19 +180,10 @@ guiTypes = {
    buttonText = "auto_qol_hub_pool_off"
    buttonFont = "cg_16b"
    format = center
-   position = { x = 22 y = 455 }
-   size = { x = 300 y = 25 }
+   position = { x = 452 y = 436 }
+   size = { x = 406 y = 25 }
    quadTextureSprite = "GFX_button_light"
    effect = "auto_qol_hub_pool_off"
-  }
-  instantTextBoxType = {
-   name = "hub_footer"
-   text = "auto_qol_hub_footer"
-   font = "cg_16b"
-   position = { x = 22 y = 606 }
-   maxWidth = 980
-   maxHeight = 48
-   alwaysTransparent = yes
   }
 
  }
@@ -183,7 +196,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 165 y = 484 }
+   position = { x = 165 y = 544 }
    size = { x = 300 y = 32 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -200,7 +213,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 495 y = 484 }
+   position = { x = 495 y = 544 }
    size = { x = 300 y = 32 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -217,7 +230,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 0 y = 484 }
+   position = { x = 0 y = 544 }
    size = { x = 235 y = 32 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -234,7 +247,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 247 y = 484 }
+   position = { x = 247 y = 544 }
    size = { x = 235 y = 32 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -251,7 +264,7 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 494 y = 484 }
+   position = { x = 494 y = 544 }
    size = { x = 235 y = 32 }
    font = "cg_16b"
    text = "OPTION_TEXT"
@@ -268,8 +281,142 @@ guiTypes = {
   buttonType = {
    name = "option_button"
    quadTextureSprite = "GFX_button_light"
-   position = { x = 741 y = 484 }
+   position = { x = 741 y = 544 }
    size = { x = 235 y = 32 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_0"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 12 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_1"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 71 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_2"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 130 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_3"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 430 y = 9 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_4"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 430 y = 68 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_5"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 430 y = 127 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_6"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 0 y = 186 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_card_7"
+  size = { width = 836 height = 1 }
+  position = { x = 0 y = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 430 y = 185 }
+   size = { x = 406 y = 38 }
+   font = "cg_16b"
+   text = "OPTION_TEXT"
+  }
+  overlappingElementsBoxType = { name = "trigger_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+  overlappingElementsBoxType = { name = "effect_icons" position = { x = -10000 y = -10000 } size = { x = 0 y = 0 } }
+ }
+ containerWindowType = {
+  name = "auto_qol_hub_close_button"
+  size = { width = 836 height = 0 }
+  buttonType = {
+   name = "option_button"
+   quadTextureSprite = "GFX_button_light"
+   position = { x = 215 y = 380 }
+   size = { x = 406 y = 32 }
    font = "cg_16b"
    text = "OPTION_TEXT"
   }

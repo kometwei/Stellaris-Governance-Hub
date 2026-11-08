@@ -1,7 +1,7 @@
 namespace = auto_qol_ascension
 
 # Initial target only; saved player adjustments take priority on subsequent visits.
-@auto_qol_ascension_slot_target = 8
+@auto_qol_ascension_slot_target = 128
 
 country_event = {
 	id = auto_qol_ascension.1

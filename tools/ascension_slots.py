@@ -1,4 +1,4 @@
-"""Resolve the existing AP slot cap without overriding any game Defines."""
+"""Default the AP target to half the existing cap without changing Defines."""
 import re
 from pathlib import Path
 
@@ -26,8 +26,9 @@ def resolve_slot_cap(mod_dirs=()):
 
 def configure_slot_cap(output_root, mod_dirs=()):
     cap = resolve_slot_cap(mod_dirs)
+    initial_target = max(1, cap // 2)
     path = Path(output_root) / 'events/auto_qol_ascension_events.txt'
-    text, count = TARGET.subn(f'@auto_qol_ascension_slot_target = {cap}', path.read_text(encoding='utf-8-sig'))
+    text, count = TARGET.subn(f'@auto_qol_ascension_slot_target = {initial_target}', path.read_text(encoding='utf-8-sig'))
     if count != 1:
         raise ValueError('Expected exactly one ascension slot target')
     path.write_text(text, encoding='utf-8')

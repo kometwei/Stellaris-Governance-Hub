@@ -156,6 +156,18 @@ auto_qol_reapply_planet_jobs_speed = {
 	}
 }
 
+auto_qol_reapply_constructor_speed = {
+    remove_modifier = qol_custom_constructor_speed_modifier
+    if = {
+        limit = { check_variable = { which = qol_custom_constructor_speed value > 0 } }
+        add_modifier = {
+            modifier = qol_custom_constructor_speed_modifier
+            days = -1
+            multiplier = qol_custom_constructor_speed
+        }
+    }
+}
+
 # Only replace this tool's own bonus, preserving all third-party modifiers.
 auto_qol_reapply_mega_build_speed = {
     remove_modifier = qol_custom_mega_build_speed_modifier

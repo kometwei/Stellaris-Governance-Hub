@@ -56,8 +56,14 @@ auto_qol_military_prepare = {
   limit = { NOT = { is_variable_set = qol_custom_mega_production } }
   set_variable = { which = qol_custom_mega_production value = 0 }
  }
+ if = {
+  limit = { NOT = { is_variable_set = qol_custom_constructor_speed } }
+  set_variable = { which = qol_custom_constructor_speed value = 0 }
+ }
  auto_qol_prepare_starbase_construction = yes
  auto_qol_reapply_mega_production = yes
  auto_qol_reapply_automated_output = yes
  auto_qol_reapply_automated_ratio = yes
+ auto_qol_reapply_constructor_speed = yes
+ auto_qol_reapply_planet_build_speed = yes
 }

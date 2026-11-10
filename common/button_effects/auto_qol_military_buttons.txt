@@ -2935,3 +2935,222 @@ auto_qol_military_mega_production_reset = {
   }
  }
 }
+
+auto_qol_military_constructor_speed_add_50 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    change_variable = { which = qol_custom_constructor_speed value = 50 }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_sub_50 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    subtract_variable = { which = qol_custom_constructor_speed value = 50 }
+    if = {
+     limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+     set_variable = { which = qol_custom_constructor_speed value = 0 }
+    }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_add_100 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    change_variable = { which = qol_custom_constructor_speed value = 100 }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_sub_100 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    subtract_variable = { which = qol_custom_constructor_speed value = 100 }
+    if = {
+     limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+     set_variable = { which = qol_custom_constructor_speed value = 0 }
+    }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_add_200 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    change_variable = { which = qol_custom_constructor_speed value = 200 }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_sub_200 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    subtract_variable = { which = qol_custom_constructor_speed value = 200 }
+    if = {
+     limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+     set_variable = { which = qol_custom_constructor_speed value = 0 }
+    }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_add_500 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    change_variable = { which = qol_custom_constructor_speed value = 500 }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_sub_500 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    subtract_variable = { which = qol_custom_constructor_speed value = 500 }
+    if = {
+     limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+     set_variable = { which = qol_custom_constructor_speed value = 0 }
+    }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_add_1000 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    change_variable = { which = qol_custom_constructor_speed value = 1000 }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_sub_1000 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    subtract_variable = { which = qol_custom_constructor_speed value = 1000 }
+    if = {
+     limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+     set_variable = { which = qol_custom_constructor_speed value = 0 }
+    }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_add_2000 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    change_variable = { which = qol_custom_constructor_speed value = 2000 }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_sub_2000 = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    subtract_variable = { which = qol_custom_constructor_speed value = 2000 }
+    if = {
+     limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+     set_variable = { which = qol_custom_constructor_speed value = 0 }
+    }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}
+
+auto_qol_military_constructor_speed_reset = {
+ potential = { from = { is_ai = no } }
+ allow = { from = { is_ai = no } }
+ effect = {
+  custom_tooltip = "auto_qol_military_constructor_speed_tt"
+  hidden_effect = {
+   from = {
+    auto_qol_military_prepare = yes
+    set_variable = { which = qol_custom_constructor_speed value = 0 }
+    auto_qol_reapply_constructor_speed = yes
+   }
+  }
+ }
+}

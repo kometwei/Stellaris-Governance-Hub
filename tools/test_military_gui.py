@@ -24,6 +24,7 @@ EXPECTED = {
     "mega_build_speed": (50, 100, 200, 500, 1000, 2000),
     "mega_construction": (1, 2, 5, 10),
     "mega_production": (10, 25, 50, 100, 200, 1000),
+    "constructor_speed": (50, 100, 200, 500, 1000, 2000),
 }
 
 
@@ -81,6 +82,33 @@ class MilitaryGuiTests(unittest.TestCase):
                     self.click(runtime, f"auto_qol_military_{feature}_reset")
                     self.assertNotIn(own_modifier, runtime.modifiers)
                     self.assertEqual(runtime.modifiers["unrelated"], {"bonus": 17})
+
+    def test_constructor_bonus_covers_all_four_stations_and_preserves_other_construction(self):
+        runtime = self.runtime()
+        runtime.modifiers['station_technology'] = {'shipclass_mining_station_build_speed_mult': 0.2}
+        self.click(runtime, 'auto_qol_military_mega_build_speed_add_100')
+        self.click(runtime, 'auto_qol_military_starbase_module_speed_add_50')
+        self.click(runtime, 'auto_qol_military_constructor_speed_add_200')
+        expected = {
+            'shipsize_starbase_outpost_build_speed_mult': 2.0,
+            'shipclass_mining_station_build_speed_mult': 2.0,
+            'shipclass_research_station_build_speed_mult': 2.0,
+            'shipclass_observation_station_build_speed_mult': 2.0,
+        }
+        own = 'qol_custom_constructor_speed_modifier'
+        self.assertEqual(runtime.modifiers[own], expected)
+        runtime.run(named(self.effects, 'auto_qol_military_prepare = {'))
+        runtime.run(named(self.effects, 'auto_qol_military_prepare = {'))
+        self.assertEqual(runtime.modifiers[own], expected)
+        self.click(runtime, 'auto_qol_military_constructor_speed_reset')
+        runtime.run(named(self.effects, 'auto_qol_military_prepare = {'))
+        self.assertNotIn(own, runtime.modifiers)
+        self.assertEqual(runtime.modifiers['station_technology'], {'shipclass_mining_station_build_speed_mult': 0.2})
+        self.assertEqual(runtime.modifiers['qol_custom_mega_build_speed_modifier'], {'megastructure_build_speed_mult': 1.0})
+        self.assertEqual(runtime.modifiers['qol_custom_starbase_module_speed_modifier']['starbase_upgrade_speed_mult'], 0.5)
+        windows = [v for k, _, v in field(parse(self.gui), 'guiTypes')
+                   if k == 'containerWindowType' and field(v, 'name') == 'auto_qol_military_mega_window']
+        self.assertIn('auto_qol_military_constructor_speed_add_200', repr(windows))
 
     def test_megastructure_bonuses_use_generic_modifiers_and_reset_independently(self):
         runtime = self.runtime()
@@ -194,6 +222,23 @@ class MilitaryGuiTests(unittest.TestCase):
         self.assertEqual(runtime.modifiers['qol_custom_mega_production_modifier'], {'megastructures_produces_mult': 2.0})
         self.assertEqual(runtime.variables["qol_custom_starbase_module_speed"], 200)
         self.assertEqual(runtime.variables["qol_custom_starbase_upgrade_speed"], 0)
+        # Existing construction bonuses gain colony development without losing their saved value.
+        runtime.variables['qol_custom_planet_build_speed'] = 200
+        runtime.modifiers['qol_custom_planet_build_speed_modifier'] = {'terraform_speed_mult': 2.0}
+        runtime.modifiers['colony_edict'] = {'planet_colony_development_speed_mult': 1.0}
+        runtime.run(prepare)
+        runtime.run(prepare)
+        self.assertEqual(runtime.variables['qol_custom_planet_build_speed'], 200)
+        self.assertEqual(runtime.modifiers['qol_custom_planet_build_speed_modifier'], {
+            'planet_building_build_speed_mult': 2.0,
+            'planet_clear_blocker_speed_mult': 2.0,
+            'terraform_speed_mult': 2.0,
+            'planet_colony_development_speed_mult': 2.0,
+        })
+        self.click(runtime, 'auto_qol_military_planet_build_speed_reset')
+        runtime.run(prepare)
+        self.assertNotIn('qol_custom_planet_build_speed_modifier', runtime.modifiers)
+        self.assertEqual(runtime.modifiers['colony_edict'], {'planet_colony_development_speed_mult': 1.0})
         self.click(runtime, "auto_qol_military_starbase_module_speed_reset")
         runtime.run(prepare)
         self.assertEqual(runtime.variables["qol_custom_starbase_module_speed"], 0)
@@ -235,7 +280,7 @@ class MilitaryGuiTests(unittest.TestCase):
                 for bx, by, bw, bh in boxes:
                     self.assertFalse(x < bx + bw and x + w > bx and y < by + bh and y + h > by)
                 boxes.append((x, y, w, h))
-        self.assertEqual(len(referenced), 174)
+        self.assertEqual(len(referenced), 187)
         self.assertEqual(referenced, {k for k, o, v in parse(self.buttons)})
         events = read("events/auto_qol_military_gui_events.txt")
         pages = {field(v, "id"): v for k, o, v in parse(events) if k == "country_event"}

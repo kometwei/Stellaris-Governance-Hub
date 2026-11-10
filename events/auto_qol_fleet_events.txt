@@ -7,6 +7,7 @@ namespace = auto_qol_cmd_limit_menu
 namespace = auto_qol_starbase_module_menu
 namespace = auto_qol_defense_platform_menu
 namespace = auto_qol_starbase_upgrade_menu
+namespace = auto_qol_constructor_menu
 namespace = auto_qol_ship_build_menu
 namespace = auto_qol_planet_construction_menu
 namespace = auto_qol_army_recruit_menu
@@ -62,6 +63,10 @@ country_event = {
 			limit = { NOT = { is_variable_set = qol_custom_planet_jobs_speed } }
 			set_variable = { which = qol_custom_planet_jobs_speed value = 0 }
 		}
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_constructor_speed } }
+			set_variable = { which = qol_custom_constructor_speed value = 0 }
+		}
 		auto_qol_prepare_starbase_construction = yes
 	}
 
@@ -101,6 +106,12 @@ country_event = {
 	}
 
 
+
+	option = {
+		name = "auto_qol_fleet_menu.go_constructor_speed"
+		custom_tooltip = "auto_qol_fleet_menu.go_constructor_speed_tt"
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
 
 	# 舰船建造速度调节
 	option = {
@@ -1085,6 +1096,7 @@ country_event = {
 			limit = { NOT = { is_variable_set = qol_custom_planet_build_speed } }
 			set_variable = { which = qol_custom_planet_build_speed value = 0 }
 		}
+	auto_qol_reapply_planet_build_speed = yes
 	}
 
 	option = {
@@ -1354,6 +1366,153 @@ country_event = {
 
 	option = {
 		name = "auto_qol_planet_jobs_speed.back"
+		country_event = { id = auto_qol_fleet_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol.close_direct"
+		default_hide_option = yes
+	}
+}
+
+
+# Unified constructor station construction speed.
+country_event = {
+	id = auto_qol_constructor_menu.1
+	title = "auto_qol_constructor_menu.1.name"
+	desc = "auto_qol_constructor_menu.1.desc"
+	picture = GFX_evt_fleet_neutral
+	is_triggered_only = yes
+	trigger = { is_ai = no }
+
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = qol_custom_constructor_speed } }
+			set_variable = { which = qol_custom_constructor_speed value = 0 }
+		}
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.add_50"
+		hidden_effect = {
+			change_variable = { which = qol_custom_constructor_speed value = 50 }
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.add_100"
+		hidden_effect = {
+			change_variable = { which = qol_custom_constructor_speed value = 100 }
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.add_200"
+		hidden_effect = {
+			change_variable = { which = qol_custom_constructor_speed value = 200 }
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.add_500"
+		hidden_effect = {
+			change_variable = { which = qol_custom_constructor_speed value = 500 }
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.add_1000"
+		hidden_effect = {
+			change_variable = { which = qol_custom_constructor_speed value = 1000 }
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.sub_50"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_constructor_speed value = 50 }
+			if = {
+				limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+				set_variable = { which = qol_custom_constructor_speed value = 0 }
+			}
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.sub_100"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_constructor_speed value = 100 }
+			if = {
+				limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+				set_variable = { which = qol_custom_constructor_speed value = 0 }
+			}
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.sub_200"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_constructor_speed value = 200 }
+			if = {
+				limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+				set_variable = { which = qol_custom_constructor_speed value = 0 }
+			}
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.sub_500"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_constructor_speed value = 500 }
+			if = {
+				limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+				set_variable = { which = qol_custom_constructor_speed value = 0 }
+			}
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.sub_1000"
+		hidden_effect = {
+			subtract_variable = { which = qol_custom_constructor_speed value = 1000 }
+			if = {
+				limit = { check_variable = { which = qol_custom_constructor_speed value < 0 } }
+				set_variable = { which = qol_custom_constructor_speed value = 0 }
+			}
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.reset"
+		hidden_effect = {
+			set_variable = { which = qol_custom_constructor_speed value = 0 }
+			auto_qol_reapply_constructor_speed = yes
+		}
+		country_event = { id = auto_qol_constructor_menu.1 }
+	}
+
+	option = {
+		name = "auto_qol_constructor_speed.back"
 		country_event = { id = auto_qol_fleet_menu.1 }
 	}
 

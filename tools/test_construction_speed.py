@@ -139,7 +139,7 @@ class ConstructionSpeedTests(unittest.TestCase):
         self.assertNotIn('name = "auto_qol_fleet_menu.go_starbase_upgrade_speed"', self.events)
 
     def test_all_speed_steps_and_independent_reset(self):
-        for feature in ('starbase_module','defense_platform','army_recruit','ship_build','planet_build'):
+        for feature in ('starbase_module','defense_platform','army_recruit','ship_build','planet_build','constructor'):
             for amount in (50,100,200,500,1000):
                 runtime = self.runtime()
                 self.prepare(runtime)
@@ -192,6 +192,7 @@ class ConstructionSpeedTests(unittest.TestCase):
                 'planet_building_build_speed_mult':2,
                 'planet_clear_blocker_speed_mult':2,
                 'terraform_speed_mult':2,
+                'planet_colony_development_speed_mult':2,
             })
             self.assertEqual(runtime.modifiers[jobs], {'planet_jobs_produces_mult':amount/100})
             runtime.run(self.option('planet_jobs','sub_200'))

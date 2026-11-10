@@ -66,11 +66,20 @@ qol_custom_planet_build_speed_modifier = {
 	planet_building_build_speed_mult = 0.01
 	planet_clear_blocker_speed_mult = 0.01
 	terraform_speed_mult = 0.01
+	planet_colony_development_speed_mult = 0.01
 }
 
 # 1单位 = +1%
 qol_custom_planet_jobs_speed_modifier = {
 	planet_jobs_produces_mult = 0.01
+}
+
+# 1 unit = +1% for each constructor-built station type; do not stack class and size bonuses.
+qol_custom_constructor_speed_modifier = {
+    shipsize_starbase_outpost_build_speed_mult = 0.01
+    shipclass_mining_station_build_speed_mult = 0.01
+    shipclass_research_station_build_speed_mult = 0.01
+    shipclass_observation_station_build_speed_mult = 0.01
 }
 
 # 1 unit = +1% generic megastructure construction speed.
